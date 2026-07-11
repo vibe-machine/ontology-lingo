@@ -1,7 +1,7 @@
 # Provenance bootstrap
 # upstream-repo: https://github.com/vibe-machine/ontology-lingo
-# upstream-tag: v0.1.3
-# upstream-commit: 971146e42676c9735509495b2ec628b2fdeba77e
+# upstream-tag: v0.1.4
+# upstream-commit: 980685b17bfa34e64e0336f0d2b3cd5a2e2d0d3b
 # source-artifacts:
 # - package.json
 # - schema/lingo.tql
@@ -25,7 +25,7 @@
 # - generated/apply-units/data/lingo-schema-docs/0016.tql
 # - generated/apply-units/data/lingo-schema-docs/0017.tql
 # - generated/apply-units/data/lingo-schema-docs/0018.tql
-# manifest: manifests/lingo-v0.1.3.package-manifest.json
+# manifest: manifests/lingo-v0.1.4.package-manifest.json
 # generator: hand-authored-package-bootstrap/0.1.0
 define
 

@@ -1,0 +1,60 @@
+define
+
+attribute lingoCandidateId, value string;
+attribute lingoSchemaLifecycleIntent, value string @values("add", "reuse", "noChange", "defer");
+
+relation lingoPlanItemUsesEvidence,
+  relates planItemRevision,
+  relates evidence;
+
+relation lingoPlanItemAffectedByConstraint,
+  relates planItemRevision,
+  relates constraintRevision;
+
+relation lingoPlanItemAffectedByCompetencyQuestion,
+  relates planItemRevision,
+  relates questionRevision;
+
+relation lingoPlanItemHasClarification,
+  relates planItemRevision,
+  relates clarificationIssue;
+
+relation lingoPlanItemOverrides,
+  relates newerItemRevision,
+  relates olderItemRevision;
+
+redefine
+entity LingoEvidenceExcerpt plays lingoPlanItemUsesEvidence:evidence;
+
+redefine
+entity LingoBriefDomainConstraintRevision plays lingoPlanItemAffectedByConstraint:constraintRevision;
+
+redefine
+entity LingoBriefCompetencyQuestionRevision plays lingoPlanItemAffectedByCompetencyQuestion:questionRevision;
+
+redefine
+entity LingoGroundingPlanItemRevision owns lingoSchemaLifecycleIntent;
+
+redefine
+entity LingoGroundingPlanItemRevision plays lingoPlanItemUsesEvidence:planItemRevision;
+
+redefine
+entity LingoGroundingPlanItemRevision plays lingoPlanItemAffectedByConstraint:planItemRevision;
+
+redefine
+entity LingoGroundingPlanItemRevision plays lingoPlanItemAffectedByCompetencyQuestion:planItemRevision;
+
+redefine
+entity LingoGroundingPlanItemRevision plays lingoPlanItemHasClarification:planItemRevision;
+
+redefine
+entity LingoGroundingPlanItemRevision plays lingoPlanItemOverrides:newerItemRevision;
+
+redefine
+entity LingoGroundingPlanItemRevision plays lingoPlanItemOverrides:olderItemRevision;
+
+redefine
+entity LingoGroundingCandidate owns lingoCandidateId @key;
+
+redefine
+entity LingoClarificationIssue plays lingoPlanItemHasClarification:clarificationIssue;

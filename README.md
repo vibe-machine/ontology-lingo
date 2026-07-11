@@ -29,7 +29,14 @@ The full test loads gist, this schema, self-documentation, provenance, and both 
 ## Domain invariants
 
 - One Workbook represents one coherent modeling effort.
-- Brief revisions own problem meaning; Grounding Plans reference exact Brief element revisions.
+- Brief revisions own problem meaning. Each Grounding Plan item carries the
+  stable Brief element identity and links to the exact element revision it
+  interpreted; it never copies Brief or evidence text into its solution payload.
+- `lingoModelingAct` records the modeling operation (`specialize`, `compose`,
+  `categorize`, or `instantiate`). `lingoSchemaLifecycleIntent` independently
+  records the intended schema effect (`add`, `reuse`, `noChange`, or `defer`).
+  For example, composing a relation does not imply that a new relation type
+  will be added.
 - Evidence is stored once in the Workbook ledger and referenced by claims and decisions.
 - Revisions, decisions, Change Sets, Verification Runs, and Apply Receipts are immutable.
 - Human decision, grounding readiness, and verification are separate axes.
@@ -42,4 +49,5 @@ defining schema at startup before its data migration lands. They are not part
 of the canonical object model and will be retired only after `one-2xg.54.6`
 verifies the graph-native replacement.
 
-The application-facing contract is mirrored in OneWorkspace at `Docs/lingo-studio-knowledge-model.md`.
+OneWorkspace implements this contract in `GroundingPlan`,
+`GroundingPlanStore`, and the temporary `LegacyPlacementDecisionAdapter`.

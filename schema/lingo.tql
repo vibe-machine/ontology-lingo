@@ -11,6 +11,7 @@ attribute lingoRevisionId, value string;
 attribute lingoStableArtifactId, value string;
 attribute lingoBriefElementId, value string;
 attribute lingoPlanItemId, value string;
+attribute lingoCandidateId, value string;
 attribute lingoClarificationId, value string;
 attribute lingoDecisionId, value string;
 attribute lingoEvaluationId, value string;
@@ -68,6 +69,7 @@ attribute lingoCorpusFingerprint, value string;
 attribute lingoConfigurationFingerprint, value string;
 
 attribute lingoModelingAct, value string @values("reuse", "specialize", "compose", "categorize", "instantiate", "defer");
+attribute lingoSchemaLifecycleIntent, value string @values("add", "reuse", "noChange", "defer");
 attribute lingoProposedTargetLabel, value string;
 attribute lingoProposedTargetKind, value string;
 attribute lingoCandidateScore, value double;
@@ -196,7 +198,8 @@ entity LingoEvidenceExcerpt sub LingoArtifact,
   owns lingoLocatorKind,
   owns lingoLocatorValue,
   plays lingoEvidenceSourceContainsExcerpt:excerpt,
-  plays lingoClaimSupportedBy:evidence;
+  plays lingoClaimSupportedBy:evidence,
+  plays lingoPlanItemUsesEvidence:evidence;
 
 relation lingoWorkbookContainsInput,
   relates workbook,
@@ -280,13 +283,15 @@ entity LingoBriefDomainConstraintRevision sub LingoBriefElementRevision,
   owns lingoConstraintKind,
   owns lingoMinimumCardinality @card(0..1),
   owns lingoMaximumCardinality @card(0..1),
-  owns lingoUnboundedMaximum @card(0..1);
+  owns lingoUnboundedMaximum @card(0..1),
+  plays lingoPlanItemAffectedByConstraint:constraintRevision;
 entity LingoBriefTemporalCommitmentRevision sub LingoBriefElementRevision;
 entity LingoBriefAssumptionRevision sub LingoBriefElementRevision;
 entity LingoBriefExclusionRevision sub LingoBriefElementRevision;
 entity LingoBriefCompetencyQuestionRevision sub LingoBriefElementRevision,
   owns lingoNormalizedInterpretation @card(0..1),
-  owns lingoExpectedAnswerShape @card(0..1);
+  owns lingoExpectedAnswerShape @card(0..1),
+  plays lingoPlanItemAffectedByCompetencyQuestion:questionRevision;
 
 relation lingoWorkbookHasBriefRevision,
   relates workbook,
@@ -413,6 +418,7 @@ entity LingoGroundingPlanItem sub LingoArtifact,
 
 entity LingoGroundingPlanItemRevision sub LingoRevisionArtifact,
   owns lingoModelingAct,
+  owns lingoSchemaLifecycleIntent,
   owns lingoProposedTargetLabel @card(0..1),
   owns lingoProposedTargetKind @card(0..1),
   owns lingoRationale @card(0..1),
@@ -420,10 +426,17 @@ entity LingoGroundingPlanItemRevision sub LingoRevisionArtifact,
   plays lingoPlanIncludesItemRevision:itemRevision,
   plays lingoPlanItemInterpretsBriefElement:planItemRevision,
   plays lingoPlanItemMapsToSchemaResource:planItemRevision,
+  plays lingoPlanItemUsesEvidence:planItemRevision,
+  plays lingoPlanItemAffectedByConstraint:planItemRevision,
+  plays lingoPlanItemAffectedByCompetencyQuestion:planItemRevision,
+  plays lingoPlanItemHasClarification:planItemRevision,
+  plays lingoPlanItemOverrides:newerItemRevision,
+  plays lingoPlanItemOverrides:olderItemRevision,
   plays lingoCandidateForPlanItem:planItemRevision,
   plays lingoOperationRealizesPlanItem:planItemRevision;
 
 entity LingoGroundingCandidate sub LingoArtifact,
+  owns lingoCandidateId @key,
   owns lingoCandidateScore,
   owns lingoCandidateRank,
   owns lingoRationale @card(0..1),
@@ -436,7 +449,8 @@ entity LingoClarificationIssue sub LingoArtifact,
   owns lingoRationale,
   owns lingoClarificationState,
   plays lingoWorkbookHasClarificationIssue:clarificationIssue,
-  plays lingoClarificationConcerns:clarificationIssue;
+  plays lingoClarificationConcerns:clarificationIssue,
+  plays lingoPlanItemHasClarification:clarificationIssue;
 
 entity LingoHumanDecision sub LingoArtifact,
   owns lingoDecisionId @key,
@@ -498,6 +512,26 @@ relation lingoPlanItemMapsToSchemaResource,
   relates resource;
 
 SchemaResource plays lingoPlanItemMapsToSchemaResource:resource;
+
+relation lingoPlanItemUsesEvidence,
+  relates planItemRevision,
+  relates evidence;
+
+relation lingoPlanItemAffectedByConstraint,
+  relates planItemRevision,
+  relates constraintRevision;
+
+relation lingoPlanItemAffectedByCompetencyQuestion,
+  relates planItemRevision,
+  relates questionRevision;
+
+relation lingoPlanItemHasClarification,
+  relates planItemRevision,
+  relates clarificationIssue;
+
+relation lingoPlanItemOverrides,
+  relates newerItemRevision,
+  relates olderItemRevision;
 
 relation lingoCandidateForPlanItem,
   relates candidate,
