@@ -3,8 +3,8 @@ define
 attribute lingoIntent, value string;
 attribute lingoUpdatedAt, value datetime;
 
-redefine
+define
 entity LingoStudioWorkbook owns lingoIntent @card(0..1);
 
-redefine
+define
 entity LingoStudioWorkbook owns lingoUpdatedAt;
