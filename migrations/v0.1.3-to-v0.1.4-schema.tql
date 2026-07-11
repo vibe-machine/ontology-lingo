@@ -23,38 +23,38 @@ relation lingoPlanItemOverrides,
   relates newerItemRevision,
   relates olderItemRevision;
 
-redefine
+define
 entity LingoEvidenceExcerpt plays lingoPlanItemUsesEvidence:evidence;
 
-redefine
+define
 entity LingoBriefDomainConstraintRevision plays lingoPlanItemAffectedByConstraint:constraintRevision;
 
-redefine
+define
 entity LingoBriefCompetencyQuestionRevision plays lingoPlanItemAffectedByCompetencyQuestion:questionRevision;
 
-redefine
+define
 entity LingoGroundingPlanItemRevision owns lingoSchemaLifecycleIntent;
 
-redefine
+define
 entity LingoGroundingPlanItemRevision plays lingoPlanItemUsesEvidence:planItemRevision;
 
-redefine
+define
 entity LingoGroundingPlanItemRevision plays lingoPlanItemAffectedByConstraint:planItemRevision;
 
-redefine
+define
 entity LingoGroundingPlanItemRevision plays lingoPlanItemAffectedByCompetencyQuestion:planItemRevision;
 
-redefine
+define
 entity LingoGroundingPlanItemRevision plays lingoPlanItemHasClarification:planItemRevision;
 
-redefine
+define
 entity LingoGroundingPlanItemRevision plays lingoPlanItemOverrides:newerItemRevision;
 
-redefine
+define
 entity LingoGroundingPlanItemRevision plays lingoPlanItemOverrides:olderItemRevision;
 
-redefine
+define
 entity LingoGroundingCandidate owns lingoCandidateId @key;
 
-redefine
+define
 entity LingoClarificationIssue plays lingoPlanItemHasClarification:clarificationIssue;
