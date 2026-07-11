@@ -1,0 +1,452 @@
+# Generated executable apply unit from data/lingo-schema-docs.tql
+# manifest: manifests/lingo-v0.1.1.package-manifest.json
+
+match
+  $struct_left isa SchemaResource, has typeLabel "LingoAnnotateOperation";
+  $struct_right isa SchemaResource, has typeLabel "LingoChangeOperation";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoPlanItemMapsToSchemaResource";
+  $struct_right isa SchemaResource, has typeLabel "lingoPlanItemMapsToSchemaResource:planItemRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoPlanItemMapsToSchemaResource";
+  $struct_right isa SchemaResource, has typeLabel "lingoPlanItemMapsToSchemaResource:resource";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoReadinessEvaluationEvaluates";
+  $struct_right isa SchemaResource, has typeLabel "lingoReadinessEvaluationEvaluates:evaluation";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoReadinessEvaluationEvaluates";
+  $struct_right isa SchemaResource, has typeLabel "lingoReadinessEvaluationEvaluates:subject";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoRelationFrameHasRole";
+  $struct_right isa SchemaResource, has typeLabel "lingoRelationFrameHasRole:frameRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoRelationFrameHasRole";
+  $struct_right isa SchemaResource, has typeLabel "lingoRelationFrameHasRole:roleRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoRelationOperationHasRoleDefinition";
+  $struct_right isa SchemaResource, has typeLabel "lingoRelationOperationHasRoleDefinition:relationOperation";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoRelationOperationHasRoleDefinition";
+  $struct_right isa SchemaResource, has typeLabel "lingoRelationOperationHasRoleDefinition:roleDefinition";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoRevisionSupersedes";
+  $struct_right isa SchemaResource, has typeLabel "lingoRevisionSupersedes:newerRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoRevisionSupersedes";
+  $struct_right isa SchemaResource, has typeLabel "lingoRevisionSupersedes:olderRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoRoleDefinitionImplementsBriefRole";
+  $struct_right isa SchemaResource, has typeLabel "lingoRoleDefinitionImplementsBriefRole:briefRoleRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoRoleDefinitionImplementsBriefRole";
+  $struct_right isa SchemaResource, has typeLabel "lingoRoleDefinitionImplementsBriefRole:roleDefinition";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoRoleRefersToBriefElement";
+  $struct_right isa SchemaResource, has typeLabel "lingoRoleRefersToBriefElement:participantElement";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoRoleRefersToBriefElement";
+  $struct_right isa SchemaResource, has typeLabel "lingoRoleRefersToBriefElement:roleRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoStagingBoundToChangeSet";
+  $struct_right isa SchemaResource, has typeLabel "lingoStagingBoundToChangeSet:changeSet";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoStagingBoundToChangeSet";
+  $struct_right isa SchemaResource, has typeLabel "lingoStagingBoundToChangeSet:stagingBinding";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoTargetUsesModuleVersion";
+  $struct_right isa SchemaResource, has typeLabel "lingoTargetUsesModuleVersion:moduleVersion";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoTargetUsesModuleVersion";
+  $struct_right isa SchemaResource, has typeLabel "lingoTargetUsesModuleVersion:targetContextRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoVerificationExecutesQuestion";
+  $struct_right isa SchemaResource, has typeLabel "lingoVerificationExecutesQuestion:executableQuestion";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoVerificationExecutesQuestion";
+  $struct_right isa SchemaResource, has typeLabel "lingoVerificationExecutesQuestion:verificationRun";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoVerificationHasResult";
+  $struct_right isa SchemaResource, has typeLabel "lingoVerificationHasResult:verificationResult";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoVerificationHasResult";
+  $struct_right isa SchemaResource, has typeLabel "lingoVerificationHasResult:verificationRun";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoVerificationRunsInBinding";
+  $struct_right isa SchemaResource, has typeLabel "lingoVerificationRunsInBinding:stagingBinding";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoVerificationRunsInBinding";
+  $struct_right isa SchemaResource, has typeLabel "lingoVerificationRunsInBinding:verificationRun";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoVerificationVerifiesChangeSet";
+  $struct_right isa SchemaResource, has typeLabel "lingoVerificationVerifiesChangeSet:changeSet";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoVerificationVerifiesChangeSet";
+  $struct_right isa SchemaResource, has typeLabel "lingoVerificationVerifiesChangeSet:verificationRun";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookCatalogsEvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookCatalogsEvidenceSource:evidenceSource";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookCatalogsEvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookCatalogsEvidenceSource:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookContainsInput";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookContainsInput:input";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookContainsInput";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookContainsInput:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookCurrentBrief";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookCurrentBrief:briefRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookCurrentBrief";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookCurrentBrief:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookCurrentPlan";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookCurrentPlan:planRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookCurrentPlan";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookCurrentPlan:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookCurrentTargetContext";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookCurrentTargetContext:targetContextRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookCurrentTargetContext";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookCurrentTargetContext:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasApplyReceipt";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasApplyReceipt:applyReceipt";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasApplyReceipt";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasApplyReceipt:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasBriefRevision";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasBriefRevision:briefRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasBriefRevision";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasBriefRevision:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasChangeSet";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasChangeSet:changeSet";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasChangeSet";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasChangeSet:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasClarificationIssue";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasClarificationIssue:clarificationIssue";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasClarificationIssue";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasClarificationIssue:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasPlanRevision";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasPlanRevision:planRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasPlanRevision";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasPlanRevision:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasStagingBinding";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasStagingBinding:stagingBinding";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasStagingBinding";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasStagingBinding:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasTargetContextRevision";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasTargetContextRevision:targetContextRevision";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;

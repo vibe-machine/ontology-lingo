@@ -1,0 +1,58 @@
+# Generated executable apply unit from data/lingo-schema-docs.tql
+# manifest: manifests/lingo-v0.1.1.package-manifest.json
+
+match
+  $struct_left isa SchemaResource, has typeLabel "LingoAnnotateOperation";
+  $struct_right isa SchemaResource, has typeLabel "LingoChangeOperation";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasTargetContextRevision";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasTargetContextRevision:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasVerificationRun";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasVerificationRun:verificationRun";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoWorkbookHasVerificationRun";
+  $struct_right isa SchemaResource, has typeLabel "lingoWorkbookHasVerificationRun:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "workbookContainsRow";
+  $struct_right isa SchemaResource, has typeLabel "workbookContainsRow:row";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "workbookContainsRow";
+  $struct_right isa SchemaResource, has typeLabel "workbookContainsRow:workbook";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+# -- END GENERATED STRUCTURAL METADATA --
