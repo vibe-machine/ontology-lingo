@@ -22,6 +22,11 @@ attribute lingoVerificationResultId, value string;
 attribute lingoStagingBindingId, value string;
 attribute lingoApplyReceiptId, value string;
 attribute lingoApplyOutcomeId, value string;
+attribute lingoAmendmentId, value string;
+attribute lingoReviewId, value string;
+attribute lingoFindingId, value string;
+attribute lingoActorId, value string;
+attribute lingoActorKind, value string @values("human", "agent");
 
 attribute lingoName, value string;
 attribute lingoText, value string;
@@ -71,6 +76,10 @@ attribute lingoHumanDecisionState, value string @values("draft", "confirmed", "d
 attribute lingoGroundingReadiness, value string @values("understandingIncomplete", "needsAnswer", "grounded", "readyToConfirm", "groundingBlocked");
 attribute lingoAttentionReason, value string;
 attribute lingoClarificationState, value string @values("open", "resolved", "dismissedWithoutResolution");
+attribute lingoAmendmentState, value string @values("proposed", "accepted", "rejected");
+attribute lingoReviewVerdict, value string @values("accepted", "revisionRequired");
+attribute lingoFindingSeverity, value string @values("blocker", "major", "minor");
+attribute lingoFindingCategory, value string @values("unsupportedInvention", "omittedExplicitRequirement", "genericRelationIdentity", "frameShapeDrift", "epistemicMismatch", "evidenceMismatch", "cardinalityInconsistency", "internalInconsistency");
 
 attribute lingoOperationKind, value string;
 attribute lingoTargetLabel, value string;
@@ -104,6 +113,7 @@ entity LingoArtifact sub Thing,
   owns lingoCreatedAt,
   plays lingoAuthoredBy:artifact,
   plays lingoArtifactHasPayload:artifact,
+  plays lingoFindingTargetsArtifact:target,
   plays lingoHumanDecisionDecides:subject,
   plays lingoReadinessEvaluationEvaluates:subject;
 
@@ -165,7 +175,8 @@ entity LingoModelingInput sub LingoArtifact,
   owns lingoInputKind,
   owns lingoContentHash,
   plays lingoWorkbookContainsInput:input,
-  plays lingoInputUsesEvidenceSource:input;
+  plays lingoInputUsesEvidenceSource:input,
+  plays lingoAmendmentUsesInput:input;
 
 entity LingoEvidenceSource sub LingoArtifact,
   owns lingoEvidenceSourceId @key,
@@ -209,12 +220,15 @@ entity LingoModelingBriefRevision sub LingoRevisionArtifact,
   plays lingoWorkbookHasBriefRevision:briefRevision,
   plays lingoWorkbookCurrentBrief:briefRevision,
   plays lingoBriefIncludesElementRevision:briefRevision,
+  plays lingoBriefAmendmentTransition:baseBriefRevision,
+  plays lingoBriefAmendmentTransition:revisedBriefRevision,
   plays lingoPlanGroundsBrief:briefRevision;
 
 entity LingoBriefElement sub LingoArtifact,
   owns lingoBriefElementId @key,
   owns lingoElementKind,
   plays lingoBriefElementHasRevision:briefElement,
+  plays lingoAmendmentAffectsElement:affectedElement,
   plays lingoRoleRefersToBriefElement:participantElement,
   plays lingoRelationFrameHasTemporalCommitment:temporalCommitmentElement,
   plays lingoCompetencyQuestionRefersToElement:referencedElement;
@@ -293,6 +307,63 @@ relation lingoBriefIncludesElementRevision,
 relation lingoClaimSupportedBy,
   relates claim,
   relates evidence;
+
+# ── Brief amendment and independent review ─────────────────────────────────
+
+entity LingoBriefAmendment sub LingoArtifact,
+  owns lingoAmendmentId @key,
+  owns lingoAmendmentState,
+  owns lingoRationale @card(0..1),
+  plays lingoAmendmentUsesInput:amendment,
+  plays lingoBriefAmendmentTransition:amendment,
+  plays lingoAmendmentAffectsElement:amendment,
+  plays lingoReviewEvaluatesAmendment:amendment;
+
+entity LingoStudioActor sub LingoArtifact,
+  owns lingoActorId @key,
+  owns lingoActorKind;
+
+entity LingoBriefReview sub LingoArtifact,
+  owns lingoReviewId @key,
+  owns lingoReviewVerdict,
+  owns lingoContractVersion,
+  owns lingoText,
+  plays lingoReviewEvaluatesAmendment:review,
+  plays lingoReviewContainsFinding:review;
+
+entity LingoBriefReviewFinding sub LingoArtifact,
+  owns lingoFindingId @key,
+  owns lingoFindingSeverity,
+  owns lingoFindingCategory,
+  owns lingoText,
+  owns lingoRationale,
+  plays lingoReviewContainsFinding:finding,
+  plays lingoFindingTargetsArtifact:finding;
+
+relation lingoAmendmentUsesInput,
+  relates amendment,
+  relates input;
+
+relation lingoBriefAmendmentTransition,
+  relates amendment,
+  relates baseBriefRevision,
+  relates revisedBriefRevision;
+
+relation lingoAmendmentAffectsElement,
+  relates amendment,
+  relates affectedElement;
+
+relation lingoReviewEvaluatesAmendment,
+  relates review,
+  relates amendment;
+
+relation lingoReviewContainsFinding,
+  relates review,
+  relates finding;
+
+relation lingoFindingTargetsArtifact,
+  relates finding,
+  relates target;
 
 relation lingoRelationFrameHasRole,
   relates frameRevision,

@@ -1,0 +1,73 @@
+define
+
+attribute lingoAmendmentId, value string;
+attribute lingoReviewId, value string;
+attribute lingoFindingId, value string;
+attribute lingoActorId, value string;
+attribute lingoActorKind, value string @values("human", "agent");
+attribute lingoAmendmentState, value string @values("proposed", "accepted", "rejected");
+attribute lingoReviewVerdict, value string @values("accepted", "revisionRequired");
+attribute lingoFindingSeverity, value string @values("blocker", "major", "minor");
+attribute lingoFindingCategory, value string @values("unsupportedInvention", "omittedExplicitRequirement", "genericRelationIdentity", "frameShapeDrift", "epistemicMismatch", "evidenceMismatch", "cardinalityInconsistency", "internalInconsistency");
+
+LingoArtifact plays lingoFindingTargetsArtifact:target;
+LingoModelingInput plays lingoAmendmentUsesInput:input;
+LingoModelingBriefRevision
+  plays lingoBriefAmendmentTransition:baseBriefRevision,
+  plays lingoBriefAmendmentTransition:revisedBriefRevision;
+LingoBriefElement plays lingoAmendmentAffectsElement:affectedElement;
+
+entity LingoBriefAmendment sub LingoArtifact,
+  owns lingoAmendmentId @key,
+  owns lingoAmendmentState,
+  owns lingoRationale @card(0..1),
+  plays lingoAmendmentUsesInput:amendment,
+  plays lingoBriefAmendmentTransition:amendment,
+  plays lingoAmendmentAffectsElement:amendment,
+  plays lingoReviewEvaluatesAmendment:amendment;
+
+entity LingoStudioActor sub LingoArtifact,
+  owns lingoActorId @key,
+  owns lingoActorKind;
+
+entity LingoBriefReview sub LingoArtifact,
+  owns lingoReviewId @key,
+  owns lingoReviewVerdict,
+  owns lingoContractVersion,
+  owns lingoText,
+  plays lingoReviewEvaluatesAmendment:review,
+  plays lingoReviewContainsFinding:review;
+
+entity LingoBriefReviewFinding sub LingoArtifact,
+  owns lingoFindingId @key,
+  owns lingoFindingSeverity,
+  owns lingoFindingCategory,
+  owns lingoText,
+  owns lingoRationale,
+  plays lingoReviewContainsFinding:finding,
+  plays lingoFindingTargetsArtifact:finding;
+
+relation lingoAmendmentUsesInput,
+  relates amendment,
+  relates input;
+
+relation lingoBriefAmendmentTransition,
+  relates amendment,
+  relates baseBriefRevision,
+  relates revisedBriefRevision;
+
+relation lingoAmendmentAffectsElement,
+  relates amendment,
+  relates affectedElement;
+
+relation lingoReviewEvaluatesAmendment,
+  relates review,
+  relates amendment;
+
+relation lingoReviewContainsFinding,
+  relates review,
+  relates finding;
+
+relation lingoFindingTargetsArtifact,
+  relates finding,
+  relates target;
