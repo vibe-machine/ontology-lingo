@@ -1,0 +1,60 @@
+{
+  "$schema": "./package-manifest.schema.json",
+  "manifestVersion": "1.0.0",
+  "package": {
+    "name": "my-domain",
+    "version": "2.0.0"
+  },
+  "upstream": {
+    "repoUrl": "https://github.com/your-org/ontology-my-domain",
+    "tag": "v2.0.0",
+    "commit": "54ee141f8e93d36d8c40c5807ee06f5a449435f1",
+    "sourceArtifacts": [
+      {
+        "path": "package.json",
+        "sha256": "c3dbc02b5bc18125bda8fab922a4228fd3ff938ce3f300981dd3ad20e0276e04"
+      },
+      {
+        "path": "schema/myDomain.tql",
+        "sha256": "133f4792da4b6cdc375cfcc95fe8bebb3ff25e36b4712a0c2ee6ea603364f462"
+      }
+    ]
+  },
+  "generator": {
+    "name": "hand-authored-package-bootstrap",
+    "version": "0.1.0",
+    "generatedAt": "2026-03-28T14:03:46Z"
+  },
+  "artifacts": [
+    {
+      "kind": "meta-schema",
+      "path": "schema/self-describing-schema.tql",
+      "sha256": "42b35203f181c438e640fe140b84f6feb88d2cae97f2c563d8c177b7ec7623a8"
+    },
+    {
+      "kind": "provenance-schema",
+      "path": "schema/package-provenance.tql",
+      "sha256": "73f05400c11e6b02970e10a1d7a027ba3e158318422ba4742bffeff43139b8fd"
+    },
+    {
+      "kind": "administrative-schema",
+      "path": "schema/administrative-operations.tql",
+      "sha256": "ab378fd7caf4d6d84f656e0512764515d9dfe98064179b35c8993577bef9dd78"
+    },
+    {
+      "kind": "documentation",
+      "path": "data/my-domain-schema-docs.tql",
+      "sha256": "943dfce470b6ed0edb17801cbee0647319300e6045ed8d443f120696bf6d4e10"
+    },
+    {
+      "kind": "manifest-schema",
+      "path": "manifests/package-manifest.schema.json",
+      "sha256": "07599fe20623f3304bec0987320050f12efc1faf04fad7c12176ffe88e0b6a48"
+    },
+    {
+      "kind": "provenance-seeds",
+      "path": "data/my-domain-provenance.tql",
+      "sha256": "9789efbdaa28fc431516d3985a98134a2c2dd20ae6f86a578bf7005269b0a7f0"
+    }
+  ]
+}

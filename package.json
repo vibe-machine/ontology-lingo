@@ -1,0 +1,80 @@
+{
+  "name": "my-domain",
+  "displayName": "My Domain",
+  "version": "2.0.0",
+  "description": "Description of your ontology domain.",
+  "author": "your-name",
+  "license": "MIT",
+  "source": "https://github.com/your-org/ontology-my-domain",
+  "prefix": "mydomain",
+  "schemas": [
+    {
+      "name": "self-describing-schema",
+      "file": "schema/self-describing-schema.tql"
+    },
+    {
+      "name": "package-provenance",
+      "file": "schema/package-provenance.tql"
+    },
+    {
+      "name": "administrative-operations",
+      "file": "schema/administrative-operations.tql"
+    },
+    {
+      "name": "myDomain",
+      "file": "schema/myDomain.tql"
+    }
+  ],
+  "data": [
+    "data/my-domain-provenance.tql",
+    "data/my-domain-schema-docs.tql"
+  ],
+  "dependencies": [
+    {
+      "name": "gist",
+      "version": ">=2.0.0"
+    }
+  ],
+  "scripts": {
+    "refresh:package-contract": "node ../ontology-gist/tools/package_contract/bootstrap_hand_authored_package.mjs .",
+    "validate:bootstrap": "node tools/package_contract/validate_bootstrap.mjs",
+    "test:typedb-bootstrap": "node tools/package_contract/validate_typedb_bootstrap.mjs",
+    "test": "npm run validate:bootstrap && npm run test:typedb-bootstrap",
+    "release": "../ontology-tooling/bin/ont release --repo .",
+    "release:check": "../ontology-tooling/bin/ont release --repo . --validate-only"
+  },
+  "manifests": [
+    "manifests/my-domain-v2.0.0.package-manifest.json"
+  ],
+  "assembly": {
+    "loadOrder": [
+      "schema/self-describing-schema.tql",
+      "schema/package-provenance.tql",
+      "schema/administrative-operations.tql",
+      "schema/myDomain.tql",
+      "data/my-domain-provenance.tql",
+      "data/my-domain-schema-docs.tql"
+    ],
+    "generatedArtifacts": [
+      "schema/self-describing-schema.tql",
+      "schema/package-provenance.tql",
+      "schema/administrative-operations.tql",
+      "data/my-domain-schema-docs.tql",
+      "data/my-domain-provenance.tql",
+      "manifests/package-manifest.schema.json",
+      "manifests/my-domain-v2.0.0.package-manifest.json"
+    ]
+  },
+  "provenance": {
+    "manifest": "manifests/my-domain-v2.0.0.package-manifest.json",
+    "status": "bootstrap"
+  },
+  "legacyDocumentation": {
+    "deprecatedFiles": [
+      "data/myDomain-typedoc.tql",
+      "data/domains.tql",
+      "data/categorize.tql"
+    ],
+    "status": "superseded-by-schema-resource"
+  }
+}

@@ -1,0 +1,65 @@
+# Provenance bootstrap
+# upstream-repo: https://github.com/your-org/ontology-my-domain
+# upstream-tag: v2.0.0
+# upstream-commit: 54ee141f8e93d36d8c40c5807ee06f5a449435f1
+# source-artifacts:
+# - package.json
+# - schema/myDomain.tql
+# manifest: manifests/my-domain-v2.0.0.package-manifest.json
+# generator: hand-authored-package-bootstrap/0.1.0
+
+
+put $module isa OntologyModule,
+  has moduleName "my-domain",
+  has moduleRepoUrl "https://github.com/your-org/ontology-my-domain";
+
+put $version isa OntologyModuleVersion,
+  has moduleVersionKey "https://github.com/your-org/ontology-my-domain@2.0.0",
+  has moduleVersion "2.0.0",
+  has upstreamCommit "54ee141f8e93d36d8c40c5807ee06f5a449435f1",
+  has manifestPath "manifests/my-domain-v2.0.0.package-manifest.json",
+  has generatorName "hand-authored-package-bootstrap",
+  has generatorVersion "0.1.0",
+  has generatedAt "2026-03-28T14:03:46Z";
+
+put (version: $version, module: $module) isa ontologyModuleVersionOf;
+
+put $s1 isa SourceArtifactRecord,
+  has sourcePath "package.json",
+  has sourceSha256 "c3dbc02b5bc18125bda8fab922a4228fd3ff938ce3f300981dd3ad20e0276e04";
+put (version: $version, sourceArtifact: $s1) isa ontologyModuleVersionBasedOnSourceArtifact;
+
+put $s2 isa SourceArtifactRecord,
+  has sourcePath "schema/myDomain.tql",
+  has sourceSha256 "133f4792da4b6cdc375cfcc95fe8bebb3ff25e36b4712a0c2ee6ea603364f462";
+put (version: $version, sourceArtifact: $s2) isa ontologyModuleVersionBasedOnSourceArtifact;
+
+put $g1 isa GeneratedArtifactRecord,
+  has artifactPath "schema/self-describing-schema.tql",
+  has artifactKind "meta-schema",
+  has artifactSha256 "42b35203f181c438e640fe140b84f6feb88d2cae97f2c563d8c177b7ec7623a8";
+put (generatedArtifact: $g1, version: $version) isa generatedArtifactForOntologyModuleVersion;
+
+put $g2 isa GeneratedArtifactRecord,
+  has artifactPath "schema/package-provenance.tql",
+  has artifactKind "provenance-schema",
+  has artifactSha256 "73f05400c11e6b02970e10a1d7a027ba3e158318422ba4742bffeff43139b8fd";
+put (generatedArtifact: $g2, version: $version) isa generatedArtifactForOntologyModuleVersion;
+
+put $g3 isa GeneratedArtifactRecord,
+  has artifactPath "schema/administrative-operations.tql",
+  has artifactKind "administrative-schema",
+  has artifactSha256 "ab378fd7caf4d6d84f656e0512764515d9dfe98064179b35c8993577bef9dd78";
+put (generatedArtifact: $g3, version: $version) isa generatedArtifactForOntologyModuleVersion;
+
+put $g4 isa GeneratedArtifactRecord,
+  has artifactPath "data/my-domain-schema-docs.tql",
+  has artifactKind "documentation",
+  has artifactSha256 "943dfce470b6ed0edb17801cbee0647319300e6045ed8d443f120696bf6d4e10";
+put (generatedArtifact: $g4, version: $version) isa generatedArtifactForOntologyModuleVersion;
+
+put $g5 isa GeneratedArtifactRecord,
+  has artifactPath "manifests/package-manifest.schema.json",
+  has artifactKind "manifest-schema",
+  has artifactSha256 "07599fe20623f3304bec0987320050f12efc1faf04fad7c12176ffe88e0b6a48";
+put (generatedArtifact: $g5, version: $version) isa generatedArtifactForOntologyModuleVersion;

@@ -1,0 +1,22 @@
+# Provenance bootstrap
+# upstream-repo: https://github.com/your-org/ontology-my-domain
+# upstream-tag: v2.0.0
+# upstream-commit: 54ee141f8e93d36d8c40c5807ee06f5a449435f1
+# source-artifacts:
+# - package.json
+# - schema/myDomain.tql
+# manifest: manifests/my-domain-v2.0.0.package-manifest.json
+# generator: hand-authored-package-bootstrap/0.1.0
+put $module isa SchemaModule,
+  has moduleKey "my-domain",
+  has moduleName "My Domain",
+  has moduleKind "hand-authored-package";
+
+put $r1 isa SchemaResource,
+  has docKey "https://github.com/your-org/ontology-my-domain#MyEntity",
+  has iri "https://github.com/your-org/ontology-my-domain#MyEntity",
+  has typeLabel "MyEntity",
+  has kind "entity",
+  has prefLabel "MyEntity",
+  has definition "Description of MyEntity.";
+put (resource: $r1, module: $module) isa inModule;
