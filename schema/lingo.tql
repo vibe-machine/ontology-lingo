@@ -215,7 +215,9 @@ entity LingoBriefElement sub LingoArtifact,
   owns lingoBriefElementId @key,
   owns lingoElementKind,
   plays lingoBriefElementHasRevision:briefElement,
-  plays lingoRoleRefersToBriefElement:participantElement;
+  plays lingoRoleRefersToBriefElement:participantElement,
+  plays lingoRelationFrameHasTemporalCommitment:temporalCommitmentElement,
+  plays lingoCompetencyQuestionRefersToElement:referencedElement;
 
 entity LingoBriefElementRevision sub LingoRevisionArtifact,
   owns lingoEpistemicState,
@@ -226,6 +228,8 @@ entity LingoBriefElementRevision sub LingoRevisionArtifact,
   plays lingoClaimSupportedBy:claim,
   plays lingoRelationFrameHasRole:frameRevision,
   plays lingoRelationFrameHasRole:roleRevision,
+  plays lingoRelationFrameHasTemporalCommitment:frameRevision,
+  plays lingoCompetencyQuestionRefersToElement:questionRevision,
   plays lingoRoleRefersToBriefElement:roleRevision,
   plays lingoConstraintAppliesToBriefElement:constraintRevision,
   plays lingoConstraintAppliesToBriefElement:subjectRevision,
@@ -297,6 +301,14 @@ relation lingoRelationFrameHasRole,
 relation lingoRoleRefersToBriefElement,
   relates roleRevision,
   relates participantElement;
+
+relation lingoRelationFrameHasTemporalCommitment,
+  relates frameRevision,
+  relates temporalCommitmentElement;
+
+relation lingoCompetencyQuestionRefersToElement,
+  relates questionRevision,
+  relates referencedElement;
 
 relation lingoConstraintAppliesToBriefElement,
   relates constraintRevision,
