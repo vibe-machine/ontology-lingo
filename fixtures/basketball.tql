@@ -4,6 +4,8 @@
 put $workbook isa LingoStudioWorkbook,
   has lingoWorkbookId "fixture:basketball",
   has lingoName "Basketball scheduling and rosters",
+  has lingoIntent "Model basketball scheduling and player-team-season rosters.",
+  has lingoUpdatedAt 2026-07-11T14:00:09,
   has lingoCreatedAt 2026-07-11T14:00:00;
 
 put $inputPayload isa LingoPayload,

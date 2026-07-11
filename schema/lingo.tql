@@ -30,9 +30,11 @@ attribute lingoActorId, value string;
 attribute lingoActorKind, value string @values("human", "agent");
 
 attribute lingoName, value string;
+attribute lingoIntent, value string;
 attribute lingoText, value string;
 attribute lingoRationale, value string;
 attribute lingoCreatedAt, value datetime;
+attribute lingoUpdatedAt, value datetime;
 attribute lingoCompletedAt, value datetime;
 attribute lingoArchivedAt, value datetime;
 attribute lingoSequence, value integer;
@@ -156,6 +158,8 @@ Thing plays lingoAuthoredBy:actor;
 entity LingoStudioWorkbook sub LingoArtifact,
   owns lingoWorkbookId @key,
   owns lingoName,
+  owns lingoIntent @card(0..1),
+  owns lingoUpdatedAt,
   owns lingoArchivedAt @card(0..1),
   plays lingoWorkbookContainsInput:workbook,
   plays lingoWorkbookCatalogsEvidenceSource:workbook,

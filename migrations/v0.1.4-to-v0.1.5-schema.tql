@@ -1,0 +1,10 @@
+define
+
+attribute lingoIntent, value string;
+attribute lingoUpdatedAt, value datetime;
+
+redefine
+entity LingoStudioWorkbook owns lingoIntent @card(0..1);
+
+redefine
+entity LingoStudioWorkbook owns lingoUpdatedAt;

@@ -1,0 +1,7 @@
+match
+  $module isa OntologyModule,
+    has moduleRepoUrl "https://github.com/vibe-machine/ontology-lingo";
+  $version isa OntologyModuleVersion,
+    has moduleVersion "0.1.5";
+  ontologyModuleVersionOf (version: $version, module: $module);
+limit 1;

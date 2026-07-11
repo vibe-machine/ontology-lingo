@@ -3,6 +3,8 @@
 put $workbook isa LingoStudioWorkbook,
   has lingoWorkbookId "fixture:minimal-sprint",
   has lingoName "Minimal Sprint",
+  has lingoIntent "Add a Sprint concept.",
+  has lingoUpdatedAt 2026-07-11T13:00:05,
   has lingoCreatedAt 2026-07-11T13:00:00;
 
 put $inputPayload isa LingoPayload,

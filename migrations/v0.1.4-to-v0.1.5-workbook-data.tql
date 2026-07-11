@@ -1,0 +1,12 @@
+match
+  $workbook isa LingoStudioWorkbook, has lingoCreatedAt $created;
+  not { $workbook has lingoUpdatedAt; };
+insert
+  $workbook has lingoUpdatedAt $created;
+
+match
+  $canonical isa LingoStudioWorkbook, has lingoWorkbookId $id;
+  $legacy isa LingoWorkbook, has workbookId $id, has workbookIntent $intent;
+  not { $canonical has lingoIntent; };
+insert
+  $canonical has lingoIntent $intent;

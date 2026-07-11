@@ -29,6 +29,9 @@ The full test loads gist, this schema, self-documentation, provenance, and both 
 ## Domain invariants
 
 - One Workbook represents one coherent modeling effort.
+- Workbook intent and `lingoUpdatedAt` are small canonical graph attributes used
+  to build the Studio index; opening a workbook does not rewrite them, and the
+  update timestamp never moves backward.
 - Brief revisions own problem meaning. Each Grounding Plan item carries the
   stable Brief element identity and links to the exact element revision it
   interpreted; it never copies Brief or evidence text into its solution payload.
