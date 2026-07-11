@@ -1,12 +1,12 @@
 {
-  "name": "my-domain",
-  "displayName": "My Domain",
-  "version": "2.0.0",
-  "description": "Description of your ontology domain.",
-  "author": "your-name",
+  "name": "lingo",
+  "displayName": "Lingo Studio Knowledge",
+  "version": "0.1.0",
+  "description": "Graph-native knowledge model for Lingo Studio workbooks, modeling briefs, grounding plans, compiled ontology changes, verification, and apply lineage.",
+  "author": "vibe-machine",
   "license": "MIT",
-  "source": "https://github.com/your-org/ontology-my-domain",
-  "prefix": "mydomain",
+  "source": "https://github.com/vibe-machine/ontology-lingo",
+  "prefix": "lingo",
   "schemas": [
     {
       "name": "self-describing-schema",
@@ -21,22 +21,30 @@
       "file": "schema/administrative-operations.tql"
     },
     {
-      "name": "myDomain",
-      "file": "schema/myDomain.tql"
+      "name": "lingo",
+      "file": "schema/lingo.tql"
     }
   ],
   "data": [
-    "data/my-domain-provenance.tql",
-    "data/my-domain-schema-docs.tql"
+    "fixtures/minimal-sprint.tql",
+    "fixtures/basketball.tql",
+    "data/lingo-provenance.tql",
+    "data/lingo-schema-docs.tql"
+  ],
+  "queries": [
+    "queries/minimal-sprint-lineage.tql",
+    "queries/basketball-lineage.tql",
+    "queries/basketball-state-axes.tql"
   ],
   "dependencies": [
     {
       "name": "gist",
-      "version": ">=2.0.0"
+      "version": ">=5.0.0"
     }
   ],
   "scripts": {
-    "refresh:package-contract": "node ../ontology-gist/tools/package_contract/bootstrap_hand_authored_package.mjs .",
+    "generate:schema-docs": "node tools/generate_lingo_schema_docs.mjs",
+    "refresh:package-contract": "npm run generate:schema-docs && node ../ontology-gist/tools/package_contract/bootstrap_hand_authored_package.mjs .",
     "validate:bootstrap": "node tools/package_contract/validate_bootstrap.mjs",
     "test:typedb-bootstrap": "node tools/package_contract/validate_typedb_bootstrap.mjs",
     "test": "npm run validate:bootstrap && npm run test:typedb-bootstrap",
@@ -44,34 +52,35 @@
     "release:check": "../ontology-tooling/bin/ont release --repo . --validate-only"
   },
   "manifests": [
-    "manifests/my-domain-v2.0.0.package-manifest.json"
+    "manifests/lingo-v0.1.0.package-manifest.json"
   ],
   "assembly": {
     "loadOrder": [
       "schema/self-describing-schema.tql",
       "schema/package-provenance.tql",
       "schema/administrative-operations.tql",
-      "schema/myDomain.tql",
-      "data/my-domain-provenance.tql",
-      "data/my-domain-schema-docs.tql"
+      "schema/lingo.tql",
+      "fixtures/minimal-sprint.tql",
+      "fixtures/basketball.tql",
+      "data/lingo-provenance.tql",
+      "data/lingo-schema-docs.tql"
     ],
     "generatedArtifacts": [
       "schema/self-describing-schema.tql",
       "schema/package-provenance.tql",
       "schema/administrative-operations.tql",
-      "data/my-domain-schema-docs.tql",
-      "data/my-domain-provenance.tql",
+      "data/lingo-schema-docs.tql",
+      "data/lingo-provenance.tql",
       "manifests/package-manifest.schema.json",
-      "manifests/my-domain-v2.0.0.package-manifest.json"
+      "manifests/lingo-v0.1.0.package-manifest.json"
     ]
   },
   "provenance": {
-    "manifest": "manifests/my-domain-v2.0.0.package-manifest.json",
+    "manifest": "manifests/lingo-v0.1.0.package-manifest.json",
     "status": "bootstrap"
   },
   "legacyDocumentation": {
     "deprecatedFiles": [
-      "data/myDomain-typedoc.tql",
       "data/domains.tql",
       "data/categorize.tql"
     ],

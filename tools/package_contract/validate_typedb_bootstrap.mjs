@@ -187,6 +187,8 @@ async function startTypedbServer(tempRoot) {
     `127.0.0.1:${grpcPort}`,
     "--server.http.address",
     `127.0.0.1:${httpPort}`,
+    "--server.admin.enabled",
+    "false",
     "--storage.data-directory",
     path.join(tempRoot, "data"),
     "--logging.directory",
@@ -319,6 +321,23 @@ async function main() {
       );
       const load = runTypedbScript(typedbServer.typedb, typedbServer.grpcPort, loadScript, root);
       assertCondition(load.status === 0, `TypeDB data load failed for ${path.basename(dataFile)}:\n${load.stdout}\n${load.stderr}`);
+    }
+
+    const packageManifest = await readJson(root, "package.json");
+    for (const [index, queryPath] of (packageManifest.queries ?? []).entries()) {
+      const queryScript = path.join(typedbTemp, `fixture-query-${index + 1}.tql`);
+      const queryText = await fs.readFile(path.join(root, queryPath), "utf8");
+      await fs.writeFile(
+        queryScript,
+        `transaction read ${databaseName}\n\n${queryText}\n\nclose\n\nexit\n`,
+        "utf8",
+      );
+      const query = runTypedbScript(typedbServer.typedb, typedbServer.grpcPort, queryScript, root);
+      assertCondition(query.status === 0, `TypeDB fixture query failed for ${queryPath}:\n${query.stdout}\n${query.stderr}`);
+      assertCondition(
+        /Finished\. Total answers: [1-9][0-9]*/.test(query.stdout),
+        `Expected fixture query ${queryPath} to return at least one answer:\n${query.stdout}`,
+      );
     }
 
     for (const pkg of orderedPackages) {

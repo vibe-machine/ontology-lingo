@@ -1,0 +1,647 @@
+define
+
+# ── Scalar vocabulary ───────────────────────────────────────────────────────
+
+attribute lingoWorkbookId, value string;
+attribute lingoInputId, value string;
+attribute lingoEvidenceSourceId, value string;
+attribute lingoEvidenceExcerptId, value string;
+attribute lingoPayloadId, value string;
+attribute lingoRevisionId, value string;
+attribute lingoStableArtifactId, value string;
+attribute lingoBriefElementId, value string;
+attribute lingoPlanItemId, value string;
+attribute lingoClarificationId, value string;
+attribute lingoDecisionId, value string;
+attribute lingoEvaluationId, value string;
+attribute lingoChangeOperationId, value string;
+attribute lingoRelationRoleDefinitionId, value string;
+attribute lingoExecutableCqId, value string;
+attribute lingoVerificationRunId, value string;
+attribute lingoVerificationResultId, value string;
+attribute lingoStagingBindingId, value string;
+attribute lingoApplyReceiptId, value string;
+attribute lingoApplyOutcomeId, value string;
+
+attribute lingoName, value string;
+attribute lingoText, value string;
+attribute lingoRationale, value string;
+attribute lingoCreatedAt, value datetime;
+attribute lingoCompletedAt, value datetime;
+attribute lingoArchivedAt, value datetime;
+attribute lingoSequence, value integer;
+attribute lingoRevisionNumber, value integer;
+attribute lingoContentHash, value string;
+attribute lingoContractVersion, value string;
+
+attribute lingoInputKind, value string @values("conversation", "import", "manual", "systemPolicy", "migration");
+attribute lingoMediaType, value string;
+attribute lingoSourceUri, value string;
+attribute lingoByteLength, value integer;
+attribute lingoStorageLocator, value string;
+attribute lingoLocatorKind, value string;
+attribute lingoLocatorValue, value string;
+
+attribute lingoElementKind, value string;
+attribute lingoEpistemicState, value string @values("asserted", "entailed", "suggested", "assumed", "unknown", "notApplicable");
+attribute lingoRoleName, value string;
+attribute lingoRolePosition, value integer;
+attribute lingoConstraintKind, value string;
+attribute lingoMinimumCardinality, value integer;
+attribute lingoMaximumCardinality, value integer;
+attribute lingoUnboundedMaximum, value boolean;
+attribute lingoSymmetric, value boolean;
+attribute lingoDistinctParticipants, value boolean;
+attribute lingoNormalizedInterpretation, value string;
+attribute lingoExpectedAnswerShape, value string;
+
+attribute lingoPackageName, value string;
+attribute lingoPackageVersion, value string;
+attribute lingoPackageCommit, value string;
+attribute lingoDependencyClosureHash, value string;
+attribute lingoCorpusFingerprint, value string;
+attribute lingoConfigurationFingerprint, value string;
+
+attribute lingoModelingAct, value string @values("reuse", "specialize", "compose", "categorize", "instantiate", "defer");
+attribute lingoProposedTargetLabel, value string;
+attribute lingoProposedTargetKind, value string;
+attribute lingoCandidateScore, value double;
+attribute lingoCandidateRank, value integer;
+attribute lingoHumanDecisionState, value string @values("draft", "confirmed", "deferred", "excluded");
+attribute lingoGroundingReadiness, value string @values("understandingIncomplete", "needsAnswer", "grounded", "readyToConfirm", "groundingBlocked");
+attribute lingoAttentionReason, value string;
+attribute lingoClarificationState, value string @values("open", "resolved", "dismissedWithoutResolution");
+
+attribute lingoOperationKind, value string;
+attribute lingoTargetLabel, value string;
+attribute lingoTargetKind, value string;
+attribute lingoValueType, value string;
+attribute lingoAnnotation, value string;
+attribute lingoOwnerLabel, value string;
+attribute lingoPlayerLabel, value string;
+attribute lingoCompilerVersion, value string;
+attribute lingoRendererVersion, value string;
+
+attribute lingoExpectedResult, value string;
+attribute lingoActualResult, value string;
+attribute lingoVerificationState, value string @values("running", "blocked", "passed", "failed", "abandoned");
+attribute lingoMutationName, value string;
+attribute lingoMutationKilled, value boolean;
+attribute lingoDiagnostic, value string;
+
+attribute lingoDatabaseName, value string;
+attribute lingoDatabaseEndpoint, value string;
+attribute lingoCopyStrategy, value string @values("fullGraphCopy");
+attribute lingoSourceGraphFingerprint, value string;
+attribute lingoBindingState, value string @values("created", "missing", "superseded", "dropped");
+attribute lingoApplyOutcome, value string @values("succeeded", "failed", "compensated", "partiallyApplied");
+attribute lingoResultGraphFingerprint, value string;
+attribute lingoLegacyIdentity, value string;
+
+# ── Shared artifact and revision foundation ─────────────────────────────────
+
+entity LingoArtifact sub Thing,
+  owns lingoCreatedAt,
+  plays lingoAuthoredBy:artifact,
+  plays lingoArtifactHasPayload:artifact,
+  plays lingoHumanDecisionDecides:subject,
+  plays lingoReadinessEvaluationEvaluates:subject;
+
+entity LingoRevisionArtifact sub LingoArtifact,
+  owns lingoRevisionId @key,
+  owns lingoStableArtifactId,
+  owns lingoRevisionNumber,
+  owns lingoContentHash,
+  owns lingoContractVersion,
+  plays lingoRevisionSupersedes:newerRevision,
+  plays lingoRevisionSupersedes:olderRevision;
+
+entity LingoPayload sub LingoArtifact,
+  owns lingoPayloadId @key,
+  owns lingoContentHash,
+  owns lingoMediaType,
+  owns lingoByteLength,
+  owns lingoStorageLocator @card(0..1),
+  owns lingoText @card(0..1),
+  plays lingoArtifactHasPayload:payload;
+
+relation lingoAuthoredBy,
+  relates artifact,
+  relates actor;
+
+relation lingoArtifactHasPayload,
+  relates artifact,
+  relates payload;
+
+relation lingoRevisionSupersedes,
+  relates newerRevision,
+  relates olderRevision;
+
+Thing plays lingoAuthoredBy:actor;
+
+# ── Workbook, input, and evidence ledger ────────────────────────────────────
+
+entity LingoStudioWorkbook sub LingoArtifact,
+  owns lingoWorkbookId @key,
+  owns lingoName,
+  owns lingoArchivedAt @card(0..1),
+  plays lingoWorkbookContainsInput:workbook,
+  plays lingoWorkbookCatalogsEvidenceSource:workbook,
+  plays lingoWorkbookHasBriefRevision:workbook,
+  plays lingoWorkbookCurrentBrief:workbook,
+  plays lingoWorkbookHasTargetContextRevision:workbook,
+  plays lingoWorkbookCurrentTargetContext:workbook,
+  plays lingoWorkbookHasPlanRevision:workbook,
+  plays lingoWorkbookCurrentPlan:workbook,
+  plays lingoWorkbookHasClarificationIssue:workbook,
+  plays lingoWorkbookHasChangeSet:workbook,
+  plays lingoWorkbookHasVerificationRun:workbook,
+  plays lingoWorkbookHasStagingBinding:workbook,
+  plays lingoWorkbookHasApplyReceipt:workbook;
+
+entity LingoModelingInput sub LingoArtifact,
+  owns lingoInputId @key,
+  owns lingoSequence,
+  owns lingoInputKind,
+  owns lingoContentHash,
+  plays lingoWorkbookContainsInput:input,
+  plays lingoInputUsesEvidenceSource:input;
+
+entity LingoEvidenceSource sub LingoArtifact,
+  owns lingoEvidenceSourceId @key,
+  owns lingoName,
+  owns lingoMediaType,
+  owns lingoSourceUri @card(0..1),
+  owns lingoContentHash,
+  owns lingoByteLength @card(0..1),
+  plays lingoWorkbookCatalogsEvidenceSource:evidenceSource,
+  plays lingoEvidenceSourceContainsExcerpt:evidenceSource,
+  plays lingoInputUsesEvidenceSource:evidenceSource;
+
+entity LingoEvidenceExcerpt sub LingoArtifact,
+  owns lingoEvidenceExcerptId @key,
+  owns lingoText @card(0..1),
+  owns lingoContentHash,
+  owns lingoLocatorKind,
+  owns lingoLocatorValue,
+  plays lingoEvidenceSourceContainsExcerpt:excerpt,
+  plays lingoClaimSupportedBy:evidence;
+
+relation lingoWorkbookContainsInput,
+  relates workbook,
+  relates input;
+
+relation lingoWorkbookCatalogsEvidenceSource,
+  relates workbook,
+  relates evidenceSource;
+
+relation lingoEvidenceSourceContainsExcerpt,
+  relates evidenceSource,
+  relates excerpt;
+
+relation lingoInputUsesEvidenceSource,
+  relates input,
+  relates evidenceSource;
+
+# ── Modeling Brief ──────────────────────────────────────────────────────────
+
+entity LingoModelingBriefRevision sub LingoRevisionArtifact,
+  plays lingoWorkbookHasBriefRevision:briefRevision,
+  plays lingoWorkbookCurrentBrief:briefRevision,
+  plays lingoBriefIncludesElementRevision:briefRevision,
+  plays lingoPlanGroundsBrief:briefRevision;
+
+entity LingoBriefElement sub LingoArtifact,
+  owns lingoBriefElementId @key,
+  owns lingoElementKind,
+  plays lingoBriefElementHasRevision:briefElement,
+  plays lingoRoleRefersToBriefElement:participantElement;
+
+entity LingoBriefElementRevision sub LingoRevisionArtifact,
+  owns lingoEpistemicState,
+  owns lingoText @card(0..1),
+  owns lingoRationale @card(0..1),
+  plays lingoBriefElementHasRevision:elementRevision,
+  plays lingoBriefIncludesElementRevision:elementRevision,
+  plays lingoClaimSupportedBy:claim,
+  plays lingoRelationFrameHasRole:frameRevision,
+  plays lingoRelationFrameHasRole:roleRevision,
+  plays lingoRoleRefersToBriefElement:roleRevision,
+  plays lingoConstraintAppliesToBriefElement:constraintRevision,
+  plays lingoConstraintAppliesToBriefElement:subjectRevision,
+  plays lingoPlanItemInterpretsBriefElement:briefElementRevision,
+  plays lingoExecutableImplementsCompetencyQuestion:competencyQuestionRevision;
+
+entity LingoBriefPurpose sub LingoBriefElement;
+entity LingoBriefScopeInclusion sub LingoBriefElement;
+entity LingoBriefConcept sub LingoBriefElement;
+entity LingoBriefExample sub LingoBriefElement;
+entity LingoBriefRelationFrame sub LingoBriefElement;
+entity LingoBriefRelationRole sub LingoBriefElement;
+entity LingoBriefIdentityClue sub LingoBriefElement;
+entity LingoBriefProperty sub LingoBriefElement;
+entity LingoBriefDomainConstraint sub LingoBriefElement;
+entity LingoBriefTemporalCommitment sub LingoBriefElement;
+entity LingoBriefAssumption sub LingoBriefElement;
+entity LingoBriefExclusion sub LingoBriefElement;
+entity LingoBriefCompetencyQuestion sub LingoBriefElement;
+
+entity LingoBriefPurposeRevision sub LingoBriefElementRevision;
+entity LingoBriefScopeInclusionRevision sub LingoBriefElementRevision;
+entity LingoBriefConceptRevision sub LingoBriefElementRevision;
+entity LingoBriefExampleRevision sub LingoBriefElementRevision;
+entity LingoBriefRelationFrameRevision sub LingoBriefElementRevision,
+  owns lingoSymmetric @card(0..1),
+  owns lingoDistinctParticipants @card(0..1);
+entity LingoBriefRelationRoleRevision sub LingoBriefElementRevision,
+  owns lingoRoleName,
+  owns lingoRolePosition;
+entity LingoBriefIdentityClueRevision sub LingoBriefElementRevision;
+entity LingoBriefPropertyRevision sub LingoBriefElementRevision;
+entity LingoBriefDomainConstraintRevision sub LingoBriefElementRevision,
+  owns lingoConstraintKind,
+  owns lingoMinimumCardinality @card(0..1),
+  owns lingoMaximumCardinality @card(0..1),
+  owns lingoUnboundedMaximum @card(0..1);
+entity LingoBriefTemporalCommitmentRevision sub LingoBriefElementRevision;
+entity LingoBriefAssumptionRevision sub LingoBriefElementRevision;
+entity LingoBriefExclusionRevision sub LingoBriefElementRevision;
+entity LingoBriefCompetencyQuestionRevision sub LingoBriefElementRevision,
+  owns lingoNormalizedInterpretation @card(0..1),
+  owns lingoExpectedAnswerShape @card(0..1);
+
+relation lingoWorkbookHasBriefRevision,
+  relates workbook,
+  relates briefRevision;
+
+relation lingoWorkbookCurrentBrief,
+  relates workbook,
+  relates briefRevision;
+
+relation lingoBriefElementHasRevision,
+  relates briefElement,
+  relates elementRevision;
+
+relation lingoBriefIncludesElementRevision,
+  relates briefRevision,
+  relates elementRevision;
+
+relation lingoClaimSupportedBy,
+  relates claim,
+  relates evidence;
+
+relation lingoRelationFrameHasRole,
+  relates frameRevision,
+  relates roleRevision;
+
+relation lingoRoleRefersToBriefElement,
+  relates roleRevision,
+  relates participantElement;
+
+relation lingoConstraintAppliesToBriefElement,
+  relates constraintRevision,
+  relates subjectRevision;
+
+# ── Target context and Grounding Plan ───────────────────────────────────────
+
+entity LingoOntologyTargetContextRevision sub LingoRevisionArtifact,
+  owns lingoPackageName,
+  owns lingoPackageVersion,
+  owns lingoPackageCommit,
+  owns lingoDependencyClosureHash,
+  owns lingoCorpusFingerprint,
+  owns lingoConfigurationFingerprint,
+  plays lingoWorkbookHasTargetContextRevision:targetContextRevision,
+  plays lingoWorkbookCurrentTargetContext:targetContextRevision,
+  plays lingoTargetUsesModuleVersion:targetContextRevision,
+  plays lingoPlanEvaluatedAgainstTarget:targetContextRevision;
+
+entity LingoGroundingPlanRevision sub LingoRevisionArtifact,
+  plays lingoWorkbookHasPlanRevision:planRevision,
+  plays lingoWorkbookCurrentPlan:planRevision,
+  plays lingoPlanGroundsBrief:planRevision,
+  plays lingoPlanEvaluatedAgainstTarget:planRevision,
+  plays lingoPlanIncludesItemRevision:planRevision,
+  plays lingoChangeSetCompiledFromPlan:planRevision;
+
+entity LingoGroundingPlanItem sub LingoArtifact,
+  owns lingoPlanItemId @key,
+  plays lingoPlanItemHasRevision:planItem;
+
+entity LingoGroundingPlanItemRevision sub LingoRevisionArtifact,
+  owns lingoModelingAct,
+  owns lingoProposedTargetLabel @card(0..1),
+  owns lingoProposedTargetKind @card(0..1),
+  owns lingoRationale @card(0..1),
+  plays lingoPlanItemHasRevision:itemRevision,
+  plays lingoPlanIncludesItemRevision:itemRevision,
+  plays lingoPlanItemInterpretsBriefElement:planItemRevision,
+  plays lingoPlanItemMapsToSchemaResource:planItemRevision,
+  plays lingoCandidateForPlanItem:planItemRevision,
+  plays lingoOperationRealizesPlanItem:planItemRevision;
+
+entity LingoGroundingCandidate sub LingoArtifact,
+  owns lingoCandidateScore,
+  owns lingoCandidateRank,
+  owns lingoRationale @card(0..1),
+  plays lingoCandidateForPlanItem:candidate,
+  plays lingoCandidateMapsToSchemaResource:candidate;
+
+entity LingoClarificationIssue sub LingoArtifact,
+  owns lingoClarificationId @key,
+  owns lingoText,
+  owns lingoRationale,
+  owns lingoClarificationState,
+  plays lingoWorkbookHasClarificationIssue:clarificationIssue,
+  plays lingoClarificationConcerns:clarificationIssue;
+
+entity LingoHumanDecision sub LingoArtifact,
+  owns lingoDecisionId @key,
+  owns lingoHumanDecisionState,
+  owns lingoRationale @card(0..1),
+  plays lingoHumanDecisionDecides:decision;
+
+entity LingoGroundingReadinessEvaluation sub LingoArtifact,
+  owns lingoEvaluationId @key,
+  owns lingoGroundingReadiness,
+  owns lingoAttentionReason @card(0..),
+  owns lingoRationale @card(0..1),
+  plays lingoReadinessEvaluationEvaluates:evaluation;
+
+relation lingoWorkbookHasTargetContextRevision,
+  relates workbook,
+  relates targetContextRevision;
+
+relation lingoWorkbookCurrentTargetContext,
+  relates workbook,
+  relates targetContextRevision;
+
+relation lingoTargetUsesModuleVersion,
+  relates targetContextRevision,
+  relates moduleVersion;
+
+OntologyModuleVersion plays lingoTargetUsesModuleVersion:moduleVersion;
+
+relation lingoWorkbookHasPlanRevision,
+  relates workbook,
+  relates planRevision;
+
+relation lingoWorkbookCurrentPlan,
+  relates workbook,
+  relates planRevision;
+
+relation lingoPlanGroundsBrief,
+  relates planRevision,
+  relates briefRevision;
+
+relation lingoPlanEvaluatedAgainstTarget,
+  relates planRevision,
+  relates targetContextRevision;
+
+relation lingoPlanItemHasRevision,
+  relates planItem,
+  relates itemRevision;
+
+relation lingoPlanIncludesItemRevision,
+  relates planRevision,
+  relates itemRevision;
+
+relation lingoPlanItemInterpretsBriefElement,
+  relates planItemRevision,
+  relates briefElementRevision;
+
+relation lingoPlanItemMapsToSchemaResource,
+  relates planItemRevision,
+  relates resource;
+
+SchemaResource plays lingoPlanItemMapsToSchemaResource:resource;
+
+relation lingoCandidateForPlanItem,
+  relates candidate,
+  relates planItemRevision;
+
+relation lingoCandidateMapsToSchemaResource,
+  relates candidate,
+  relates resource;
+
+SchemaResource plays lingoCandidateMapsToSchemaResource:resource;
+
+relation lingoWorkbookHasClarificationIssue,
+  relates workbook,
+  relates clarificationIssue;
+
+relation lingoClarificationConcerns,
+  relates clarificationIssue,
+  relates subject;
+
+LingoArtifact plays lingoClarificationConcerns:subject;
+
+relation lingoHumanDecisionDecides,
+  relates decision,
+  relates subject;
+
+relation lingoReadinessEvaluationEvaluates,
+  relates evaluation,
+  relates subject;
+
+# ── Deterministic Change Set ────────────────────────────────────────────────
+
+entity LingoOntologyChangeSet sub LingoRevisionArtifact,
+  owns lingoCompilerVersion,
+  owns lingoRendererVersion,
+  plays lingoWorkbookHasChangeSet:changeSet,
+  plays lingoChangeSetCompiledFromPlan:changeSet,
+  plays lingoChangeSetContainsOperation:changeSet,
+  plays lingoExecutableCompiledForChangeSet:changeSet,
+  plays lingoVerificationVerifiesChangeSet:changeSet,
+  plays lingoStagingBoundToChangeSet:changeSet,
+  plays lingoApplyReceiptAppliesChangeSet:changeSet;
+
+entity LingoChangeOperation sub LingoArtifact,
+  owns lingoChangeOperationId @key,
+  owns lingoSequence,
+  owns lingoOperationKind,
+  owns lingoTargetLabel,
+  owns lingoTargetKind,
+  plays lingoChangeSetContainsOperation:operation,
+  plays lingoOperationRealizesPlanItem:operation,
+  plays lingoOperationDependsOn:dependentOperation,
+  plays lingoOperationDependsOn:prerequisiteOperation,
+  plays lingoRelationOperationHasRoleDefinition:relationOperation,
+  plays lingoApplyOutcomeForOperation:operation;
+
+entity LingoDefineEntityOperation sub LingoChangeOperation;
+entity LingoDefineRelationOperation sub LingoChangeOperation;
+entity LingoDefineAttributeOperation sub LingoChangeOperation,
+  owns lingoValueType;
+entity LingoOwnsOperation sub LingoChangeOperation,
+  owns lingoOwnerLabel;
+entity LingoPlaysOperation sub LingoChangeOperation,
+  owns lingoPlayerLabel,
+  owns lingoRoleName;
+entity LingoAnnotateOperation sub LingoChangeOperation,
+  owns lingoAnnotation;
+
+entity LingoRelationRoleDefinition sub LingoArtifact,
+  owns lingoRelationRoleDefinitionId @key,
+  owns lingoRoleName,
+  owns lingoRolePosition,
+  owns lingoTargetLabel @card(0..1),
+  plays lingoRelationOperationHasRoleDefinition:roleDefinition,
+  plays lingoRoleDefinitionImplementsBriefRole:roleDefinition;
+
+relation lingoWorkbookHasChangeSet,
+  relates workbook,
+  relates changeSet;
+
+relation lingoChangeSetCompiledFromPlan,
+  relates changeSet,
+  relates planRevision;
+
+relation lingoChangeSetContainsOperation,
+  relates changeSet,
+  relates operation;
+
+relation lingoOperationRealizesPlanItem,
+  relates operation,
+  relates planItemRevision;
+
+relation lingoOperationDependsOn,
+  relates dependentOperation,
+  relates prerequisiteOperation;
+
+relation lingoRelationOperationHasRoleDefinition,
+  relates relationOperation,
+  relates roleDefinition;
+
+relation lingoRoleDefinitionImplementsBriefRole,
+  relates roleDefinition,
+  relates briefRoleRevision;
+
+LingoBriefRelationRoleRevision plays lingoRoleDefinitionImplementsBriefRole:briefRoleRevision;
+
+# ── Executable CQs and verification ────────────────────────────────────────
+
+entity LingoExecutableCompetencyQuestion sub LingoRevisionArtifact,
+  owns lingoExecutableCqId @key,
+  owns lingoCompilerVersion,
+  owns lingoExpectedResult,
+  owns lingoMutationName @card(0..),
+  plays lingoExecutableImplementsCompetencyQuestion:executableQuestion,
+  plays lingoExecutableCompiledForChangeSet:executableQuestion,
+  plays lingoVerificationExecutesQuestion:executableQuestion;
+
+entity LingoStagingBinding sub LingoArtifact,
+  owns lingoStagingBindingId @key,
+  owns lingoDatabaseName,
+  owns lingoDatabaseEndpoint @card(0..1),
+  owns lingoCopyStrategy,
+  owns lingoSourceGraphFingerprint,
+  owns lingoBindingState,
+  plays lingoWorkbookHasStagingBinding:stagingBinding,
+  plays lingoStagingBoundToChangeSet:stagingBinding,
+  plays lingoVerificationRunsInBinding:stagingBinding,
+  plays lingoApplyReceiptTargetsBinding:stagingBinding;
+
+entity LingoVerificationRun sub LingoArtifact,
+  owns lingoVerificationRunId @key,
+  owns lingoVerificationState,
+  owns lingoCompletedAt @card(0..1),
+  owns lingoConfigurationFingerprint,
+  plays lingoWorkbookHasVerificationRun:verificationRun,
+  plays lingoVerificationVerifiesChangeSet:verificationRun,
+  plays lingoVerificationExecutesQuestion:verificationRun,
+  plays lingoVerificationRunsInBinding:verificationRun,
+  plays lingoVerificationHasResult:verificationRun,
+  plays lingoApplyReceiptAuthorizedByVerification:verificationRun;
+
+entity LingoVerificationResult sub LingoArtifact,
+  owns lingoVerificationResultId @key,
+  owns lingoVerificationState,
+  owns lingoExpectedResult @card(0..1),
+  owns lingoActualResult @card(0..1),
+  owns lingoMutationName @card(0..1),
+  owns lingoMutationKilled @card(0..1),
+  owns lingoDiagnostic @card(0..1),
+  plays lingoVerificationHasResult:verificationResult;
+
+relation lingoExecutableImplementsCompetencyQuestion,
+  relates executableQuestion,
+  relates competencyQuestionRevision;
+
+relation lingoExecutableCompiledForChangeSet,
+  relates executableQuestion,
+  relates changeSet;
+
+relation lingoWorkbookHasStagingBinding,
+  relates workbook,
+  relates stagingBinding;
+
+relation lingoStagingBoundToChangeSet,
+  relates stagingBinding,
+  relates changeSet;
+
+relation lingoWorkbookHasVerificationRun,
+  relates workbook,
+  relates verificationRun;
+
+relation lingoVerificationVerifiesChangeSet,
+  relates verificationRun,
+  relates changeSet;
+
+relation lingoVerificationExecutesQuestion,
+  relates verificationRun,
+  relates executableQuestion;
+
+relation lingoVerificationRunsInBinding,
+  relates verificationRun,
+  relates stagingBinding;
+
+relation lingoVerificationHasResult,
+  relates verificationRun,
+  relates verificationResult;
+
+# ── Apply lineage ───────────────────────────────────────────────────────────
+
+entity LingoApplyReceipt sub LingoArtifact,
+  owns lingoApplyReceiptId @key,
+  owns lingoApplyOutcome,
+  owns lingoCompletedAt @card(0..1),
+  owns lingoResultGraphFingerprint @card(0..1),
+  owns lingoDiagnostic @card(0..1),
+  plays lingoWorkbookHasApplyReceipt:applyReceipt,
+  plays lingoApplyReceiptAppliesChangeSet:applyReceipt,
+  plays lingoApplyReceiptAuthorizedByVerification:applyReceipt,
+  plays lingoApplyReceiptTargetsBinding:applyReceipt,
+  plays lingoApplyReceiptHasOperationOutcome:applyReceipt;
+
+entity LingoApplyOperationOutcome sub LingoArtifact,
+  owns lingoApplyOutcomeId @key,
+  owns lingoApplyOutcome,
+  owns lingoDiagnostic @card(0..1),
+  plays lingoApplyReceiptHasOperationOutcome:operationOutcome,
+  plays lingoApplyOutcomeForOperation:operationOutcome;
+
+relation lingoWorkbookHasApplyReceipt,
+  relates workbook,
+  relates applyReceipt;
+
+relation lingoApplyReceiptAppliesChangeSet,
+  relates applyReceipt,
+  relates changeSet;
+
+relation lingoApplyReceiptAuthorizedByVerification,
+  relates applyReceipt,
+  relates verificationRun;
+
+relation lingoApplyReceiptTargetsBinding,
+  relates applyReceipt,
+  relates stagingBinding;
+
+relation lingoApplyReceiptHasOperationOutcome,
+  relates applyReceipt,
+  relates operationOutcome;
+
+relation lingoApplyOutcomeForOperation,
+  relates operationOutcome,
+  relates operation;

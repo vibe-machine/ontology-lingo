@@ -1,11 +1,13 @@
 # Provenance bootstrap
-# upstream-repo: https://github.com/your-org/ontology-my-domain
-# upstream-tag: v2.0.0
-# upstream-commit: 54ee141f8e93d36d8c40c5807ee06f5a449435f1
+# upstream-repo: https://github.com/vibe-machine/ontology-lingo
+# upstream-tag: v0.1.0
+# upstream-commit: 8acd6e08810fd15ad6328df83678659cd7d92811
 # source-artifacts:
 # - package.json
-# - schema/myDomain.tql
-# manifest: manifests/my-domain-v2.0.0.package-manifest.json
+# - schema/lingo.tql
+# - fixtures/minimal-sprint.tql
+# - fixtures/basketball.tql
+# manifest: manifests/lingo-v0.1.0.package-manifest.json
 # generator: hand-authored-package-bootstrap/0.1.0
 define
 
@@ -53,13 +55,13 @@ entity GeneratedArtifactRecord sub SchemaMetaData,
     plays generatedArtifactForOntologyModuleVersion:generatedArtifact;
 
 relation ontologyModuleVersionOf sub isBasedOn,
-    relates version as isBasedOnSubject,
-    relates module as isBasedOnObject;
+    relates version as derivedThing,
+    relates module as basis;
 
 relation ontologyModuleVersionBasedOnSourceArtifact sub isBasedOn,
-    relates version as isBasedOnSubject,
-    relates sourceArtifact as isBasedOnObject;
+    relates version as derivedThing,
+    relates sourceArtifact as basis;
 
 relation generatedArtifactForOntologyModuleVersion sub isAbout,
-    relates generatedArtifact as isAboutSubject,
-    relates version as isAboutObject;
+    relates generatedArtifact as content,
+    relates version as subjectMatter;

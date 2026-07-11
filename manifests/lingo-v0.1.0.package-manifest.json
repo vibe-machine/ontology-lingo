@@ -1,0 +1,68 @@
+{
+  "$schema": "./package-manifest.schema.json",
+  "manifestVersion": "1.0.0",
+  "package": {
+    "name": "lingo",
+    "version": "0.1.0"
+  },
+  "upstream": {
+    "repoUrl": "https://github.com/vibe-machine/ontology-lingo",
+    "tag": "v0.1.0",
+    "commit": "8acd6e08810fd15ad6328df83678659cd7d92811",
+    "sourceArtifacts": [
+      {
+        "path": "package.json",
+        "sha256": "2385ebab383b6bcfc33bc9e47666b3f3596db6ae612216b53c17f792d34b52bd"
+      },
+      {
+        "path": "schema/lingo.tql",
+        "sha256": "c9d5c7c99ed17d0ad255574583838acb08472c85dd2458d4307610d136794a69"
+      },
+      {
+        "path": "fixtures/minimal-sprint.tql",
+        "sha256": "4eb6ab4d6e3abedcfe85ecd764c1df813b0948c25ab33f033cb69f12e85c5363"
+      },
+      {
+        "path": "fixtures/basketball.tql",
+        "sha256": "e255c75539e56ab1004f148c7dad372a1e81ac7e63e8cc00afa66b501d382e37"
+      }
+    ]
+  },
+  "generator": {
+    "name": "hand-authored-package-bootstrap",
+    "version": "0.1.0",
+    "generatedAt": "2026-07-11T12:51:47Z"
+  },
+  "artifacts": [
+    {
+      "kind": "meta-schema",
+      "path": "schema/self-describing-schema.tql",
+      "sha256": "627ecc4fd35a00a22f81c3e66cbf8469fffaae748b8ae31c8b44764110b81c53"
+    },
+    {
+      "kind": "provenance-schema",
+      "path": "schema/package-provenance.tql",
+      "sha256": "1bb5f4cd8410a9f49fb212755bfcde589cd3d11c978b899c5ca1976a6d689850"
+    },
+    {
+      "kind": "administrative-schema",
+      "path": "schema/administrative-operations.tql",
+      "sha256": "8e3e4fca613091f4491795d6b15c9db5805cc5b5bb1b545e2edd24fc13b5b5e8"
+    },
+    {
+      "kind": "documentation",
+      "path": "data/lingo-schema-docs.tql",
+      "sha256": "ad175ac601924e37e1abd36e05b16b481da86fc9ec806598a4cbfa61173417f5"
+    },
+    {
+      "kind": "manifest-schema",
+      "path": "manifests/package-manifest.schema.json",
+      "sha256": "07599fe20623f3304bec0987320050f12efc1faf04fad7c12176ffe88e0b6a48"
+    },
+    {
+      "kind": "provenance-seeds",
+      "path": "data/lingo-provenance.tql",
+      "sha256": "f031916520f4169ffc8231895c868f145660053f2623f39d8c5dcfff4a0d2bc3"
+    }
+  ]
+}
