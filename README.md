@@ -36,4 +36,10 @@ The full test loads gist, this schema, self-documentation, provenance, and both 
 - Raw TypeQL and large payloads are content-addressed derivatives, not opaque canonical rows.
 - Full-graph staging copies remain the operational strategy for now.
 
+`LingoWorkbook`, `LingoWorkbookRow`, and `workbookContainsRow` are explicitly
+legacy migration sources carried by the package so the current Studio can stop
+defining schema at startup before its data migration lands. They are not part
+of the canonical object model and will be retired only after `one-2xg.54.6`
+verifies the graph-native replacement.
+
 The application-facing contract is mirrored in OneWorkspace at `Docs/lingo-studio-knowledge-model.md`.

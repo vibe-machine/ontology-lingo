@@ -645,3 +645,54 @@ relation lingoApplyReceiptHasOperationOutcome,
 relation lingoApplyOutcomeForOperation,
   relates operationOutcome,
   relates operation;
+
+# ── Legacy Studio compatibility ─────────────────────────────────────────────
+# Transitional read/write surface for the existing WorkbookStore. These types
+# are migration sources, not the canonical knowledge model. They remain in the
+# governed package until the idempotent migration tracked by one-2xg.54.6 has
+# verified every legacy row and switched application reads to ontology-lingo.
+
+attribute workbookId, value string;
+attribute workbookName, value string;
+attribute workbookIntent, value string;
+attribute workbookCreatedAt, value datetime;
+attribute workbookUpdatedAt, value datetime;
+attribute workbookArchivedAt, value datetime;
+attribute workbookStagingDatabase, value string;
+attribute workbookRowId, value string;
+attribute workbookRowName, value string;
+attribute workbookRowKind, value string;
+attribute workbookRowStatus, value string;
+attribute workbookRowOrigin, value string;
+attribute workbookRowSourceFile, value string;
+attribute workbookRowSourceIri, value string;
+attribute workbookRowPayload, value string;
+attribute workbookRowCreatedAt, value datetime;
+attribute workbookRowUpdatedAt, value datetime;
+
+entity LingoWorkbook sub LingoArtifact,
+  owns workbookId @key,
+  owns workbookName,
+  owns workbookIntent @card(0..1),
+  owns workbookCreatedAt,
+  owns workbookUpdatedAt,
+  owns workbookArchivedAt @card(0..1),
+  owns workbookStagingDatabase @card(0..1),
+  plays workbookContainsRow:workbook;
+
+entity LingoWorkbookRow sub LingoArtifact,
+  owns workbookRowId @key,
+  owns workbookRowName,
+  owns workbookRowKind,
+  owns workbookRowStatus,
+  owns workbookRowOrigin,
+  owns workbookRowSourceFile @card(0..1),
+  owns workbookRowSourceIri @card(0..1),
+  owns workbookRowPayload,
+  owns workbookRowCreatedAt,
+  owns workbookRowUpdatedAt,
+  plays workbookContainsRow:row;
+
+relation workbookContainsRow,
+  relates workbook,
+  relates row;
