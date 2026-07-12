@@ -245,6 +245,10 @@
               },
               {
                 "kind": "write",
+                "path": "migrations/v0.1.4-to-v0.1.5-legacy-workbook-data.tql"
+              },
+              {
+                "kind": "write",
                 "path": "data/lingo-provenance.tql"
               }
             ]
@@ -309,6 +313,10 @@
               },
               {
                 "kind": "write",
+                "path": "migrations/v0.1.4-to-v0.1.5-legacy-workbook-data.tql"
+              },
+              {
+                "kind": "write",
                 "path": "data/lingo-provenance.tql"
               }
             ]
@@ -369,6 +377,10 @@
               },
               {
                 "kind": "write",
+                "path": "migrations/v0.1.4-to-v0.1.5-legacy-workbook-data.tql"
+              },
+              {
+                "kind": "write",
                 "path": "data/lingo-provenance.tql"
               }
             ]
@@ -418,6 +430,10 @@
               {
                 "kind": "write",
                 "path": "migrations/v0.1.4-to-v0.1.5-workbook-data.tql"
+              },
+              {
+                "kind": "write",
+                "path": "migrations/v0.1.4-to-v0.1.5-legacy-workbook-data.tql"
               },
               {
                 "kind": "write",

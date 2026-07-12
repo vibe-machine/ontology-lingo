@@ -8,11 +8,11 @@
   "upstream": {
     "repoUrl": "https://github.com/vibe-machine/ontology-lingo",
     "tag": "v0.1.5",
-    "commit": "8c739665b3f38afd3f753792fe3999007705ebf7",
+    "commit": "baad5400c69e1830a09a728c18113bd85cc7439d",
     "sourceArtifacts": [
       {
         "path": "package.json",
-        "sha256": "2d70faf924b8c382182a237543db648ccff7a457dae34db9780ab73b3b01aa72"
+        "sha256": "3ad6c3f80ca20228aadc44c70ca74d782cf5a1577a5a60491a3531088d9cf892"
       },
       {
         "path": "schema/lingo.tql",
@@ -103,28 +103,28 @@
   "generator": {
     "name": "hand-authored-package-bootstrap",
     "version": "0.1.0",
-    "generatedAt": "2026-07-11T22:24:27Z"
+    "generatedAt": "2026-07-12T18:09:26Z"
   },
   "artifacts": [
     {
       "kind": "meta-schema",
       "path": "schema/self-describing-schema.tql",
-      "sha256": "64de210692a463650402236d4fd9dea1c9120834f8d4197150fa50d5f4a2c9be"
+      "sha256": "3bbdaea3726f0e02a93bdca36a01d321e5ee42d2e11b311fbd3799504512e14b"
     },
     {
       "kind": "provenance-schema",
       "path": "schema/package-provenance.tql",
-      "sha256": "01825a78067ba069220a9e95cb466845bd990d7e1d12e071c103a631ffb8e90e"
+      "sha256": "4e18aff16ab8ca95e5e51011ccbbb2ec19aba38a5603d185727afe8485e68bd6"
     },
     {
       "kind": "administrative-schema",
       "path": "schema/administrative-operations.tql",
-      "sha256": "2f5a3f0d4673d899b26d5d11232b2cf242d2a77820f5fc22a6bd6bc2a1d6db06"
+      "sha256": "fb29a6351e13d34e390f1275d68688309286374f8540af371304933a89dfbbd5"
     },
     {
       "kind": "documentation",
       "path": "data/lingo-schema-docs.tql",
-      "sha256": "f307b783389a235284cac9801ffa2e087d9e1a4d328e3a23a6d814f82b07244a"
+      "sha256": "c1fc4d81f3e00bb86fd46ee0221c020b340f1187b1e38f0af19f5e8156911d39"
     },
     {
       "kind": "manifest-schema",
@@ -134,7 +134,7 @@
     {
       "kind": "provenance-seeds",
       "path": "data/lingo-provenance.tql",
-      "sha256": "4dfff8bf3820957806574edfa766271cc33f17f2574340f88a16d97d069c96c8"
+      "sha256": "2bebd7821e46f27eba65c84224184aa9f2f7856a978412859724e39421ba9bd1"
     }
   ]
 }

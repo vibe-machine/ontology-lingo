@@ -1,0 +1,7 @@
+match
+  $canonical isa LingoStudioWorkbook, has lingoWorkbookId $id;
+  $legacy isa LingoWorkbook, has workbookId $id, has workbookIntent $intent;
+  not { $canonical has lingoIntent $_; };
+let $intentValue = $intent;
+insert
+  $canonical has lingoIntent == $intentValue;

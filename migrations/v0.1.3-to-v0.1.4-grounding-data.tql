@@ -3,7 +3,7 @@ match
     has lingoModelingAct $old,
     has lingoProposedTargetKind "entity";
   $old == "reuse";
-  not { $item has lingoSchemaLifecycleIntent; };
+  not { $item has lingoSchemaLifecycleIntent $_; };
 delete
   has $old of $item;
 insert
@@ -15,7 +15,7 @@ match
     has lingoModelingAct $old,
     has lingoProposedTargetKind "relation";
   $old == "reuse";
-  not { $item has lingoSchemaLifecycleIntent; };
+  not { $item has lingoSchemaLifecycleIntent $_; };
 delete
   has $old of $item;
 insert
@@ -27,7 +27,7 @@ match
     has lingoModelingAct $old,
     has lingoProposedTargetKind "attribute";
   $old == "reuse";
-  not { $item has lingoSchemaLifecycleIntent; };
+  not { $item has lingoSchemaLifecycleIntent $_; };
 delete
   has $old of $item;
 insert
@@ -37,7 +37,7 @@ insert
 match
   $item isa LingoGroundingPlanItemRevision, has lingoModelingAct $old;
   $old == "defer";
-  not { $item has lingoSchemaLifecycleIntent; };
+  not { $item has lingoSchemaLifecycleIntent $_; };
 delete
   has $old of $item;
 insert
@@ -49,12 +49,12 @@ match
   { $act == "specialize"; } or
   { $act == "compose"; } or
   { $act == "categorize"; };
-  not { $item has lingoSchemaLifecycleIntent; };
+  not { $item has lingoSchemaLifecycleIntent $_; };
 insert
   $item has lingoSchemaLifecycleIntent "add";
 
 match
   $item isa LingoGroundingPlanItemRevision, has lingoModelingAct "instantiate";
-  not { $item has lingoSchemaLifecycleIntent; };
+  not { $item has lingoSchemaLifecycleIntent $_; };
 insert
   $item has lingoSchemaLifecycleIntent "noChange";

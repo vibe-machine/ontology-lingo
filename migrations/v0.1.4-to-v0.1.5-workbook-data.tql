@@ -1,12 +1,6 @@
 match
   $workbook isa LingoStudioWorkbook, has lingoCreatedAt $created;
-  not { $workbook has lingoUpdatedAt; };
+  not { $workbook has lingoUpdatedAt $_; };
+let $createdValue = $created;
 insert
-  $workbook has lingoUpdatedAt $created;
-
-match
-  $canonical isa LingoStudioWorkbook, has lingoWorkbookId $id;
-  $legacy isa LingoWorkbook, has workbookId $id, has workbookIntent $intent;
-  not { $canonical has lingoIntent; };
-insert
-  $canonical has lingoIntent $intent;
+  $workbook has lingoUpdatedAt == $createdValue;
