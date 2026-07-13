@@ -208,14 +208,22 @@ put $target isa LingoOntologyTargetContextRevision,
   has lingoRevisionId "fixture:basketball:target:r1",
   has lingoStableArtifactId "fixture:basketball:target",
   has lingoRevisionNumber 1,
-  has lingoContentHash "2000000000000000000000000000000000000000000000000000000000000030",
-  has lingoContractVersion "ontology-lingo/0.1.0",
+  has lingoContentHash "d2822dbf6697af57059236b93603776b462d4c743ba67381cccd53bca74dc111",
+  has lingoContractVersion "lingo-target-context/1",
   has lingoPackageName "gist",
   has lingoPackageVersion "5.0.0",
-  has lingoPackageCommit "6ab80c158a7fa56a1b5d3d824b125b92107e8f08",
+  has lingoPackageCommit "bb77174a28bca02336b46caa348986d14acd43cf",
   has lingoDependencyClosureHash "2000000000000000000000000000000000000000000000000000000000000031",
   has lingoCorpusFingerprint "2000000000000000000000000000000000000000000000000000000000000032",
   has lingoConfigurationFingerprint "2000000000000000000000000000000000000000000000000000000000000033",
+  has lingoCreatedAt 2026-07-11T14:00:02;
+
+put $targetPayload isa LingoPayload,
+  has lingoPayloadId "fixture:basketball:target:r1:payload",
+  has lingoContentHash "d2822dbf6697af57059236b93603776b462d4c743ba67381cccd53bca74dc111",
+  has lingoMediaType "application/vnd.lingo.target-context+json",
+  has lingoByteLength 808,
+  has lingoText "{\"configurationFingerprint\":\"2000000000000000000000000000000000000000000000000000000000000033\",\"corpusFingerprint\":\"2000000000000000000000000000000000000000000000000000000000000032\",\"createdAt\":\"2026-07-11T14:00:02Z\",\"dependencyClosureHash\":\"2000000000000000000000000000000000000000000000000000000000000031\",\"packages\":[{\"commit\":\"bb77174a28bca02336b46caa348986d14acd43cf\",\"declaredDependencies\":[],\"name\":\"gist\",\"reference\":\"v5.0.0\",\"schemaPaths\":[\"schema/administrative-operations.tql\",\"schema/gistCore.tql\",\"schema/package-provenance.tql\",\"schema/self-describing-schema.tql\"],\"source\":\"https://github.com/vibe-machine/ontology-gist.git\",\"typeSourcePaths\":{},\"version\":\"5.0.0\"}],\"revisionID\":\"fixture:basketball:target:r1\",\"revisionNumber\":1,\"rootPackageName\":\"gist\",\"stableID\":\"fixture:basketball:target\"}",
   has lingoCreatedAt 2026-07-11T14:00:02;
 
 put $plan isa LingoGroundingPlanRevision,
@@ -422,6 +430,7 @@ put lingoConstraintAppliesToBriefElement (constraintRevision: $constraintRevisio
 
 put lingoWorkbookHasTargetContextRevision (workbook: $workbook, targetContextRevision: $target);
 put lingoWorkbookCurrentTargetContext (workbook: $workbook, targetContextRevision: $target);
+put lingoArtifactHasPayload (artifact: $target, payload: $targetPayload);
 put lingoWorkbookHasPlanRevision (workbook: $workbook, planRevision: $plan);
 put lingoWorkbookCurrentPlan (workbook: $workbook, planRevision: $plan);
 put lingoPlanGroundsBrief (planRevision: $plan, briefRevision: $brief);
