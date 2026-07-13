@@ -1,6 +1,0 @@
-match
-  $workbook isa LingoStudioWorkbook, has lingoCreatedAt $created;
-  not { $workbook has lingoUpdatedAt $_; };
-let $createdValue = $created;
-insert
-  $workbook has lingoUpdatedAt == $createdValue;
