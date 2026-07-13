@@ -71,7 +71,7 @@ attribute lingoCorpusFingerprint, value string;
 attribute lingoConfigurationFingerprint, value string;
 
 attribute lingoModelingAct, value string @values("reuse", "specialize", "compose", "categorize", "instantiate", "defer");
-attribute lingoSchemaLifecycleIntent, value string @values("add", "reuse", "noChange", "defer");
+attribute lingoSchemaLifecycleIntent, value string @values("add", "reuse", "noChange", "defer", "rename", "deprecate", "split", "merge", "undefine", "reparentExisting", "migrate");
 attribute lingoProposedTargetLabel, value string;
 attribute lingoProposedTargetKind, value string;
 attribute lingoCandidateScore, value double;
