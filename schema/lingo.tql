@@ -19,6 +19,7 @@ attribute lingoChangeOperationId, value string;
 attribute lingoRelationRoleDefinitionId, value string;
 attribute lingoExecutableCqId, value string;
 attribute lingoInterpretationConfirmationId, value string;
+attribute lingoCompetencyQuestionFixtureId, value string;
 attribute lingoVerificationRunId, value string;
 attribute lingoVerificationResultId, value string;
 attribute lingoStagingBindingId, value string;
@@ -105,6 +106,7 @@ attribute lingoPromptVersion, value string;
 attribute lingoBlockedReason, value string;
 attribute lingoInterpretationConfirmationState, value string @values("confirmed", "rejected");
 attribute lingoInterpretationHash, value string;
+attribute lingoExplicitlyExpectsZeroRows, value boolean;
 
 attribute lingoExpectedResult, value string;
 attribute lingoActualResult, value string;
@@ -684,6 +686,8 @@ entity LingoExecutableCompetencyQuestion sub LingoRevisionArtifact,
   plays lingoExecutableTestsPlanItem:executableQuestion,
   plays lingoExecutableTestsConstraint:executableQuestion,
   plays lingoExecutableHasInterpretationConfirmation:executableQuestion,
+  plays lingoFixtureTestsExecutableQuestion:executableQuestion,
+  plays lingoVerificationResultForQuestion:executableQuestion,
   plays lingoVerificationExecutesQuestion:executableQuestion;
 
 entity LingoInterpretationConfirmation sub LingoArtifact,
@@ -693,6 +697,12 @@ entity LingoInterpretationConfirmation sub LingoArtifact,
   owns lingoActorId,
   owns lingoRationale @card(0..1),
   plays lingoExecutableHasInterpretationConfirmation:confirmation;
+
+entity LingoCompetencyQuestionFixture sub LingoRevisionArtifact,
+  owns lingoCompetencyQuestionFixtureId @key,
+  owns lingoExplicitlyExpectsZeroRows,
+  plays lingoFixtureTestsExecutableQuestion:fixtureRevision,
+  plays lingoVerificationUsesFixture:fixtureRevision;
 
 entity LingoStagingBinding sub LingoArtifact,
   owns lingoStagingBindingId @key,
@@ -714,6 +724,7 @@ entity LingoVerificationRun sub LingoArtifact,
   plays lingoWorkbookHasVerificationRun:verificationRun,
   plays lingoVerificationVerifiesChangeSet:verificationRun,
   plays lingoVerificationExecutesQuestion:verificationRun,
+  plays lingoVerificationUsesFixture:verificationRun,
   plays lingoVerificationRunsInBinding:verificationRun,
   plays lingoVerificationHasResult:verificationRun,
   plays lingoApplyReceiptAuthorizedByVerification:verificationRun;
@@ -726,7 +737,8 @@ entity LingoVerificationResult sub LingoArtifact,
   owns lingoMutationName @card(0..1),
   owns lingoMutationKilled @card(0..1),
   owns lingoDiagnostic @card(0..1),
-  plays lingoVerificationHasResult:verificationResult;
+  plays lingoVerificationHasResult:verificationResult,
+  plays lingoVerificationResultForQuestion:verificationResult;
 
 relation lingoExecutableImplementsCompetencyQuestion,
   relates executableQuestion,
@@ -759,6 +771,18 @@ relation lingoExecutableTestsConstraint,
 relation lingoExecutableHasInterpretationConfirmation,
   relates executableQuestion,
   relates confirmation;
+
+relation lingoFixtureTestsExecutableQuestion,
+  relates fixtureRevision,
+  relates executableQuestion;
+
+relation lingoVerificationUsesFixture,
+  relates verificationRun,
+  relates fixtureRevision;
+
+relation lingoVerificationResultForQuestion,
+  relates verificationResult,
+  relates executableQuestion;
 
 relation lingoWorkbookHasStagingBinding,
   relates workbook,

@@ -8,7 +8,7 @@
   "upstream": {
     "repoUrl": "https://github.com/vibe-machine/ontology-lingo",
     "tag": "v0.1.5",
-    "commit": "894d9fb09fab806acf8b5c9cb02921852aa554c6",
+    "commit": "0e5e31ba2075cc04d91a20985b4e999740aafebb",
     "sourceArtifacts": [
       {
         "path": "package.json",
@@ -16,7 +16,7 @@
       },
       {
         "path": "schema/lingo.tql",
-        "sha256": "e887b0f456d8b881f67f2cd2c945237e1e4491f4d9fed8ef8753f5decfa4dbf6"
+        "sha256": "e7c2610faf984683f79fd5616185f6e9aba16be0ee2a7203191792584c4175fb"
       },
       {
         "path": "fixtures/minimal-sprint.tql",
@@ -103,28 +103,28 @@
   "generator": {
     "name": "hand-authored-package-bootstrap",
     "version": "0.1.0",
-    "generatedAt": "2026-07-13T09:55:02Z"
+    "generatedAt": "2026-07-13T10:02:08Z"
   },
   "artifacts": [
     {
       "kind": "meta-schema",
       "path": "schema/self-describing-schema.tql",
-      "sha256": "a7de920bfe85daac15090ec945ea27554ec93ca9f3933e5d34b0b8317fef8999"
+      "sha256": "016d5ca72d2500681110d33964460776d43eb3ca4e517beb33cf9c4bff45066f"
     },
     {
       "kind": "provenance-schema",
       "path": "schema/package-provenance.tql",
-      "sha256": "c65b84f8a9d03958d8864a803fc371ab8f16ae6631e8c94d9da8547450de5242"
+      "sha256": "2d1286781e775802a1773f7889388510198b2761dae1cac1328f33fd4004e126"
     },
     {
       "kind": "administrative-schema",
       "path": "schema/administrative-operations.tql",
-      "sha256": "2cbbca8a1aee9613b6bceaac573db76cd6d9508e066fea1f335aed76639dcbe5"
+      "sha256": "5a553b78aee508722ff5ef2de175e895b20bdead2422ef2ab6eed7f5685906e3"
     },
     {
       "kind": "documentation",
       "path": "data/lingo-schema-docs.tql",
-      "sha256": "13170437f2153c12d0681620aca00673f39ced73d025cd2af1efff8a2c250e40"
+      "sha256": "7de4ad941bb7be4cb4c21cd73f73fb29fd6e65b38761408fe667329998b2bb66"
     },
     {
       "kind": "manifest-schema",
@@ -134,7 +134,7 @@
     {
       "kind": "provenance-seeds",
       "path": "data/lingo-provenance.tql",
-      "sha256": "be690fd16ea90a90b66540d1e2aa8bdf9d85b8743a5f1a18410e8df5bd6ccfda"
+      "sha256": "d91d97b88f318cd41c8d6587f6d8f4fbee44b02139d0792dc4de181feeb1055a"
     }
   ]
 }
