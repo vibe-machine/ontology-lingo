@@ -1,7 +1,7 @@
 # Provenance bootstrap
 # upstream-repo: https://github.com/vibe-machine/ontology-lingo
 # upstream-tag: v0.1.5
-# upstream-commit: d8b7cffbd00c22696d87d773f159723cd5cd4328
+# upstream-commit: c09e32f671a099fdcef227d9349a7f8152fa1bc4
 # source-artifacts:
 # - package.json
 # - schema/lingo.tql
@@ -2202,409 +2202,418 @@ put $resource_241 isa SchemaResource,
 put (resource: $resource_241, module: $module) isa inModule;
 
 put $resource_242 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRetryId",
+  has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRetryId",
+  has typeLabel "lingoVerificationRetryId",
+  has kind "attribute",
+  has prefLabel "Verification Retry Id",
+  has definition "A Verification Retry Id value used by the Lingo Studio knowledge model.";
+put (resource: $resource_242, module: $module) isa inModule;
+
+put $resource_243 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#LingoVerificationRun",
   has iri "https://github.com/vibe-machine/ontology-lingo#LingoVerificationRun",
   has typeLabel "LingoVerificationRun",
   has kind "entity",
   has prefLabel "Verification Run",
   has definition "An immutable observation of exact executable artifacts against one staging graph snapshot.";
-put (resource: $resource_242, module: $module) isa inModule;
+put (resource: $resource_243, module: $module) isa inModule;
 
-put $resource_243 isa SchemaResource,
+put $resource_244 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRunId",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRunId",
   has typeLabel "lingoVerificationRunId",
   has kind "attribute",
   has prefLabel "Verification Run Id",
   has definition "A Verification Run Id value used by the Lingo Studio knowledge model.";
-put (resource: $resource_243, module: $module) isa inModule;
+put (resource: $resource_244, module: $module) isa inModule;
 
-put $resource_244 isa SchemaResource,
+put $resource_245 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRunsInBinding",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRunsInBinding",
   has typeLabel "lingoVerificationRunsInBinding",
   has kind "relation",
   has prefLabel "Verification Runs In Binding",
   has definition "Relates Verification Runs In Binding participants in the Lingo Studio knowledge model.";
-put (resource: $resource_244, module: $module) isa inModule;
+put (resource: $resource_245, module: $module) isa inModule;
 
-put $resource_245 isa SchemaResource,
+put $resource_246 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationState",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationState",
   has typeLabel "lingoVerificationState",
   has kind "attribute",
   has prefLabel "Verification State",
   has definition "A Verification State value used by the Lingo Studio knowledge model.";
-put (resource: $resource_245, module: $module) isa inModule;
+put (resource: $resource_246, module: $module) isa inModule;
 
-put $resource_246 isa SchemaResource,
+put $resource_247 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationToolVersion",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationToolVersion",
   has typeLabel "lingoVerificationToolVersion",
   has kind "attribute",
   has prefLabel "Verification Tool Version",
   has definition "A Verification Tool Version value used by the Lingo Studio knowledge model.";
-put (resource: $resource_246, module: $module) isa inModule;
+put (resource: $resource_247, module: $module) isa inModule;
 
-put $resource_247 isa SchemaResource,
+put $resource_248 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationTypeDBVersion",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationTypeDBVersion",
   has typeLabel "lingoVerificationTypeDBVersion",
   has kind "attribute",
   has prefLabel "Verification Type DBVersion",
   has definition "A Verification Type DBVersion value used by the Lingo Studio knowledge model.";
-put (resource: $resource_247, module: $module) isa inModule;
+put (resource: $resource_248, module: $module) isa inModule;
 
-put $resource_248 isa SchemaResource,
+put $resource_249 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationUsesFixture",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationUsesFixture",
   has typeLabel "lingoVerificationUsesFixture",
   has kind "relation",
   has prefLabel "Verification Uses Fixture",
   has definition "Relates Verification Uses Fixture participants in the Lingo Studio knowledge model.";
-put (resource: $resource_248, module: $module) isa inModule;
+put (resource: $resource_249, module: $module) isa inModule;
 
-put $resource_249 isa SchemaResource,
+put $resource_250 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesBrief",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesBrief",
   has typeLabel "lingoVerificationVerifiesBrief",
   has kind "relation",
   has prefLabel "Verification Verifies Brief",
   has definition "Relates Verification Verifies Brief participants in the Lingo Studio knowledge model.";
-put (resource: $resource_249, module: $module) isa inModule;
+put (resource: $resource_250, module: $module) isa inModule;
 
-put $resource_250 isa SchemaResource,
+put $resource_251 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesChangeSet",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesChangeSet",
   has typeLabel "lingoVerificationVerifiesChangeSet",
   has kind "relation",
   has prefLabel "Verification Verifies Change Set",
   has definition "Links a Verification Run to the exact Ontology Change Set it evaluated.";
-put (resource: $resource_250, module: $module) isa inModule;
+put (resource: $resource_251, module: $module) isa inModule;
 
-put $resource_251 isa SchemaResource,
+put $resource_252 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesPlan",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesPlan",
   has typeLabel "lingoVerificationVerifiesPlan",
   has kind "relation",
   has prefLabel "Verification Verifies Plan",
   has definition "Relates Verification Verifies Plan participants in the Lingo Studio knowledge model.";
-put (resource: $resource_251, module: $module) isa inModule;
+put (resource: $resource_252, module: $module) isa inModule;
 
-put $resource_252 isa SchemaResource,
+put $resource_253 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesTargetContext",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesTargetContext",
   has typeLabel "lingoVerificationVerifiesTargetContext",
   has kind "relation",
   has prefLabel "Verification Verifies Target Context",
   has definition "Relates Verification Verifies Target Context participants in the Lingo Studio knowledge model.";
-put (resource: $resource_252, module: $module) isa inModule;
+put (resource: $resource_253, module: $module) isa inModule;
 
-put $resource_253 isa SchemaResource,
+put $resource_254 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#LingoWorkbook",
   has iri "https://github.com/vibe-machine/ontology-lingo#LingoWorkbook",
   has typeLabel "LingoWorkbook",
   has kind "entity",
   has prefLabel "Workbook",
   has definition "A Workbook concept in the Lingo Studio knowledge model.";
-put (resource: $resource_253, module: $module) isa inModule;
+put (resource: $resource_254, module: $module) isa inModule;
 
-put $resource_254 isa SchemaResource,
+put $resource_255 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCatalogsEvidenceSource",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCatalogsEvidenceSource",
   has typeLabel "lingoWorkbookCatalogsEvidenceSource",
   has kind "relation",
   has prefLabel "Workbook Catalogs Evidence Source",
   has definition "Relates Workbook Catalogs Evidence Source participants in the Lingo Studio knowledge model.";
-put (resource: $resource_254, module: $module) isa inModule;
+put (resource: $resource_255, module: $module) isa inModule;
 
-put $resource_255 isa SchemaResource,
+put $resource_256 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookContainsInput",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookContainsInput",
   has typeLabel "lingoWorkbookContainsInput",
   has kind "relation",
   has prefLabel "Workbook Contains Input",
   has definition "Relates Workbook Contains Input participants in the Lingo Studio knowledge model.";
-put (resource: $resource_255, module: $module) isa inModule;
+put (resource: $resource_256, module: $module) isa inModule;
 
-put $resource_256 isa SchemaResource,
+put $resource_257 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentBrief",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentBrief",
   has typeLabel "lingoWorkbookCurrentBrief",
   has kind "relation",
   has prefLabel "Workbook Current Brief",
   has definition "Relates Workbook Current Brief participants in the Lingo Studio knowledge model.";
-put (resource: $resource_256, module: $module) isa inModule;
+put (resource: $resource_257, module: $module) isa inModule;
 
-put $resource_257 isa SchemaResource,
+put $resource_258 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentPlan",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentPlan",
   has typeLabel "lingoWorkbookCurrentPlan",
   has kind "relation",
   has prefLabel "Workbook Current Plan",
   has definition "Relates Workbook Current Plan participants in the Lingo Studio knowledge model.";
-put (resource: $resource_257, module: $module) isa inModule;
+put (resource: $resource_258, module: $module) isa inModule;
 
-put $resource_258 isa SchemaResource,
+put $resource_259 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentTargetContext",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentTargetContext",
   has typeLabel "lingoWorkbookCurrentTargetContext",
   has kind "relation",
   has prefLabel "Workbook Current Target Context",
   has definition "Relates Workbook Current Target Context participants in the Lingo Studio knowledge model.";
-put (resource: $resource_258, module: $module) isa inModule;
+put (resource: $resource_259, module: $module) isa inModule;
 
-put $resource_259 isa SchemaResource,
+put $resource_260 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasApplyReceipt",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasApplyReceipt",
   has typeLabel "lingoWorkbookHasApplyReceipt",
   has kind "relation",
   has prefLabel "Workbook Has Apply Receipt",
   has definition "Relates Workbook Has Apply Receipt participants in the Lingo Studio knowledge model.";
-put (resource: $resource_259, module: $module) isa inModule;
+put (resource: $resource_260, module: $module) isa inModule;
 
-put $resource_260 isa SchemaResource,
+put $resource_261 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasBriefRevision",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasBriefRevision",
   has typeLabel "lingoWorkbookHasBriefRevision",
   has kind "relation",
   has prefLabel "Workbook Has Brief Revision",
   has definition "Relates Workbook Has Brief Revision participants in the Lingo Studio knowledge model.";
-put (resource: $resource_260, module: $module) isa inModule;
+put (resource: $resource_261, module: $module) isa inModule;
 
-put $resource_261 isa SchemaResource,
+put $resource_262 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasChangeSet",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasChangeSet",
   has typeLabel "lingoWorkbookHasChangeSet",
   has kind "relation",
   has prefLabel "Workbook Has Change Set",
   has definition "Relates Workbook Has Change Set participants in the Lingo Studio knowledge model.";
-put (resource: $resource_261, module: $module) isa inModule;
+put (resource: $resource_262, module: $module) isa inModule;
 
-put $resource_262 isa SchemaResource,
+put $resource_263 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasClarificationIssue",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasClarificationIssue",
   has typeLabel "lingoWorkbookHasClarificationIssue",
   has kind "relation",
   has prefLabel "Workbook Has Clarification Issue",
   has definition "Relates Workbook Has Clarification Issue participants in the Lingo Studio knowledge model.";
-put (resource: $resource_262, module: $module) isa inModule;
+put (resource: $resource_263, module: $module) isa inModule;
 
-put $resource_263 isa SchemaResource,
+put $resource_264 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasPlanRevision",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasPlanRevision",
   has typeLabel "lingoWorkbookHasPlanRevision",
   has kind "relation",
   has prefLabel "Workbook Has Plan Revision",
   has definition "Relates Workbook Has Plan Revision participants in the Lingo Studio knowledge model.";
-put (resource: $resource_263, module: $module) isa inModule;
+put (resource: $resource_264, module: $module) isa inModule;
 
-put $resource_264 isa SchemaResource,
+put $resource_265 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasStagingBinding",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasStagingBinding",
   has typeLabel "lingoWorkbookHasStagingBinding",
   has kind "relation",
   has prefLabel "Workbook Has Staging Binding",
   has definition "Relates Workbook Has Staging Binding participants in the Lingo Studio knowledge model.";
-put (resource: $resource_264, module: $module) isa inModule;
+put (resource: $resource_265, module: $module) isa inModule;
 
-put $resource_265 isa SchemaResource,
+put $resource_266 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasTargetContextRevision",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasTargetContextRevision",
   has typeLabel "lingoWorkbookHasTargetContextRevision",
   has kind "relation",
   has prefLabel "Workbook Has Target Context Revision",
   has definition "Relates Workbook Has Target Context Revision participants in the Lingo Studio knowledge model.";
-put (resource: $resource_265, module: $module) isa inModule;
+put (resource: $resource_266, module: $module) isa inModule;
 
-put $resource_266 isa SchemaResource,
+put $resource_267 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasVerificationRun",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasVerificationRun",
   has typeLabel "lingoWorkbookHasVerificationRun",
   has kind "relation",
   has prefLabel "Workbook Has Verification Run",
   has definition "Relates Workbook Has Verification Run participants in the Lingo Studio knowledge model.";
-put (resource: $resource_266, module: $module) isa inModule;
+put (resource: $resource_267, module: $module) isa inModule;
 
-put $resource_267 isa SchemaResource,
+put $resource_268 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookId",
   has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookId",
   has typeLabel "lingoWorkbookId",
   has kind "attribute",
   has prefLabel "Workbook Id",
   has definition "A Workbook Id value used by the Lingo Studio knowledge model.";
-put (resource: $resource_267, module: $module) isa inModule;
+put (resource: $resource_268, module: $module) isa inModule;
 
-put $resource_268 isa SchemaResource,
+put $resource_269 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#LingoWorkbookRow",
   has iri "https://github.com/vibe-machine/ontology-lingo#LingoWorkbookRow",
   has typeLabel "LingoWorkbookRow",
   has kind "entity",
   has prefLabel "Workbook Row",
   has definition "A Workbook Row concept in the Lingo Studio knowledge model.";
-put (resource: $resource_268, module: $module) isa inModule;
+put (resource: $resource_269, module: $module) isa inModule;
 
-put $resource_269 isa SchemaResource,
+put $resource_270 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookArchivedAt",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookArchivedAt",
   has typeLabel "workbookArchivedAt",
   has kind "attribute",
   has prefLabel "workbook Archived At",
   has definition "A workbook Archived At value used by the Lingo Studio knowledge model.";
-put (resource: $resource_269, module: $module) isa inModule;
+put (resource: $resource_270, module: $module) isa inModule;
 
-put $resource_270 isa SchemaResource,
+put $resource_271 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookContainsRow",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookContainsRow",
   has typeLabel "workbookContainsRow",
   has kind "relation",
   has prefLabel "workbook Contains Row",
   has definition "Relates workbook Contains Row participants in the Lingo Studio knowledge model.";
-put (resource: $resource_270, module: $module) isa inModule;
+put (resource: $resource_271, module: $module) isa inModule;
 
-put $resource_271 isa SchemaResource,
+put $resource_272 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookCreatedAt",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookCreatedAt",
   has typeLabel "workbookCreatedAt",
   has kind "attribute",
   has prefLabel "workbook Created At",
   has definition "A workbook Created At value used by the Lingo Studio knowledge model.";
-put (resource: $resource_271, module: $module) isa inModule;
+put (resource: $resource_272, module: $module) isa inModule;
 
-put $resource_272 isa SchemaResource,
+put $resource_273 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookId",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookId",
   has typeLabel "workbookId",
   has kind "attribute",
   has prefLabel "workbook Id",
   has definition "A workbook Id value used by the Lingo Studio knowledge model.";
-put (resource: $resource_272, module: $module) isa inModule;
+put (resource: $resource_273, module: $module) isa inModule;
 
-put $resource_273 isa SchemaResource,
+put $resource_274 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookIntent",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookIntent",
   has typeLabel "workbookIntent",
   has kind "attribute",
   has prefLabel "workbook Intent",
   has definition "A workbook Intent value used by the Lingo Studio knowledge model.";
-put (resource: $resource_273, module: $module) isa inModule;
+put (resource: $resource_274, module: $module) isa inModule;
 
-put $resource_274 isa SchemaResource,
+put $resource_275 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookName",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookName",
   has typeLabel "workbookName",
   has kind "attribute",
   has prefLabel "workbook Name",
   has definition "A workbook Name value used by the Lingo Studio knowledge model.";
-put (resource: $resource_274, module: $module) isa inModule;
+put (resource: $resource_275, module: $module) isa inModule;
 
-put $resource_275 isa SchemaResource,
+put $resource_276 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookRowCreatedAt",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookRowCreatedAt",
   has typeLabel "workbookRowCreatedAt",
   has kind "attribute",
   has prefLabel "workbook Row Created At",
   has definition "A workbook Row Created At value used by the Lingo Studio knowledge model.";
-put (resource: $resource_275, module: $module) isa inModule;
+put (resource: $resource_276, module: $module) isa inModule;
 
-put $resource_276 isa SchemaResource,
+put $resource_277 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookRowId",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookRowId",
   has typeLabel "workbookRowId",
   has kind "attribute",
   has prefLabel "workbook Row Id",
   has definition "A workbook Row Id value used by the Lingo Studio knowledge model.";
-put (resource: $resource_276, module: $module) isa inModule;
+put (resource: $resource_277, module: $module) isa inModule;
 
-put $resource_277 isa SchemaResource,
+put $resource_278 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookRowKind",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookRowKind",
   has typeLabel "workbookRowKind",
   has kind "attribute",
   has prefLabel "workbook Row Kind",
   has definition "A workbook Row Kind value used by the Lingo Studio knowledge model.";
-put (resource: $resource_277, module: $module) isa inModule;
+put (resource: $resource_278, module: $module) isa inModule;
 
-put $resource_278 isa SchemaResource,
+put $resource_279 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookRowName",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookRowName",
   has typeLabel "workbookRowName",
   has kind "attribute",
   has prefLabel "workbook Row Name",
   has definition "A workbook Row Name value used by the Lingo Studio knowledge model.";
-put (resource: $resource_278, module: $module) isa inModule;
+put (resource: $resource_279, module: $module) isa inModule;
 
-put $resource_279 isa SchemaResource,
+put $resource_280 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookRowOrigin",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookRowOrigin",
   has typeLabel "workbookRowOrigin",
   has kind "attribute",
   has prefLabel "workbook Row Origin",
   has definition "A workbook Row Origin value used by the Lingo Studio knowledge model.";
-put (resource: $resource_279, module: $module) isa inModule;
+put (resource: $resource_280, module: $module) isa inModule;
 
-put $resource_280 isa SchemaResource,
+put $resource_281 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookRowPayload",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookRowPayload",
   has typeLabel "workbookRowPayload",
   has kind "attribute",
   has prefLabel "workbook Row Payload",
   has definition "A workbook Row Payload value used by the Lingo Studio knowledge model.";
-put (resource: $resource_280, module: $module) isa inModule;
+put (resource: $resource_281, module: $module) isa inModule;
 
-put $resource_281 isa SchemaResource,
+put $resource_282 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookRowSourceFile",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookRowSourceFile",
   has typeLabel "workbookRowSourceFile",
   has kind "attribute",
   has prefLabel "workbook Row Source File",
   has definition "A workbook Row Source File value used by the Lingo Studio knowledge model.";
-put (resource: $resource_281, module: $module) isa inModule;
+put (resource: $resource_282, module: $module) isa inModule;
 
-put $resource_282 isa SchemaResource,
+put $resource_283 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookRowSourceIri",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookRowSourceIri",
   has typeLabel "workbookRowSourceIri",
   has kind "attribute",
   has prefLabel "workbook Row Source Iri",
   has definition "A workbook Row Source Iri value used by the Lingo Studio knowledge model.";
-put (resource: $resource_282, module: $module) isa inModule;
+put (resource: $resource_283, module: $module) isa inModule;
 
-put $resource_283 isa SchemaResource,
+put $resource_284 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookRowStatus",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookRowStatus",
   has typeLabel "workbookRowStatus",
   has kind "attribute",
   has prefLabel "workbook Row Status",
   has definition "A workbook Row Status value used by the Lingo Studio knowledge model.";
-put (resource: $resource_283, module: $module) isa inModule;
+put (resource: $resource_284, module: $module) isa inModule;
 
-put $resource_284 isa SchemaResource,
+put $resource_285 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookRowUpdatedAt",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookRowUpdatedAt",
   has typeLabel "workbookRowUpdatedAt",
   has kind "attribute",
   has prefLabel "workbook Row Updated At",
   has definition "A workbook Row Updated At value used by the Lingo Studio knowledge model.";
-put (resource: $resource_284, module: $module) isa inModule;
+put (resource: $resource_285, module: $module) isa inModule;
 
-put $resource_285 isa SchemaResource,
+put $resource_286 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookStagingDatabase",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookStagingDatabase",
   has typeLabel "workbookStagingDatabase",
   has kind "attribute",
   has prefLabel "workbook Staging Database",
   has definition "A workbook Staging Database value used by the Lingo Studio knowledge model.";
-put (resource: $resource_285, module: $module) isa inModule;
+put (resource: $resource_286, module: $module) isa inModule;
 
-put $resource_286 isa SchemaResource,
+put $resource_287 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#workbookUpdatedAt",
   has iri "https://github.com/vibe-machine/ontology-lingo#workbookUpdatedAt",
   has typeLabel "workbookUpdatedAt",
   has kind "attribute",
   has prefLabel "workbook Updated At",
   has definition "A workbook Updated At value used by the Lingo Studio knowledge model.";
-put (resource: $resource_286, module: $module) isa inModule;
+put (resource: $resource_287, module: $module) isa inModule;
 
 # -- BEGIN GENERATED STRUCTURAL METADATA --
 # Generated from authoritative schema definitions. Do not hand-edit this section.
@@ -6149,6 +6158,14 @@ insert
   $schema_resource has valueTypeName "string";
 
 match
+  $schema_resource isa SchemaResource, has typeLabel "lingoVerificationRetryId";
+  not {
+    $schema_resource has valueTypeName "string";
+  };
+insert
+  $schema_resource has valueTypeName "string";
+
+match
   $schema_resource isa SchemaResource, has typeLabel "lingoVerificationRunId";
   not {
     $schema_resource has valueTypeName "string";
@@ -8281,6 +8298,15 @@ insert
 match
   $struct_left isa SchemaResource, has typeLabel "LingoVerificationResult";
   $struct_right isa SchemaResource, has typeLabel "lingoVerificationState";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "lingoVerificationRetries";
+  $struct_right isa SchemaResource, has typeLabel "lingoVerificationRetryId";
   not {
     (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
   };

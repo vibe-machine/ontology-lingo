@@ -22,6 +22,7 @@ attribute lingoInterpretationConfirmationId, value string;
 attribute lingoCompetencyQuestionFixtureId, value string;
 attribute lingoVerificationRunId, value string;
 attribute lingoVerificationResultId, value string;
+attribute lingoVerificationRetryId, value string;
 attribute lingoStagingBindingId, value string;
 attribute lingoApplyReceiptId, value string;
 attribute lingoApplyOutcomeId, value string;
@@ -851,6 +852,7 @@ relation lingoVerificationHasResult,
   relates verificationResult;
 
 relation lingoVerificationRetries,
+  owns lingoVerificationRetryId @key,
   relates retryRun,
   relates priorRun;
 
