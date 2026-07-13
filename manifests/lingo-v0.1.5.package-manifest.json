@@ -8,7 +8,7 @@
   "upstream": {
     "repoUrl": "https://github.com/vibe-machine/ontology-lingo",
     "tag": "v0.1.5",
-    "commit": "af0193eee148fa8da2a3647753ac0d1bef95555e",
+    "commit": "f1c5758a0084582bf479d589a0e151036e4b3fc6",
     "sourceArtifacts": [
       {
         "path": "package.json",
@@ -20,11 +20,11 @@
       },
       {
         "path": "fixtures/minimal-sprint.tql",
-        "sha256": "daceb2e15ecdfab2699bcbfaba9ba366cd3338c2c5aa93648ddae01566173177"
+        "sha256": "42ef854dd08d107d437c13cd1ba61eb994ecfc28c5453023a0a16770eb597316"
       },
       {
         "path": "fixtures/basketball.tql",
-        "sha256": "e4ffb24758742d802a9c2f937a86937ca8257c1cfba50d78e59c08c71b30ee34"
+        "sha256": "88670d93e5848570550d17a5d6b1fe89bfa7878ff58226ca6dea68b4898aa5cf"
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0001.tql",
@@ -103,28 +103,28 @@
   "generator": {
     "name": "hand-authored-package-bootstrap",
     "version": "0.1.0",
-    "generatedAt": "2026-07-13T00:37:12Z"
+    "generatedAt": "2026-07-13T00:51:42Z"
   },
   "artifacts": [
     {
       "kind": "meta-schema",
       "path": "schema/self-describing-schema.tql",
-      "sha256": "791d1c2b095709494238765b8ab7808cc3895863ae88bc4de8a4edbfe9c16932"
+      "sha256": "10ef24d28cb7e3832765cd1a5c88007133cdfa1ef1ff6276f6f41fa98a2cdacc"
     },
     {
       "kind": "provenance-schema",
       "path": "schema/package-provenance.tql",
-      "sha256": "eb0c5773c96720bcafcca69a345bd4f6e2aa1a0b17816a5a6d74c88d44412195"
+      "sha256": "1d172a8ef6c8d88326f20ce4c54ae8ee4c911031d83d10bf97c1cb858cafc6a4"
     },
     {
       "kind": "administrative-schema",
       "path": "schema/administrative-operations.tql",
-      "sha256": "9d40ebe880de04cdd2b3bc118661d4ca70fb8fc1abca4bd8f02d9b658bf0cdc3"
+      "sha256": "c589035c6a02d7aabe58aedbf99e9fbd699509d4ef71d2edd3070594787df4f3"
     },
     {
       "kind": "documentation",
       "path": "data/lingo-schema-docs.tql",
-      "sha256": "f1e654acc1917138bb4bd6d3baccb70d1da5da1cb601a38888d645944dca745e"
+      "sha256": "231ed902b3d63dcc310e91119e26e31e8de6aa04dfbc60f81e20233deaacb354"
     },
     {
       "kind": "manifest-schema",
@@ -134,7 +134,7 @@
     {
       "kind": "provenance-seeds",
       "path": "data/lingo-provenance.tql",
-      "sha256": "037e51fddf9e478c616f2ddf2b4475eaa4e42ed9f80eca19687524019b0f7589"
+      "sha256": "71de7ac618367adb8892835d310851624fc61bea4f5ac0e551c59561d20e59ac"
     }
   ]
 }

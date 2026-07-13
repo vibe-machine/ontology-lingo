@@ -124,6 +124,7 @@ put $playerRoleRevision isa LingoBriefRelationRoleRevision,
   has lingoContentHash "2000000000000000000000000000000000000000000000000000000000000021",
   has lingoContractVersion "ontology-lingo/0.1.0",
   has lingoEpistemicState "asserted",
+  has lingoText "player",
   has lingoRoleName "player",
   has lingoRolePosition 1,
   has lingoCreatedAt 2026-07-11T14:00:01;
@@ -139,6 +140,7 @@ put $teamRoleRevision isa LingoBriefRelationRoleRevision,
   has lingoContentHash "2000000000000000000000000000000000000000000000000000000000000022",
   has lingoContractVersion "ontology-lingo/0.1.0",
   has lingoEpistemicState "asserted",
+  has lingoText "team",
   has lingoRoleName "team",
   has lingoRolePosition 2,
   has lingoCreatedAt 2026-07-11T14:00:01;
@@ -154,6 +156,7 @@ put $seasonRoleRevision isa LingoBriefRelationRoleRevision,
   has lingoContentHash "2000000000000000000000000000000000000000000000000000000000000023",
   has lingoContractVersion "ontology-lingo/0.1.0",
   has lingoEpistemicState "asserted",
+  has lingoText "season",
   has lingoRoleName "season",
   has lingoRolePosition 3,
   has lingoCreatedAt 2026-07-11T14:00:01;
@@ -231,7 +234,7 @@ put $plan isa LingoGroundingPlanRevision,
   has lingoStableArtifactId "fixture:basketball:plan",
   has lingoRevisionNumber 1,
   has lingoContentHash "2000000000000000000000000000000000000000000000000000000000000040",
-  has lingoContractVersion "ontology-lingo/0.1.0",
+  has lingoContractVersion "lingo-grounding-plan/1",
   has lingoCreatedAt 2026-07-11T14:00:03;
 
 put $rosterItem isa LingoGroundingPlanItem,
@@ -242,12 +245,20 @@ put $rosterItemRevision isa LingoGroundingPlanItemRevision,
   has lingoStableArtifactId "fixture:basketball:plan-item:roster",
   has lingoRevisionNumber 1,
   has lingoContentHash "2000000000000000000000000000000000000000000000000000000000000041",
-  has lingoContractVersion "ontology-lingo/0.1.0",
+  has lingoContractVersion "lingo-grounding-item/1",
   has lingoModelingAct "compose",
   has lingoSchemaLifecycleIntent "add",
   has lingoProposedTargetLabel "BasketballRosterMembership",
   has lingoProposedTargetKind "relation",
   has lingoRationale "Preserve player, team, and season as one ternary graph commitment.",
+  has lingoCreatedAt 2026-07-11T14:00:03;
+
+put $rosterItemPayload isa LingoPayload,
+  has lingoPayloadId "fixture:basketball:plan-item:roster:r1:payload",
+  has lingoContentHash "f035fee0e7276eeb0f44982ba81a7319bf705a8c6380f56cad9877876fdec07f",
+  has lingoMediaType "application/vnd.lingo.grounding-solution+json",
+  has lingoByteLength 296,
+  has lingoText "{\"relation\":{\"parentLabel\":null,\"roles\":[{\"name\":\"player\",\"position\":1,\"playerLabel\":\"Person\",\"specializedRoleName\":null},{\"name\":\"team\",\"position\":2,\"playerLabel\":\"Organization\",\"specializedRoleName\":null},{\"name\":\"season\",\"position\":3,\"playerLabel\":\"TimeInterval\",\"specializedRoleName\":null}]}}",
   has lingoCreatedAt 2026-07-11T14:00:03;
 
 put $teamItem isa LingoGroundingPlanItem,
@@ -258,12 +269,20 @@ put $teamItemRevision isa LingoGroundingPlanItemRevision,
   has lingoStableArtifactId "fixture:basketball:plan-item:team",
   has lingoRevisionNumber 1,
   has lingoContentHash "2000000000000000000000000000000000000000000000000000000000000042",
-  has lingoContractVersion "ontology-lingo/0.1.0",
+  has lingoContractVersion "lingo-grounding-item/1",
   has lingoModelingAct "categorize",
   has lingoSchemaLifecycleIntent "reuse",
   has lingoProposedTargetLabel "Organization",
   has lingoProposedTargetKind "entity",
   has lingoRationale "Reuse the shared organization concept for Team.",
+  has lingoCreatedAt 2026-07-11T14:00:03;
+
+put $teamItemPayload isa LingoPayload,
+  has lingoPayloadId "fixture:basketball:plan-item:team:r1:payload",
+  has lingoContentHash "7bde646356601f6b6fd5cc99adb5350da1c50f6c1951a6dec04e667d66f4cf93",
+  has lingoMediaType "application/vnd.lingo.grounding-solution+json",
+  has lingoByteLength 29,
+  has lingoText "{\"type\":{\"parentLabel\":null}}",
   has lingoCreatedAt 2026-07-11T14:00:03;
 
 put $outcomesItem isa LingoGroundingPlanItem,
@@ -274,10 +293,18 @@ put $outcomesItemRevision isa LingoGroundingPlanItemRevision,
   has lingoStableArtifactId "fixture:basketball:plan-item:outcomes",
   has lingoRevisionNumber 1,
   has lingoContentHash "2000000000000000000000000000000000000000000000000000000000000043",
-  has lingoContractVersion "ontology-lingo/0.1.0",
+  has lingoContractVersion "lingo-grounding-item/1",
   has lingoModelingAct "categorize",
   has lingoSchemaLifecycleIntent "defer",
   has lingoRationale "The Brief explicitly excludes outcomes and statistics.",
+  has lingoCreatedAt 2026-07-11T14:00:03;
+
+put $outcomesItemPayload isa LingoPayload,
+  has lingoPayloadId "fixture:basketball:plan-item:outcomes:r1:payload",
+  has lingoContentHash "4ccf0dec39d2e03df5d9165b005b8262943be6a045bd00b37699784ad81a45f7",
+  has lingoMediaType "application/vnd.lingo.grounding-solution+json",
+  has lingoByteLength 11,
+  has lingoText "{\"none\":{}}",
   has lingoCreatedAt 2026-07-11T14:00:03;
 
 put $rosterReadiness isa LingoGroundingReadinessEvaluation,
@@ -416,6 +443,9 @@ put lingoClaimSupportedBy (claim: $playerRevision, evidence: $rosterExcerpt);
 put lingoClaimSupportedBy (claim: $teamRevision, evidence: $rosterExcerpt);
 put lingoClaimSupportedBy (claim: $seasonRevision, evidence: $rosterExcerpt);
 put lingoClaimSupportedBy (claim: $frameRevision, evidence: $rosterExcerpt);
+put lingoClaimSupportedBy (claim: $playerRoleRevision, evidence: $rosterExcerpt);
+put lingoClaimSupportedBy (claim: $teamRoleRevision, evidence: $rosterExcerpt);
+put lingoClaimSupportedBy (claim: $seasonRoleRevision, evidence: $rosterExcerpt);
 put lingoClaimSupportedBy (claim: $constraintRevision, evidence: $rosterExcerpt);
 put lingoClaimSupportedBy (claim: $cqRevision, evidence: $rosterExcerpt);
 put lingoClaimSupportedBy (claim: $exclusionRevision, evidence: $scopeExcerpt);
@@ -439,6 +469,9 @@ put lingoPlanEvaluatedAgainstTarget (planRevision: $plan, targetContextRevision:
 put lingoPlanItemHasRevision (planItem: $rosterItem, itemRevision: $rosterItemRevision);
 put lingoPlanItemHasRevision (planItem: $teamItem, itemRevision: $teamItemRevision);
 put lingoPlanItemHasRevision (planItem: $outcomesItem, itemRevision: $outcomesItemRevision);
+put lingoArtifactHasPayload (artifact: $rosterItemRevision, payload: $rosterItemPayload);
+put lingoArtifactHasPayload (artifact: $teamItemRevision, payload: $teamItemPayload);
+put lingoArtifactHasPayload (artifact: $outcomesItemRevision, payload: $outcomesItemPayload);
 put lingoPlanIncludesItemRevision (planRevision: $plan, itemRevision: $rosterItemRevision);
 put lingoPlanIncludesItemRevision (planRevision: $plan, itemRevision: $teamItemRevision);
 put lingoPlanIncludesItemRevision (planRevision: $plan, itemRevision: $outcomesItemRevision);

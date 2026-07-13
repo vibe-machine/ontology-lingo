@@ -103,7 +103,7 @@ put $plan isa LingoGroundingPlanRevision,
   has lingoStableArtifactId "fixture:minimal-sprint:plan",
   has lingoRevisionNumber 1,
   has lingoContentHash "1000000000000000000000000000000000000000000000000000000000000030",
-  has lingoContractVersion "ontology-lingo/0.1.0",
+  has lingoContractVersion "lingo-grounding-plan/1",
   has lingoCreatedAt 2026-07-11T13:00:03;
 
 put $planItem isa LingoGroundingPlanItem,
@@ -115,12 +115,20 @@ put $planItemRevision isa LingoGroundingPlanItemRevision,
   has lingoStableArtifactId "fixture:minimal-sprint:plan-item:sprint",
   has lingoRevisionNumber 1,
   has lingoContentHash "1000000000000000000000000000000000000000000000000000000000000031",
-  has lingoContractVersion "ontology-lingo/0.1.0",
+  has lingoContractVersion "lingo-grounding-item/1",
   has lingoModelingAct "specialize",
   has lingoSchemaLifecycleIntent "add",
   has lingoProposedTargetLabel "Sprint",
   has lingoProposedTargetKind "entity",
   has lingoRationale "Create one sparse concept without inventing identity or lifecycle commitments.",
+  has lingoCreatedAt 2026-07-11T13:00:03;
+
+put $planItemPayload isa LingoPayload,
+  has lingoPayloadId "fixture:minimal-sprint:plan-item:sprint:r1:payload",
+  has lingoContentHash "7bde646356601f6b6fd5cc99adb5350da1c50f6c1951a6dec04e667d66f4cf93",
+  has lingoMediaType "application/vnd.lingo.grounding-solution+json",
+  has lingoByteLength 29,
+  has lingoText "{\"type\":{\"parentLabel\":null}}",
   has lingoCreatedAt 2026-07-11T13:00:03;
 
 put $readiness isa LingoGroundingReadinessEvaluation,
@@ -218,6 +226,7 @@ put lingoPlanGroundsBrief (planRevision: $plan, briefRevision: $brief);
 put lingoPlanEvaluatedAgainstTarget (planRevision: $plan, targetContextRevision: $target);
 put lingoPlanItemHasRevision (planItem: $planItem, itemRevision: $planItemRevision);
 put lingoPlanIncludesItemRevision (planRevision: $plan, itemRevision: $planItemRevision);
+put lingoArtifactHasPayload (artifact: $planItemRevision, payload: $planItemPayload);
 put lingoPlanItemInterpretsBriefElement (planItemRevision: $planItemRevision, briefElementRevision: $conceptRevision);
 put lingoReadinessEvaluationEvaluates (evaluation: $readiness, subject: $planItemRevision);
 put lingoHumanDecisionDecides (decision: $decision, subject: $planItemRevision);
