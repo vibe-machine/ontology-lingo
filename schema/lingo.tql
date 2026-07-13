@@ -113,6 +113,14 @@ attribute lingoActualResult, value string;
 attribute lingoVerificationState, value string @values("running", "blocked", "passed", "failed", "abandoned");
 attribute lingoMutationName, value string;
 attribute lingoMutationKilled, value boolean;
+attribute lingoMutationFingerprint, value string;
+attribute lingoMutationTargetLabel, value string;
+attribute lingoExpectedFailureStage, value string @values("validate", "createShadow", "applyChangeSet", "insertGivens", "insertWitness", "insertAntiWitness", "executeQuestion", "compareResult", "discardShadow");
+attribute lingoActualFailureStage, value string @values("validate", "createShadow", "applyChangeSet", "insertGivens", "insertWitness", "insertAntiWitness", "executeQuestion", "compareResult", "discardShadow");
+attribute lingoVerificationProvider, value string;
+attribute lingoVerificationModel, value string;
+attribute lingoVerificationToolVersion, value string;
+attribute lingoVerificationTypeDBVersion, value string;
 attribute lingoDiagnostic, value string;
 
 attribute lingoDatabaseName, value string;
@@ -243,7 +251,8 @@ entity LingoModelingBriefRevision sub LingoRevisionArtifact,
   plays lingoBriefAmendmentTransition:baseBriefRevision,
   plays lingoBriefAmendmentTransition:revisedBriefRevision,
   plays lingoPlanGroundsBrief:briefRevision,
-  plays lingoExecutableCompiledFromBrief:briefRevision;
+  plays lingoExecutableCompiledFromBrief:briefRevision,
+  plays lingoVerificationVerifiesBrief:briefRevision;
 
 entity LingoBriefElement sub LingoArtifact,
   owns lingoBriefElementId @key,
@@ -422,7 +431,8 @@ entity LingoOntologyTargetContextRevision sub LingoRevisionArtifact,
   plays lingoWorkbookHasTargetContextRevision:targetContextRevision,
   plays lingoWorkbookCurrentTargetContext:targetContextRevision,
   plays lingoTargetUsesModuleVersion:targetContextRevision,
-  plays lingoPlanEvaluatedAgainstTarget:targetContextRevision;
+  plays lingoPlanEvaluatedAgainstTarget:targetContextRevision,
+  plays lingoVerificationVerifiesTargetContext:targetContextRevision;
 
 entity LingoGroundingPlanRevision sub LingoRevisionArtifact,
   plays lingoWorkbookHasPlanRevision:planRevision,
@@ -431,7 +441,8 @@ entity LingoGroundingPlanRevision sub LingoRevisionArtifact,
   plays lingoPlanEvaluatedAgainstTarget:planRevision,
   plays lingoPlanIncludesItemRevision:planRevision,
   plays lingoChangeSetCompiledFromPlan:planRevision,
-  plays lingoExecutableCompiledFromPlan:planRevision;
+  plays lingoExecutableCompiledFromPlan:planRevision,
+  plays lingoVerificationVerifiesPlan:planRevision;
 
 entity LingoGroundingPlanItem sub LingoArtifact,
   owns lingoPlanItemId @key,
@@ -718,15 +729,26 @@ entity LingoStagingBinding sub LingoArtifact,
 
 entity LingoVerificationRun sub LingoArtifact,
   owns lingoVerificationRunId @key,
+  owns lingoContractVersion,
   owns lingoVerificationState,
   owns lingoCompletedAt @card(0..1),
   owns lingoConfigurationFingerprint,
+  owns lingoVerificationProvider,
+  owns lingoVerificationModel @card(0..1),
+  owns lingoVerificationToolVersion,
+  owns lingoVerificationTypeDBVersion @card(0..1),
+  owns lingoBlockedReason @card(0..1),
   plays lingoWorkbookHasVerificationRun:verificationRun,
+  plays lingoVerificationVerifiesBrief:verificationRun,
+  plays lingoVerificationVerifiesTargetContext:verificationRun,
+  plays lingoVerificationVerifiesPlan:verificationRun,
   plays lingoVerificationVerifiesChangeSet:verificationRun,
   plays lingoVerificationExecutesQuestion:verificationRun,
   plays lingoVerificationUsesFixture:verificationRun,
   plays lingoVerificationRunsInBinding:verificationRun,
   plays lingoVerificationHasResult:verificationRun,
+  plays lingoVerificationRetries:retryRun,
+  plays lingoVerificationRetries:priorRun,
   plays lingoApplyReceiptAuthorizedByVerification:verificationRun;
 
 entity LingoVerificationResult sub LingoArtifact,
@@ -736,6 +758,10 @@ entity LingoVerificationResult sub LingoArtifact,
   owns lingoActualResult @card(0..1),
   owns lingoMutationName @card(0..1),
   owns lingoMutationKilled @card(0..1),
+  owns lingoMutationFingerprint @card(0..1),
+  owns lingoMutationTargetLabel @card(0..1),
+  owns lingoExpectedFailureStage @card(0..),
+  owns lingoActualFailureStage @card(0..1),
   owns lingoDiagnostic @card(0..1),
   plays lingoVerificationHasResult:verificationResult,
   plays lingoVerificationResultForQuestion:verificationResult;
@@ -796,6 +822,18 @@ relation lingoWorkbookHasVerificationRun,
   relates workbook,
   relates verificationRun;
 
+relation lingoVerificationVerifiesBrief,
+  relates verificationRun,
+  relates briefRevision;
+
+relation lingoVerificationVerifiesTargetContext,
+  relates verificationRun,
+  relates targetContextRevision;
+
+relation lingoVerificationVerifiesPlan,
+  relates verificationRun,
+  relates planRevision;
+
 relation lingoVerificationVerifiesChangeSet,
   relates verificationRun,
   relates changeSet;
@@ -811,6 +849,10 @@ relation lingoVerificationRunsInBinding,
 relation lingoVerificationHasResult,
   relates verificationRun,
   relates verificationResult;
+
+relation lingoVerificationRetries,
+  relates retryRun,
+  relates priorRun;
 
 # ── Apply lineage ───────────────────────────────────────────────────────────
 
