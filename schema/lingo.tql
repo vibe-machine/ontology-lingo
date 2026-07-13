@@ -18,6 +18,7 @@ attribute lingoEvaluationId, value string;
 attribute lingoChangeOperationId, value string;
 attribute lingoRelationRoleDefinitionId, value string;
 attribute lingoExecutableCqId, value string;
+attribute lingoInterpretationConfirmationId, value string;
 attribute lingoVerificationRunId, value string;
 attribute lingoVerificationResultId, value string;
 attribute lingoStagingBindingId, value string;
@@ -96,6 +97,14 @@ attribute lingoPlayerLabel, value string;
 attribute lingoSpecializedRoleName, value string;
 attribute lingoCompilerVersion, value string;
 attribute lingoRendererVersion, value string;
+attribute lingoExecutableState, value string @values("needsConfirmation", "ready", "blocked");
+attribute lingoResultContractKind, value string @values("rows", "scalar", "truth", "count");
+attribute lingoGeneratorProvider, value string;
+attribute lingoGeneratorModel, value string;
+attribute lingoPromptVersion, value string;
+attribute lingoBlockedReason, value string;
+attribute lingoInterpretationConfirmationState, value string @values("confirmed", "rejected");
+attribute lingoInterpretationHash, value string;
 
 attribute lingoExpectedResult, value string;
 attribute lingoActualResult, value string;
@@ -231,7 +240,8 @@ entity LingoModelingBriefRevision sub LingoRevisionArtifact,
   plays lingoBriefIncludesElementRevision:briefRevision,
   plays lingoBriefAmendmentTransition:baseBriefRevision,
   plays lingoBriefAmendmentTransition:revisedBriefRevision,
-  plays lingoPlanGroundsBrief:briefRevision;
+  plays lingoPlanGroundsBrief:briefRevision,
+  plays lingoExecutableCompiledFromBrief:briefRevision;
 
 entity LingoBriefElement sub LingoArtifact,
   owns lingoBriefElementId @key,
@@ -257,7 +267,8 @@ entity LingoBriefElementRevision sub LingoRevisionArtifact,
   plays lingoConstraintAppliesToBriefElement:constraintRevision,
   plays lingoConstraintAppliesToBriefElement:subjectRevision,
   plays lingoPlanItemInterpretsBriefElement:briefElementRevision,
-  plays lingoExecutableImplementsCompetencyQuestion:competencyQuestionRevision;
+  plays lingoExecutableImplementsCompetencyQuestion:competencyQuestionRevision,
+  plays lingoExecutableReferencesBriefElement:briefElementRevision;
 
 entity LingoBriefPurpose sub LingoBriefElement;
 entity LingoBriefScopeInclusion sub LingoBriefElement;
@@ -290,7 +301,8 @@ entity LingoBriefDomainConstraintRevision sub LingoBriefElementRevision,
   owns lingoMinimumCardinality @card(0..1),
   owns lingoMaximumCardinality @card(0..1),
   owns lingoUnboundedMaximum @card(0..1),
-  plays lingoPlanItemAffectedByConstraint:constraintRevision;
+  plays lingoPlanItemAffectedByConstraint:constraintRevision,
+  plays lingoExecutableTestsConstraint:constraintRevision;
 entity LingoBriefTemporalCommitmentRevision sub LingoBriefElementRevision;
 entity LingoBriefAssumptionRevision sub LingoBriefElementRevision;
 entity LingoBriefExclusionRevision sub LingoBriefElementRevision;
@@ -416,7 +428,8 @@ entity LingoGroundingPlanRevision sub LingoRevisionArtifact,
   plays lingoPlanGroundsBrief:planRevision,
   plays lingoPlanEvaluatedAgainstTarget:planRevision,
   plays lingoPlanIncludesItemRevision:planRevision,
-  plays lingoChangeSetCompiledFromPlan:planRevision;
+  plays lingoChangeSetCompiledFromPlan:planRevision,
+  plays lingoExecutableCompiledFromPlan:planRevision;
 
 entity LingoGroundingPlanItem sub LingoArtifact,
   owns lingoPlanItemId @key,
@@ -439,7 +452,8 @@ entity LingoGroundingPlanItemRevision sub LingoRevisionArtifact,
   plays lingoPlanItemOverrides:newerItemRevision,
   plays lingoPlanItemOverrides:olderItemRevision,
   plays lingoCandidateForPlanItem:planItemRevision,
-  plays lingoOperationRealizesPlanItem:planItemRevision;
+  plays lingoOperationRealizesPlanItem:planItemRevision,
+  plays lingoExecutableTestsPlanItem:planItemRevision;
 
 entity LingoGroundingCandidate sub LingoArtifact,
   owns lingoCandidateId @key,
@@ -653,11 +667,32 @@ LingoBriefRelationRoleRevision plays lingoRoleDefinitionImplementsBriefRole:brie
 entity LingoExecutableCompetencyQuestion sub LingoRevisionArtifact,
   owns lingoExecutableCqId @key,
   owns lingoCompilerVersion,
-  owns lingoExpectedResult,
+  owns lingoExecutableState,
+  owns lingoNormalizedInterpretation @card(0..1),
+  owns lingoResultContractKind @card(0..1),
+  owns lingoGeneratorProvider @card(0..1),
+  owns lingoGeneratorModel @card(0..1),
+  owns lingoPromptVersion @card(0..1),
+  owns lingoBlockedReason @card(0..1),
+  owns lingoExpectedResult @card(0..1),
   owns lingoMutationName @card(0..),
   plays lingoExecutableImplementsCompetencyQuestion:executableQuestion,
+  plays lingoExecutableCompiledFromBrief:executableQuestion,
+  plays lingoExecutableCompiledFromPlan:executableQuestion,
   plays lingoExecutableCompiledForChangeSet:executableQuestion,
+  plays lingoExecutableReferencesBriefElement:executableQuestion,
+  plays lingoExecutableTestsPlanItem:executableQuestion,
+  plays lingoExecutableTestsConstraint:executableQuestion,
+  plays lingoExecutableHasInterpretationConfirmation:executableQuestion,
   plays lingoVerificationExecutesQuestion:executableQuestion;
+
+entity LingoInterpretationConfirmation sub LingoArtifact,
+  owns lingoInterpretationConfirmationId @key,
+  owns lingoInterpretationConfirmationState,
+  owns lingoInterpretationHash,
+  owns lingoActorId,
+  owns lingoRationale @card(0..1),
+  plays lingoExecutableHasInterpretationConfirmation:confirmation;
 
 entity LingoStagingBinding sub LingoArtifact,
   owns lingoStagingBindingId @key,
@@ -697,9 +732,33 @@ relation lingoExecutableImplementsCompetencyQuestion,
   relates executableQuestion,
   relates competencyQuestionRevision;
 
+relation lingoExecutableCompiledFromBrief,
+  relates executableQuestion,
+  relates briefRevision;
+
+relation lingoExecutableCompiledFromPlan,
+  relates executableQuestion,
+  relates planRevision;
+
 relation lingoExecutableCompiledForChangeSet,
   relates executableQuestion,
   relates changeSet;
+
+relation lingoExecutableReferencesBriefElement,
+  relates executableQuestion,
+  relates briefElementRevision;
+
+relation lingoExecutableTestsPlanItem,
+  relates executableQuestion,
+  relates planItemRevision;
+
+relation lingoExecutableTestsConstraint,
+  relates executableQuestion,
+  relates constraintRevision;
+
+relation lingoExecutableHasInterpretationConfirmation,
+  relates executableQuestion,
+  relates confirmation;
 
 relation lingoWorkbookHasStagingBinding,
   relates workbook,

@@ -42,6 +42,12 @@ The full test loads gist, this schema, self-documentation, provenance, and both 
   will be added.
 - Evidence is stored once in the Workbook ledger and referenced by claims and decisions.
 - Revisions, decisions, Change Sets, Verification Runs, and Apply Receipts are immutable.
+- Competency questions remain canonical in the Brief. Each executable question
+  is a versioned derivative tied to one exact Brief, Plan, and Change Set; it
+  carries a typed answer contract, generator provenance, human interpretation
+  confirmations, and explicit links to the model commitments it tests.
+- Ambiguous or untranslated competency questions persist as blocked artifacts
+  instead of disappearing from verification readiness.
 - Human decision, grounding readiness, and verification are separate axes.
 - Raw TypeQL and large payloads are content-addressed derivatives, not opaque canonical rows.
 - Full-graph staging copies remain the operational strategy for now.
