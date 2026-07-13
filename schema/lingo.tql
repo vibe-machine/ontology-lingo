@@ -88,10 +88,12 @@ attribute lingoFindingCategory, value string @values("unsupportedInvention", "om
 attribute lingoOperationKind, value string;
 attribute lingoTargetLabel, value string;
 attribute lingoTargetKind, value string;
+attribute lingoParentLabel, value string;
 attribute lingoValueType, value string;
 attribute lingoAnnotation, value string;
 attribute lingoOwnerLabel, value string;
 attribute lingoPlayerLabel, value string;
+attribute lingoSpecializedRoleName, value string;
 attribute lingoCompilerVersion, value string;
 attribute lingoRendererVersion, value string;
 
@@ -591,12 +593,16 @@ entity LingoChangeOperation sub LingoArtifact,
   plays lingoRelationOperationHasRoleDefinition:relationOperation,
   plays lingoApplyOutcomeForOperation:operation;
 
-entity LingoDefineEntityOperation sub LingoChangeOperation;
-entity LingoDefineRelationOperation sub LingoChangeOperation;
+entity LingoDefineEntityOperation sub LingoChangeOperation,
+  owns lingoParentLabel @card(0..1);
+entity LingoDefineRelationOperation sub LingoChangeOperation,
+  owns lingoParentLabel @card(0..1);
 entity LingoDefineAttributeOperation sub LingoChangeOperation,
-  owns lingoValueType;
+  owns lingoValueType,
+  owns lingoParentLabel @card(0..1);
 entity LingoOwnsOperation sub LingoChangeOperation,
-  owns lingoOwnerLabel;
+  owns lingoOwnerLabel,
+  owns lingoAnnotation;
 entity LingoPlaysOperation sub LingoChangeOperation,
   owns lingoPlayerLabel,
   owns lingoRoleName;
@@ -608,6 +614,7 @@ entity LingoRelationRoleDefinition sub LingoArtifact,
   owns lingoRoleName,
   owns lingoRolePosition,
   owns lingoTargetLabel @card(0..1),
+  owns lingoSpecializedRoleName @card(0..1),
   plays lingoRelationOperationHasRoleDefinition:roleDefinition,
   plays lingoRoleDefinitionImplementsBriefRole:roleDefinition;
 
