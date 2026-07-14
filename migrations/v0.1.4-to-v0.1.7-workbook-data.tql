@@ -1,0 +1,14 @@
+match
+  $workbook isa LingoStudioWorkbook, has lingoCreatedAt $created;
+  not { $workbook has lingoUpdatedAt $_; };
+let $createdValue = $created;
+insert
+  $workbook has lingoUpdatedAt == $createdValue;
+
+match
+  $canonical isa LingoStudioWorkbook, has lingoWorkbookId $id;
+  $legacy isa LingoWorkbook, has workbookId $id, has workbookIntent $intent;
+  not { $canonical has lingoIntent $_; };
+let $intentValue = $intent;
+insert
+  $canonical has lingoIntent == $intentValue;

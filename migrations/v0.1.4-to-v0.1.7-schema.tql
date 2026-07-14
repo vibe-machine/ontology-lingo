@@ -1,0 +1,16 @@
+define
+  attribute lingoIntent, value string;
+  attribute lingoUpdatedAt, value datetime;
+
+define
+  entity LingoStudioWorkbook owns lingoIntent @card(0..1);
+
+define
+  entity LingoStudioWorkbook owns lingoUpdatedAt;
+
+redefine
+  attribute lingoSchemaLifecycleIntent
+    @values("add", "reuse", "noChange", "defer", "rename", "deprecate", "split", "merge", "undefine", "reparentExisting", "migrate");
+
+redefine
+  LingoExecutableCompetencyQuestion owns lingoExpectedResult @card(0..1);
