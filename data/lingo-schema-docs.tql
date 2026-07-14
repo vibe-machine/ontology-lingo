@@ -1,7 +1,7 @@
 # Provenance bootstrap
 # upstream-repo: https://github.com/vibe-machine/ontology-lingo
-# upstream-tag: v0.1.6
-# upstream-commit: 13a083df41f1261e900fd6cc9c33f6e55078e9b9
+# upstream-tag: v0.1.7
+# upstream-commit: 65ede0861e20547bfa00d58fa403b5af813cfe0f
 # source-artifacts:
 # - package.json
 # - schema/lingo.tql
@@ -25,7 +25,7 @@
 # - generated/apply-units/data/lingo-schema-docs/0016.tql
 # - generated/apply-units/data/lingo-schema-docs/0017.tql
 # - generated/apply-units/data/lingo-schema-docs/0018.tql
-# manifest: manifests/lingo-v0.1.6.package-manifest.json
+# manifest: manifests/lingo-v0.1.7.package-manifest.json
 # generator: hand-authored-package-bootstrap/0.1.0
 put $module isa SchemaModule,
   has moduleKey "lingo",

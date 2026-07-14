@@ -8,9 +8,10 @@ define
 define
   entity LingoStudioWorkbook owns lingoUpdatedAt;
 
-redefine
-  attribute lingoSchemaLifecycleIntent
-    @values("add", "reuse", "noChange", "defer", "rename", "deprecate", "split", "merge", "undefine", "reparentExisting", "migrate");
+undefine
+  @values from lingoSchemaLifecycleIntent value string;
 
-redefine
+define
+  lingoSchemaLifecycleIntent value string
+    @values("add", "reuse", "noChange", "defer", "rename", "deprecate", "split", "merge", "undefine", "reparentExisting", "migrate");
   LingoExecutableCompetencyQuestion owns lingoExpectedResult @card(0..1);

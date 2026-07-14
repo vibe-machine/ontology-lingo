@@ -6,8 +6,9 @@ insert
   $workbook has lingoUpdatedAt == $createdValue;
 
 match
-  $canonical isa LingoStudioWorkbook, has lingoWorkbookId $id;
-  $legacy isa LingoWorkbook, has workbookId $id, has workbookIntent $intent;
+  $canonical isa LingoStudioWorkbook, has lingoWorkbookId $canonicalId;
+  $legacy isa LingoWorkbook, has workbookId $legacyId, has workbookIntent $intent;
+  $canonicalId == $legacyId;
   not { $canonical has lingoIntent $_; };
 let $intentValue = $intent;
 insert
