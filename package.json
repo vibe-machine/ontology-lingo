@@ -208,7 +208,7 @@
             "units": [
               {
                 "kind": "write",
-                "path": "migrations/v0.1.6-to-v0.1.7.tql"
+                "path": "data/lingo-provenance.tql"
               }
             ]
           },

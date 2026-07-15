@@ -1,7 +1,7 @@
 # Provenance bootstrap
 # upstream-repo: https://github.com/vibe-machine/ontology-lingo
 # upstream-tag: v0.1.7
-# upstream-commit: 65ede0861e20547bfa00d58fa403b5af813cfe0f
+# upstream-commit: 43b0f9d1fd8704c2256c5f08dc03860dae380d6e
 # source-artifacts:
 # - package.json
 # - schema/lingo.tql

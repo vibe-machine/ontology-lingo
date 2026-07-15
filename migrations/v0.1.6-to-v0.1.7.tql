@@ -28,7 +28,7 @@ put $module isa SchemaModule,
   has moduleName "Lingo Studio Knowledge",
   has moduleKind "hand-authored-package";
 
-put $module isa OntologyModule,
+put $ontology_module isa OntologyModule,
   has moduleName "lingo",
   has moduleRepoUrl "https://github.com/vibe-machine/ontology-lingo";
 
@@ -40,7 +40,7 @@ put $version isa OntologyModuleVersion,
   has generatorName "hand-authored-package-bootstrap",
   has generatorVersion "0.1.0",
   has generatedAt "2026-07-14T20:28:18Z";
-put (version: $version, module: $module) isa ontologyModuleVersionOf;
+put (version: $version, module: $ontology_module) isa ontologyModuleVersionOf;
 
 match
   $target isa LingoOntologyTargetContextRevision,
