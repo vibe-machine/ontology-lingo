@@ -121,7 +121,7 @@
     ],
     "plans": [
       {
-        "id": "lingo-0.1.4-to-0.1.7",
+        "id": "lingo-0.1.4-to-0.1.8",
         "from": "0.1.4",
         "to": "0.1.8",
         "mode": "compatible",
@@ -155,7 +155,7 @@
         ]
       },
       {
-        "id": "lingo-0.1.5-to-0.1.7",
+        "id": "lingo-0.1.5-to-0.1.8",
         "from": "0.1.5",
         "to": "0.1.8",
         "mode": "compatible",
@@ -185,7 +185,46 @@
         ]
       },
       {
-        "id": "lingo-0.1.6-to-0.1.7",
+        "id": "lingo-0.1.6-to-0.1.8",
+        "from": "0.1.6",
+        "to": "0.1.8",
+        "mode": "compatible",
+        "snapshot": {
+          "required": false,
+          "label": "pre-lingo-0.1.8-migration"
+        },
+        "phases": [
+          {
+            "id": "preflight",
+            "units": [
+              {
+                "kind": "assert-data",
+                "path": "migrations/preflight/assert-v0.1.6-module-version.tql"
+              }
+            ]
+          },
+          {
+            "id": "migrate",
+            "units": [
+              {
+                "kind": "write",
+                "path": "data/lingo-provenance.tql"
+              }
+            ]
+          },
+          {
+            "id": "verify",
+            "units": [
+              {
+                "kind": "assert-data",
+                "path": "migrations/verify/assert-v0.1.8-module-version.tql"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lingo-0.1.7-to-0.1.8",
         "from": "0.1.7",
         "to": "0.1.8",
         "mode": "compatible",
@@ -208,7 +247,7 @@
             "units": [
               {
                 "kind": "write",
-                "path": "migrations/v0.1.7-to-v0.1.8.tql"
+                "path": "data/lingo-provenance.tql"
               }
             ]
           },

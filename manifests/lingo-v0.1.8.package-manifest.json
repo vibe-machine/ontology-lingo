@@ -8,11 +8,11 @@
   "upstream": {
     "repoUrl": "https://github.com/vibe-machine/ontology-lingo",
     "tag": "v0.1.8",
-    "commit": "42d3a6bab3dc698546897c8bea8a76ef56b68ef3",
+    "commit": "42a3006f89c4b0bc5ebd69e4c43eacd99a8a5a16",
     "sourceArtifacts": [
       {
         "path": "package.json",
-        "sha256": "d0a20029080df1f8cc438e8ed3d0d65dd7eeab494784b539cdc2c4f660b25f33"
+        "sha256": "20a2c7cd86fd44c6d972d3c2176dcf0afdb7c81c6c90a9d06fea17926e3717fc"
       },
       {
         "path": "schema/lingo.tql",
@@ -103,28 +103,28 @@
   "generator": {
     "name": "hand-authored-package-bootstrap",
     "version": "0.1.0",
-    "generatedAt": "2026-07-15T14:37:18Z"
+    "generatedAt": "2026-07-15T14:38:15Z"
   },
   "artifacts": [
     {
       "kind": "meta-schema",
       "path": "schema/self-describing-schema.tql",
-      "sha256": "add4cf04aa94da210ab4592099be5efec1e2a86f3c585ca1d329478d76f7f1bb"
+      "sha256": "2270aad0ad5283b5fdfb50267d1f4eecfd2ed0c65247807ef2a2b11fa6a32772"
     },
     {
       "kind": "provenance-schema",
       "path": "schema/package-provenance.tql",
-      "sha256": "5f19c5ff8caf1efdcdefc8cb648abe6af3afed58400fb58fe0549fa72e17d1a9"
+      "sha256": "81413e6c57695ed336dda1e9781601ccf8ee338bed3bf4acbc3d284569b7025c"
     },
     {
       "kind": "administrative-schema",
       "path": "schema/administrative-operations.tql",
-      "sha256": "bf2a1d91edaf814a11a3a2ec1f688692c28fb424690ac36258e272434dd94b64"
+      "sha256": "21be7ea2f3a3708f50d077339b436f829992bcfac7b71855c9c7b5b24f793a1f"
     },
     {
       "kind": "documentation",
       "path": "data/lingo-schema-docs.tql",
-      "sha256": "c1f13877c76b9dddccc4cc79919096802e86e517e72a82a238ac0192479f5ed7"
+      "sha256": "d8bae24ca7b03aeda3b81d3b1ae4cfff05e6debb9ebb07240fa1089a9e82c011"
     },
     {
       "kind": "manifest-schema",
@@ -134,12 +134,7 @@
     {
       "kind": "provenance-seeds",
       "path": "data/lingo-provenance.tql",
-      "sha256": "3c9bc8861c258c0aeb88ed73b9744943e759637ecb501a54a1aa7ae6c9cad0b1"
-    },
-    {
-      "kind": "migration",
-      "path": "migrations/v0.1.7-to-v0.1.8.tql",
-      "sha256": "840eca1bc4179bb5e304b0a0cbbd3c1bcb0c4f0dfd78185d5717b46a085c3a5a"
+      "sha256": "7d966218d1be9a41d41518e933857a1e5d90f532f1f5fceea3c7c57543c0b060"
     }
   ]
 }
