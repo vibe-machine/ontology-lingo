@@ -217,33 +217,36 @@ async function startTypedbServer(tempRoot) {
 
   const child = spawn(typedb, args, { cwd: tempRoot, stdio: ["ignore", "pipe", "pipe"] });
 
-  await new Promise((resolve, reject) => {
-    let output = "";
-    const timeout = setTimeout(() => {
-      reject(new Error(`TypeDB server did not become ready.\n${output}`));
-    }, 15000);
-
-    function onData(chunk) {
-      output += chunk.toString();
-      if (output.includes("Ready!")) {
-        clearTimeout(timeout);
-        resolve();
+  let output = "";
+  let startupError;
+  child.stdout.on("data", (chunk) => { output += chunk.toString(); });
+  child.stderr.on("data", (chunk) => { output += chunk.toString(); });
+  child.on("error", (error) => { startupError = error; });
+  try {
+    const deadline = Date.now() + 15000;
+    let lastProbe = "";
+    while (Date.now() < deadline) {
+      if (startupError) throw startupError;
+      if (child.exitCode !== null) {
+        throw new Error(`TypeDB server exited early with code ${child.exitCode}.\n${output}`);
       }
+      // Banner wording changes across TypeDB releases. Readiness means the
+      // authenticated console can actually talk to this disposable server.
+      const probe = spawnSync(typedb, [
+        "console", `--address=127.0.0.1:${grpcPort}`, "--username=admin",
+        "--password=password", "--tls-disabled", "--command", "database list",
+      ], { encoding: "utf8", timeout: 2000 });
+      if (probe.status === 0) return { child, grpcPort, typedb };
+      lastProbe = probe.error?.message ?? `${probe.stdout ?? ""}${probe.stderr ?? ""}`;
+      await new Promise((resolve) => setTimeout(resolve, 250));
     }
+    throw new Error(`TypeDB server did not become ready.\n${lastProbe}\n${output}`);
+  } catch (error) {
+    // The caller has no server handle until startup returns successfully.
+    await stopProcess(child);
+    throw error;
+  }
 
-    child.stdout.on("data", onData);
-    child.stderr.on("data", onData);
-    child.on("exit", (code) => {
-      clearTimeout(timeout);
-      reject(new Error(`TypeDB server exited early with code ${code}.\n${output}`));
-    });
-    child.on("error", (error) => {
-      clearTimeout(timeout);
-      reject(error);
-    });
-  });
-
-  return { child, grpcPort, typedb };
 }
 
 async function stopProcess(child) {

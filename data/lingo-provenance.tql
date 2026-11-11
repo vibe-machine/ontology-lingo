@@ -1,7 +1,7 @@
 # Provenance bootstrap
 # upstream-repo: https://github.com/vibe-machine/ontology-lingo
-# upstream-tag: v0.1.8
-# upstream-commit: 42a3006f89c4b0bc5ebd69e4c43eacd99a8a5a16
+# upstream-tag: v0.1.9
+# upstream-commit: 66ac2e24c1314bbd3f9bd1fc8bc1f465b5cf8d8d
 # source-artifacts:
 # - package.json
 # - schema/lingo.tql
@@ -25,7 +25,7 @@
 # - generated/apply-units/data/lingo-schema-docs/0016.tql
 # - generated/apply-units/data/lingo-schema-docs/0017.tql
 # - generated/apply-units/data/lingo-schema-docs/0018.tql
-# manifest: manifests/lingo-v0.1.8.package-manifest.json
+# manifest: manifests/lingo-v0.1.9.package-manifest.json
 # generator: hand-authored-package-bootstrap/0.1.0
 
 
@@ -34,24 +34,24 @@ put $module isa OntologyModule,
   has moduleRepoUrl "https://github.com/vibe-machine/ontology-lingo";
 
 put $version isa OntologyModuleVersion,
-  has moduleVersionKey "https://github.com/vibe-machine/ontology-lingo@0.1.8",
-  has moduleVersion "0.1.8",
-  has upstreamCommit "42a3006f89c4b0bc5ebd69e4c43eacd99a8a5a16",
-  has manifestPath "manifests/lingo-v0.1.8.package-manifest.json",
+  has moduleVersionKey "https://github.com/vibe-machine/ontology-lingo@0.1.9",
+  has moduleVersion "0.1.9",
+  has upstreamCommit "66ac2e24c1314bbd3f9bd1fc8bc1f465b5cf8d8d",
+  has manifestPath "manifests/lingo-v0.1.9.package-manifest.json",
   has generatorName "hand-authored-package-bootstrap",
   has generatorVersion "0.1.0",
-  has generatedAt "2026-07-15T14:38:15Z";
+  has generatedAt "2026-09-29T11:19:30Z";
 
 put (version: $version, module: $module) isa ontologyModuleVersionOf;
 
 put $s1 isa SourceArtifactRecord,
   has sourcePath "package.json",
-  has sourceSha256 "20a2c7cd86fd44c6d972d3c2176dcf0afdb7c81c6c90a9d06fea17926e3717fc";
+  has sourceSha256 "37a359532fdb391a4e8dce8f633d97a1687a4d3581608218e54dd46f4763a390";
 put (version: $version, sourceArtifact: $s1) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s2 isa SourceArtifactRecord,
   has sourcePath "schema/lingo.tql",
-  has sourceSha256 "6f79d401c60b3798222abee0db6cc036635c244fee23158316828b048d714e9e";
+  has sourceSha256 "1ff5deb0c7855e9819c3d32d15827651402bf055c1b7808244f620d08ca65d24";
 put (version: $version, sourceArtifact: $s2) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s3 isa SourceArtifactRecord,
@@ -157,25 +157,25 @@ put (version: $version, sourceArtifact: $s22) isa ontologyModuleVersionBasedOnSo
 put $g1 isa GeneratedArtifactRecord,
   has artifactPath "schema/self-describing-schema.tql",
   has artifactKind "meta-schema",
-  has artifactSha256 "2270aad0ad5283b5fdfb50267d1f4eecfd2ed0c65247807ef2a2b11fa6a32772";
+  has artifactSha256 "364eb8b63ad655f41b990eb93ebf3874879c9d17f82bae543561783b8d0c5e75";
 put (generatedArtifact: $g1, version: $version) isa generatedArtifactForOntologyModuleVersion;
 
 put $g2 isa GeneratedArtifactRecord,
   has artifactPath "schema/package-provenance.tql",
   has artifactKind "provenance-schema",
-  has artifactSha256 "81413e6c57695ed336dda1e9781601ccf8ee338bed3bf4acbc3d284569b7025c";
+  has artifactSha256 "a50fad4ceb3a826986f828ec720bc25d168d5f538ac2e810a2f48bedee5b4caf";
 put (generatedArtifact: $g2, version: $version) isa generatedArtifactForOntologyModuleVersion;
 
 put $g3 isa GeneratedArtifactRecord,
   has artifactPath "schema/administrative-operations.tql",
   has artifactKind "administrative-schema",
-  has artifactSha256 "21be7ea2f3a3708f50d077339b436f829992bcfac7b71855c9c7b5b24f793a1f";
+  has artifactSha256 "5a0cf32efb027ebf5e665e140a20bb68f2ce2b4c7655348d6c06206b8b1bf9ff";
 put (generatedArtifact: $g3, version: $version) isa generatedArtifactForOntologyModuleVersion;
 
 put $g4 isa GeneratedArtifactRecord,
   has artifactPath "data/lingo-schema-docs.tql",
   has artifactKind "documentation",
-  has artifactSha256 "d8bae24ca7b03aeda3b81d3b1ae4cfff05e6debb9ebb07240fa1089a9e82c011";
+  has artifactSha256 "4b0190394b6b89c3ead7c07970920ac2aff8c912538e13837f2e74a7ccbbd1e1";
 put (generatedArtifact: $g4, version: $version) isa generatedArtifactForOntologyModuleVersion;
 
 put $g5 isa GeneratedArtifactRecord,
