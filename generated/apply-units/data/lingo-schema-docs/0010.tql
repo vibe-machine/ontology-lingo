@@ -1,9 +1,9 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v0.1.1.package-manifest.json
+# manifest: manifests/lingo-v1.0.0.package-manifest.json
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoAnnotateOperation";
-  $struct_right isa SchemaResource, has typeLabel "LingoChangeOperation";
+  $struct_left isa SchemaResource, has typeLabel "aboutness";
+  $struct_right isa SchemaResource, has typeLabel "isAbout";
   not {
     (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
@@ -11,442 +11,442 @@ insert
   (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefExclusion";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElement";
+  $struct_left isa SchemaResource, has typeLabel "grounding";
+  $struct_right isa SchemaResource, has typeLabel "grounding:groundingClaim";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefExclusionRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElementRevision";
+  $struct_left isa SchemaResource, has typeLabel "hasAddress";
+  $struct_right isa SchemaResource, has typeLabel "hasAddress:address";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefIdentityClue";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElement";
+  $struct_left isa SchemaResource, has typeLabel "hasAddress";
+  $struct_right isa SchemaResource, has typeLabel "hasAddress:addressedThing";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefIdentityClueRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElementRevision";
+  $struct_left isa SchemaResource, has typeLabel "hasParticipant";
+  $struct_right isa SchemaResource, has typeLabel "hasParticipant:participant";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefProperty";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElement";
+  $struct_left isa SchemaResource, has typeLabel "hasParticipant";
+  $struct_right isa SchemaResource, has typeLabel "hasParticipant:participationContext";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefPropertyRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElementRevision";
+  $struct_left isa SchemaResource, has typeLabel "inclusion";
+  $struct_right isa SchemaResource, has typeLabel "inclusion:element";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefPurpose";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElement";
+  $struct_left isa SchemaResource, has typeLabel "inclusion";
+  $struct_right isa SchemaResource, has typeLabel "inclusion:revision";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefPurposeRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElementRevision";
+  $struct_left isa SchemaResource, has typeLabel "isAbout";
+  $struct_right isa SchemaResource, has typeLabel "isAbout:content";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefRelationFrame";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElement";
+  $struct_left isa SchemaResource, has typeLabel "isAbout";
+  $struct_right isa SchemaResource, has typeLabel "isAbout:subjectMatter";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefRelationFrameRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElementRevision";
+  $struct_left isa SchemaResource, has typeLabel "isBasedOn";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:basis";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefRelationRole";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElement";
+  $struct_left isa SchemaResource, has typeLabel "isBasedOn";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:derivedThing";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefRelationRoleRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElementRevision";
+  $struct_left isa SchemaResource, has typeLabel "isCategorizedBy";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:categorizedThing";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefScopeInclusion";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElement";
+  $struct_left isa SchemaResource, has typeLabel "isCategorizedBy";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:category";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefScopeInclusionRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElementRevision";
+  $struct_left isa SchemaResource, has typeLabel "isExpressedIn";
+  $struct_right isa SchemaResource, has typeLabel "isExpressedIn:expressedThing";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefTemporalCommitment";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElement";
+  $struct_left isa SchemaResource, has typeLabel "isExpressedIn";
+  $struct_right isa SchemaResource, has typeLabel "isExpressedIn:language";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoBriefTemporalCommitmentRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoBriefElementRevision";
+  $struct_left isa SchemaResource, has typeLabel "isMemberOf";
+  $struct_right isa SchemaResource, has typeLabel "isMemberOf:collection";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoChangeOperation";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "isMemberOf";
+  $struct_right isa SchemaResource, has typeLabel "isMemberOf:member";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoClarificationIssue";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "isPartOf";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf:part";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoDefineAttributeOperation";
-  $struct_right isa SchemaResource, has typeLabel "LingoChangeOperation";
+  $struct_left isa SchemaResource, has typeLabel "isPartOf";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf:whole";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoDefineEntityOperation";
-  $struct_right isa SchemaResource, has typeLabel "LingoChangeOperation";
+  $struct_left isa SchemaResource, has typeLabel "isProducedBy";
+  $struct_right isa SchemaResource, has typeLabel "isProducedBy:producer";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoDefineRelationOperation";
-  $struct_right isa SchemaResource, has typeLabel "LingoChangeOperation";
+  $struct_left isa SchemaResource, has typeLabel "isProducedBy";
+  $struct_right isa SchemaResource, has typeLabel "isProducedBy:product";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoEvidenceExcerpt";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "listClassification";
+  $struct_right isa SchemaResource, has typeLabel "listClassification:classifiedList";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoEvidenceSource";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "listClassification";
+  $struct_right isa SchemaResource, has typeLabel "listClassification:listKind";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoExecutableCompetencyQuestion";
-  $struct_right isa SchemaResource, has typeLabel "LingoRevisionArtifact";
+  $struct_left isa SchemaResource, has typeLabel "locationClassification";
+  $struct_right isa SchemaResource, has typeLabel "locationClassification:classifiedLocation";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoGroundingCandidate";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "locationClassification";
+  $struct_right isa SchemaResource, has typeLabel "locationClassification:locationKind";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoGroundingPlanItem";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "origin";
+  $struct_right isa SchemaResource, has typeLabel "origin:originClaim";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoGroundingPlanItemRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoRevisionArtifact";
+  $struct_left isa SchemaResource, has typeLabel "origin";
+  $struct_right isa SchemaResource, has typeLabel "origin:originKind";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoGroundingPlanRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoRevisionArtifact";
+  $struct_left isa SchemaResource, has typeLabel "placement";
+  $struct_right isa SchemaResource, has typeLabel "placement:passage";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoGroundingReadinessEvaluation";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "placement";
+  $struct_right isa SchemaResource, has typeLabel "placement:passageSource";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoHumanDecision";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "processRecord";
+  $struct_right isa SchemaResource, has typeLabel "processRecord:record";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoModelingBriefRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoRevisionArtifact";
+  $struct_left isa SchemaResource, has typeLabel "processRecord";
+  $struct_right isa SchemaResource, has typeLabel "processRecord:recordedReading";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoModelingInput";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "questionReference";
+  $struct_right isa SchemaResource, has typeLabel "questionReference:question";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoOntologyChangeSet";
-  $struct_right isa SchemaResource, has typeLabel "LingoRevisionArtifact";
+  $struct_left isa SchemaResource, has typeLabel "questionReference";
+  $struct_right isa SchemaResource, has typeLabel "questionReference:referencedElement";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoOntologyTargetContextRevision";
-  $struct_right isa SchemaResource, has typeLabel "LingoRevisionArtifact";
+  $struct_left isa SchemaResource, has typeLabel "readership";
+  $struct_right isa SchemaResource, has typeLabel "readership:reader";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoOwnsOperation";
-  $struct_right isa SchemaResource, has typeLabel "LingoChangeOperation";
+  $struct_left isa SchemaResource, has typeLabel "readership";
+  $struct_right isa SchemaResource, has typeLabel "readership:reading";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoPayload";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "readingSubject";
+  $struct_right isa SchemaResource, has typeLabel "readingSubject:pass";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoPlaysOperation";
-  $struct_right isa SchemaResource, has typeLabel "LingoChangeOperation";
+  $struct_left isa SchemaResource, has typeLabel "readingSubject";
+  $struct_right isa SchemaResource, has typeLabel "readingSubject:sourceRead";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoRelationRoleDefinition";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "refersTo";
+  $struct_right isa SchemaResource, has typeLabel "refersTo:referent";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoRevisionArtifact";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "refersTo";
+  $struct_right isa SchemaResource, has typeLabel "refersTo:referringThing";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoStagingBinding";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "replacement";
+  $struct_right isa SchemaResource, has typeLabel "replacement:newer";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoStudioWorkbook";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "replacement";
+  $struct_right isa SchemaResource, has typeLabel "replacement:older";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoVerificationResult";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "revisionHistory";
+  $struct_right isa SchemaResource, has typeLabel "revisionHistory:brief";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoVerificationRun";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "revisionHistory";
+  $struct_right isa SchemaResource, has typeLabel "revisionHistory:revision";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoWorkbook";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "sourceFormat";
+  $struct_right isa SchemaResource, has typeLabel "sourceFormat:format";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoWorkbookRow";
-  $struct_right isa SchemaResource, has typeLabel "LingoArtifact";
+  $struct_left isa SchemaResource, has typeLabel "sourceFormat";
+  $struct_right isa SchemaResource, has typeLabel "sourceFormat:formattedSource";
   not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoAnnotateOperation";
-  $struct_right isa SchemaResource, has typeLabel "lingoAnnotation";
+  $struct_left isa SchemaResource, has typeLabel "standing";
+  $struct_right isa SchemaResource, has typeLabel "standing:state";
   not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoApplyOperationOutcome";
-  $struct_right isa SchemaResource, has typeLabel "lingoApplyOutcome";
+  $struct_left isa SchemaResource, has typeLabel "standing";
+  $struct_right isa SchemaResource, has typeLabel "standing:subject";
   not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoApplyOperationOutcome";
-  $struct_right isa SchemaResource, has typeLabel "lingoApplyOutcomeId";
+  $struct_left isa SchemaResource, has typeLabel "support";
+  $struct_right isa SchemaResource, has typeLabel "support:evidence";
   not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
-  $struct_left isa SchemaResource, has typeLabel "LingoApplyOperationOutcome";
-  $struct_right isa SchemaResource, has typeLabel "lingoDiagnostic";
+  $struct_left isa SchemaResource, has typeLabel "support";
+  $struct_right isa SchemaResource, has typeLabel "support:supportedClaim";
   not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };
 insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;

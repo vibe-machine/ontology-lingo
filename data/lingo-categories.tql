@@ -1,0 +1,60 @@
+# The fixed lists of the Lingo ontology.
+# Each is a category a reader can list and query. `put` writes a value only when it is missing.
+
+put $c1 isa SourceKind, has name "book";
+put $c2 isa SourceKind, has name "essay";
+put $c3 isa SourceKind, has name "schema";
+put $c4 isa SourceKind, has name "code";
+put $c5 isa SourceKind, has name "session";
+
+put $c6 isa EpistemicState, has name "stated";
+put $c7 isa EpistemicState, has name "implied";
+put $c8 isa EpistemicState, has name "asserted";
+put $c9 isa EpistemicState, has name "suggested";
+put $c10 isa EpistemicState, has name "assumed";
+
+put $c11 isa ClaimOrigin, has name "statement";
+put $c12 isa ClaimOrigin, has name "story";
+
+put $c13 isa ConceptKind, has name "thing";
+put $c14 isa ConceptKind, has name "document";
+put $c15 isa ConceptKind, has name "group";
+put $c16 isa ConceptKind, has name "role";
+put $c17 isa ConceptKind, has name "event";
+put $c18 isa ConceptKind, has name "state";
+put $c19 isa ConceptKind, has name "measure";
+put $c20 isa ConceptKind, has name "activity";
+put $c21 isa ConceptKind, has name "quality";
+
+put $c22 isa Weight, has name "central";
+put $c23 isa Weight, has name "supporting";
+put $c24 isa Weight, has name "passing";
+
+put $c25 isa ListKind, has name "kinds";
+put $c26 isa ListKind, has name "parts";
+put $c27 isa ListKind, has name "options";
+put $c28 isa ListKind, has name "stages";
+
+put $c29 isa RuleStrength, has name "must";
+put $c30 isa RuleStrength, has name "should";
+put $c31 isa RuleStrength, has name "guideline";
+
+put $c32 isa DutyMode, has name "does";
+put $c33 isa DutyMode, has name "decides";
+put $c34 isa DutyMode, has name "approves";
+put $c35 isa DutyMode, has name "answers for";
+put $c36 isa DutyMode, has name "may";
+put $c37 isa DutyMode, has name "may not";
+
+put $c38 isa CheckVerdict, has name "confirmed";
+put $c39 isa CheckVerdict, has name "overstated";
+put $c40 isa CheckVerdict, has name "unsupported";
+
+put $c41 isa TermFit, has name "same";
+put $c42 isa TermFit, has name "narrower";
+put $c43 isa TermFit, has name "broader";
+put $c44 isa TermFit, has name "related";
+put $c45 isa TermFit, has name "different";
+
+put $c46 isa LocationKind, has name "web address";
+put $c47 isa LocationKind, has name "local file";

@@ -1,0 +1,2 @@
+# 27. From which copy was a reading made?
+match $r isa Reading, has readingId $rid; copyRead (readingOfCopy: $r, copy: $l); $l has containedText $copy; select $rid, $copy;

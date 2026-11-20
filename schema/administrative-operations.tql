@@ -1,12 +1,12 @@
 # Provenance bootstrap
 # upstream-repo: https://github.com/vibe-machine/ontology-lingo
 # upstream-tag: v0.1.9
-# upstream-commit: 66ac2e24c1314bbd3f9bd1fc8bc1f465b5cf8d8d
+# upstream-commit: 992b3324f98d5e2760fe6796e7b01a0c77e681ad
 # source-artifacts:
 # - package.json
 # - schema/lingo.tql
-# - fixtures/minimal-sprint.tql
-# - fixtures/basketball.tql
+# - data/lingo-categories.tql
+# - data/lingo-formats.tql
 # - generated/apply-units/data/lingo-schema-docs/0001.tql
 # - generated/apply-units/data/lingo-schema-docs/0002.tql
 # - generated/apply-units/data/lingo-schema-docs/0003.tql
@@ -18,13 +18,6 @@
 # - generated/apply-units/data/lingo-schema-docs/0009.tql
 # - generated/apply-units/data/lingo-schema-docs/0010.tql
 # - generated/apply-units/data/lingo-schema-docs/0011.tql
-# - generated/apply-units/data/lingo-schema-docs/0012.tql
-# - generated/apply-units/data/lingo-schema-docs/0013.tql
-# - generated/apply-units/data/lingo-schema-docs/0014.tql
-# - generated/apply-units/data/lingo-schema-docs/0015.tql
-# - generated/apply-units/data/lingo-schema-docs/0016.tql
-# - generated/apply-units/data/lingo-schema-docs/0017.tql
-# - generated/apply-units/data/lingo-schema-docs/0018.tql
 # manifest: manifests/lingo-v0.1.9.package-manifest.json
 # generator: hand-authored-package-bootstrap/0.1.0
 define
@@ -42,3 +35,21 @@ relation installationOfOntologyModuleVersion sub isBasedOn,
     relates version as basis;
 
 OntologyModuleVersion plays installationOfOntologyModuleVersion:version;
+
+# Optional install-record fields (gist 5.1.0). All optional, so records
+# written before 5.1.0 stay valid. A failed install has no
+# installationOfOntologyModuleVersion link, so the record names its package
+# (installedModuleRepoUrl) and version (targetModuleVersion) itself.
+attribute previousModuleVersion, value string;
+attribute targetModuleVersion, value string;
+attribute installedModuleRepoUrl, value string;
+attribute installationTrigger, value string @values("install", "upgrade", "rebuild", "migration");
+attribute installationOutcome, value string @values("succeeded", "failed");
+attribute installationError, value string;
+
+OntologyModuleInstallation owns previousModuleVersion @card(0..1),
+    owns targetModuleVersion @card(0..1),
+    owns installedModuleRepoUrl @card(0..1),
+    owns installationTrigger @card(0..1),
+    owns installationOutcome @card(0..1),
+    owns installationError @card(0..1);

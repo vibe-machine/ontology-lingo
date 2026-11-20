@@ -1,852 +1,452 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v0.1.1.package-manifest.json
+# manifest: manifests/lingo-v1.0.0.package-manifest.json
 
-put $generated_role_1 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoApplyOutcomeForOperation:operation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoApplyOutcomeForOperation:operation",
-  has typeLabel "lingoApplyOutcomeForOperation:operation",
-  has kind "role",
-  has roleName "operation",
-  has prefLabel "operation",
-  has definition "Role 'operation' in relation 'lingoApplyOutcomeForOperation'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoApplyOutcomeForOperation:operation";
+  $struct_left isa SchemaResource, has typeLabel "aboutness";
+  $struct_right isa SchemaResource, has typeLabel "isAbout";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_25 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoChangeSetContainsOperation:changeSet",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoChangeSetContainsOperation:changeSet",
-  has typeLabel "lingoChangeSetContainsOperation:changeSet",
-  has kind "role",
-  has roleName "changeSet",
-  has prefLabel "changeSet",
-  has definition "Role 'changeSet' in relation 'lingoChangeSetContainsOperation'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoChangeSetContainsOperation:changeSet";
+  $struct_left isa SchemaResource, has typeLabel "ImpliedQuestion";
+  $struct_right isa SchemaResource, has typeLabel "SourceClaim";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_26 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoChangeSetContainsOperation:operation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoChangeSetContainsOperation:operation",
-  has typeLabel "lingoChangeSetContainsOperation:operation",
-  has kind "role",
-  has roleName "operation",
-  has prefLabel "operation",
-  has definition "Role 'operation' in relation 'lingoChangeSetContainsOperation'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoChangeSetContainsOperation:operation";
+  $struct_left isa SchemaResource, has typeLabel "inclusion";
+  $struct_right isa SchemaResource, has typeLabel "isMemberOf";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_27 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoClaimSupportedBy:claim",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoClaimSupportedBy:claim",
-  has typeLabel "lingoClaimSupportedBy:claim",
-  has kind "role",
-  has roleName "claim",
-  has prefLabel "claim",
-  has definition "Role 'claim' in relation 'lingoClaimSupportedBy'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoClaimSupportedBy:claim";
+  $struct_left isa SchemaResource, has typeLabel "inclusion:element";
+  $struct_right isa SchemaResource, has typeLabel "isMemberOf:member";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_28 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoClaimSupportedBy:evidence",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoClaimSupportedBy:evidence",
-  has typeLabel "lingoClaimSupportedBy:evidence",
-  has kind "role",
-  has roleName "evidence",
-  has prefLabel "evidence",
-  has definition "Role 'evidence' in relation 'lingoClaimSupportedBy'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoClaimSupportedBy:evidence";
+  $struct_left isa SchemaResource, has typeLabel "inclusion:revision";
+  $struct_right isa SchemaResource, has typeLabel "isMemberOf:collection";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_29 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoClarificationConcerns:clarificationIssue",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoClarificationConcerns:clarificationIssue",
-  has typeLabel "lingoClarificationConcerns:clarificationIssue",
-  has kind "role",
-  has roleName "clarificationIssue",
-  has prefLabel "clarificationIssue",
-  has definition "Role 'clarificationIssue' in relation 'lingoClarificationConcerns'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoClarificationConcerns:clarificationIssue";
+  $struct_left isa SchemaResource, has typeLabel "LifeHistory";
+  $struct_right isa SchemaResource, has typeLabel "SourceClaim";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_30 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoClarificationConcerns:subject",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoClarificationConcerns:subject",
-  has typeLabel "lingoClarificationConcerns:subject",
-  has kind "role",
-  has roleName "subject",
-  has prefLabel "subject",
-  has definition "Role 'subject' in relation 'lingoClarificationConcerns'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoClarificationConcerns:subject";
+  $struct_left isa SchemaResource, has typeLabel "LinkClaim";
+  $struct_right isa SchemaResource, has typeLabel "SourceClaim";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_31 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoConstraintAppliesToBriefElement:constraintRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoConstraintAppliesToBriefElement:constraintRevision",
-  has typeLabel "lingoConstraintAppliesToBriefElement:constraintRevision",
-  has kind "role",
-  has roleName "constraintRevision",
-  has prefLabel "constraintRevision",
-  has definition "Role 'constraintRevision' in relation 'lingoConstraintAppliesToBriefElement'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoConstraintAppliesToBriefElement:constraintRevision";
+  $struct_left isa SchemaResource, has typeLabel "listClassification";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_32 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoConstraintAppliesToBriefElement:subjectRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoConstraintAppliesToBriefElement:subjectRevision",
-  has typeLabel "lingoConstraintAppliesToBriefElement:subjectRevision",
-  has kind "role",
-  has roleName "subjectRevision",
-  has prefLabel "subjectRevision",
-  has definition "Role 'subjectRevision' in relation 'lingoConstraintAppliesToBriefElement'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoConstraintAppliesToBriefElement:subjectRevision";
+  $struct_left isa SchemaResource, has typeLabel "listClassification:classifiedList";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:categorizedThing";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_33 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoEvidenceSourceContainsExcerpt:evidenceSource",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoEvidenceSourceContainsExcerpt:evidenceSource",
-  has typeLabel "lingoEvidenceSourceContainsExcerpt:evidenceSource",
-  has kind "role",
-  has roleName "evidenceSource",
-  has prefLabel "evidenceSource",
-  has definition "Role 'evidenceSource' in relation 'lingoEvidenceSourceContainsExcerpt'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoEvidenceSourceContainsExcerpt:evidenceSource";
+  $struct_left isa SchemaResource, has typeLabel "listClassification:listKind";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:category";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_34 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoEvidenceSourceContainsExcerpt:excerpt",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoEvidenceSourceContainsExcerpt:excerpt",
-  has typeLabel "lingoEvidenceSourceContainsExcerpt:excerpt",
-  has kind "role",
-  has roleName "excerpt",
-  has prefLabel "excerpt",
-  has definition "Role 'excerpt' in relation 'lingoEvidenceSourceContainsExcerpt'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoEvidenceSourceContainsExcerpt:excerpt";
+  $struct_left isa SchemaResource, has typeLabel "locationClassification";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_35 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoExecutableCompiledForChangeSet:changeSet",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoExecutableCompiledForChangeSet:changeSet",
-  has typeLabel "lingoExecutableCompiledForChangeSet:changeSet",
-  has kind "role",
-  has roleName "changeSet",
-  has prefLabel "changeSet",
-  has definition "Role 'changeSet' in relation 'lingoExecutableCompiledForChangeSet'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoExecutableCompiledForChangeSet:changeSet";
+  $struct_left isa SchemaResource, has typeLabel "locationClassification:classifiedLocation";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:categorizedThing";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_36 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoExecutableCompiledForChangeSet:executableQuestion",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoExecutableCompiledForChangeSet:executableQuestion",
-  has typeLabel "lingoExecutableCompiledForChangeSet:executableQuestion",
-  has kind "role",
-  has roleName "executableQuestion",
-  has prefLabel "executableQuestion",
-  has definition "Role 'executableQuestion' in relation 'lingoExecutableCompiledForChangeSet'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoExecutableCompiledForChangeSet:executableQuestion";
+  $struct_left isa SchemaResource, has typeLabel "locationClassification:locationKind";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:category";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_37 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoExecutableImplementsCompetencyQuestion:competencyQuestionRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoExecutableImplementsCompetencyQuestion:competencyQuestionRevision",
-  has typeLabel "lingoExecutableImplementsCompetencyQuestion:competencyQuestionRevision",
-  has kind "role",
-  has roleName "competencyQuestionRevision",
-  has prefLabel "competencyQuestionRevision",
-  has definition "Role 'competencyQuestionRevision' in relation 'lingoExecutableImplementsCompetencyQuestion'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoExecutableImplementsCompetencyQuestion:competencyQuestionRevision";
+  $struct_left isa SchemaResource, has typeLabel "LocationKind";
+  $struct_right isa SchemaResource, has typeLabel "ElectronicAddressType";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_38 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoExecutableImplementsCompetencyQuestion:executableQuestion",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoExecutableImplementsCompetencyQuestion:executableQuestion",
-  has typeLabel "lingoExecutableImplementsCompetencyQuestion:executableQuestion",
-  has kind "role",
-  has roleName "executableQuestion",
-  has prefLabel "executableQuestion",
-  has definition "Role 'executableQuestion' in relation 'lingoExecutableImplementsCompetencyQuestion'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoExecutableImplementsCompetencyQuestion:executableQuestion";
+  $struct_left isa SchemaResource, has typeLabel "ModelingBrief";
+  $struct_right isa SchemaResource, has typeLabel "Specification";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_39 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoHumanDecisionDecides:decision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoHumanDecisionDecides:decision",
-  has typeLabel "lingoHumanDecisionDecides:decision",
-  has kind "role",
-  has roleName "decision",
-  has prefLabel "decision",
-  has definition "Role 'decision' in relation 'lingoHumanDecisionDecides'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoHumanDecisionDecides:decision";
+  $struct_left isa SchemaResource, has typeLabel "origin";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_40 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoHumanDecisionDecides:subject",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoHumanDecisionDecides:subject",
-  has typeLabel "lingoHumanDecisionDecides:subject",
-  has kind "role",
-  has roleName "subject",
-  has prefLabel "subject",
-  has definition "Role 'subject' in relation 'lingoHumanDecisionDecides'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoHumanDecisionDecides:subject";
+  $struct_left isa SchemaResource, has typeLabel "origin:originClaim";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:categorizedThing";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_41 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoInputUsesEvidenceSource:evidenceSource",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoInputUsesEvidenceSource:evidenceSource",
-  has typeLabel "lingoInputUsesEvidenceSource:evidenceSource",
-  has kind "role",
-  has roleName "evidenceSource",
-  has prefLabel "evidenceSource",
-  has definition "Role 'evidenceSource' in relation 'lingoInputUsesEvidenceSource'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoInputUsesEvidenceSource:evidenceSource";
+  $struct_left isa SchemaResource, has typeLabel "origin:originKind";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:category";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_42 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoInputUsesEvidenceSource:input",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoInputUsesEvidenceSource:input",
-  has typeLabel "lingoInputUsesEvidenceSource:input",
-  has kind "role",
-  has roleName "input",
-  has prefLabel "input",
-  has definition "Role 'input' in relation 'lingoInputUsesEvidenceSource'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoInputUsesEvidenceSource:input";
+  $struct_left isa SchemaResource, has typeLabel "Passage";
+  $struct_right isa SchemaResource, has typeLabel "Content";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_43 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOperationDependsOn:dependentOperation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoOperationDependsOn:dependentOperation",
-  has typeLabel "lingoOperationDependsOn:dependentOperation",
-  has kind "role",
-  has roleName "dependentOperation",
-  has prefLabel "dependentOperation",
-  has definition "Role 'dependentOperation' in relation 'lingoOperationDependsOn'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOperationDependsOn:dependentOperation";
+  $struct_left isa SchemaResource, has typeLabel "placement";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_44 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOperationDependsOn:prerequisiteOperation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoOperationDependsOn:prerequisiteOperation",
-  has typeLabel "lingoOperationDependsOn:prerequisiteOperation",
-  has kind "role",
-  has roleName "prerequisiteOperation",
-  has prefLabel "prerequisiteOperation",
-  has definition "Role 'prerequisiteOperation' in relation 'lingoOperationDependsOn'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOperationDependsOn:prerequisiteOperation";
+  $struct_left isa SchemaResource, has typeLabel "placement:passage";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf:part";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_45 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOperationRealizesPlanItem:operation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoOperationRealizesPlanItem:operation",
-  has typeLabel "lingoOperationRealizesPlanItem:operation",
-  has kind "role",
-  has roleName "operation",
-  has prefLabel "operation",
-  has definition "Role 'operation' in relation 'lingoOperationRealizesPlanItem'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOperationRealizesPlanItem:operation";
+  $struct_left isa SchemaResource, has typeLabel "placement:passageSource";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf:whole";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_46 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOperationRealizesPlanItem:planItemRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoOperationRealizesPlanItem:planItemRevision",
-  has typeLabel "lingoOperationRealizesPlanItem:planItemRevision",
-  has kind "role",
-  has roleName "planItemRevision",
-  has prefLabel "planItemRevision",
-  has definition "Role 'planItemRevision' in relation 'lingoOperationRealizesPlanItem'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOperationRealizesPlanItem:planItemRevision";
+  $struct_left isa SchemaResource, has typeLabel "Principle";
+  $struct_right isa SchemaResource, has typeLabel "SourceClaim";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_47 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanEvaluatedAgainstTarget:planRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanEvaluatedAgainstTarget:planRevision",
-  has typeLabel "lingoPlanEvaluatedAgainstTarget:planRevision",
-  has kind "role",
-  has roleName "planRevision",
-  has prefLabel "planRevision",
-  has definition "Role 'planRevision' in relation 'lingoPlanEvaluatedAgainstTarget'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanEvaluatedAgainstTarget:planRevision";
+  $struct_left isa SchemaResource, has typeLabel "processRecord";
+  $struct_right isa SchemaResource, has typeLabel "isAbout";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_48 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanEvaluatedAgainstTarget:targetContextRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanEvaluatedAgainstTarget:targetContextRevision",
-  has typeLabel "lingoPlanEvaluatedAgainstTarget:targetContextRevision",
-  has kind "role",
-  has roleName "targetContextRevision",
-  has prefLabel "targetContextRevision",
-  has definition "Role 'targetContextRevision' in relation 'lingoPlanEvaluatedAgainstTarget'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanEvaluatedAgainstTarget:targetContextRevision";
+  $struct_left isa SchemaResource, has typeLabel "processRecord:record";
+  $struct_right isa SchemaResource, has typeLabel "isAbout:content";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_49 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanGroundsBrief:briefRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanGroundsBrief:briefRevision",
-  has typeLabel "lingoPlanGroundsBrief:briefRevision",
-  has kind "role",
-  has roleName "briefRevision",
-  has prefLabel "briefRevision",
-  has definition "Role 'briefRevision' in relation 'lingoPlanGroundsBrief'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanGroundsBrief:briefRevision";
+  $struct_left isa SchemaResource, has typeLabel "processRecord:recordedReading";
+  $struct_right isa SchemaResource, has typeLabel "isAbout:subjectMatter";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_50 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanGroundsBrief:planRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanGroundsBrief:planRevision",
-  has typeLabel "lingoPlanGroundsBrief:planRevision",
-  has kind "role",
-  has roleName "planRevision",
-  has prefLabel "planRevision",
-  has definition "Role 'planRevision' in relation 'lingoPlanGroundsBrief'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanGroundsBrief:planRevision";
+  $struct_left isa SchemaResource, has typeLabel "questionReference";
+  $struct_right isa SchemaResource, has typeLabel "refersTo";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_51 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanIncludesItemRevision:itemRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanIncludesItemRevision:itemRevision",
-  has typeLabel "lingoPlanIncludesItemRevision:itemRevision",
-  has kind "role",
-  has roleName "itemRevision",
-  has prefLabel "itemRevision",
-  has definition "Role 'itemRevision' in relation 'lingoPlanIncludesItemRevision'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanIncludesItemRevision:itemRevision";
+  $struct_left isa SchemaResource, has typeLabel "questionReference:question";
+  $struct_right isa SchemaResource, has typeLabel "refersTo:referringThing";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_52 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanIncludesItemRevision:planRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanIncludesItemRevision:planRevision",
-  has typeLabel "lingoPlanIncludesItemRevision:planRevision",
-  has kind "role",
-  has roleName "planRevision",
-  has prefLabel "planRevision",
-  has definition "Role 'planRevision' in relation 'lingoPlanIncludesItemRevision'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanIncludesItemRevision:planRevision";
+  $struct_left isa SchemaResource, has typeLabel "questionReference:referencedElement";
+  $struct_right isa SchemaResource, has typeLabel "refersTo:referent";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_53 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemHasRevision:itemRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemHasRevision:itemRevision",
-  has typeLabel "lingoPlanItemHasRevision:itemRevision",
-  has kind "role",
-  has roleName "itemRevision",
-  has prefLabel "itemRevision",
-  has definition "Role 'itemRevision' in relation 'lingoPlanItemHasRevision'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemHasRevision:itemRevision";
+  $struct_left isa SchemaResource, has typeLabel "readership";
+  $struct_right isa SchemaResource, has typeLabel "hasParticipant";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_54 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemHasRevision:planItem",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemHasRevision:planItem",
-  has typeLabel "lingoPlanItemHasRevision:planItem",
-  has kind "role",
-  has roleName "planItem",
-  has prefLabel "planItem",
-  has definition "Role 'planItem' in relation 'lingoPlanItemHasRevision'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemHasRevision:planItem";
+  $struct_left isa SchemaResource, has typeLabel "readership:reader";
+  $struct_right isa SchemaResource, has typeLabel "hasParticipant:participant";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_55 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemInterpretsBriefElement:briefElementRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemInterpretsBriefElement:briefElementRevision",
-  has typeLabel "lingoPlanItemInterpretsBriefElement:briefElementRevision",
-  has kind "role",
-  has roleName "briefElementRevision",
-  has prefLabel "briefElementRevision",
-  has definition "Role 'briefElementRevision' in relation 'lingoPlanItemInterpretsBriefElement'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemInterpretsBriefElement:briefElementRevision";
+  $struct_left isa SchemaResource, has typeLabel "readership:reading";
+  $struct_right isa SchemaResource, has typeLabel "hasParticipant:participationContext";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_56 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemInterpretsBriefElement:planItemRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemInterpretsBriefElement:planItemRevision",
-  has typeLabel "lingoPlanItemInterpretsBriefElement:planItemRevision",
-  has kind "role",
-  has roleName "planItemRevision",
-  has prefLabel "planItemRevision",
-  has definition "Role 'planItemRevision' in relation 'lingoPlanItemInterpretsBriefElement'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemInterpretsBriefElement:planItemRevision";
+  $struct_left isa SchemaResource, has typeLabel "Reading";
+  $struct_right isa SchemaResource, has typeLabel "HistoricalEvent";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_57 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemMapsToSchemaResource:planItemRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemMapsToSchemaResource:planItemRevision",
-  has typeLabel "lingoPlanItemMapsToSchemaResource:planItemRevision",
-  has kind "role",
-  has roleName "planItemRevision",
-  has prefLabel "planItemRevision",
-  has definition "Role 'planItemRevision' in relation 'lingoPlanItemMapsToSchemaResource'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemMapsToSchemaResource:planItemRevision";
+  $struct_left isa SchemaResource, has typeLabel "readingSubject";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_58 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemMapsToSchemaResource:resource",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemMapsToSchemaResource:resource",
-  has typeLabel "lingoPlanItemMapsToSchemaResource:resource",
-  has kind "role",
-  has roleName "resource",
-  has prefLabel "resource",
-  has definition "Role 'resource' in relation 'lingoPlanItemMapsToSchemaResource'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemMapsToSchemaResource:resource";
+  $struct_left isa SchemaResource, has typeLabel "readingSubject:pass";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:derivedThing";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_59 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoReadinessEvaluationEvaluates:evaluation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoReadinessEvaluationEvaluates:evaluation",
-  has typeLabel "lingoReadinessEvaluationEvaluates:evaluation",
-  has kind "role",
-  has roleName "evaluation",
-  has prefLabel "evaluation",
-  has definition "Role 'evaluation' in relation 'lingoReadinessEvaluationEvaluates'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoReadinessEvaluationEvaluates:evaluation";
+  $struct_left isa SchemaResource, has typeLabel "readingSubject:sourceRead";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:basis";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_60 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoReadinessEvaluationEvaluates:subject",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoReadinessEvaluationEvaluates:subject",
-  has typeLabel "lingoReadinessEvaluationEvaluates:subject",
-  has kind "role",
-  has roleName "subject",
-  has prefLabel "subject",
-  has definition "Role 'subject' in relation 'lingoReadinessEvaluationEvaluates'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoReadinessEvaluationEvaluates:subject";
+  $struct_left isa SchemaResource, has typeLabel "Reconciliation";
+  $struct_right isa SchemaResource, has typeLabel "Determination";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_61 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRelationFrameHasRole:frameRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoRelationFrameHasRole:frameRevision",
-  has typeLabel "lingoRelationFrameHasRole:frameRevision",
-  has kind "role",
-  has roleName "frameRevision",
-  has prefLabel "frameRevision",
-  has definition "Role 'frameRevision' in relation 'lingoRelationFrameHasRole'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRelationFrameHasRole:frameRevision";
+  $struct_left isa SchemaResource, has typeLabel "replacement";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_62 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRelationFrameHasRole:roleRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoRelationFrameHasRole:roleRevision",
-  has typeLabel "lingoRelationFrameHasRole:roleRevision",
-  has kind "role",
-  has roleName "roleRevision",
-  has prefLabel "roleRevision",
-  has definition "Role 'roleRevision' in relation 'lingoRelationFrameHasRole'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRelationFrameHasRole:roleRevision";
+  $struct_left isa SchemaResource, has typeLabel "replacement:newer";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:derivedThing";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_63 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRelationOperationHasRoleDefinition:relationOperation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoRelationOperationHasRoleDefinition:relationOperation",
-  has typeLabel "lingoRelationOperationHasRoleDefinition:relationOperation",
-  has kind "role",
-  has roleName "relationOperation",
-  has prefLabel "relationOperation",
-  has definition "Role 'relationOperation' in relation 'lingoRelationOperationHasRoleDefinition'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRelationOperationHasRoleDefinition:relationOperation";
+  $struct_left isa SchemaResource, has typeLabel "replacement:older";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:basis";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_64 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRelationOperationHasRoleDefinition:roleDefinition",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoRelationOperationHasRoleDefinition:roleDefinition",
-  has typeLabel "lingoRelationOperationHasRoleDefinition:roleDefinition",
-  has kind "role",
-  has roleName "roleDefinition",
-  has prefLabel "roleDefinition",
-  has definition "Role 'roleDefinition' in relation 'lingoRelationOperationHasRoleDefinition'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRelationOperationHasRoleDefinition:roleDefinition";
+  $struct_left isa SchemaResource, has typeLabel "revisionHistory";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_65 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRevisionSupersedes:newerRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoRevisionSupersedes:newerRevision",
-  has typeLabel "lingoRevisionSupersedes:newerRevision",
-  has kind "role",
-  has roleName "newerRevision",
-  has prefLabel "newerRevision",
-  has definition "Role 'newerRevision' in relation 'lingoRevisionSupersedes'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRevisionSupersedes:newerRevision";
+  $struct_left isa SchemaResource, has typeLabel "revisionHistory:brief";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf:whole";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_66 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRevisionSupersedes:olderRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoRevisionSupersedes:olderRevision",
-  has typeLabel "lingoRevisionSupersedes:olderRevision",
-  has kind "role",
-  has roleName "olderRevision",
-  has prefLabel "olderRevision",
-  has definition "Role 'olderRevision' in relation 'lingoRevisionSupersedes'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRevisionSupersedes:olderRevision";
+  $struct_left isa SchemaResource, has typeLabel "revisionHistory:revision";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf:part";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_67 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRoleDefinitionImplementsBriefRole:briefRoleRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoRoleDefinitionImplementsBriefRole:briefRoleRevision",
-  has typeLabel "lingoRoleDefinitionImplementsBriefRole:briefRoleRevision",
-  has kind "role",
-  has roleName "briefRoleRevision",
-  has prefLabel "briefRoleRevision",
-  has definition "Role 'briefRoleRevision' in relation 'lingoRoleDefinitionImplementsBriefRole'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRoleDefinitionImplementsBriefRole:briefRoleRevision";
+  $struct_left isa SchemaResource, has typeLabel "Rule";
+  $struct_right isa SchemaResource, has typeLabel "SourceClaim";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_68 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRoleDefinitionImplementsBriefRole:roleDefinition",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoRoleDefinitionImplementsBriefRole:roleDefinition",
-  has typeLabel "lingoRoleDefinitionImplementsBriefRole:roleDefinition",
-  has kind "role",
-  has roleName "roleDefinition",
-  has prefLabel "roleDefinition",
-  has definition "Role 'roleDefinition' in relation 'lingoRoleDefinitionImplementsBriefRole'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRoleDefinitionImplementsBriefRole:roleDefinition";
+  $struct_left isa SchemaResource, has typeLabel "SessionRecord";
+  $struct_right isa SchemaResource, has typeLabel "EvidenceSource";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_69 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRoleRefersToBriefElement:participantElement",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoRoleRefersToBriefElement:participantElement",
-  has typeLabel "lingoRoleRefersToBriefElement:participantElement",
-  has kind "role",
-  has roleName "participantElement",
-  has prefLabel "participantElement",
-  has definition "Role 'participantElement' in relation 'lingoRoleRefersToBriefElement'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRoleRefersToBriefElement:participantElement";
+  $struct_left isa SchemaResource, has typeLabel "SourceClaim";
+  $struct_right isa SchemaResource, has typeLabel "Text";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_70 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRoleRefersToBriefElement:roleRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoRoleRefersToBriefElement:roleRevision",
-  has typeLabel "lingoRoleRefersToBriefElement:roleRevision",
-  has kind "role",
-  has roleName "roleRevision",
-  has prefLabel "roleRevision",
-  has definition "Role 'roleRevision' in relation 'lingoRoleRefersToBriefElement'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRoleRefersToBriefElement:roleRevision";
+  $struct_left isa SchemaResource, has typeLabel "sourceFormat";
+  $struct_right isa SchemaResource, has typeLabel "isExpressedIn";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_71 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoStagingBoundToChangeSet:changeSet",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoStagingBoundToChangeSet:changeSet",
-  has typeLabel "lingoStagingBoundToChangeSet:changeSet",
-  has kind "role",
-  has roleName "changeSet",
-  has prefLabel "changeSet",
-  has definition "Role 'changeSet' in relation 'lingoStagingBoundToChangeSet'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoStagingBoundToChangeSet:changeSet";
+  $struct_left isa SchemaResource, has typeLabel "sourceFormat:format";
+  $struct_right isa SchemaResource, has typeLabel "isExpressedIn:language";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_72 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoStagingBoundToChangeSet:stagingBinding",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoStagingBoundToChangeSet:stagingBinding",
-  has typeLabel "lingoStagingBoundToChangeSet:stagingBinding",
-  has kind "role",
-  has roleName "stagingBinding",
-  has prefLabel "stagingBinding",
-  has definition "Role 'stagingBinding' in relation 'lingoStagingBoundToChangeSet'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoStagingBoundToChangeSet:stagingBinding";
+  $struct_left isa SchemaResource, has typeLabel "sourceFormat:formattedSource";
+  $struct_right isa SchemaResource, has typeLabel "isExpressedIn:expressedThing";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
-put $generated_role_73 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoTargetUsesModuleVersion:moduleVersion",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoTargetUsesModuleVersion:moduleVersion",
-  has typeLabel "lingoTargetUsesModuleVersion:moduleVersion",
-  has kind "role",
-  has roleName "moduleVersion",
-  has prefLabel "moduleVersion",
-  has definition "Role 'moduleVersion' in relation 'lingoTargetUsesModuleVersion'.";
 match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoTargetUsesModuleVersion:moduleVersion";
+  $struct_left isa SchemaResource, has typeLabel "SourceKind";
+  $struct_right isa SchemaResource, has typeLabel "Category";
   not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;

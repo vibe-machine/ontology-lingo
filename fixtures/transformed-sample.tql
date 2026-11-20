@@ -1,6 +1,6 @@
-transaction write lingo-redesign-scratch
-
-insert
+# A small sample for the package's own checks: one book, one working session, a brief of two concepts.
+# It is not package data and is never installed. The meanings are in our own words.
+match
   $book isa SourceKind, has name "book";
   $stated isa EpistemicState, has name "stated";
   $asserted isa EpistemicState, has name "asserted";
@@ -9,11 +9,13 @@ insert
   $central isa Weight, has name "central";
   $kinds isa ListKind, has name "kinds";
   $same isa TermFit, has name "same";
+  $epub isa MediaType, has name "EPUB";
+  $web isa LocationKind, has name "web address"; $file isa LocationKind, has name "local file";
+  $sessionKind isa SourceKind, has name "session";
+insert
   $opus isa AssistantModel, has name "claude-opus";
   $src isa EvidenceSource, has sourceId "cagan-transformed-2024", has name "Transformed", has authorName "Marty Cagan", has publishedYear 2024;
   sourceClassification (classifiedSource: $src, sourceKind: $book);
-  $epub isa MediaType, has name "EPUB";
-  $web isa LocationKind, has name "web address"; $file isa LocationKind, has name "local file";
   sourceFormat (formattedSource: $src, format: $epub);
   $l1 isa SourceLocation, has containedText "books/transformed.epub"; whereabouts (locatedSource: $src, location: $l1); locationClassification (classifiedLocation: $l1, locationKind: $file);
   $l2 isa SourceLocation, has containedText "corpus/text/transformed.txt"; whereabouts (locatedSource: $src, location: $l2); locationClassification (classifiedLocation: $l2, locationKind: $file);
@@ -25,7 +27,6 @@ insert
   readingSubject (pass: $read, sourceRead: $src);
   readership (reading: $read, reader: $opus);
   copyRead (readingOfCopy: $read, copy: $l2);
-  $sessionKind isa SourceKind, has name "session";
   $sess isa SessionRecord, has sourceId "session-2026-11-20", has name "Working session, 20 November 2026";
   $l3 isa SourceLocation, has containedText "transcripts/75b134bd.jsonl"; whereabouts (locatedSource: $sess, location: $l3); locationClassification (classifiedLocation: $l3, locationKind: $file);
   sourceClassification (classifiedSource: $sess, sourceKind: $sessionKind);
@@ -67,12 +68,10 @@ insert
   grounding (element: $c1, groundingClaim: $def); grounding (element: $c1, groundingClaim: $dis);
   $q isa BriefQuestion, has briefElementId "pom-q317", has containedText "Which results is each team responsible for, as opposed to a list of things to deliver?";
   inclusion (element: $q, revision: $rev); standing (subject: $q, state: $asserted);
-  reference (question: $q, referencedElement: $c1);
+  questionReference (question: $q, referencedElement: $c1);
   $pur isa BriefPurpose, has briefElementId "pom-purpose", has containedText "Answer an executive's questions about how the product company is run.";
   inclusion (element: $pur, revision: $rev); standing (subject: $pur, state: $asserted);
   grounding (element: $pur, groundingClaim: $said);
   $rec isa Reconciliation, has reconciliationId "rec-1", has atDateTime 2026-11-20T17:05:00, has description "The author's outcome is our Outcome.";
   termReconciliation (decision: $rec, term: $outcome, concept: $c1); fit (reconciliation: $rec, degree: $same);
   decisionMaking (decision: $rec, decider: $opus);
-
-commit

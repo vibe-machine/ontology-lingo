@@ -9,24 +9,18 @@ const schema = await fs.readFile(path.join(root, "schema/lingo.tql"), "utf8");
 const structure = parseTypeQLSchemaStructure([schema]);
 
 const curated = new Map(Object.entries({
-  LingoStudioWorkbook: "One coherent Studio modeling effort and its complete durable history.",
-  LingoModelingInput: "One immutable conversation, import, manual entry, policy input, or migration input supplied to a Workbook.",
-  LingoEvidenceSource: "One immutable observed source version in a Workbook evidence ledger.",
-  LingoEvidenceExcerpt: "A precisely located excerpt from one Evidence Source.",
-  LingoModelingBriefRevision: "An immutable revision of the sole authority for the user's domain meaning.",
-  LingoBriefRelationFrameRevision: "An immutable arbitrary-arity relation frame with explicit roles and participant semantics.",
-  LingoOntologyTargetContextRevision: "An immutable package, dependency-closure, corpus, and retrieval context used for grounding.",
-  LingoGroundingPlanRevision: "An immutable mapping from exact Brief elements into one ontology target context.",
-  LingoOntologyChangeSet: "A deterministic structured compilation from one exact Grounding Plan revision.",
-  LingoExecutableCompetencyQuestion: "An immutable executable oracle compiled from one Brief competency question for one Change Set.",
-  LingoVerificationRun: "An immutable observation of exact executable artifacts against one staging graph snapshot.",
-  LingoStagingBinding: "Durable provenance for a disposable full-graph staging copy.",
-  LingoApplyReceipt: "An immutable audit record of what was applied, where, and from which verified inputs.",
-  lingoHumanDecisionDecides: "Links an immutable human decision event to the exact artifact revision it decides.",
-  lingoPlanItemInterpretsBriefElement: "Links a Grounding Plan item revision to the exact Brief element revision it interprets.",
-  lingoChangeSetCompiledFromPlan: "Links an Ontology Change Set to the exact Grounding Plan revision compiled into it.",
-  lingoVerificationVerifiesChangeSet: "Links a Verification Run to the exact Ontology Change Set it evaluated.",
-  lingoApplyReceiptAuthorizedByVerification: "Links an Apply Receipt to the exact Verification Runs that authorized it."
+  "EvidenceSource": "A book, an essay, a schema or anything else read for a subject.",
+  "SessionRecord": "The record of a working session; a source only for what was said in it that no other source says.",
+  "SourceLocation": "Where one copy of a source is kept: a web address or a file on a machine.",
+  "Passage": "A place in a source. It holds where, never the source's words.",
+  "Reading": "One pass over a source by one reader, under one version of the reading instructions.",
+  "SourceTerm": "A word as one source uses it.",
+  "SourceClaim": "One thing a source says about its terms, written in our words.",
+  "ClaimCheck": "A second reader's verdict on a claim.",
+  "ModelingBrief": "The statement of intent for one subject.",
+  "BriefRevision": "The brief as it stood at one moment: the statements in force.",
+  "BriefElement": "One statement of a brief.",
+  "Reconciliation": "The recorded decision that a source's term is, or is not, one of our concepts."
 }));
 
 function escape(value) {
@@ -48,7 +42,7 @@ const entries = [...structure.typeKinds.entries()]
 const lines = [
   "put $module isa SchemaModule,",
   "  has moduleKey \"lingo\",",
-  "  has moduleName \"Lingo Studio Knowledge\",",
+  "  has moduleName \"Lingo\",",
   "  has moduleKind \"hand-authored-package\";",
   ""
 ];
@@ -57,10 +51,10 @@ for (const [index, [label, kind]] of entries.entries()) {
   const variable = `$resource_${index + 1}`;
   const docKey = `${repoUrl}#${label}`;
   const generic = kind === "attribute"
-    ? `A ${words(label)} value used by the Lingo Studio knowledge model.`
+    ? `A ${words(label)} value used by the Lingo ontology.`
     : kind === "relation"
-      ? `Relates ${words(label)} participants in the Lingo Studio knowledge model.`
-      : `A ${words(label)} concept in the Lingo Studio knowledge model.`;
+      ? `Relates ${words(label)} participants in the Lingo ontology.`
+      : `A ${words(label)} concept in the Lingo ontology.`;
   const definition = curated.get(label) ?? generic;
   lines.push(`put ${variable} isa SchemaResource,`);
   lines.push(`  has docKey \"${escape(docKey)}\",`);

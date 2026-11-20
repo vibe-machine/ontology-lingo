@@ -1,0 +1,2 @@
+# 7. Which distinctions does a source draw between two terms?
+match $d isa Distinction, has containedText $text; aboutness (claim: $d, term: $t); $t has name $term; select $term, $text;

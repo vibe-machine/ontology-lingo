@@ -1,0 +1,5 @@
+# 26. In what file format is each source, and where is each copy of it kept?
+match $s isa EvidenceSource, has name $source; whereabouts (locatedSource: $s, location: $l); $l has containedText $where;
+  locationClassification (classifiedLocation: $l, locationKind: $k); $k has name $kind;
+  try { sourceFormat (formattedSource: $s, format: $f); $f has name $format; };
+  select $source, $format, $kind, $where;

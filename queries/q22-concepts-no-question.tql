@@ -1,0 +1,2 @@
+# 22. Which concepts in the brief does no competency question refer to?
+match $b isa ModelingBrief, has briefId "pom"; let $c in concepts_without_question($b); $c has name $n; select $n;

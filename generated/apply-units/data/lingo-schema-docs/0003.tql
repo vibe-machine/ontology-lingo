@@ -1,459 +1,852 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v0.1.1.package-manifest.json
+# manifest: manifests/lingo-v1.0.0.package-manifest.json
 
-# Provenance bootstrap
-# upstream-repo: https://github.com/vibe-machine/ontology-lingo
-# upstream-tag: v0.1.1
-# upstream-commit: 6445d833052936eb678896fdba2c6861c398013e
-# source-artifacts:
-# - package.json
-# - schema/lingo.tql
-# - fixtures/minimal-sprint.tql
-# - fixtures/basketball.tql
-# manifest: manifests/lingo-v0.1.1.package-manifest.json
-# generator: hand-authored-package-bootstrap/0.1.0
-put $module isa SchemaModule,
-  has moduleKey "lingo",
-  has moduleName "Lingo Studio Knowledge",
-  has moduleKind "hand-authored-package";
+put $generated_role_1 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#aboutness:claim",
+  has iri "https://github.com/vibe-machine/ontology-lingo#aboutness:claim",
+  has typeLabel "aboutness:claim",
+  has kind "role",
+  has roleName "claim",
+  has prefLabel "claim",
+  has definition "Role 'claim' in relation 'aboutness'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#aboutness:claim";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_99 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoGroundingPlanItem",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoGroundingPlanItem",
-  has typeLabel "LingoGroundingPlanItem",
-  has kind "entity",
-  has prefLabel "Grounding Plan Item",
-  has definition "A Grounding Plan Item concept in the Lingo Studio knowledge model.";
-put (resource: $resource_99, module: $module) isa inModule;
+put $generated_role_5 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#checkOutcome:judgedCheck",
+  has iri "https://github.com/vibe-machine/ontology-lingo#checkOutcome:judgedCheck",
+  has typeLabel "checkOutcome:judgedCheck",
+  has kind "role",
+  has roleName "judgedCheck",
+  has prefLabel "judgedCheck",
+  has definition "Role 'judgedCheck' in relation 'checkOutcome'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#checkOutcome:judgedCheck";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_100 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoGroundingPlanItemRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoGroundingPlanItemRevision",
-  has typeLabel "LingoGroundingPlanItemRevision",
-  has kind "entity",
-  has prefLabel "Grounding Plan Item Revision",
-  has definition "A Grounding Plan Item Revision concept in the Lingo Studio knowledge model.";
-put (resource: $resource_100, module: $module) isa inModule;
+put $generated_role_6 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#checkOutcome:verdict",
+  has iri "https://github.com/vibe-machine/ontology-lingo#checkOutcome:verdict",
+  has typeLabel "checkOutcome:verdict",
+  has kind "role",
+  has roleName "verdict",
+  has prefLabel "verdict",
+  has definition "Role 'verdict' in relation 'checkOutcome'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#checkOutcome:verdict";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_101 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoGroundingPlanRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoGroundingPlanRevision",
-  has typeLabel "LingoGroundingPlanRevision",
-  has kind "entity",
-  has prefLabel "Grounding Plan Revision",
-  has definition "An immutable mapping from exact Brief elements into one ontology target context.";
-put (resource: $resource_101, module: $module) isa inModule;
+put $generated_role_7 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#checkSubject:check",
+  has iri "https://github.com/vibe-machine/ontology-lingo#checkSubject:check",
+  has typeLabel "checkSubject:check",
+  has kind "role",
+  has roleName "check",
+  has prefLabel "check",
+  has definition "Role 'check' in relation 'checkSubject'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#checkSubject:check";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_102 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoGroundingReadiness",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoGroundingReadiness",
-  has typeLabel "lingoGroundingReadiness",
-  has kind "attribute",
-  has prefLabel "Grounding Readiness",
-  has definition "A Grounding Readiness value used by the Lingo Studio knowledge model.";
-put (resource: $resource_102, module: $module) isa inModule;
+put $generated_role_8 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#checkSubject:checkedClaim",
+  has iri "https://github.com/vibe-machine/ontology-lingo#checkSubject:checkedClaim",
+  has typeLabel "checkSubject:checkedClaim",
+  has kind "role",
+  has roleName "checkedClaim",
+  has prefLabel "checkedClaim",
+  has definition "Role 'checkedClaim' in relation 'checkSubject'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#checkSubject:checkedClaim";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_103 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoGroundingReadinessEvaluation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoGroundingReadinessEvaluation",
-  has typeLabel "LingoGroundingReadinessEvaluation",
-  has kind "entity",
-  has prefLabel "Grounding Readiness Evaluation",
-  has definition "A Grounding Readiness Evaluation concept in the Lingo Studio knowledge model.";
-put (resource: $resource_103, module: $module) isa inModule;
+put $generated_role_9 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#conceptClassification:classifiedDefinition",
+  has iri "https://github.com/vibe-machine/ontology-lingo#conceptClassification:classifiedDefinition",
+  has typeLabel "conceptClassification:classifiedDefinition",
+  has kind "role",
+  has roleName "classifiedDefinition",
+  has prefLabel "classifiedDefinition",
+  has definition "Role 'classifiedDefinition' in relation 'conceptClassification'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#conceptClassification:classifiedDefinition";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_104 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoHumanDecision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoHumanDecision",
-  has typeLabel "LingoHumanDecision",
-  has kind "entity",
-  has prefLabel "Human Decision",
-  has definition "A Human Decision concept in the Lingo Studio knowledge model.";
-put (resource: $resource_104, module: $module) isa inModule;
+put $generated_role_10 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#conceptClassification:conceptKind",
+  has iri "https://github.com/vibe-machine/ontology-lingo#conceptClassification:conceptKind",
+  has typeLabel "conceptClassification:conceptKind",
+  has kind "role",
+  has roleName "conceptKind",
+  has prefLabel "conceptKind",
+  has definition "Role 'conceptKind' in relation 'conceptClassification'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#conceptClassification:conceptKind";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_105 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoHumanDecisionDecides",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoHumanDecisionDecides",
-  has typeLabel "lingoHumanDecisionDecides",
-  has kind "relation",
-  has prefLabel "Human Decision Decides",
-  has definition "Links an immutable human decision event to the exact artifact revision it decides.";
-put (resource: $resource_105, module: $module) isa inModule;
+put $generated_role_11 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#copyRead:copy",
+  has iri "https://github.com/vibe-machine/ontology-lingo#copyRead:copy",
+  has typeLabel "copyRead:copy",
+  has kind "role",
+  has roleName "copy",
+  has prefLabel "copy",
+  has definition "Role 'copy' in relation 'copyRead'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#copyRead:copy";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_106 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoHumanDecisionState",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoHumanDecisionState",
-  has typeLabel "lingoHumanDecisionState",
-  has kind "attribute",
-  has prefLabel "Human Decision State",
-  has definition "A Human Decision State value used by the Lingo Studio knowledge model.";
-put (resource: $resource_106, module: $module) isa inModule;
+put $generated_role_12 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#copyRead:readingOfCopy",
+  has iri "https://github.com/vibe-machine/ontology-lingo#copyRead:readingOfCopy",
+  has typeLabel "copyRead:readingOfCopy",
+  has kind "role",
+  has roleName "readingOfCopy",
+  has prefLabel "readingOfCopy",
+  has definition "Role 'readingOfCopy' in relation 'copyRead'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#copyRead:readingOfCopy";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_107 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoInputId",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoInputId",
-  has typeLabel "lingoInputId",
-  has kind "attribute",
-  has prefLabel "Input Id",
-  has definition "A Input Id value used by the Lingo Studio knowledge model.";
-put (resource: $resource_107, module: $module) isa inModule;
+put $generated_role_13 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#decisionMaking:decider",
+  has iri "https://github.com/vibe-machine/ontology-lingo#decisionMaking:decider",
+  has typeLabel "decisionMaking:decider",
+  has kind "role",
+  has roleName "decider",
+  has prefLabel "decider",
+  has definition "Role 'decider' in relation 'decisionMaking'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#decisionMaking:decider";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_108 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoInputKind",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoInputKind",
-  has typeLabel "lingoInputKind",
-  has kind "attribute",
-  has prefLabel "Input Kind",
-  has definition "A Input Kind value used by the Lingo Studio knowledge model.";
-put (resource: $resource_108, module: $module) isa inModule;
+put $generated_role_14 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#decisionMaking:decision",
+  has iri "https://github.com/vibe-machine/ontology-lingo#decisionMaking:decision",
+  has typeLabel "decisionMaking:decision",
+  has kind "role",
+  has roleName "decision",
+  has prefLabel "decision",
+  has definition "Role 'decision' in relation 'decisionMaking'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#decisionMaking:decision";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_109 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoInputUsesEvidenceSource",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoInputUsesEvidenceSource",
-  has typeLabel "lingoInputUsesEvidenceSource",
-  has kind "relation",
-  has prefLabel "Input Uses Evidence Source",
-  has definition "Relates Input Uses Evidence Source participants in the Lingo Studio knowledge model.";
-put (resource: $resource_109, module: $module) isa inModule;
+put $generated_role_15 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#dutyClassification:classifiedDuty",
+  has iri "https://github.com/vibe-machine/ontology-lingo#dutyClassification:classifiedDuty",
+  has typeLabel "dutyClassification:classifiedDuty",
+  has kind "role",
+  has roleName "classifiedDuty",
+  has prefLabel "classifiedDuty",
+  has definition "Role 'classifiedDuty' in relation 'dutyClassification'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#dutyClassification:classifiedDuty";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_110 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoLegacyIdentity",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoLegacyIdentity",
-  has typeLabel "lingoLegacyIdentity",
-  has kind "attribute",
-  has prefLabel "Legacy Identity",
-  has definition "A Legacy Identity value used by the Lingo Studio knowledge model.";
-put (resource: $resource_110, module: $module) isa inModule;
+put $generated_role_16 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#dutyClassification:mode",
+  has iri "https://github.com/vibe-machine/ontology-lingo#dutyClassification:mode",
+  has typeLabel "dutyClassification:mode",
+  has kind "role",
+  has roleName "mode",
+  has prefLabel "mode",
+  has definition "Role 'mode' in relation 'dutyClassification'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#dutyClassification:mode";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_111 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoLocatorKind",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoLocatorKind",
-  has typeLabel "lingoLocatorKind",
-  has kind "attribute",
-  has prefLabel "Locator Kind",
-  has definition "A Locator Kind value used by the Lingo Studio knowledge model.";
-put (resource: $resource_111, module: $module) isa inModule;
+put $generated_role_17 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#emphasis:weighedDefinition",
+  has iri "https://github.com/vibe-machine/ontology-lingo#emphasis:weighedDefinition",
+  has typeLabel "emphasis:weighedDefinition",
+  has kind "role",
+  has roleName "weighedDefinition",
+  has prefLabel "weighedDefinition",
+  has definition "Role 'weighedDefinition' in relation 'emphasis'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#emphasis:weighedDefinition";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_112 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoLocatorValue",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoLocatorValue",
-  has typeLabel "lingoLocatorValue",
-  has kind "attribute",
-  has prefLabel "Locator Value",
-  has definition "A Locator Value value used by the Lingo Studio knowledge model.";
-put (resource: $resource_112, module: $module) isa inModule;
+put $generated_role_18 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#emphasis:weight",
+  has iri "https://github.com/vibe-machine/ontology-lingo#emphasis:weight",
+  has typeLabel "emphasis:weight",
+  has kind "role",
+  has roleName "weight",
+  has prefLabel "weight",
+  has definition "Role 'weight' in relation 'emphasis'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#emphasis:weight";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_113 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoMaximumCardinality",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoMaximumCardinality",
-  has typeLabel "lingoMaximumCardinality",
-  has kind "attribute",
-  has prefLabel "Maximum Cardinality",
-  has definition "A Maximum Cardinality value used by the Lingo Studio knowledge model.";
-put (resource: $resource_113, module: $module) isa inModule;
+put $generated_role_19 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#fit:degree",
+  has iri "https://github.com/vibe-machine/ontology-lingo#fit:degree",
+  has typeLabel "fit:degree",
+  has kind "role",
+  has roleName "degree",
+  has prefLabel "degree",
+  has definition "Role 'degree' in relation 'fit'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#fit:degree";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_114 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoMediaType",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoMediaType",
-  has typeLabel "lingoMediaType",
-  has kind "attribute",
-  has prefLabel "Media Type",
-  has definition "A Media Type value used by the Lingo Studio knowledge model.";
-put (resource: $resource_114, module: $module) isa inModule;
+put $generated_role_20 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#fit:reconciliation",
+  has iri "https://github.com/vibe-machine/ontology-lingo#fit:reconciliation",
+  has typeLabel "fit:reconciliation",
+  has kind "role",
+  has roleName "reconciliation",
+  has prefLabel "reconciliation",
+  has definition "Role 'reconciliation' in relation 'fit'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#fit:reconciliation";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_115 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoMinimumCardinality",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoMinimumCardinality",
-  has typeLabel "lingoMinimumCardinality",
-  has kind "attribute",
-  has prefLabel "Minimum Cardinality",
-  has definition "A Minimum Cardinality value used by the Lingo Studio knowledge model.";
-put (resource: $resource_115, module: $module) isa inModule;
+put $generated_role_21 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#force:rule",
+  has iri "https://github.com/vibe-machine/ontology-lingo#force:rule",
+  has typeLabel "force:rule",
+  has kind "role",
+  has roleName "rule",
+  has prefLabel "rule",
+  has definition "Role 'rule' in relation 'force'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#force:rule";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_116 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoModelingAct",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoModelingAct",
-  has typeLabel "lingoModelingAct",
-  has kind "attribute",
-  has prefLabel "Modeling Act",
-  has definition "A Modeling Act value used by the Lingo Studio knowledge model.";
-put (resource: $resource_116, module: $module) isa inModule;
+put $generated_role_22 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#force:strength",
+  has iri "https://github.com/vibe-machine/ontology-lingo#force:strength",
+  has typeLabel "force:strength",
+  has kind "role",
+  has roleName "strength",
+  has prefLabel "strength",
+  has definition "Role 'strength' in relation 'force'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#force:strength";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_117 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoModelingBriefRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoModelingBriefRevision",
-  has typeLabel "LingoModelingBriefRevision",
-  has kind "entity",
-  has prefLabel "Modeling Brief Revision",
-  has definition "An immutable revision of the sole authority for the user's domain meaning.";
-put (resource: $resource_117, module: $module) isa inModule;
+put $generated_role_23 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#grounding:element",
+  has iri "https://github.com/vibe-machine/ontology-lingo#grounding:element",
+  has typeLabel "grounding:element",
+  has kind "role",
+  has roleName "element",
+  has prefLabel "element",
+  has definition "Role 'element' in relation 'grounding'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#grounding:element";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_118 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoModelingInput",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoModelingInput",
-  has typeLabel "LingoModelingInput",
-  has kind "entity",
-  has prefLabel "Modeling Input",
-  has definition "One immutable conversation, import, manual entry, policy input, or migration input supplied to a Workbook.";
-put (resource: $resource_118, module: $module) isa inModule;
+put $generated_role_24 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#grounding:groundingClaim",
+  has iri "https://github.com/vibe-machine/ontology-lingo#grounding:groundingClaim",
+  has typeLabel "grounding:groundingClaim",
+  has kind "role",
+  has roleName "groundingClaim",
+  has prefLabel "groundingClaim",
+  has definition "Role 'groundingClaim' in relation 'grounding'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#grounding:groundingClaim";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_119 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoMutationKilled",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoMutationKilled",
-  has typeLabel "lingoMutationKilled",
-  has kind "attribute",
-  has prefLabel "Mutation Killed",
-  has definition "A Mutation Killed value used by the Lingo Studio knowledge model.";
-put (resource: $resource_119, module: $module) isa inModule;
+put $generated_role_25 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#hasAddress:address",
+  has iri "https://github.com/vibe-machine/ontology-lingo#hasAddress:address",
+  has typeLabel "hasAddress:address",
+  has kind "role",
+  has roleName "address",
+  has prefLabel "address",
+  has definition "Role 'address' in relation 'hasAddress'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#hasAddress:address";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_120 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoMutationName",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoMutationName",
-  has typeLabel "lingoMutationName",
-  has kind "attribute",
-  has prefLabel "Mutation Name",
-  has definition "A Mutation Name value used by the Lingo Studio knowledge model.";
-put (resource: $resource_120, module: $module) isa inModule;
+put $generated_role_26 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#hasAddress:addressedThing",
+  has iri "https://github.com/vibe-machine/ontology-lingo#hasAddress:addressedThing",
+  has typeLabel "hasAddress:addressedThing",
+  has kind "role",
+  has roleName "addressedThing",
+  has prefLabel "addressedThing",
+  has definition "Role 'addressedThing' in relation 'hasAddress'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#hasAddress:addressedThing";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_121 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoName",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoName",
-  has typeLabel "lingoName",
-  has kind "attribute",
-  has prefLabel "Name",
-  has definition "A Name value used by the Lingo Studio knowledge model.";
-put (resource: $resource_121, module: $module) isa inModule;
+put $generated_role_27 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#hasParticipant:participant",
+  has iri "https://github.com/vibe-machine/ontology-lingo#hasParticipant:participant",
+  has typeLabel "hasParticipant:participant",
+  has kind "role",
+  has roleName "participant",
+  has prefLabel "participant",
+  has definition "Role 'participant' in relation 'hasParticipant'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#hasParticipant:participant";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_122 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoNormalizedInterpretation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoNormalizedInterpretation",
-  has typeLabel "lingoNormalizedInterpretation",
-  has kind "attribute",
-  has prefLabel "Normalized Interpretation",
-  has definition "A Normalized Interpretation value used by the Lingo Studio knowledge model.";
-put (resource: $resource_122, module: $module) isa inModule;
+put $generated_role_28 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#hasParticipant:participationContext",
+  has iri "https://github.com/vibe-machine/ontology-lingo#hasParticipant:participationContext",
+  has typeLabel "hasParticipant:participationContext",
+  has kind "role",
+  has roleName "participationContext",
+  has prefLabel "participationContext",
+  has definition "Role 'participationContext' in relation 'hasParticipant'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#hasParticipant:participationContext";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_123 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoOntologyChangeSet",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoOntologyChangeSet",
-  has typeLabel "LingoOntologyChangeSet",
-  has kind "entity",
-  has prefLabel "Ontology Change Set",
-  has definition "A deterministic structured compilation from one exact Grounding Plan revision.";
-put (resource: $resource_123, module: $module) isa inModule;
+put $generated_role_29 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#inclusion:element",
+  has iri "https://github.com/vibe-machine/ontology-lingo#inclusion:element",
+  has typeLabel "inclusion:element",
+  has kind "role",
+  has roleName "element",
+  has prefLabel "element",
+  has definition "Role 'element' in relation 'inclusion'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#inclusion:element";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_124 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoOntologyTargetContextRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoOntologyTargetContextRevision",
-  has typeLabel "LingoOntologyTargetContextRevision",
-  has kind "entity",
-  has prefLabel "Ontology Target Context Revision",
-  has definition "An immutable package, dependency-closure, corpus, and retrieval context used for grounding.";
-put (resource: $resource_124, module: $module) isa inModule;
+put $generated_role_30 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#inclusion:revision",
+  has iri "https://github.com/vibe-machine/ontology-lingo#inclusion:revision",
+  has typeLabel "inclusion:revision",
+  has kind "role",
+  has roleName "revision",
+  has prefLabel "revision",
+  has definition "Role 'revision' in relation 'inclusion'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#inclusion:revision";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_125 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOperationDependsOn",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoOperationDependsOn",
-  has typeLabel "lingoOperationDependsOn",
-  has kind "relation",
-  has prefLabel "Operation Depends On",
-  has definition "Relates Operation Depends On participants in the Lingo Studio knowledge model.";
-put (resource: $resource_125, module: $module) isa inModule;
+put $generated_role_31 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isAbout:content",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isAbout:content",
+  has typeLabel "isAbout:content",
+  has kind "role",
+  has roleName "content",
+  has prefLabel "content",
+  has definition "Role 'content' in relation 'isAbout'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isAbout:content";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_126 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOperationKind",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoOperationKind",
-  has typeLabel "lingoOperationKind",
-  has kind "attribute",
-  has prefLabel "Operation Kind",
-  has definition "A Operation Kind value used by the Lingo Studio knowledge model.";
-put (resource: $resource_126, module: $module) isa inModule;
+put $generated_role_32 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isAbout:subjectMatter",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isAbout:subjectMatter",
+  has typeLabel "isAbout:subjectMatter",
+  has kind "role",
+  has roleName "subjectMatter",
+  has prefLabel "subjectMatter",
+  has definition "Role 'subjectMatter' in relation 'isAbout'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isAbout:subjectMatter";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_127 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOperationRealizesPlanItem",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoOperationRealizesPlanItem",
-  has typeLabel "lingoOperationRealizesPlanItem",
-  has kind "relation",
-  has prefLabel "Operation Realizes Plan Item",
-  has definition "Relates Operation Realizes Plan Item participants in the Lingo Studio knowledge model.";
-put (resource: $resource_127, module: $module) isa inModule;
+put $generated_role_33 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isBasedOn:basis",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isBasedOn:basis",
+  has typeLabel "isBasedOn:basis",
+  has kind "role",
+  has roleName "basis",
+  has prefLabel "basis",
+  has definition "Role 'basis' in relation 'isBasedOn'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isBasedOn:basis";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_128 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoOwnerLabel",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoOwnerLabel",
-  has typeLabel "lingoOwnerLabel",
-  has kind "attribute",
-  has prefLabel "Owner Label",
-  has definition "A Owner Label value used by the Lingo Studio knowledge model.";
-put (resource: $resource_128, module: $module) isa inModule;
+put $generated_role_34 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isBasedOn:derivedThing",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isBasedOn:derivedThing",
+  has typeLabel "isBasedOn:derivedThing",
+  has kind "role",
+  has roleName "derivedThing",
+  has prefLabel "derivedThing",
+  has definition "Role 'derivedThing' in relation 'isBasedOn'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isBasedOn:derivedThing";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_129 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoOwnsOperation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoOwnsOperation",
-  has typeLabel "LingoOwnsOperation",
-  has kind "entity",
-  has prefLabel "Owns Operation",
-  has definition "A Owns Operation concept in the Lingo Studio knowledge model.";
-put (resource: $resource_129, module: $module) isa inModule;
+put $generated_role_35 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isCategorizedBy:categorizedThing",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isCategorizedBy:categorizedThing",
+  has typeLabel "isCategorizedBy:categorizedThing",
+  has kind "role",
+  has roleName "categorizedThing",
+  has prefLabel "categorizedThing",
+  has definition "Role 'categorizedThing' in relation 'isCategorizedBy'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isCategorizedBy:categorizedThing";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_130 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPackageCommit",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPackageCommit",
-  has typeLabel "lingoPackageCommit",
-  has kind "attribute",
-  has prefLabel "Package Commit",
-  has definition "A Package Commit value used by the Lingo Studio knowledge model.";
-put (resource: $resource_130, module: $module) isa inModule;
+put $generated_role_36 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isCategorizedBy:category",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isCategorizedBy:category",
+  has typeLabel "isCategorizedBy:category",
+  has kind "role",
+  has roleName "category",
+  has prefLabel "category",
+  has definition "Role 'category' in relation 'isCategorizedBy'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isCategorizedBy:category";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_131 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPackageName",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPackageName",
-  has typeLabel "lingoPackageName",
-  has kind "attribute",
-  has prefLabel "Package Name",
-  has definition "A Package Name value used by the Lingo Studio knowledge model.";
-put (resource: $resource_131, module: $module) isa inModule;
+put $generated_role_37 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isExpressedIn:expressedThing",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isExpressedIn:expressedThing",
+  has typeLabel "isExpressedIn:expressedThing",
+  has kind "role",
+  has roleName "expressedThing",
+  has prefLabel "expressedThing",
+  has definition "Role 'expressedThing' in relation 'isExpressedIn'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isExpressedIn:expressedThing";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_132 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPackageVersion",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPackageVersion",
-  has typeLabel "lingoPackageVersion",
-  has kind "attribute",
-  has prefLabel "Package Version",
-  has definition "A Package Version value used by the Lingo Studio knowledge model.";
-put (resource: $resource_132, module: $module) isa inModule;
+put $generated_role_38 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isExpressedIn:language",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isExpressedIn:language",
+  has typeLabel "isExpressedIn:language",
+  has kind "role",
+  has roleName "language",
+  has prefLabel "language",
+  has definition "Role 'language' in relation 'isExpressedIn'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isExpressedIn:language";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_133 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoPayload",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoPayload",
-  has typeLabel "LingoPayload",
-  has kind "entity",
-  has prefLabel "Payload",
-  has definition "A Payload concept in the Lingo Studio knowledge model.";
-put (resource: $resource_133, module: $module) isa inModule;
+put $generated_role_39 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isMemberOf:collection",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isMemberOf:collection",
+  has typeLabel "isMemberOf:collection",
+  has kind "role",
+  has roleName "collection",
+  has prefLabel "collection",
+  has definition "Role 'collection' in relation 'isMemberOf'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isMemberOf:collection";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_134 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPayloadId",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPayloadId",
-  has typeLabel "lingoPayloadId",
-  has kind "attribute",
-  has prefLabel "Payload Id",
-  has definition "A Payload Id value used by the Lingo Studio knowledge model.";
-put (resource: $resource_134, module: $module) isa inModule;
+put $generated_role_40 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isMemberOf:member",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isMemberOf:member",
+  has typeLabel "isMemberOf:member",
+  has kind "role",
+  has roleName "member",
+  has prefLabel "member",
+  has definition "Role 'member' in relation 'isMemberOf'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isMemberOf:member";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_135 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanEvaluatedAgainstTarget",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanEvaluatedAgainstTarget",
-  has typeLabel "lingoPlanEvaluatedAgainstTarget",
-  has kind "relation",
-  has prefLabel "Plan Evaluated Against Target",
-  has definition "Relates Plan Evaluated Against Target participants in the Lingo Studio knowledge model.";
-put (resource: $resource_135, module: $module) isa inModule;
+put $generated_role_41 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isPartOf:part",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isPartOf:part",
+  has typeLabel "isPartOf:part",
+  has kind "role",
+  has roleName "part",
+  has prefLabel "part",
+  has definition "Role 'part' in relation 'isPartOf'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isPartOf:part";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_136 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanGroundsBrief",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanGroundsBrief",
-  has typeLabel "lingoPlanGroundsBrief",
-  has kind "relation",
-  has prefLabel "Plan Grounds Brief",
-  has definition "Relates Plan Grounds Brief participants in the Lingo Studio knowledge model.";
-put (resource: $resource_136, module: $module) isa inModule;
+put $generated_role_42 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isPartOf:whole",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isPartOf:whole",
+  has typeLabel "isPartOf:whole",
+  has kind "role",
+  has roleName "whole",
+  has prefLabel "whole",
+  has definition "Role 'whole' in relation 'isPartOf'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isPartOf:whole";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_137 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanIncludesItemRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanIncludesItemRevision",
-  has typeLabel "lingoPlanIncludesItemRevision",
-  has kind "relation",
-  has prefLabel "Plan Includes Item Revision",
-  has definition "Relates Plan Includes Item Revision participants in the Lingo Studio knowledge model.";
-put (resource: $resource_137, module: $module) isa inModule;
+put $generated_role_43 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isProducedBy:producer",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isProducedBy:producer",
+  has typeLabel "isProducedBy:producer",
+  has kind "role",
+  has roleName "producer",
+  has prefLabel "producer",
+  has definition "Role 'producer' in relation 'isProducedBy'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isProducedBy:producer";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_138 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemHasRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemHasRevision",
-  has typeLabel "lingoPlanItemHasRevision",
-  has kind "relation",
-  has prefLabel "Plan Item Has Revision",
-  has definition "Relates Plan Item Has Revision participants in the Lingo Studio knowledge model.";
-put (resource: $resource_138, module: $module) isa inModule;
+put $generated_role_44 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#isProducedBy:product",
+  has iri "https://github.com/vibe-machine/ontology-lingo#isProducedBy:product",
+  has typeLabel "isProducedBy:product",
+  has kind "role",
+  has roleName "product",
+  has prefLabel "product",
+  has definition "Role 'product' in relation 'isProducedBy'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#isProducedBy:product";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_139 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemId",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemId",
-  has typeLabel "lingoPlanItemId",
-  has kind "attribute",
-  has prefLabel "Plan Item Id",
-  has definition "A Plan Item Id value used by the Lingo Studio knowledge model.";
-put (resource: $resource_139, module: $module) isa inModule;
+put $generated_role_45 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#listClassification:classifiedList",
+  has iri "https://github.com/vibe-machine/ontology-lingo#listClassification:classifiedList",
+  has typeLabel "listClassification:classifiedList",
+  has kind "role",
+  has roleName "classifiedList",
+  has prefLabel "classifiedList",
+  has definition "Role 'classifiedList' in relation 'listClassification'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#listClassification:classifiedList";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_140 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemInterpretsBriefElement",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemInterpretsBriefElement",
-  has typeLabel "lingoPlanItemInterpretsBriefElement",
-  has kind "relation",
-  has prefLabel "Plan Item Interprets Brief Element",
-  has definition "Links a Grounding Plan item revision to the exact Brief element revision it interprets.";
-put (resource: $resource_140, module: $module) isa inModule;
+put $generated_role_46 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#listClassification:listKind",
+  has iri "https://github.com/vibe-machine/ontology-lingo#listClassification:listKind",
+  has typeLabel "listClassification:listKind",
+  has kind "role",
+  has roleName "listKind",
+  has prefLabel "listKind",
+  has definition "Role 'listKind' in relation 'listClassification'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#listClassification:listKind";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_141 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemMapsToSchemaResource",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlanItemMapsToSchemaResource",
-  has typeLabel "lingoPlanItemMapsToSchemaResource",
-  has kind "relation",
-  has prefLabel "Plan Item Maps To Schema Resource",
-  has definition "Relates Plan Item Maps To Schema Resource participants in the Lingo Studio knowledge model.";
-put (resource: $resource_141, module: $module) isa inModule;
+put $generated_role_47 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#locationClassification:classifiedLocation",
+  has iri "https://github.com/vibe-machine/ontology-lingo#locationClassification:classifiedLocation",
+  has typeLabel "locationClassification:classifiedLocation",
+  has kind "role",
+  has roleName "classifiedLocation",
+  has prefLabel "classifiedLocation",
+  has definition "Role 'classifiedLocation' in relation 'locationClassification'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#locationClassification:classifiedLocation";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_142 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoPlayerLabel",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoPlayerLabel",
-  has typeLabel "lingoPlayerLabel",
-  has kind "attribute",
-  has prefLabel "Player Label",
-  has definition "A Player Label value used by the Lingo Studio knowledge model.";
-put (resource: $resource_142, module: $module) isa inModule;
+put $generated_role_48 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#locationClassification:locationKind",
+  has iri "https://github.com/vibe-machine/ontology-lingo#locationClassification:locationKind",
+  has typeLabel "locationClassification:locationKind",
+  has kind "role",
+  has roleName "locationKind",
+  has prefLabel "locationKind",
+  has definition "Role 'locationKind' in relation 'locationClassification'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#locationClassification:locationKind";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_143 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#LingoPlaysOperation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#LingoPlaysOperation",
-  has typeLabel "LingoPlaysOperation",
-  has kind "entity",
-  has prefLabel "Plays Operation",
-  has definition "A Plays Operation concept in the Lingo Studio knowledge model.";
-put (resource: $resource_143, module: $module) isa inModule;
+put $generated_role_49 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#origin:originClaim",
+  has iri "https://github.com/vibe-machine/ontology-lingo#origin:originClaim",
+  has typeLabel "origin:originClaim",
+  has kind "role",
+  has roleName "originClaim",
+  has prefLabel "originClaim",
+  has definition "Role 'originClaim' in relation 'origin'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#origin:originClaim";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_144 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoProposedTargetKind",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoProposedTargetKind",
-  has typeLabel "lingoProposedTargetKind",
-  has kind "attribute",
-  has prefLabel "Proposed Target Kind",
-  has definition "A Proposed Target Kind value used by the Lingo Studio knowledge model.";
-put (resource: $resource_144, module: $module) isa inModule;
+put $generated_role_50 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#origin:originKind",
+  has iri "https://github.com/vibe-machine/ontology-lingo#origin:originKind",
+  has typeLabel "origin:originKind",
+  has kind "role",
+  has roleName "originKind",
+  has prefLabel "originKind",
+  has definition "Role 'originKind' in relation 'origin'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#origin:originKind";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_145 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoProposedTargetLabel",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoProposedTargetLabel",
-  has typeLabel "lingoProposedTargetLabel",
-  has kind "attribute",
-  has prefLabel "Proposed Target Label",
-  has definition "A Proposed Target Label value used by the Lingo Studio knowledge model.";
-put (resource: $resource_145, module: $module) isa inModule;
+put $generated_role_51 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#placement:passage",
+  has iri "https://github.com/vibe-machine/ontology-lingo#placement:passage",
+  has typeLabel "placement:passage",
+  has kind "role",
+  has roleName "passage",
+  has prefLabel "passage",
+  has definition "Role 'passage' in relation 'placement'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#placement:passage";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_146 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoRationale",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoRationale",
-  has typeLabel "lingoRationale",
-  has kind "attribute",
-  has prefLabel "Rationale",
-  has definition "A Rationale value used by the Lingo Studio knowledge model.";
-put (resource: $resource_146, module: $module) isa inModule;
+put $generated_role_52 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#placement:passageSource",
+  has iri "https://github.com/vibe-machine/ontology-lingo#placement:passageSource",
+  has typeLabel "placement:passageSource",
+  has kind "role",
+  has roleName "passageSource",
+  has prefLabel "passageSource",
+  has definition "Role 'passageSource' in relation 'placement'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#placement:passageSource";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $resource_147 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoReadinessEvaluationEvaluates",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoReadinessEvaluationEvaluates",
-  has typeLabel "lingoReadinessEvaluationEvaluates",
-  has kind "relation",
-  has prefLabel "Readiness Evaluation Evaluates",
-  has definition "Relates Readiness Evaluation Evaluates participants in the Lingo Studio knowledge model.";
-put (resource: $resource_147, module: $module) isa inModule;
+put $generated_role_53 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#processRecord:record",
+  has iri "https://github.com/vibe-machine/ontology-lingo#processRecord:record",
+  has typeLabel "processRecord:record",
+  has kind "role",
+  has roleName "record",
+  has prefLabel "record",
+  has definition "Role 'record' in relation 'processRecord'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#processRecord:record";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;

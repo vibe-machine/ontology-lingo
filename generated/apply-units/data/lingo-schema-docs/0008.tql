@@ -1,411 +1,452 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v0.1.1.package-manifest.json
-
-put $generated_role_1 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoApplyOutcomeForOperation:operation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoApplyOutcomeForOperation:operation",
-  has typeLabel "lingoApplyOutcomeForOperation:operation",
-  has kind "role",
-  has roleName "operation",
-  has prefLabel "operation",
-  has definition "Role 'operation' in relation 'lingoApplyOutcomeForOperation'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoApplyOutcomeForOperation:operation";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+# manifest: manifests/lingo-v1.0.0.package-manifest.json
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoCompilerVersion";
+  $struct_left isa SchemaResource, has typeLabel "aboutness";
+  $struct_right isa SchemaResource, has typeLabel "isAbout";
   not {
-    $schema_resource has valueTypeName "string";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoCompletedAt";
+  $struct_left isa SchemaResource, has typeLabel "SourceClaim";
+  $struct_right isa SchemaResource, has typeLabel "claimId";
   not {
-    $schema_resource has valueTypeName "datetime";
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
   };
 insert
-  $schema_resource has valueTypeName "datetime";
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoConfigurationFingerprint";
+  $struct_left isa SchemaResource, has typeLabel "SourceClaim";
+  $struct_right isa SchemaResource, has typeLabel "containedText";
   not {
-    $schema_resource has valueTypeName "string";
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoConstraintKind";
+  $struct_left isa SchemaResource, has typeLabel "SourceKind";
+  $struct_right isa SchemaResource, has typeLabel "name";
   not {
-    $schema_resource has valueTypeName "string";
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoContentHash";
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "alternateName";
   not {
-    $schema_resource has valueTypeName "string";
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoContractVersion";
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "name";
   not {
-    $schema_resource has valueTypeName "string";
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoCorpusFingerprint";
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "termId";
   not {
-    $schema_resource has valueTypeName "string";
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoCreatedAt";
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "termIsReaders";
   not {
-    $schema_resource has valueTypeName "datetime";
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
   };
 insert
-  $schema_resource has valueTypeName "datetime";
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoDatabaseEndpoint";
+  $struct_left isa SchemaResource, has typeLabel "step";
+  $struct_right isa SchemaResource, has typeLabel "sequence";
   not {
-    $schema_resource has valueTypeName "string";
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoDatabaseName";
+  $struct_left isa SchemaResource, has typeLabel "AssistantModel";
+  $struct_right isa SchemaResource, has typeLabel "decisionMaking:decider";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoDecisionId";
+  $struct_left isa SchemaResource, has typeLabel "AssistantModel";
+  $struct_right isa SchemaResource, has typeLabel "readership:reader";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoDependencyClosureHash";
+  $struct_left isa SchemaResource, has typeLabel "BriefConcept";
+  $struct_right isa SchemaResource, has typeLabel "frameEnd:participant";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoDiagnostic";
+  $struct_left isa SchemaResource, has typeLabel "BriefConcept";
+  $struct_right isa SchemaResource, has typeLabel "termReconciliation:concept";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoDistinctParticipants";
+  $struct_left isa SchemaResource, has typeLabel "BriefElement";
+  $struct_right isa SchemaResource, has typeLabel "grounding:element";
   not {
-    $schema_resource has valueTypeName "boolean";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "boolean";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoElementKind";
+  $struct_left isa SchemaResource, has typeLabel "BriefElement";
+  $struct_right isa SchemaResource, has typeLabel "inclusion:element";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoEvaluationId";
+  $struct_left isa SchemaResource, has typeLabel "BriefElement";
+  $struct_right isa SchemaResource, has typeLabel "questionReference:referencedElement";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoEvidenceExcerptId";
+  $struct_left isa SchemaResource, has typeLabel "BriefElement";
+  $struct_right isa SchemaResource, has typeLabel "replacement:newer";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoEvidenceSourceId";
+  $struct_left isa SchemaResource, has typeLabel "BriefElement";
+  $struct_right isa SchemaResource, has typeLabel "replacement:older";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoExecutableCqId";
+  $struct_left isa SchemaResource, has typeLabel "BriefElement";
+  $struct_right isa SchemaResource, has typeLabel "standing:subject";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoExpectedAnswerShape";
+  $struct_left isa SchemaResource, has typeLabel "BriefQuestion";
+  $struct_right isa SchemaResource, has typeLabel "questionReference:question";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoExpectedResult";
+  $struct_left isa SchemaResource, has typeLabel "BriefRelationFrame";
+  $struct_right isa SchemaResource, has typeLabel "frameEnd:frame";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoInputId";
+  $struct_left isa SchemaResource, has typeLabel "BriefRevision";
+  $struct_right isa SchemaResource, has typeLabel "decisionMaking:decision";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoLegacyIdentity";
+  $struct_left isa SchemaResource, has typeLabel "BriefRevision";
+  $struct_right isa SchemaResource, has typeLabel "inclusion:revision";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoLocatorKind";
+  $struct_left isa SchemaResource, has typeLabel "BriefRevision";
+  $struct_right isa SchemaResource, has typeLabel "revisionHistory:revision";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoLocatorValue";
+  $struct_left isa SchemaResource, has typeLabel "ClaimCheck";
+  $struct_right isa SchemaResource, has typeLabel "checkOutcome:judgedCheck";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoMaximumCardinality";
+  $struct_left isa SchemaResource, has typeLabel "ClaimCheck";
+  $struct_right isa SchemaResource, has typeLabel "checkSubject:check";
   not {
-    $schema_resource has valueTypeName "integer";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "integer";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoMediaType";
+  $struct_left isa SchemaResource, has typeLabel "ClaimCheck";
+  $struct_right isa SchemaResource, has typeLabel "decisionMaking:decision";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoMinimumCardinality";
+  $struct_left isa SchemaResource, has typeLabel "DutyClaim";
+  $struct_right isa SchemaResource, has typeLabel "duty:claim";
   not {
-    $schema_resource has valueTypeName "integer";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "integer";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoMutationKilled";
+  $struct_left isa SchemaResource, has typeLabel "DutyClaim";
+  $struct_right isa SchemaResource, has typeLabel "dutyClassification:classifiedDuty";
   not {
-    $schema_resource has valueTypeName "boolean";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "boolean";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoMutationName";
+  $struct_left isa SchemaResource, has typeLabel "Enumeration";
+  $struct_right isa SchemaResource, has typeLabel "division:list";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoName";
+  $struct_left isa SchemaResource, has typeLabel "Enumeration";
+  $struct_right isa SchemaResource, has typeLabel "listClassification:classifiedList";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoNormalizedInterpretation";
+  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "placement:passageSource";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoOperationKind";
+  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "readingSubject:sourceRead";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoOwnerLabel";
+  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "sourceClassification:classifiedSource";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoPackageCommit";
+  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "sourceFormat:formattedSource";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoPackageName";
+  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "vocabulary:termSource";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoPackageVersion";
+  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "whereabouts:locatedSource";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoPayloadId";
+  $struct_left isa SchemaResource, has typeLabel "LifeHistory";
+  $struct_right isa SchemaResource, has typeLabel "step:history";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoPlanItemId";
+  $struct_left isa SchemaResource, has typeLabel "LinkClaim";
+  $struct_right isa SchemaResource, has typeLabel "assertedLink:claim";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoPlayerLabel";
+  $struct_left isa SchemaResource, has typeLabel "LocationKind";
+  $struct_right isa SchemaResource, has typeLabel "locationClassification:locationKind";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoProposedTargetKind";
+  $struct_left isa SchemaResource, has typeLabel "MediaType";
+  $struct_right isa SchemaResource, has typeLabel "sourceFormat:format";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoProposedTargetLabel";
+  $struct_left isa SchemaResource, has typeLabel "ModelingBrief";
+  $struct_right isa SchemaResource, has typeLabel "revisionHistory:brief";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoRationale";
+  $struct_left isa SchemaResource, has typeLabel "Passage";
+  $struct_right isa SchemaResource, has typeLabel "placement:passage";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoRelationRoleDefinitionId";
+  $struct_left isa SchemaResource, has typeLabel "Passage";
+  $struct_right isa SchemaResource, has typeLabel "support:evidence";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoRendererVersion";
+  $struct_left isa SchemaResource, has typeLabel "Person";
+  $struct_right isa SchemaResource, has typeLabel "decisionMaking:decider";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoResultGraphFingerprint";
+  $struct_left isa SchemaResource, has typeLabel "Person";
+  $struct_right isa SchemaResource, has typeLabel "readership:reader";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoRevisionId";
+  $struct_left isa SchemaResource, has typeLabel "Reading";
+  $struct_right isa SchemaResource, has typeLabel "authorship:reading";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoRevisionNumber";
+  $struct_left isa SchemaResource, has typeLabel "Reading";
+  $struct_right isa SchemaResource, has typeLabel "copyRead:readingOfCopy";
   not {
-    $schema_resource has valueTypeName "integer";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "integer";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoRoleName";
+  $struct_left isa SchemaResource, has typeLabel "Reading";
+  $struct_right isa SchemaResource, has typeLabel "processRecord:recordedReading";
   not {
-    $schema_resource has valueTypeName "string";
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reading";
+  $struct_right isa SchemaResource, has typeLabel "readership:reading";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;

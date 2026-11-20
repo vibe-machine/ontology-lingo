@@ -1,0 +1,4 @@
+# 25. Which statements in the brief rest only on what the owner said in a session?
+match $e isa BriefElement, has containedText $n; grounding (element: $e, groundingClaim: $c);
+  not { grounding (element: $e, groundingClaim: $c2); support (supportedClaim: $c2, evidence: $p2); placement (passage: $p2, passageSource: $s2); not { $s2 isa SessionRecord; }; };
+  select $n;

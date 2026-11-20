@@ -1,0 +1,2 @@
+# 20. Which concepts in the brief rest on no claim from any source?
+match $e isa BriefConcept, has name $n; not { grounding (element: $e); }; select $n;

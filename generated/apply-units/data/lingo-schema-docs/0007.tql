@@ -1,744 +1,452 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v0.1.1.package-manifest.json
-
-put $generated_role_1 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoApplyOutcomeForOperation:operation",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoApplyOutcomeForOperation:operation",
-  has typeLabel "lingoApplyOutcomeForOperation:operation",
-  has kind "role",
-  has roleName "operation",
-  has prefLabel "operation",
-  has definition "Role 'operation' in relation 'lingoApplyOutcomeForOperation'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoApplyOutcomeForOperation:operation";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_74 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoTargetUsesModuleVersion:targetContextRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoTargetUsesModuleVersion:targetContextRevision",
-  has typeLabel "lingoTargetUsesModuleVersion:targetContextRevision",
-  has kind "role",
-  has roleName "targetContextRevision",
-  has prefLabel "targetContextRevision",
-  has definition "Role 'targetContextRevision' in relation 'lingoTargetUsesModuleVersion'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoTargetUsesModuleVersion:targetContextRevision";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_75 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationExecutesQuestion:executableQuestion",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationExecutesQuestion:executableQuestion",
-  has typeLabel "lingoVerificationExecutesQuestion:executableQuestion",
-  has kind "role",
-  has roleName "executableQuestion",
-  has prefLabel "executableQuestion",
-  has definition "Role 'executableQuestion' in relation 'lingoVerificationExecutesQuestion'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationExecutesQuestion:executableQuestion";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_76 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationExecutesQuestion:verificationRun",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationExecutesQuestion:verificationRun",
-  has typeLabel "lingoVerificationExecutesQuestion:verificationRun",
-  has kind "role",
-  has roleName "verificationRun",
-  has prefLabel "verificationRun",
-  has definition "Role 'verificationRun' in relation 'lingoVerificationExecutesQuestion'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationExecutesQuestion:verificationRun";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_77 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationHasResult:verificationResult",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationHasResult:verificationResult",
-  has typeLabel "lingoVerificationHasResult:verificationResult",
-  has kind "role",
-  has roleName "verificationResult",
-  has prefLabel "verificationResult",
-  has definition "Role 'verificationResult' in relation 'lingoVerificationHasResult'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationHasResult:verificationResult";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_78 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationHasResult:verificationRun",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationHasResult:verificationRun",
-  has typeLabel "lingoVerificationHasResult:verificationRun",
-  has kind "role",
-  has roleName "verificationRun",
-  has prefLabel "verificationRun",
-  has definition "Role 'verificationRun' in relation 'lingoVerificationHasResult'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationHasResult:verificationRun";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_79 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRunsInBinding:stagingBinding",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRunsInBinding:stagingBinding",
-  has typeLabel "lingoVerificationRunsInBinding:stagingBinding",
-  has kind "role",
-  has roleName "stagingBinding",
-  has prefLabel "stagingBinding",
-  has definition "Role 'stagingBinding' in relation 'lingoVerificationRunsInBinding'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRunsInBinding:stagingBinding";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_80 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRunsInBinding:verificationRun",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRunsInBinding:verificationRun",
-  has typeLabel "lingoVerificationRunsInBinding:verificationRun",
-  has kind "role",
-  has roleName "verificationRun",
-  has prefLabel "verificationRun",
-  has definition "Role 'verificationRun' in relation 'lingoVerificationRunsInBinding'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationRunsInBinding:verificationRun";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_81 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesChangeSet:changeSet",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesChangeSet:changeSet",
-  has typeLabel "lingoVerificationVerifiesChangeSet:changeSet",
-  has kind "role",
-  has roleName "changeSet",
-  has prefLabel "changeSet",
-  has definition "Role 'changeSet' in relation 'lingoVerificationVerifiesChangeSet'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesChangeSet:changeSet";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_82 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesChangeSet:verificationRun",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesChangeSet:verificationRun",
-  has typeLabel "lingoVerificationVerifiesChangeSet:verificationRun",
-  has kind "role",
-  has roleName "verificationRun",
-  has prefLabel "verificationRun",
-  has definition "Role 'verificationRun' in relation 'lingoVerificationVerifiesChangeSet'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoVerificationVerifiesChangeSet:verificationRun";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_83 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCatalogsEvidenceSource:evidenceSource",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCatalogsEvidenceSource:evidenceSource",
-  has typeLabel "lingoWorkbookCatalogsEvidenceSource:evidenceSource",
-  has kind "role",
-  has roleName "evidenceSource",
-  has prefLabel "evidenceSource",
-  has definition "Role 'evidenceSource' in relation 'lingoWorkbookCatalogsEvidenceSource'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCatalogsEvidenceSource:evidenceSource";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_84 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCatalogsEvidenceSource:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCatalogsEvidenceSource:workbook",
-  has typeLabel "lingoWorkbookCatalogsEvidenceSource:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookCatalogsEvidenceSource'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCatalogsEvidenceSource:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_85 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookContainsInput:input",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookContainsInput:input",
-  has typeLabel "lingoWorkbookContainsInput:input",
-  has kind "role",
-  has roleName "input",
-  has prefLabel "input",
-  has definition "Role 'input' in relation 'lingoWorkbookContainsInput'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookContainsInput:input";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_86 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookContainsInput:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookContainsInput:workbook",
-  has typeLabel "lingoWorkbookContainsInput:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookContainsInput'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookContainsInput:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_87 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentBrief:briefRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentBrief:briefRevision",
-  has typeLabel "lingoWorkbookCurrentBrief:briefRevision",
-  has kind "role",
-  has roleName "briefRevision",
-  has prefLabel "briefRevision",
-  has definition "Role 'briefRevision' in relation 'lingoWorkbookCurrentBrief'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentBrief:briefRevision";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_88 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentBrief:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentBrief:workbook",
-  has typeLabel "lingoWorkbookCurrentBrief:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookCurrentBrief'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentBrief:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_89 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentPlan:planRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentPlan:planRevision",
-  has typeLabel "lingoWorkbookCurrentPlan:planRevision",
-  has kind "role",
-  has roleName "planRevision",
-  has prefLabel "planRevision",
-  has definition "Role 'planRevision' in relation 'lingoWorkbookCurrentPlan'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentPlan:planRevision";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_90 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentPlan:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentPlan:workbook",
-  has typeLabel "lingoWorkbookCurrentPlan:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookCurrentPlan'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentPlan:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_91 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentTargetContext:targetContextRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentTargetContext:targetContextRevision",
-  has typeLabel "lingoWorkbookCurrentTargetContext:targetContextRevision",
-  has kind "role",
-  has roleName "targetContextRevision",
-  has prefLabel "targetContextRevision",
-  has definition "Role 'targetContextRevision' in relation 'lingoWorkbookCurrentTargetContext'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentTargetContext:targetContextRevision";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_92 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentTargetContext:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentTargetContext:workbook",
-  has typeLabel "lingoWorkbookCurrentTargetContext:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookCurrentTargetContext'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookCurrentTargetContext:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_93 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasApplyReceipt:applyReceipt",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasApplyReceipt:applyReceipt",
-  has typeLabel "lingoWorkbookHasApplyReceipt:applyReceipt",
-  has kind "role",
-  has roleName "applyReceipt",
-  has prefLabel "applyReceipt",
-  has definition "Role 'applyReceipt' in relation 'lingoWorkbookHasApplyReceipt'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasApplyReceipt:applyReceipt";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_94 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasApplyReceipt:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasApplyReceipt:workbook",
-  has typeLabel "lingoWorkbookHasApplyReceipt:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookHasApplyReceipt'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasApplyReceipt:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_95 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasBriefRevision:briefRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasBriefRevision:briefRevision",
-  has typeLabel "lingoWorkbookHasBriefRevision:briefRevision",
-  has kind "role",
-  has roleName "briefRevision",
-  has prefLabel "briefRevision",
-  has definition "Role 'briefRevision' in relation 'lingoWorkbookHasBriefRevision'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasBriefRevision:briefRevision";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_96 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasBriefRevision:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasBriefRevision:workbook",
-  has typeLabel "lingoWorkbookHasBriefRevision:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookHasBriefRevision'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasBriefRevision:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_97 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasChangeSet:changeSet",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasChangeSet:changeSet",
-  has typeLabel "lingoWorkbookHasChangeSet:changeSet",
-  has kind "role",
-  has roleName "changeSet",
-  has prefLabel "changeSet",
-  has definition "Role 'changeSet' in relation 'lingoWorkbookHasChangeSet'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasChangeSet:changeSet";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_98 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasChangeSet:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasChangeSet:workbook",
-  has typeLabel "lingoWorkbookHasChangeSet:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookHasChangeSet'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasChangeSet:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_99 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasClarificationIssue:clarificationIssue",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasClarificationIssue:clarificationIssue",
-  has typeLabel "lingoWorkbookHasClarificationIssue:clarificationIssue",
-  has kind "role",
-  has roleName "clarificationIssue",
-  has prefLabel "clarificationIssue",
-  has definition "Role 'clarificationIssue' in relation 'lingoWorkbookHasClarificationIssue'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasClarificationIssue:clarificationIssue";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_100 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasClarificationIssue:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasClarificationIssue:workbook",
-  has typeLabel "lingoWorkbookHasClarificationIssue:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookHasClarificationIssue'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasClarificationIssue:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_101 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasPlanRevision:planRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasPlanRevision:planRevision",
-  has typeLabel "lingoWorkbookHasPlanRevision:planRevision",
-  has kind "role",
-  has roleName "planRevision",
-  has prefLabel "planRevision",
-  has definition "Role 'planRevision' in relation 'lingoWorkbookHasPlanRevision'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasPlanRevision:planRevision";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_102 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasPlanRevision:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasPlanRevision:workbook",
-  has typeLabel "lingoWorkbookHasPlanRevision:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookHasPlanRevision'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasPlanRevision:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_103 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasStagingBinding:stagingBinding",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasStagingBinding:stagingBinding",
-  has typeLabel "lingoWorkbookHasStagingBinding:stagingBinding",
-  has kind "role",
-  has roleName "stagingBinding",
-  has prefLabel "stagingBinding",
-  has definition "Role 'stagingBinding' in relation 'lingoWorkbookHasStagingBinding'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasStagingBinding:stagingBinding";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_104 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasStagingBinding:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasStagingBinding:workbook",
-  has typeLabel "lingoWorkbookHasStagingBinding:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookHasStagingBinding'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasStagingBinding:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_105 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasTargetContextRevision:targetContextRevision",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasTargetContextRevision:targetContextRevision",
-  has typeLabel "lingoWorkbookHasTargetContextRevision:targetContextRevision",
-  has kind "role",
-  has roleName "targetContextRevision",
-  has prefLabel "targetContextRevision",
-  has definition "Role 'targetContextRevision' in relation 'lingoWorkbookHasTargetContextRevision'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasTargetContextRevision:targetContextRevision";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_106 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasTargetContextRevision:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasTargetContextRevision:workbook",
-  has typeLabel "lingoWorkbookHasTargetContextRevision:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookHasTargetContextRevision'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasTargetContextRevision:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_107 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasVerificationRun:verificationRun",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasVerificationRun:verificationRun",
-  has typeLabel "lingoWorkbookHasVerificationRun:verificationRun",
-  has kind "role",
-  has roleName "verificationRun",
-  has prefLabel "verificationRun",
-  has definition "Role 'verificationRun' in relation 'lingoWorkbookHasVerificationRun'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasVerificationRun:verificationRun";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_108 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasVerificationRun:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasVerificationRun:workbook",
-  has typeLabel "lingoWorkbookHasVerificationRun:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'lingoWorkbookHasVerificationRun'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#lingoWorkbookHasVerificationRun:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_109 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#workbookContainsRow:row",
-  has iri "https://github.com/vibe-machine/ontology-lingo#workbookContainsRow:row",
-  has typeLabel "workbookContainsRow:row",
-  has kind "role",
-  has roleName "row",
-  has prefLabel "row",
-  has definition "Role 'row' in relation 'workbookContainsRow'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#workbookContainsRow:row";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_110 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#workbookContainsRow:workbook",
-  has iri "https://github.com/vibe-machine/ontology-lingo#workbookContainsRow:workbook",
-  has typeLabel "workbookContainsRow:workbook",
-  has kind "role",
-  has roleName "workbook",
-  has prefLabel "workbook",
-  has definition "Role 'workbook' in relation 'workbookContainsRow'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#workbookContainsRow:workbook";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
+# manifest: manifests/lingo-v1.0.0.package-manifest.json
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoActualResult";
+  $struct_left isa SchemaResource, has typeLabel "aboutness";
+  $struct_right isa SchemaResource, has typeLabel "isAbout";
   not {
-    $schema_resource has valueTypeName "string";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoAnnotation";
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "KnowledgeConcept";
   not {
-    $schema_resource has valueTypeName "string";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoApplyOutcomeId";
+  $struct_left isa SchemaResource, has typeLabel "standing";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy";
   not {
-    $schema_resource has valueTypeName "string";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoApplyReceiptId";
+  $struct_left isa SchemaResource, has typeLabel "standing:state";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:category";
   not {
-    $schema_resource has valueTypeName "string";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoArchivedAt";
+  $struct_left isa SchemaResource, has typeLabel "standing:subject";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:categorizedThing";
   not {
-    $schema_resource has valueTypeName "datetime";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "datetime";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoAttentionReason";
+  $struct_left isa SchemaResource, has typeLabel "support";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn";
   not {
-    $schema_resource has valueTypeName "string";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoBriefElementId";
+  $struct_left isa SchemaResource, has typeLabel "support:evidence";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:basis";
   not {
-    $schema_resource has valueTypeName "string";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoByteLength";
+  $struct_left isa SchemaResource, has typeLabel "support:supportedClaim";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:derivedThing";
   not {
-    $schema_resource has valueTypeName "integer";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "integer";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoCandidateRank";
+  $struct_left isa SchemaResource, has typeLabel "TermDefinition";
+  $struct_right isa SchemaResource, has typeLabel "SourceClaim";
   not {
-    $schema_resource has valueTypeName "integer";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "integer";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoCandidateScore";
+  $struct_left isa SchemaResource, has typeLabel "vocabulary";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf";
   not {
-    $schema_resource has valueTypeName "double";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "double";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoChangeOperationId";
+  $struct_left isa SchemaResource, has typeLabel "vocabulary:term";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf:part";
   not {
-    $schema_resource has valueTypeName "string";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
-  $schema_resource isa SchemaResource, has typeLabel "lingoClarificationId";
+  $struct_left isa SchemaResource, has typeLabel "vocabulary:termSource";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf:whole";
   not {
-    $schema_resource has valueTypeName "string";
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
 insert
-  $schema_resource has valueTypeName "string";
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "whereabouts";
+  $struct_right isa SchemaResource, has typeLabel "hasAddress";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "whereabouts:locatedSource";
+  $struct_right isa SchemaResource, has typeLabel "hasAddress:addressedThing";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "whereabouts:location";
+  $struct_right isa SchemaResource, has typeLabel "hasAddress:address";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "AssistantModel";
+  $struct_right isa SchemaResource, has typeLabel "name";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "BriefConcept";
+  $struct_right isa SchemaResource, has typeLabel "name";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "BriefElement";
+  $struct_right isa SchemaResource, has typeLabel "briefElementId";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "BriefElement";
+  $struct_right isa SchemaResource, has typeLabel "containedText";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "BriefElement";
+  $struct_right isa SchemaResource, has typeLabel "description";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "BriefRelationFrame";
+  $struct_right isa SchemaResource, has typeLabel "name";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "BriefRevision";
+  $struct_right isa SchemaResource, has typeLabel "atDateTime";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "BriefRevision";
+  $struct_right isa SchemaResource, has typeLabel "briefRevisionId";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "BriefRevision";
+  $struct_right isa SchemaResource, has typeLabel "description";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "BriefRevision";
+  $struct_right isa SchemaResource, has typeLabel "sequence";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "ClaimCheck";
+  $struct_right isa SchemaResource, has typeLabel "atDateTime";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "ClaimCheck";
+  $struct_right isa SchemaResource, has typeLabel "checkId";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "ClaimCheck";
+  $struct_right isa SchemaResource, has typeLabel "description";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Enumeration";
+  $struct_right isa SchemaResource, has typeLabel "listIsComplete";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "authorName";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "contentHash";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "name";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "publishedYear";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
+  $struct_right isa SchemaResource, has typeLabel "sourceId";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "frameEnd";
+  $struct_right isa SchemaResource, has typeLabel "name";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "LifeHistory";
+  $struct_right isa SchemaResource, has typeLabel "statesAreOrdered";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "LinkClaim";
+  $struct_right isa SchemaResource, has typeLabel "verbPhrase";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "LocationKind";
+  $struct_right isa SchemaResource, has typeLabel "name";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "ModelingBrief";
+  $struct_right isa SchemaResource, has typeLabel "briefId";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "ModelingBrief";
+  $struct_right isa SchemaResource, has typeLabel "name";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Passage";
+  $struct_right isa SchemaResource, has typeLabel "locator";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Passage";
+  $struct_right isa SchemaResource, has typeLabel "passageId";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reading";
+  $struct_right isa SchemaResource, has typeLabel "atDateTime";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reading";
+  $struct_right isa SchemaResource, has typeLabel "formatVersion";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reading";
+  $struct_right isa SchemaResource, has typeLabel "readingId";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reconciliation";
+  $struct_right isa SchemaResource, has typeLabel "atDateTime";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reconciliation";
+  $struct_right isa SchemaResource, has typeLabel "description";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reconciliation";
+  $struct_right isa SchemaResource, has typeLabel "reconciliationId";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Rule";
+  $struct_right isa SchemaResource, has typeLabel "quantity";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Rule";
+  $struct_right isa SchemaResource, has typeLabel "quantityUnit";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;

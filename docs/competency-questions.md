@@ -1,11 +1,9 @@
-# Questions the evidence and brief part of Lingo must answer
+# Questions the Lingo ontology must answer
 
-Draft. These are Lingo's own competency questions for the part of its model that records what was read,
+These are Lingo's own competency questions for the part of its model that records what was read,
 what each source says, and what we intend to model. They come from what Studio does today and from what
-the first reading of a book for the product operating model needed. The draft schema beside this file
-(`evidence-and-brief.tql`) was written to answer them. Questions marked "run" were answered by a query
-against a scratch database holding gist, the draft schema and a small sample
-(`evidence-and-brief.sample.tqls`, `evidence-and-brief.ask.tqls`).
+the first reading of a book for the product operating model needed. The schema (`schema/lingo.tql`) was written to answer them. Questions marked "run" have a query in `queries/`,
+answered against a scratch database holding gist, this package and the sample in `fixtures/`.
 
 ## What was read
 
@@ -55,4 +53,4 @@ against a scratch database holding gist, the draft schema and a small sample
 ## Left for later parts
 
 Amendments and their reviews, the grounding plan, the change set, verification and apply are not in this
-draft. Their ideas stand; they would be re-seated on gist the same way.
+version. Their ideas stand; they would be re-seated on gist the same way.

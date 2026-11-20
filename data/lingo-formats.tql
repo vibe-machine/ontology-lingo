@@ -1,0 +1,11 @@
+# The file formats a source may be in, as gist media types.
+# `put` writes a value only when it is missing.
+
+put $c48 isa MediaType, has name "EPUB";
+put $c49 isa MediaType, has name "PDF";
+put $c50 isa MediaType, has name "HTML";
+put $c51 isa MediaType, has name "OWL";
+put $c52 isa MediaType, has name "Turtle";
+put $c53 isa MediaType, has name "plain text";
+put $c54 isa MediaType, has name "Markdown";
+put $c55 isa MediaType, has name "JSON Lines";

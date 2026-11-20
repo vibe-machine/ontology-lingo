@@ -1,0 +1,2 @@
+# 8. Into what kinds does a source divide a term?
+match division (dividedTerm: $of, memberTerm: $m); $of has name $o; $m has name $member; select $o, $member;

@@ -1,62 +1,62 @@
 # ontology-lingo
 
-`ontology-lingo` is the governed TypeDB package for Lingo Studio's modeling-process knowledge. It stores durable Workbooks, Modeling Inputs, evidence, Modeling Brief and Grounding Plan revisions, structured Ontology Change Sets, executable competency questions, Verification Runs, staging provenance, and Apply Receipts in the same `knowledge` graph as gist and domain ontologies.
+The Lingo ontology is the record of how a model is made. Every other ontology models a subject;
+this one models the making of a model, so that any concept can be followed back to the passages
+that prompted it, and any source to everything taken from it. It lives in the same `knowledge`
+database as gist and the subject ontologies, and depends only on `gist`.
 
-The package depends only on `gist`. Studio-specific concepts live here rather than in gist or ontology-vibemachine, while mappings reference the shared `SchemaResource`, `OntologyModuleVersion`, and `Thing` identities.
+## The three layers
+
+1. **What was read.** An `EvidenceSource` (a book, an essay, a schema) in a file format, kept at
+   one or more `SourceLocation`s; a `Passage` is a place in it; a `Reading` is one pass over it by
+   one reader under one version of the reading instructions. A `SessionRecord` is the record of a
+   working session, joined to the readings done in it.
+2. **What the source says, in its own terms.** A `SourceTerm` is a word as one source uses it. A
+   `SourceClaim` is one thing the source says, in our wording, and is one of nine kinds. Every
+   claim rests on at least one passage and comes from exactly one reading.
+3. **What we intend to model, in ours.** A `ModelingBrief` has `BriefRevision`s; each lists the
+   `BriefElement`s in force (purpose, scope, concepts, relations, constraints, questions).
+
+A `Reconciliation` is the recorded decision that a source's term is, or is not, one of our concepts.
+
+The later steps of Lingo Studio (grounding plan, change set, verification, apply) are not modelled
+in this version.
+
+## Design rules
+
+- Designed from competency questions: `docs/competency-questions.md`. A change starts there.
+- Every type is built on a gist type, and a relation on a gist relation where one fits.
+- Fixed lists are categories with seed values (`data/lingo-categories.tql`), not strings.
+- The source's words are never stored: a passage holds where, a claim holds our wording.
+- A brief is never edited in place; a changed statement replaces the old one.
+- Type names carry no `lingo` prefix. A name must not collide with another package's
+  (`reference` belongs to beads, so the relation here is `questionReference`).
+- gist's upper types are not abstract, so `SourceClaim` and `BriefElement` cannot be; only their
+  subtypes are ever written.
 
 ## Commands
 
 ```bash
-npm run refresh:package-contract
-npm run validate:bootstrap
-npm run test:typedb-bootstrap
-npm test
+npm run refresh:package-contract   # after changing schema, data or package.json
+npm test                           # loads gist and this package into a temporary TypeDB
 npm run release:check
 ```
 
-The full test loads gist, this schema, self-documentation, provenance, and both fixtures into a temporary real TypeDB 3 server.
+Before a release, also run the candidate through the app's install:
+`mise run check-package-release <this checkout> <gist checkout>` in OneWorkspace.
 
 ## Layout
 
-- `schema/lingo.tql` — hand-authored canonical schema.
-- `fixtures/` — Minimal Sprint and Basketball graph fixtures.
-- `queries/` — direct lineage traversals over those fixtures.
-- `data/lingo-schema-docs.tql` — generated queryable `SchemaResource` documentation.
-- `data/lingo-provenance.tql` — generated package provenance.
-- `migrations/` — future in-place schema/data migrations.
-- `manifests/` — deterministic package manifest and checksums.
+- `schema/lingo.tql`: the hand-written schema.
+- `data/lingo-categories.tql`, `data/lingo-formats.tql`: the fixed lists and the file formats.
+- `docs/competency-questions.md`: the questions the model must answer.
+- `queries/`: queries that answer nine of them.
+- `fixtures/transformed-sample.tql`: a small sample for those queries. Never installed.
+- `data/lingo-schema-docs.tql`, `data/lingo-provenance.tql`, `manifests/`, the other files in
+  `schema/`: generated.
 
-## Domain invariants
+## History
 
-- One Workbook represents one coherent modeling effort.
-- Workbook intent and `lingoUpdatedAt` are small canonical graph attributes used
-  to build the Studio index; opening a workbook does not rewrite them, and the
-  update timestamp never moves backward.
-- Brief revisions own problem meaning. Each Grounding Plan item carries the
-  stable Brief element identity and links to the exact element revision it
-  interpreted; it never copies Brief or evidence text into its solution payload.
-- `lingoModelingAct` records the modeling operation (`specialize`, `compose`,
-  `categorize`, or `instantiate`). `lingoSchemaLifecycleIntent` independently
-  records the intended schema effect (`add`, `reuse`, `noChange`, or `defer`).
-  For example, composing a relation does not imply that a new relation type
-  will be added.
-- Evidence is stored once in the Workbook ledger and referenced by claims and decisions.
-- Revisions, decisions, Change Sets, Verification Runs, and Apply Receipts are immutable.
-- Competency questions remain canonical in the Brief. Each executable question
-  is a versioned derivative tied to one exact Brief, Plan, and Change Set; it
-  carries a typed answer contract, generator provenance, human interpretation
-  confirmations, and explicit links to the model commitments it tests.
-- Ambiguous or untranslated competency questions persist as blocked artifacts
-  instead of disappearing from verification readiness.
-- Human decision, grounding readiness, and verification are separate axes.
-- Raw TypeQL and large payloads are content-addressed derivatives, not opaque canonical rows.
-- Full-graph staging copies remain the operational strategy for now.
-
-`LingoWorkbook`, `LingoWorkbookRow`, and `workbookContainsRow` are explicitly
-legacy migration sources carried by the package so the current Studio can stop
-defining schema at startup before its data migration lands. They are not part
-of the canonical object model and will be retired only after `one-2xg.54.6`
-verifies the graph-native replacement.
-
-OneWorkspace implements this contract in `GroundingPlan`,
-`GroundingPlanStore`, and the temporary `LegacyPlacementDecisionAdapter`.
+Versions 0.1.0 to 0.1.9 held an earlier model (workbooks, grounding plans, change sets, receipts)
+that was not designed from questions. Version 1.0.0 replaces it and carries no migration from it.
+The old model is in the git history and under the `v0.1.x` tags.
