@@ -1,7 +1,7 @@
 {
   "name": "lingo",
   "displayName": "Lingo",
-  "version": "0.1.9",
+  "version": "1.0.0",
   "description": "The record of how a model is made: what was read, what each source says in its own terms, what we intend to model, and the decisions that join them.",
   "author": "vibe-machine",
   "license": "MIT",
@@ -58,7 +58,7 @@
     "release:check": "../ontology-tooling/bin/ont release --repo . --validate-only"
   },
   "manifests": [
-    "manifests/lingo-v0.1.9.package-manifest.json"
+    "manifests/lingo-v1.0.0.package-manifest.json"
   ],
   "assembly": {
     "loadOrder": [
@@ -88,11 +88,11 @@
       "data/lingo-schema-docs.tql",
       "data/lingo-provenance.tql",
       "manifests/package-manifest.schema.json",
-      "manifests/lingo-v0.1.9.package-manifest.json"
+      "manifests/lingo-v1.0.0.package-manifest.json"
     ]
   },
   "provenance": {
-    "manifest": "manifests/lingo-v0.1.9.package-manifest.json",
+    "manifest": "manifests/lingo-v1.0.0.package-manifest.json",
     "status": "bootstrap"
   },
   "legacyDocumentation": {
