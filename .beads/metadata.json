@@ -1,7 +1,7 @@
 {
   "database": "dolt",
   "backend": "dolt",
-  "dolt_mode": "embedded",
+  "dolt_mode": "server",
   "dolt_database": "onlingo",
   "project_id": "acf800bf-c763-4d3a-8837-c6b350288683"
 }
