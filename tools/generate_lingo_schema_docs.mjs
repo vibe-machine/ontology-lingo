@@ -42,7 +42,7 @@ const entries = [...structure.typeKinds.entries()]
 const lines = [
   "put $module isa SchemaModule,",
   "  has moduleKey \"lingo\",",
-  "  has moduleName \"Lingo\",",
+  "  has moduleName \"Lingo Studio Knowledge\",",
   "  has moduleKind \"hand-authored-package\";",
   ""
 ];

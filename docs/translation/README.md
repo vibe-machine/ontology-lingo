@@ -1,6 +1,6 @@
 # Package Contract
 
-This repository publishes the `Lingo` ontology package using the self-describing documentation and provenance contract established by `ontology-gist`.
+This repository publishes the `Lingo Studio Knowledge` ontology package using the self-describing documentation and provenance contract established by `ontology-gist`.
 
 Current package boundaries:
 

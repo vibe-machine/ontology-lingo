@@ -4,7 +4,7 @@
 # Provenance bootstrap
 # upstream-repo: https://github.com/vibe-machine/ontology-lingo
 # upstream-tag: v1.0.0
-# upstream-commit: 162957fb272045d3011ccf9d003a71721aa2bc37
+# upstream-commit: 59e5efb45bd17110ecd368c43ecc7d707c35d04e
 # source-artifacts:
 # - package.json
 # - schema/lingo.tql
@@ -14,7 +14,7 @@
 # generator: hand-authored-package-bootstrap/0.1.0
 put $module isa SchemaModule,
   has moduleKey "lingo",
-  has moduleName "Lingo",
+  has moduleName "Lingo Studio Knowledge",
   has moduleKind "hand-authored-package";
 
 put $resource_1 isa SchemaResource,
