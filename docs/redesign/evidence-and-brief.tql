@@ -1,0 +1,340 @@
+# DRAFT, not part of the package. A redesign of Lingo's evidence and brief part,
+# seated on gist. It is not listed in package.json and nothing loads it.
+# The questions it must answer are in evidence-and-brief.questions.md beside it.
+#
+# Three layers, each resting on the one before:
+#   1. what was read:   EvidenceSource > Passage, and a Reading (who read it, when, how)
+#   2. what it says:    SourceTerm and SourceClaim, in the source's own terms
+#   3. what we intend:  ModelingBrief > BriefRevision > BriefElement, in ours
+# A Reconciliation is the recorded decision that a source's term is (or is not) our concept.
+
+define
+
+# ── Values ──────────────────────────────────────────────────────────────────
+# name, description, containedText, sequence and atDateTime come from gist.
+
+attribute sourceId value string;
+attribute passageId value string;
+attribute readingId value string;
+attribute termId value string;
+attribute claimId value string;
+attribute checkId value string;
+attribute reconciliationId value string;
+attribute briefId value string;
+attribute briefRevisionId value string;
+attribute briefElementId value string;
+
+attribute authorName value string;
+attribute publishedYear value integer;
+attribute contentHash value string;
+attribute locator value string;
+attribute alternateName value string;
+attribute formatVersion value string;
+attribute verbPhrase value string;
+attribute quantity value double;
+attribute quantityUnit value string;
+attribute listIsComplete value boolean;
+attribute statesAreOrdered value boolean;
+attribute termIsReaders value boolean;
+
+# ── Fixed lists, as categories the reader can see and query ─────────────────
+# Role names are long on purpose: the database requires every role built on one gist
+# relation (here isCategorizedBy) to have a name no other relation in that family uses.
+
+entity SourceKind sub Category, owns name @key, plays sourceClassification:sourceKind;            # book, essay, schema, code, session
+entity EpistemicState sub Category, owns name @key, plays standing:state;                   # stated, implied, asserted, suggested, assumed
+entity ClaimOrigin sub Category, owns name @key, plays origin:originKind;                         # statement, story
+entity ConceptKind sub Category, owns name @key, plays conceptClassification:conceptKind;          # thing, document, group, role, event, state, measure, activity, quality
+entity Weight sub Category, owns name @key, plays emphasis:weight;                          # central, supporting, passing
+entity ListKind sub Category, owns name @key, plays listClassification:listKind;                # kinds, parts, options, stages
+entity RuleStrength sub Category, owns name @key, plays force:strength;                     # must, should, guideline
+entity DutyMode sub Category, owns name @key, plays dutyClassification:mode;                # does, decides, approves, answers for, may, may not
+entity CheckVerdict sub Category, owns name @key, plays checkOutcome:verdict;               # confirmed, overstated, unsupported
+entity TermFit sub Category, owns name @key, plays fit:degree;                              # same, narrower, broader, related, different
+
+relation sourceClassification sub isCategorizedBy, relates classifiedSource as categorizedThing, relates sourceKind as category;
+relation standing sub isCategorizedBy, relates subject as categorizedThing, relates state as category;
+relation origin sub isCategorizedBy, relates originClaim as categorizedThing, relates originKind as category;
+relation conceptClassification sub isCategorizedBy, relates classifiedDefinition as categorizedThing, relates conceptKind as category;
+relation emphasis sub isCategorizedBy, relates weighedDefinition as categorizedThing, relates weight as category;
+relation listClassification sub isCategorizedBy, relates classifiedList as categorizedThing, relates listKind as category;
+relation force sub isCategorizedBy, relates rule as categorizedThing, relates strength as category;
+relation dutyClassification sub isCategorizedBy, relates classifiedDuty as categorizedThing, relates mode as category;
+relation checkOutcome sub isCategorizedBy, relates judgedCheck as categorizedThing, relates verdict as category;
+relation fit sub isCategorizedBy, relates reconciliation as categorizedThing, relates degree as category;
+
+# ── Layer 1: what was read ──────────────────────────────────────────────────
+
+# A book, an essay, a schema: anything read for a subject. What is learned from a book is recorded
+# against the book, never against the session in which it was read.
+entity EvidenceSource sub FormattedContent,
+  owns sourceId @key,
+  owns name @card(1),
+  owns authorName @card(0..),
+  owns publishedYear @card(0..1),
+  owns contentHash @card(0..1),
+  plays sourceClassification:classifiedSource @card(1),
+  plays placement:passageSource,
+  plays vocabulary:termSource,
+  plays readingSubject:sourceRead,
+  plays sourceFormat:formattedSource @card(0..1),
+  plays whereabouts:locatedSource;
+
+# The file format of a source: EPUB, PDF, HTML, OWL, Turtle, plain text. The format is gist's own media type.
+# It is a different fact from the kind of source: a book may be an EPUB or a PDF.
+MediaType plays sourceFormat:format;
+relation sourceFormat sub isExpressedIn, relates formattedSource as expressedThing, relates format as language;
+
+# Where a copy of a source is kept: a web address or a file on a machine. A source may have several,
+# such as the address it was fetched from and the local copy that was read.
+entity LocationKind sub ElectronicAddressType, owns name @key, plays locationClassification:locationKind;   # web address, local file
+entity SourceLocation sub ElectronicAddress,
+  owns containedText @card(1),
+  plays whereabouts:location @card(1),
+  plays locationClassification:classifiedLocation @card(1),
+  plays copyRead:copy;
+relation whereabouts sub hasAddress, relates locatedSource as addressedThing, relates location as address;
+relation locationClassification sub isCategorizedBy, relates classifiedLocation as categorizedThing, relates locationKind as category;
+
+# A place in a source. It holds where, never the source's words.
+entity Passage sub Content,
+  owns passageId @key,
+  owns locator @card(1),
+  plays placement:passage @card(1),
+  plays support:evidence;
+
+relation placement sub isPartOf, relates passage as part, relates passageSource as whole;
+
+# One pass over a source by one reader, under one version of the reading brief.
+entity Reading sub HistoricalEvent,
+  owns readingId @key,
+  owns atDateTime @card(1),
+  owns formatVersion @card(1),
+  plays readingSubject:pass @card(1),
+  plays readership:reading @card(1..),
+  plays authorship:reading,
+  plays processRecord:recordedReading,
+  plays copyRead:readingOfCopy @card(0..1);
+
+# An assistant model that reads. A person reads as a gist Person.
+entity AssistantModel sub System,
+  owns name @key,
+  plays readership:reader,
+  plays decisionMaking:decider;
+
+Person plays readership:reader, plays decisionMaking:decider;
+
+relation readingSubject sub isBasedOn, relates pass as derivedThing, relates sourceRead as basis;
+# The copy a reading was made from. Passage locators (a line, a page) are places in that copy.
+relation copyRead sub isBasedOn, relates readingOfCopy as derivedThing, relates copy as basis;
+relation readership sub hasParticipant, relates reading as participationContext, relates reader as participant;
+
+# The record of a working session: a person and an assistant at work, its transcript kept at its location.
+# It is a record of the process, joined to the readings done in it. It is also a source, but only for what
+# was said in it that no other source says (the owner's own statements); such claims rest on its passages.
+entity SessionRecord sub EvidenceSource,
+  plays processRecord:record;
+
+relation processRecord sub isAbout, relates record as content, relates recordedReading as subjectMatter;
+
+# ── Layer 2: what the source says, in its own terms ─────────────────────────
+
+# A word as one source uses it. Two sources' "vision" are two terms until reconciled.
+entity SourceTerm sub KnowledgeConcept,
+  owns termId @key,
+  owns name @card(1),
+  owns alternateName @card(0..),
+  owns termIsReaders @card(0..1),
+  plays vocabulary:term @card(1),
+  plays aboutness:term,
+  plays division:dividedTerm,
+  plays division:memberTerm,
+  plays assertedLink:fromTerm,
+  plays assertedLink:toTerm,
+  plays step:state,
+  plays duty:actor,
+  plays duty:target,
+  plays termReconciliation:term;
+
+relation vocabulary sub isPartOf, relates term as part, relates termSource as whole;
+
+# One thing a source says, written in our words. Every claim rests on at least one
+# passage, comes from exactly one reading, and is marked stated or implied.
+# It cannot be marked abstract: the database requires an abstract type's parent to be
+# abstract too, and gist's types are not. Only the subtypes below are ever written.
+entity SourceClaim sub Text,
+  owns claimId @key,
+  owns containedText @card(1),
+  plays support:supportedClaim @card(1..),
+  plays authorship:authoredClaim @card(1),
+  plays standing:subject @card(1),
+  plays origin:originClaim @card(0..1),
+  plays aboutness:claim,
+  plays checkSubject:checkedClaim,
+  plays grounding:groundingClaim;
+
+relation support sub isBasedOn, relates supportedClaim as derivedThing, relates evidence as basis;
+relation authorship sub isProducedBy, relates authoredClaim as product, relates reading as producer;
+relation aboutness sub isAbout, relates claim as content, relates term as subjectMatter;
+
+# What a term means.
+entity TermDefinition sub SourceClaim,
+  plays conceptClassification:classifiedDefinition @card(1),
+  plays emphasis:weighedDefinition @card(0..1);
+
+# The source insists two terms differ. About exactly two terms.
+entity Distinction sub SourceClaim;
+
+# The source divides a term into kinds, parts, options or stages.
+entity Enumeration sub SourceClaim,
+  owns listIsComplete @card(0..1),
+  plays listClassification:classifiedList @card(1),
+  plays division:list @card(1);
+
+relation division, relates list @card(1), relates dividedTerm @card(1), relates memberTerm @card(1..);
+
+# The source connects two terms: a team owns a problem.
+entity LinkClaim sub SourceClaim,
+  owns verbPhrase @card(1),
+  plays assertedLink:claim @card(1);
+
+relation assertedLink, relates claim @card(1), relates fromTerm @card(1), relates toTerm @card(1);
+
+# The states a thing passes through, or is placed in.
+entity LifeHistory sub SourceClaim,
+  owns statesAreOrdered @card(1),
+  plays step:history;
+
+relation step, owns sequence @card(0..1), relates history @card(1), relates state @card(1);
+
+# Who does, decides or approves what.
+entity DutyClaim sub SourceClaim,
+  plays dutyClassification:classifiedDuty @card(1),
+  plays duty:claim @card(1);
+
+relation duty, relates claim @card(1), relates actor @card(1), relates target @card(0..1);
+
+# What must, should or usually holds, with its number where the source gives one.
+entity Rule sub SourceClaim,
+  owns quantity @card(0..1),
+  owns quantityUnit @card(0..1),
+  plays force:rule @card(1);
+
+# A named principle the source builds on.
+entity Principle sub SourceClaim;
+
+# A question the source implies someone would ask.
+entity ImpliedQuestion sub SourceClaim;
+
+# A second reader's check of a claim against its passage.
+entity ClaimCheck sub Determination,
+  owns checkId @key,
+  owns atDateTime @card(1),
+  owns description @card(0..1),
+  plays checkSubject:check @card(1),
+  plays checkOutcome:judgedCheck @card(1),
+  plays decisionMaking:decision @card(1..);
+
+relation checkSubject sub isBasedOn, relates check as derivedThing, relates checkedClaim as basis;
+relation decisionMaking sub hasParticipant, relates decision as participationContext, relates decider as participant;
+
+# ── Layer 3: what we intend to model, in our terms ──────────────────────────
+
+# The brief for one subject, and its revisions in order.
+entity ModelingBrief sub Specification,
+  owns briefId @key,
+  owns name @card(1),
+  plays revisionHistory:brief;
+
+entity BriefRevision sub Specification,
+  owns briefRevisionId @key,
+  owns sequence @card(1),
+  owns atDateTime @card(1),
+  owns description @card(0..1),
+  plays revisionHistory:revision @card(1),
+  plays inclusion:revision,
+  plays decisionMaking:decision;
+
+relation revisionHistory sub isPartOf, relates revision as part, relates brief as whole;
+
+# One statement of the brief. It never changes: a changed statement is a new
+# element that replaces the old one, and a revision includes the ones in force.
+entity BriefElement sub Requirement,
+  owns briefElementId @key,
+  owns containedText @card(1),
+  owns description @card(0..1),
+  plays inclusion:element @card(1..),
+  plays replacement:newer @card(0..1),
+  plays replacement:older,
+  plays standing:subject @card(1),
+  plays grounding:element,
+  plays reference:referencedElement;
+
+relation inclusion sub isMemberOf, relates element as member, relates revision as collection;
+relation replacement sub isBasedOn, relates newer as derivedThing, relates older as basis;
+
+# The claims an element rests on. An element with none is an unsupported invention.
+relation grounding sub isBasedOn, relates element as derivedThing, relates groundingClaim as basis;
+
+entity BriefPurpose sub BriefElement;
+entity BriefScope sub BriefElement;
+entity BriefExclusion sub BriefElement;
+entity BriefAssumption sub BriefElement;
+entity BriefExample sub BriefElement;
+entity BriefConstraint sub BriefElement;
+
+# Our own concept. Its name is ours; the terms it reconciles keep theirs.
+entity BriefConcept sub BriefElement,
+  owns name @card(1),
+  plays termReconciliation:concept,
+  plays frameEnd:participant;
+
+# A relation we intend, and the concepts at its ends.
+entity BriefRelationFrame sub BriefElement,
+  owns name @card(1),
+  plays frameEnd:frame;
+
+relation frameEnd, owns name @card(1), relates frame @card(1), relates participant @card(1);
+
+# A competency question, and the elements it is about.
+entity BriefQuestion sub BriefElement,
+  plays reference:question;
+
+relation reference sub refersTo, relates question as referringThing, relates referencedElement as referent;
+
+# The decision that a source's term is, or is not, one of our concepts.
+entity Reconciliation sub Determination,
+  owns reconciliationId @key,
+  owns atDateTime @card(1),
+  owns description @card(1),
+  plays termReconciliation:decision @card(1),
+  plays fit:reconciliation @card(1),
+  plays decisionMaking:decision @card(1..);
+
+relation termReconciliation, relates decision @card(1), relates term @card(1), relates concept @card(0..1);
+
+# ── Derived facts ───────────────────────────────────────────────────────────
+
+# The revision in force is the one with the highest sequence; nothing stores a "current" pointer.
+fun current_revision($brief: ModelingBrief) -> BriefRevision:
+  match
+    revisionHistory (brief: $brief, revision: $revision);
+    $revision has sequence $n;
+    not { revisionHistory (brief: $brief, revision: $later); $later has sequence $m; $m > $n; };
+  return first $revision;
+
+# Concepts in force that no question in force refers to.
+fun concepts_without_question($brief: ModelingBrief) -> { BriefConcept }:
+  match
+    let $revision = current_revision($brief);
+    $concept isa BriefConcept;
+    inclusion (revision: $revision, element: $concept);
+    not { $q isa BriefQuestion; inclusion (revision: $revision, element: $q); reference (question: $q, referencedElement: $concept); };
+  return { $concept };
+
+# Source terms no reconciliation has dealt with yet.
+fun unreconciled_terms() -> { SourceTerm }:
+  match
+    $term isa SourceTerm;
+    not { termReconciliation (term: $term); };
+  return { $term };
