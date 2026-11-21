@@ -1,5 +1,5 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v1.1.1.package-manifest.json
+# manifest: manifests/lingo-v1.1.2.package-manifest.json
 
 put $generated_role_1 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#aboutness:claim",

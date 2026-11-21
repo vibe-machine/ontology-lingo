@@ -1,7 +1,7 @@
 {
   "name": "lingo",
   "displayName": "Lingo Studio Knowledge",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "The record of how a model is made: what was read, what each source says in its own terms, what we intend to model, and the decisions that join them.",
   "author": "vibe-machine",
   "license": "MIT",
@@ -65,7 +65,7 @@
     "test:typedb-migration": "../ontology-tooling/bin/ont check-upgrade --repo ."
   },
   "manifests": [
-    "manifests/lingo-v1.1.1.package-manifest.json"
+    "manifests/lingo-v1.1.2.package-manifest.json"
   ],
   "assembly": {
     "loadOrder": [
@@ -97,7 +97,7 @@
       "data/lingo-schema-docs.tql",
       "data/lingo-provenance.tql",
       "manifests/package-manifest.schema.json",
-      "manifests/lingo-v1.1.1.package-manifest.json",
+      "manifests/lingo-v1.1.2.package-manifest.json",
       "generated/apply-units/data/lingo-schema-docs/0001.tql",
       "generated/apply-units/data/lingo-schema-docs/0002.tql",
       "generated/apply-units/data/lingo-schema-docs/0003.tql",
@@ -109,14 +109,14 @@
       "generated/apply-units/data/lingo-schema-docs/0009.tql",
       "generated/apply-units/data/lingo-schema-docs/0010.tql",
       "generated/apply-units/data/lingo-schema-docs/0011.tql",
-      "generated/apply-units/migrations/v1.0.1-to-v1.1.1/0001/0001.tql",
-      "generated/apply-units/migrations/v1.0.1-to-v1.1.1/0001/0002.tql",
-      "generated/apply-units/migrations/v1.0.2-to-v1.1.1/0001/0001.tql",
-      "generated/apply-units/migrations/v1.0.2-to-v1.1.1/0001/0002.tql"
+      "generated/apply-units/migrations/v1.0.1-to-v1.1.2/0001/0001.tql",
+      "generated/apply-units/migrations/v1.0.1-to-v1.1.2/0001/0002.tql",
+      "generated/apply-units/migrations/v1.0.2-to-v1.1.2/0001/0001.tql",
+      "generated/apply-units/migrations/v1.0.2-to-v1.1.2/0001/0002.tql"
     ]
   },
   "provenance": {
-    "manifest": "manifests/lingo-v1.1.1.package-manifest.json",
+    "manifest": "manifests/lingo-v1.1.2.package-manifest.json",
     "status": "bootstrap"
   },
   "legacyDocumentation": {
@@ -133,14 +133,14 @@
     ],
     "plans": [
       {
-        "id": "lingo-1.0.1-to-1.1.1",
+        "id": "lingo-1.0.1-to-1.1.2",
         "from": "1.0.1",
-        "to": "1.1.1",
+        "to": "1.1.2",
         "mode": "compatible",
         "generated": true,
         "snapshot": {
           "required": false,
-          "label": "pre-lingo-1.1.1-migration"
+          "label": "pre-lingo-1.1.2-migration"
         },
         "phases": [
           {
@@ -157,7 +157,7 @@
             "units": [
               {
                 "kind": "schema",
-                "path": "migrations/v1.0.1-to-v1.1.1-schema.tql"
+                "path": "migrations/v1.0.1-to-v1.1.2-schema.tql"
               }
             ]
           },
@@ -166,15 +166,15 @@
             "units": [
               {
                 "kind": "write",
-                "path": "generated/apply-units/migrations/v1.0.1-to-v1.1.1/0001/0001.tql"
+                "path": "generated/apply-units/migrations/v1.0.1-to-v1.1.2/0001/0001.tql"
               },
               {
                 "kind": "write",
-                "path": "generated/apply-units/migrations/v1.0.1-to-v1.1.1/0001/0002.tql"
+                "path": "generated/apply-units/migrations/v1.0.1-to-v1.1.2/0001/0002.tql"
               },
               {
                 "kind": "write",
-                "path": "migrations/v1.0.1-to-v1.1.1/0002.tql"
+                "path": "migrations/v1.0.1-to-v1.1.2/0002.tql"
               },
               {
                 "kind": "write",
@@ -187,21 +187,21 @@
             "units": [
               {
                 "kind": "assert-data",
-                "path": "migrations/verify/assert-v1.1.1-module-version.tql"
+                "path": "migrations/verify/assert-v1.1.2-module-version.tql"
               }
             ]
           }
         ]
       },
       {
-        "id": "lingo-1.0.2-to-1.1.1",
+        "id": "lingo-1.0.2-to-1.1.2",
         "from": "1.0.2",
-        "to": "1.1.1",
+        "to": "1.1.2",
         "mode": "compatible",
         "generated": true,
         "snapshot": {
           "required": false,
-          "label": "pre-lingo-1.1.1-migration"
+          "label": "pre-lingo-1.1.2-migration"
         },
         "phases": [
           {
@@ -218,7 +218,7 @@
             "units": [
               {
                 "kind": "schema",
-                "path": "migrations/v1.0.2-to-v1.1.1-schema.tql"
+                "path": "migrations/v1.0.2-to-v1.1.2-schema.tql"
               }
             ]
           },
@@ -227,15 +227,15 @@
             "units": [
               {
                 "kind": "write",
-                "path": "generated/apply-units/migrations/v1.0.2-to-v1.1.1/0001/0001.tql"
+                "path": "generated/apply-units/migrations/v1.0.2-to-v1.1.2/0001/0001.tql"
               },
               {
                 "kind": "write",
-                "path": "generated/apply-units/migrations/v1.0.2-to-v1.1.1/0001/0002.tql"
+                "path": "generated/apply-units/migrations/v1.0.2-to-v1.1.2/0001/0002.tql"
               },
               {
                 "kind": "write",
-                "path": "migrations/v1.0.2-to-v1.1.1/0002.tql"
+                "path": "migrations/v1.0.2-to-v1.1.2/0002.tql"
               },
               {
                 "kind": "write",
@@ -248,21 +248,21 @@
             "units": [
               {
                 "kind": "assert-data",
-                "path": "migrations/verify/assert-v1.1.1-module-version.tql"
+                "path": "migrations/verify/assert-v1.1.2-module-version.tql"
               }
             ]
           }
         ]
       },
       {
-        "id": "lingo-1.1.0-to-1.1.1",
+        "id": "lingo-1.1.0-to-1.1.2",
         "from": "1.1.0",
-        "to": "1.1.1",
+        "to": "1.1.2",
         "mode": "compatible",
         "generated": true,
         "snapshot": {
           "required": false,
-          "label": "pre-lingo-1.1.1-migration"
+          "label": "pre-lingo-1.1.2-migration"
         },
         "phases": [
           {
@@ -279,7 +279,7 @@
             "units": [
               {
                 "kind": "schema",
-                "path": "migrations/v1.1.0-to-v1.1.1-schema.tql"
+                "path": "migrations/v1.1.0-to-v1.1.2-schema.tql"
               }
             ]
           },
@@ -297,7 +297,56 @@
             "units": [
               {
                 "kind": "assert-data",
-                "path": "migrations/verify/assert-v1.1.1-module-version.tql"
+                "path": "migrations/verify/assert-v1.1.2-module-version.tql"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lingo-1.1.1-to-1.1.2",
+        "from": "1.1.1",
+        "to": "1.1.2",
+        "mode": "compatible",
+        "generated": true,
+        "snapshot": {
+          "required": false,
+          "label": "pre-lingo-1.1.2-migration"
+        },
+        "phases": [
+          {
+            "id": "preflight",
+            "units": [
+              {
+                "kind": "assert-data",
+                "path": "migrations/preflight/assert-v1.1.1-module-version.tql"
+              }
+            ]
+          },
+          {
+            "id": "schema",
+            "units": [
+              {
+                "kind": "schema",
+                "path": "migrations/v1.1.1-to-v1.1.2-schema.tql"
+              }
+            ]
+          },
+          {
+            "id": "migrate",
+            "units": [
+              {
+                "kind": "write",
+                "path": "data/lingo-provenance.tql"
+              }
+            ]
+          },
+          {
+            "id": "verify",
+            "units": [
+              {
+                "kind": "assert-data",
+                "path": "migrations/verify/assert-v1.1.2-module-version.tql"
               }
             ]
           }

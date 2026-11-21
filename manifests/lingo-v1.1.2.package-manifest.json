@@ -3,16 +3,16 @@
   "manifestVersion": "1.0.0",
   "package": {
     "name": "lingo",
-    "version": "1.1.1"
+    "version": "1.1.2"
   },
   "upstream": {
     "repoUrl": "https://github.com/vibe-machine/ontology-lingo",
-    "tag": "v1.1.1",
-    "commit": "e5ba90d4adc9eb4895b7e9627f4149a40eab02bc",
+    "tag": "v1.1.2",
+    "commit": "71809e20ae39f0ecbd2654bb965564ae499d9ebc",
     "sourceArtifacts": [
       {
         "path": "package.json",
-        "sha256": "396dcc4000bb06a106277686cd950dbdad48f5096160c27f9ea86a9b2e137205"
+        "sha256": "20f310a54f40688a58e666025590715b2453b6c25fc2f0808a9f969c2621ea02"
       },
       {
         "path": "schema/stored-queries.tql",
@@ -36,75 +36,75 @@
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0001.tql",
-        "sha256": "c9a991215fc6e6818846b1d06cca47b597afe8d7ed2f24b09a4f32863f8aaa0c"
+        "sha256": "6fc7291d0c6d468dfbafcc3c336adfbc8d65df29cb0b950fb1c089c6e9515863"
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0002.tql",
-        "sha256": "adef11fab0c54d50e3846bc5284e8f1976c633ae45e64170e662544f0dcb0a92"
+        "sha256": "080280c9a62b801e367face167984cca03e031b928d4050ae1a54b058fb43b27"
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0003.tql",
-        "sha256": "1c7e60bbfeb3640c248f38feb8808e46484938ea1dedb4431a77b1dacd2430ce"
+        "sha256": "04b0235f22dcdba158cfa2f2556707feb7dbdd20ec389c1c1c10898723d794fa"
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0004.tql",
-        "sha256": "159a91e52c13441cc09d604c1a16b5f758550e1544dc31e9e647b2d8345e5a75"
+        "sha256": "261eab2836f1a33fa37108254d9bddfc1d821eff60679fe293e812ddc872ab2a"
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0005.tql",
-        "sha256": "8d78cc1735d75b06b1d94dce0512ee3412f2a8f7d66b909b46bec62a67c1bacb"
+        "sha256": "5924e3525fc2eddefa0067cb89b4553d87c95d50ec13468a514cc7462222f074"
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0006.tql",
-        "sha256": "da62aeadf1103677496dd42ee20adc9545a062e46cd8989e24dc50f41a908629"
+        "sha256": "59af97e0be29b8a884d2bf3fd887bc4d2dbfaa0f2af0c759d56dae3c0e8756f8"
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0007.tql",
-        "sha256": "78ea11bf69e0406478020c4124f049e992655a967a92df40c850620982838ff8"
+        "sha256": "260bc7fb3f68cd0df5bee7822c864fcb828255462a1d2cd9f35f95b98076687b"
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0008.tql",
-        "sha256": "6794779e387b8aec7d5b9f4b0ecbf6f0a0478d478455ea854c4884dd10c23cea"
+        "sha256": "867f9046c73d025d50abefd63870bd1b59b04ac1ee55e21399b8b1730f578ca5"
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0009.tql",
-        "sha256": "64b98606dbcb4f16040d151e1e350253731fdcc2c5903cc5871943a9c2a874b1"
+        "sha256": "c30e02eee1e126c8b7e7ad7a25178fcedb85d01c1b9ddb28315fff37d8d9608d"
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0010.tql",
-        "sha256": "b14baf06c5867d9fff9c877d3c10478837fd55ae5c9e09d3a34ddb9ffaff124b"
+        "sha256": "edc3f6daa082ab3c8a33001cbe647df27eaa83084b6810ad767ddfcd5f315e23"
       },
       {
         "path": "generated/apply-units/data/lingo-schema-docs/0011.tql",
-        "sha256": "869fe1502e85ea354c49c0aecf2da8c878fe14fa14e50e451a39b6b163643240"
+        "sha256": "0a2ac56cb412b146243452725884e11dd3a2106593ab5969dec23c05ab8d4efb"
       }
     ]
   },
   "generator": {
     "name": "hand-authored-package-bootstrap",
     "version": "0.1.0",
-    "generatedAt": "2026-11-21T02:33:18Z"
+    "generatedAt": "2026-11-21T03:18:59Z"
   },
   "artifacts": [
     {
       "kind": "meta-schema",
       "path": "schema/self-describing-schema.tql",
-      "sha256": "a3d0ecd05e04ca4d49b255d48f0112c52a63b2d8c59fdc99cd3ca7066908a1b2"
+      "sha256": "5d7718b80fedb8e75d968439aa5dad67bff0289e0035bc32f966995b4dece912"
     },
     {
       "kind": "provenance-schema",
       "path": "schema/package-provenance.tql",
-      "sha256": "9945d60d9c62fca0362555d777e3a27b5a26947f02140c6f208e92832a1eaf8c"
+      "sha256": "cfd9ca5c7e7b95125ca11989de3eb7db55a0151916633811b492b9ad5f115dc8"
     },
     {
       "kind": "administrative-schema",
       "path": "schema/administrative-operations.tql",
-      "sha256": "3c62a1bbfeb2f1c80474a9dac36279037b4aa5e78681bb303b586d49db832289"
+      "sha256": "31b47593b5beab856cda6db00e928670fe7ed7b196bbd5682cb7fa6136e97b21"
     },
     {
       "kind": "documentation",
       "path": "data/lingo-schema-docs.tql",
-      "sha256": "9b2a6c1f5f9b9c63d1419aa8d698323b1cf077253146f177bcdb87df36e36689"
+      "sha256": "687efde709786263756298c8c3184c4495530495c3d59c2d0a0671ac5be9db6e"
     },
     {
       "kind": "manifest-schema",
@@ -114,102 +114,102 @@
     {
       "kind": "provenance-seeds",
       "path": "data/lingo-provenance.tql",
-      "sha256": "cc761576e2e51bdabc651b14ec69b0733f52ace7f9ee32085e2a905f668e4782"
+      "sha256": "334b4dba9f0c51fb888ac3f050a575363b7341a9e17bcf46d8de01bafca36d53"
     },
     {
       "kind": "migration",
-      "path": "migrations/v1.0.1-to-v1.1.1/0001.tql",
-      "sha256": "98c5d72fe433e55815d01c700dc28fab15ccd56ae2a43221b08e7f1de4d5207c"
+      "path": "migrations/v1.0.1-to-v1.1.2/0001.tql",
+      "sha256": "65d94513da564d7bd1e35efbaa7bc162bdb318b5e546de362fcab89321320dcd"
     },
     {
       "kind": "migration",
-      "path": "migrations/v1.0.1-to-v1.1.1/0002.tql",
-      "sha256": "53b617534c82602bcab4452e43334388ce2e26b4db6d0536b9219b4775a26dd8"
+      "path": "migrations/v1.0.1-to-v1.1.2/0002.tql",
+      "sha256": "5a65e73316006c07ec55ff64bb9dec669f66136903d222095db3581c17c6dec8"
     },
     {
       "kind": "migration",
-      "path": "migrations/v1.0.2-to-v1.1.1/0001.tql",
-      "sha256": "d6fb063b9a63eee75c94257eab268ed5871e1325359250ca376bb90257760869"
+      "path": "migrations/v1.0.2-to-v1.1.2/0001.tql",
+      "sha256": "e68c50b09b4f2716be5cd984a9a8c0672e73dad7f38c0a55a9646871b81021a5"
     },
     {
       "kind": "migration",
-      "path": "migrations/v1.0.2-to-v1.1.1/0002.tql",
-      "sha256": "9106bc7a7b8ec3061b92c34de34cf6ad130f0a931f2f4465c2dc75214f9035ab"
+      "path": "migrations/v1.0.2-to-v1.1.2/0002.tql",
+      "sha256": "a367d7b41abd5899a3d712510cba05e5fd12b1adee0cdf93e79a5d0efd451106"
     },
     {
       "kind": "apply-unit",
       "path": "generated/apply-units/data/lingo-schema-docs/0001.tql",
-      "sha256": "c9a991215fc6e6818846b1d06cca47b597afe8d7ed2f24b09a4f32863f8aaa0c"
+      "sha256": "6fc7291d0c6d468dfbafcc3c336adfbc8d65df29cb0b950fb1c089c6e9515863"
     },
     {
       "kind": "apply-unit",
       "path": "generated/apply-units/data/lingo-schema-docs/0002.tql",
-      "sha256": "adef11fab0c54d50e3846bc5284e8f1976c633ae45e64170e662544f0dcb0a92"
+      "sha256": "080280c9a62b801e367face167984cca03e031b928d4050ae1a54b058fb43b27"
     },
     {
       "kind": "apply-unit",
       "path": "generated/apply-units/data/lingo-schema-docs/0003.tql",
-      "sha256": "1c7e60bbfeb3640c248f38feb8808e46484938ea1dedb4431a77b1dacd2430ce"
+      "sha256": "04b0235f22dcdba158cfa2f2556707feb7dbdd20ec389c1c1c10898723d794fa"
     },
     {
       "kind": "apply-unit",
       "path": "generated/apply-units/data/lingo-schema-docs/0004.tql",
-      "sha256": "159a91e52c13441cc09d604c1a16b5f758550e1544dc31e9e647b2d8345e5a75"
+      "sha256": "261eab2836f1a33fa37108254d9bddfc1d821eff60679fe293e812ddc872ab2a"
     },
     {
       "kind": "apply-unit",
       "path": "generated/apply-units/data/lingo-schema-docs/0005.tql",
-      "sha256": "8d78cc1735d75b06b1d94dce0512ee3412f2a8f7d66b909b46bec62a67c1bacb"
+      "sha256": "5924e3525fc2eddefa0067cb89b4553d87c95d50ec13468a514cc7462222f074"
     },
     {
       "kind": "apply-unit",
       "path": "generated/apply-units/data/lingo-schema-docs/0006.tql",
-      "sha256": "da62aeadf1103677496dd42ee20adc9545a062e46cd8989e24dc50f41a908629"
+      "sha256": "59af97e0be29b8a884d2bf3fd887bc4d2dbfaa0f2af0c759d56dae3c0e8756f8"
     },
     {
       "kind": "apply-unit",
       "path": "generated/apply-units/data/lingo-schema-docs/0007.tql",
-      "sha256": "78ea11bf69e0406478020c4124f049e992655a967a92df40c850620982838ff8"
+      "sha256": "260bc7fb3f68cd0df5bee7822c864fcb828255462a1d2cd9f35f95b98076687b"
     },
     {
       "kind": "apply-unit",
       "path": "generated/apply-units/data/lingo-schema-docs/0008.tql",
-      "sha256": "6794779e387b8aec7d5b9f4b0ecbf6f0a0478d478455ea854c4884dd10c23cea"
+      "sha256": "867f9046c73d025d50abefd63870bd1b59b04ac1ee55e21399b8b1730f578ca5"
     },
     {
       "kind": "apply-unit",
       "path": "generated/apply-units/data/lingo-schema-docs/0009.tql",
-      "sha256": "64b98606dbcb4f16040d151e1e350253731fdcc2c5903cc5871943a9c2a874b1"
+      "sha256": "c30e02eee1e126c8b7e7ad7a25178fcedb85d01c1b9ddb28315fff37d8d9608d"
     },
     {
       "kind": "apply-unit",
       "path": "generated/apply-units/data/lingo-schema-docs/0010.tql",
-      "sha256": "b14baf06c5867d9fff9c877d3c10478837fd55ae5c9e09d3a34ddb9ffaff124b"
+      "sha256": "edc3f6daa082ab3c8a33001cbe647df27eaa83084b6810ad767ddfcd5f315e23"
     },
     {
       "kind": "apply-unit",
       "path": "generated/apply-units/data/lingo-schema-docs/0011.tql",
-      "sha256": "869fe1502e85ea354c49c0aecf2da8c878fe14fa14e50e451a39b6b163643240"
+      "sha256": "0a2ac56cb412b146243452725884e11dd3a2106593ab5969dec23c05ab8d4efb"
     },
     {
       "kind": "apply-unit",
-      "path": "generated/apply-units/migrations/v1.0.1-to-v1.1.1/0001/0001.tql",
-      "sha256": "199ee16ade6ce7192dba041f7cadd1608553dd1215e32e0453ee064623ae16db"
+      "path": "generated/apply-units/migrations/v1.0.1-to-v1.1.2/0001/0001.tql",
+      "sha256": "ed0fb2e5a6c837c679777c2ce04f2a67ba05e21e751359ba3efd76bc062d7405"
     },
     {
       "kind": "apply-unit",
-      "path": "generated/apply-units/migrations/v1.0.1-to-v1.1.1/0001/0002.tql",
-      "sha256": "ee1d790af27d033a991b7e93284ca6f8c35ba617694e50cd096282f4b4cacd8a"
+      "path": "generated/apply-units/migrations/v1.0.1-to-v1.1.2/0001/0002.tql",
+      "sha256": "dbfd8e6778a5a8fa9d09e077ab831def4ac25cf7c40bd60f267ef2821a584d06"
     },
     {
       "kind": "apply-unit",
-      "path": "generated/apply-units/migrations/v1.0.2-to-v1.1.1/0001/0001.tql",
-      "sha256": "0553963ebf82e2dc9ae1a788411620341a694bc7209627c0125af38bff501f57"
+      "path": "generated/apply-units/migrations/v1.0.2-to-v1.1.2/0001/0001.tql",
+      "sha256": "f7550590afea366b743a69ad2ad8cd3e17aeba753b5383cf378b89b019b7ec0e"
     },
     {
       "kind": "apply-unit",
-      "path": "generated/apply-units/migrations/v1.0.2-to-v1.1.1/0001/0002.tql",
-      "sha256": "a34ac2b3a52f00bc1d64f71b664a96fa4fc66268491818786d65780eaa6600c2"
+      "path": "generated/apply-units/migrations/v1.0.2-to-v1.1.2/0001/0002.tql",
+      "sha256": "b705bb48a9cd91540f0e19f8ddd7d4dc3b7cc61d6af33c3dcb104ddd104de60d"
     }
   ]
 }
