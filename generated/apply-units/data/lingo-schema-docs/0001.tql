@@ -1,10 +1,10 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v1.0.2.package-manifest.json
+# manifest: manifests/lingo-v1.1.0.package-manifest.json
 
 # Provenance bootstrap
 # upstream-repo: https://github.com/vibe-machine/ontology-lingo
-# upstream-tag: v1.0.2
-# upstream-commit: 574bd842876d7383866d327939cc60850c85c2c2
+# upstream-tag: v1.1.0
+# upstream-commit: db6efef7c0cef1b9e841e6ae05b48d01d29b6681
 # source-artifacts:
 # - package.json
 # - schema/stored-queries.tql
@@ -12,7 +12,18 @@
 # - data/lingo-categories.tql
 # - data/lingo-formats.tql
 # - data/lingo-questions.tql
-# manifest: manifests/lingo-v1.0.2.package-manifest.json
+# - generated/apply-units/data/lingo-schema-docs/0001.tql
+# - generated/apply-units/data/lingo-schema-docs/0002.tql
+# - generated/apply-units/data/lingo-schema-docs/0003.tql
+# - generated/apply-units/data/lingo-schema-docs/0004.tql
+# - generated/apply-units/data/lingo-schema-docs/0005.tql
+# - generated/apply-units/data/lingo-schema-docs/0006.tql
+# - generated/apply-units/data/lingo-schema-docs/0007.tql
+# - generated/apply-units/data/lingo-schema-docs/0008.tql
+# - generated/apply-units/data/lingo-schema-docs/0009.tql
+# - generated/apply-units/data/lingo-schema-docs/0010.tql
+# - generated/apply-units/data/lingo-schema-docs/0011.tql
+# manifest: manifests/lingo-v1.1.0.package-manifest.json
 # generator: hand-authored-package-bootstrap/0.1.0
 put $module isa SchemaModule,
   has moduleKey "lingo",
