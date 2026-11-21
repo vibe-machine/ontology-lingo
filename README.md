@@ -24,7 +24,7 @@ in this version.
 
 ## Design rules
 
-- Designed from competency questions: `docs/competency-questions.md`. A change starts there.
+- Designed from competency questions: `competency/questions.json`. A change starts there.
 - Every type is built on a gist type, and a relation on a gist relation where one fits.
 - Fixed lists are categories with seed values (`data/lingo-categories.tql`), not strings.
 - The source's words are never stored: a passage holds where, a claim holds our wording.
@@ -49,7 +49,7 @@ Before a release, also run the candidate through the app's install:
 
 - `schema/lingo.tql`: the hand-written schema.
 - `data/lingo-categories.tql`, `data/lingo-formats.tql`: the fixed lists and the file formats.
-- `docs/competency-questions.md`: the questions the model must answer.
+- `docs/competency-questions.md`: the questions, generated for reading.
 - `competency/questions.json`: every question with its query and the fixtures it is answered against.
 - `queries/`: one query per question.
 - `fixtures/transformed-sample.tql`, `fixtures/competency-sample.tql`: a small sample on which every
