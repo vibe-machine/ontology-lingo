@@ -115,7 +115,8 @@ entity Reading sub HistoricalEvent,
   plays readership:reading @card(1..),
   plays authorship:reading,
   plays processRecord:recordedReading,
-  plays copyRead:readingOfCopy @card(0..1);
+  plays copyRead:readingOfCopy @card(0..1),
+  plays readingPurpose:purposefulReading @card(0..1);
 
 # An assistant model that reads. A person reads as a gist Person.
 entity AssistantModel sub System,
@@ -129,6 +130,8 @@ relation readingSubject sub isBasedOn, relates pass as derivedThing, relates sou
 # The copy a reading was made from. Passage locators (a line, a page) are places in that copy.
 relation copyRead sub isBasedOn, relates readingOfCopy as derivedThing, relates copy as basis;
 relation readership sub hasParticipant, relates reading as participationContext, relates reader as participant;
+# The subject a reading was done for: the brief it serves. A reading that yielded nothing was still done for it.
+relation readingPurpose sub hasGoal, relates purposefulReading as directedThing, relates purposeBrief as goal;
 
 # The record of a working session: a person and an assistant at work, its transcript kept at its location.
 # It is a record of the process, joined to the readings done in it. It is also a source, but only for what
@@ -245,7 +248,8 @@ relation decisionMaking sub hasParticipant, relates decision as participationCon
 entity ModelingBrief sub Specification,
   owns briefId @key,
   owns name @card(1),
-  plays revisionHistory:brief;
+  plays revisionHistory:brief,
+  plays readingPurpose:purposeBrief;
 
 entity BriefRevision sub Specification,
   owns briefRevisionId @key,

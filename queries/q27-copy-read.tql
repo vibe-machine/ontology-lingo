@@ -1,2 +1,6 @@
-# 27. From which copy was a reading made?
-match $r isa Reading, has readingId $rid; copyRead (readingOfCopy: $r, copy: $l); $l has containedText $copy; select $rid, $copy;
+# 27. From which copy was a reading made, so that its line or page numbers can be found again?
+match
+  $r isa Reading, has readingId $reading;
+  readingSubject (pass: $r, sourceRead: $s); $s has name $source;
+  copyRead (readingOfCopy: $r, copy: $l); $l has containedText $copy;
+select $reading, $source, $copy;

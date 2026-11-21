@@ -1,9 +1,54 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v1.0.0.package-manifest.json
+# manifest: manifests/lingo-v1.0.1.package-manifest.json
 
 match
   $struct_left isa SchemaResource, has typeLabel "aboutness";
   $struct_right isa SchemaResource, has typeLabel "isAbout";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "force:rule";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:categorizedThing";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "force:strength";
+  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:category";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "grounding";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "grounding:element";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:derivedThing";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "grounding:groundingClaim";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:basis";
   not {
     (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
@@ -299,6 +344,33 @@ insert
   (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
 
 match
+  $struct_left isa SchemaResource, has typeLabel "readingPurpose";
+  $struct_right isa SchemaResource, has typeLabel "hasGoal";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "readingPurpose:purposeBrief";
+  $struct_right isa SchemaResource, has typeLabel "hasGoal:goal";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "readingPurpose:purposefulReading";
+  $struct_right isa SchemaResource, has typeLabel "hasGoal:directedThing";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
   $struct_left isa SchemaResource, has typeLabel "readingSubject";
   $struct_right isa SchemaResource, has typeLabel "isBasedOn";
   not {
@@ -373,78 +445,6 @@ insert
 match
   $struct_left isa SchemaResource, has typeLabel "revisionHistory:brief";
   $struct_right isa SchemaResource, has typeLabel "isPartOf:whole";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "revisionHistory:revision";
-  $struct_right isa SchemaResource, has typeLabel "isPartOf:part";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Rule";
-  $struct_right isa SchemaResource, has typeLabel "SourceClaim";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "SessionRecord";
-  $struct_right isa SchemaResource, has typeLabel "EvidenceSource";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "SourceClaim";
-  $struct_right isa SchemaResource, has typeLabel "Text";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "sourceFormat";
-  $struct_right isa SchemaResource, has typeLabel "isExpressedIn";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "sourceFormat:format";
-  $struct_right isa SchemaResource, has typeLabel "isExpressedIn:language";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "sourceFormat:formattedSource";
-  $struct_right isa SchemaResource, has typeLabel "isExpressedIn:expressedThing";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "SourceKind";
-  $struct_right isa SchemaResource, has typeLabel "Category";
   not {
     (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };

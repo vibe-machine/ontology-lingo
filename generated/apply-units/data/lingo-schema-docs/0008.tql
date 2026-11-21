@@ -1,5 +1,5 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v1.0.0.package-manifest.json
+# manifest: manifests/lingo-v1.0.1.package-manifest.json
 
 match
   $struct_left isa SchemaResource, has typeLabel "aboutness";
@@ -9,6 +9,78 @@ match
   };
 insert
   (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reading";
+  $struct_right isa SchemaResource, has typeLabel "atDateTime";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reading";
+  $struct_right isa SchemaResource, has typeLabel "formatVersion";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reading";
+  $struct_right isa SchemaResource, has typeLabel "readingId";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reconciliation";
+  $struct_right isa SchemaResource, has typeLabel "atDateTime";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reconciliation";
+  $struct_right isa SchemaResource, has typeLabel "description";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reconciliation";
+  $struct_right isa SchemaResource, has typeLabel "reconciliationId";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Rule";
+  $struct_right isa SchemaResource, has typeLabel "quantity";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Rule";
+  $struct_right isa SchemaResource, has typeLabel "quantityUnit";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
 
 match
   $struct_left isa SchemaResource, has typeLabel "SourceClaim";
@@ -372,79 +444,7 @@ insert
 
 match
   $struct_left isa SchemaResource, has typeLabel "ModelingBrief";
-  $struct_right isa SchemaResource, has typeLabel "revisionHistory:brief";
-  not {
-    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-  };
-insert
-  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Passage";
-  $struct_right isa SchemaResource, has typeLabel "placement:passage";
-  not {
-    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-  };
-insert
-  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Passage";
-  $struct_right isa SchemaResource, has typeLabel "support:evidence";
-  not {
-    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-  };
-insert
-  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Person";
-  $struct_right isa SchemaResource, has typeLabel "decisionMaking:decider";
-  not {
-    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-  };
-insert
-  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Person";
-  $struct_right isa SchemaResource, has typeLabel "readership:reader";
-  not {
-    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-  };
-insert
-  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Reading";
-  $struct_right isa SchemaResource, has typeLabel "authorship:reading";
-  not {
-    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-  };
-insert
-  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Reading";
-  $struct_right isa SchemaResource, has typeLabel "copyRead:readingOfCopy";
-  not {
-    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-  };
-insert
-  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Reading";
-  $struct_right isa SchemaResource, has typeLabel "processRecord:recordedReading";
-  not {
-    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-  };
-insert
-  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Reading";
-  $struct_right isa SchemaResource, has typeLabel "readership:reading";
+  $struct_right isa SchemaResource, has typeLabel "readingPurpose:purposeBrief";
   not {
     (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };

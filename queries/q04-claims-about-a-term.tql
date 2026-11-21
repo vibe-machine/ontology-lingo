@@ -1,0 +1,7 @@
+# 4. What does one source say about one term: every claim that is about it?
+match
+  $s isa EvidenceSource, has sourceId "cagan-transformed-2024";
+  vocabulary (term: $t, termSource: $s); $t has name "outcome";
+  aboutness (claim: $c, term: $t);
+  $c isa! $kind, has claimId $claim, has containedText $text;
+select $claim, $kind, $text;

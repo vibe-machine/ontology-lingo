@@ -1,0 +1,8 @@
+# 23. Which competency questions refer to nothing in the brief?
+match
+  $brief isa ModelingBrief, has briefId "pom";
+  let $revision = current_revision($brief);
+  $q isa BriefQuestion, has containedText $question;
+  inclusion (revision: $revision, element: $q);
+  not { questionReference (question: $q, referencedElement: $e); inclusion (revision: $revision, element: $e); };
+select $question;

@@ -1,0 +1,9 @@
+# 9. Which states does a source say a thing passes through, and are they ordered?
+match
+  $h isa LifeHistory, has statesAreOrdered $ordered;
+  aboutness (claim: $h, term: $t); $t has name $thing;
+  $st isa step, links (history: $h, state: $state); $state has name $stateName;
+  try { $st has sequence $position; };
+  vocabulary (term: $t, termSource: $s); $s has name $source;
+select $source, $thing, $ordered, $position, $stateName;
+sort $position;

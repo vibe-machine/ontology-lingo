@@ -1,0 +1,8 @@
+# 3. Which claims has a second reader checked, and what did each check find?
+match
+  $check isa ClaimCheck, has checkId $checkId;
+  checkSubject (check: $check, checkedClaim: $c); $c has claimId $claim, has containedText $text;
+  checkOutcome (judgedCheck: $check, verdict: $v); $v has name $verdict;
+  decisionMaking (decision: $check, decider: $who); $who has name $checker;
+  try { $check has description $note; };
+select $claim, $text, $checker, $verdict, $note;

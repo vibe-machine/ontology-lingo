@@ -1,4 +1,16 @@
-# 25. Which statements in the brief rest only on what the owner said in a session?
-match $e isa BriefElement, has containedText $n; grounding (element: $e, groundingClaim: $c);
-  not { grounding (element: $e, groundingClaim: $c2); support (supportedClaim: $c2, evidence: $p2); placement (passage: $p2, passageSource: $s2); not { $s2 isa SessionRecord; }; };
-  select $n;
+# 25. Which statements in the brief rest only on what the owner said in a session, and on no published source?
+match
+  $brief isa ModelingBrief, has briefId "pom";
+  let $revision = current_revision($brief);
+  $e isa BriefElement, has containedText $statement;
+  inclusion (revision: $revision, element: $e);
+  grounding (element: $e, groundingClaim: $c);
+  support (supportedClaim: $c, evidence: $p); placement (passage: $p, passageSource: $session);
+  $session isa SessionRecord, has name $sessionName;
+  not {
+    grounding (element: $e, groundingClaim: $c2);
+    support (supportedClaim: $c2, evidence: $p2); placement (passage: $p2, passageSource: $s2);
+    not { $s2 isa SessionRecord; };
+  };
+select $statement, $sessionName;
+distinct;

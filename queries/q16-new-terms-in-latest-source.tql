@@ -1,0 +1,12 @@
+# 16. How many new terms did the latest source add that no earlier source had?
+match
+  $latest isa Reading, has atDateTime $at;
+  not { $other isa Reading, has atDateTime $later; $later > $at; };
+  readingSubject (pass: $latest, sourceRead: $s); $s has name $source;
+  vocabulary (term: $t, termSource: $s); $t has name $term;
+  not {
+    vocabulary (term: $older, termSource: $earlierSource); $older has name $term;
+    readingSubject (pass: $earlierReading, sourceRead: $earlierSource);
+    $earlierReading has atDateTime $earlierAt; $earlierAt < $at;
+  };
+reduce $newTerms = count groupby $source;

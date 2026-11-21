@@ -1,2 +1,8 @@
-# 8. Into what kinds does a source divide a term?
-match division (dividedTerm: $of, memberTerm: $m); $of has name $o; $m has name $member; select $o, $member;
+# 8. Into what kinds, parts, options or stages does a source divide a term, and does it call the list complete?
+match
+  $list isa Enumeration;
+  division (list: $list, dividedTerm: $of, memberTerm: $m); $of has name $term; $m has name $member;
+  listClassification (classifiedList: $list, listKind: $k); $k has name $listKind;
+  vocabulary (term: $of, termSource: $s); $s has name $source;
+  try { $list has listIsComplete $complete; };
+select $source, $term, $listKind, $member, $complete;

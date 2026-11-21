@@ -50,8 +50,10 @@ Before a release, also run the candidate through the app's install:
 - `schema/lingo.tql`: the hand-written schema.
 - `data/lingo-categories.tql`, `data/lingo-formats.tql`: the fixed lists and the file formats.
 - `docs/competency-questions.md`: the questions the model must answer.
-- `queries/`: queries that answer nine of them.
-- `fixtures/transformed-sample.tql`: a small sample for those queries. Never installed.
+- `competency/questions.json`: every question with its query and the fixtures it is answered against.
+- `queries/`: one query per question.
+- `fixtures/transformed-sample.tql`, `fixtures/competency-sample.tql`: a small sample on which every
+  query returns rows. Never installed.
 - `data/lingo-schema-docs.tql`, `data/lingo-provenance.tql`, `manifests/`, the other files in
   `schema/`: generated.
 

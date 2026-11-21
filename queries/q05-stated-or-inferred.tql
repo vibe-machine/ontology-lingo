@@ -1,0 +1,7 @@
+# 5. Which claims did the source state outright, and which did the reader infer?
+match
+  $c isa SourceClaim, has claimId $claim, has containedText $text;
+  standing (subject: $c, state: $st); $st has name $state;
+  { $state == "stated"; } or { $state == "implied"; };
+  authorship (authoredClaim: $c, reading: $r); readingSubject (pass: $r, sourceRead: $s); $s has name $source;
+select $source, $state, $claim, $text;

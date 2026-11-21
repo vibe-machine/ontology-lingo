@@ -1,0 +1,9 @@
+# 11. Which rules does a source place on a term, how strong is each, and what number does it give?
+match
+  $rule isa Rule, has containedText $text;
+  aboutness (claim: $rule, term: $t); $t has name $term;
+  force (rule: $rule, strength: $f); $f has name $strength;
+  try { $rule has quantity $number; };
+  try { $rule has quantityUnit $unit; };
+  vocabulary (term: $t, termSource: $s); $s has name $source;
+select $source, $term, $strength, $number, $unit, $text;

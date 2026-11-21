@@ -1,2 +1,8 @@
 # 20. Which concepts in the brief rest on no claim from any source?
-match $e isa BriefConcept, has name $n; not { grounding (element: $e); }; select $n;
+match
+  $brief isa ModelingBrief, has briefId "pom";
+  let $revision = current_revision($brief);
+  $c isa BriefConcept, has name $concept;
+  inclusion (revision: $revision, element: $c);
+  not { grounding (element: $c, groundingClaim: $claim); };
+select $concept;

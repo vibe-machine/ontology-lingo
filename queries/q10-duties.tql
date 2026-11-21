@@ -1,0 +1,8 @@
+# 10. Who does a source say does, decides or approves what?
+match
+  $d isa DutyClaim, has containedText $text;
+  duty (claim: $d, actor: $a); $a has name $actor;
+  dutyClassification (classifiedDuty: $d, mode: $m); $m has name $mode;
+  try { duty (claim: $d, target: $t); $t has name $target; };
+  vocabulary (term: $a, termSource: $s); $s has name $source;
+select $source, $actor, $mode, $target, $text;

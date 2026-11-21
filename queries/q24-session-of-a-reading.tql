@@ -1,2 +1,6 @@
 # 24. In which working session was a reading done, and where is its transcript kept?
-match $r isa Reading, has readingId $rid; processRecord (record: $s, recordedReading: $r); $s has name $session; whereabouts (locatedSource: $s, location: $l); $l has containedText $where; select $rid, $session, $where;
+match
+  $r isa Reading, has readingId $reading;
+  processRecord (record: $s, recordedReading: $r); $s has name $session;
+  whereabouts (locatedSource: $s, location: $l); $l has containedText $transcript;
+select $reading, $session, $transcript;

@@ -1,0 +1,7 @@
+# 17. What is in force in the brief for a subject: its purpose, scope, concepts, relations, constraints and questions?
+match
+  $brief isa ModelingBrief, has briefId "pom";
+  let $revision = current_revision($brief);
+  inclusion (revision: $revision, element: $e);
+  $e isa! $kind, has containedText $statement;
+select $kind, $statement;

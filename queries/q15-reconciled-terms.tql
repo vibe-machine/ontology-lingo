@@ -1,0 +1,9 @@
+# 15. Which source terms have we decided are one of our concepts, how close is the fit, who decided, and why?
+match
+  $rec isa Reconciliation, has description $why;
+  termReconciliation (decision: $rec, term: $t, concept: $c);
+  $t has name $term; vocabulary (term: $t, termSource: $s); $s has name $source;
+  $c has name $concept;
+  fit (reconciliation: $rec, degree: $f); $f has name $fit;
+  decisionMaking (decision: $rec, decider: $who); $who has name $decidedBy;
+select $source, $term, $concept, $fit, $decidedBy, $why;

@@ -1,0 +1,9 @@
+# 19. Which statements did the owner assert, which did the assistant suggest, and which are assumed?
+match
+  $brief isa ModelingBrief, has briefId "pom";
+  let $revision = current_revision($brief);
+  inclusion (revision: $revision, element: $e); $e has containedText $statement;
+  standing (subject: $e, state: $st); $st has name $standing;
+  { $standing == "asserted"; } or { $standing == "suggested"; } or { $standing == "assumed"; };
+select $standing, $statement;
+sort $standing;

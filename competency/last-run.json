@@ -1,0 +1,143 @@
+{
+  "package": "lingo",
+  "version": "1.0.1",
+  "ranAt": "2026-11-21T00:45:55Z",
+  "questionsDigest": "95ae4a34dd6ad32c819616006a0673d033c956e521daa36107ac0a067041d80e",
+  "results": [
+    {
+      "id": "q01",
+      "number": 1,
+      "rows": 3
+    },
+    {
+      "id": "q02",
+      "number": 2,
+      "rows": 4
+    },
+    {
+      "id": "q03",
+      "number": 3,
+      "rows": 2
+    },
+    {
+      "id": "q04",
+      "number": 4,
+      "rows": 2
+    },
+    {
+      "id": "q05",
+      "number": 5,
+      "rows": 9
+    },
+    {
+      "id": "q06",
+      "number": 6,
+      "rows": 1
+    },
+    {
+      "id": "q07",
+      "number": 7,
+      "rows": 1
+    },
+    {
+      "id": "q08",
+      "number": 8,
+      "rows": 4
+    },
+    {
+      "id": "q09",
+      "number": 9,
+      "rows": 3
+    },
+    {
+      "id": "q10",
+      "number": 10,
+      "rows": 1
+    },
+    {
+      "id": "q11",
+      "number": 11,
+      "rows": 1
+    },
+    {
+      "id": "q12",
+      "number": 12,
+      "rows": 1
+    },
+    {
+      "id": "q13",
+      "number": 13,
+      "rows": 1
+    },
+    {
+      "id": "q14",
+      "number": 14,
+      "rows": 14
+    },
+    {
+      "id": "q15",
+      "number": 15,
+      "rows": 2
+    },
+    {
+      "id": "q16",
+      "number": 16,
+      "rows": 1
+    },
+    {
+      "id": "q17",
+      "number": 17,
+      "rows": 10
+    },
+    {
+      "id": "q18",
+      "number": 18,
+      "rows": 8
+    },
+    {
+      "id": "q19",
+      "number": 19,
+      "rows": 10
+    },
+    {
+      "id": "q20",
+      "number": 20,
+      "rows": 1
+    },
+    {
+      "id": "q21",
+      "number": 21,
+      "rows": 1
+    },
+    {
+      "id": "q22",
+      "number": 22,
+      "rows": 2
+    },
+    {
+      "id": "q23",
+      "number": 23,
+      "rows": 1
+    },
+    {
+      "id": "q24",
+      "number": 24,
+      "rows": 1
+    },
+    {
+      "id": "q25",
+      "number": 25,
+      "rows": 1
+    },
+    {
+      "id": "q26",
+      "number": 26,
+      "rows": 5
+    },
+    {
+      "id": "q27",
+      "number": 27,
+      "rows": 3
+    }
+  ]
+}

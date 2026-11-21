@@ -1,0 +1,15 @@
+# 18. What changed between two revisions of the brief, and which statement replaced which?
+match
+  $brief isa ModelingBrief, has briefId "pom";
+  revisionHistory (brief: $brief, revision: $from); $from has sequence 1;
+  revisionHistory (brief: $brief, revision: $to); $to has sequence 2;
+  {
+    inclusion (revision: $to, element: $e); not { inclusion (revision: $from, element: $e); };
+    let $change = "added";
+  } or {
+    inclusion (revision: $from, element: $e); not { inclusion (revision: $to, element: $e); };
+    let $change = "removed";
+  };
+  $e has containedText $statement;
+  try { replacement (newer: $e, older: $o); $o has containedText $replaces; };
+select $change, $statement, $replaces;

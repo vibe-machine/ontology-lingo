@@ -1,9 +1,81 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v1.0.0.package-manifest.json
+# manifest: manifests/lingo-v1.0.1.package-manifest.json
 
 match
   $struct_left isa SchemaResource, has typeLabel "aboutness";
   $struct_right isa SchemaResource, has typeLabel "isAbout";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "revisionHistory:revision";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf:part";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Rule";
+  $struct_right isa SchemaResource, has typeLabel "SourceClaim";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "SessionRecord";
+  $struct_right isa SchemaResource, has typeLabel "EvidenceSource";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "SourceClaim";
+  $struct_right isa SchemaResource, has typeLabel "Text";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "sourceFormat";
+  $struct_right isa SchemaResource, has typeLabel "isExpressedIn";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "sourceFormat:format";
+  $struct_right isa SchemaResource, has typeLabel "isExpressedIn:language";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "sourceFormat:formattedSource";
+  $struct_right isa SchemaResource, has typeLabel "isExpressedIn:expressedThing";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "SourceKind";
+  $struct_right isa SchemaResource, has typeLabel "Category";
   not {
     (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
@@ -373,78 +445,6 @@ insert
 match
   $struct_left isa SchemaResource, has typeLabel "Passage";
   $struct_right isa SchemaResource, has typeLabel "passageId";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Reading";
-  $struct_right isa SchemaResource, has typeLabel "atDateTime";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Reading";
-  $struct_right isa SchemaResource, has typeLabel "formatVersion";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Reading";
-  $struct_right isa SchemaResource, has typeLabel "readingId";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Reconciliation";
-  $struct_right isa SchemaResource, has typeLabel "atDateTime";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Reconciliation";
-  $struct_right isa SchemaResource, has typeLabel "description";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Reconciliation";
-  $struct_right isa SchemaResource, has typeLabel "reconciliationId";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Rule";
-  $struct_right isa SchemaResource, has typeLabel "quantity";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Rule";
-  $struct_right isa SchemaResource, has typeLabel "quantityUnit";
   not {
     (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
   };

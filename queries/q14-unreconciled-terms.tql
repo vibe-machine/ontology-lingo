@@ -1,2 +1,6 @@
 # 14. Which source terms have not been reconciled with our concepts yet?
-match let $t in unreconciled_terms(); $t has name $n; select $n;
+match
+  let $t in unreconciled_terms();
+  $t has name $term;
+  vocabulary (term: $t, termSource: $s); $s has name $source;
+select $source, $term;

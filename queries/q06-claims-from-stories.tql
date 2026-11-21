@@ -1,0 +1,6 @@
+# 6. Which claims came from a story the source tells and not from a statement it makes?
+match
+  $c isa SourceClaim, has claimId $claim, has containedText $text;
+  origin (originClaim: $c, originKind: $o); $o has name "story";
+  authorship (authoredClaim: $c, reading: $r); readingSubject (pass: $r, sourceRead: $s); $s has name $source;
+select $source, $claim, $text;

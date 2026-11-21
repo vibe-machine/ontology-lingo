@@ -1,0 +1,9 @@
+# 1. Which sources have been read for a subject, by whom, when, and under which version of the reading brief?
+match
+  $brief isa ModelingBrief, has briefId "pom", has name $subject;
+  readingPurpose (purposefulReading: $r, purposeBrief: $brief);
+  $r has readingId $reading, has atDateTime $when, has formatVersion $briefVersion;
+  readingSubject (pass: $r, sourceRead: $s); $s has name $source;
+  readership (reading: $r, reader: $who);
+  try { $who has name $reader; };
+select $subject, $source, $reading, $reader, $when, $briefVersion;

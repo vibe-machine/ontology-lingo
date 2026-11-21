@@ -1,0 +1,19 @@
+# 13. Which terms do two sources use with different meanings?
+match
+  $t1 isa SourceTerm, has name $term; $t2 isa SourceTerm, has name $term;
+  vocabulary (term: $t1, termSource: $s1); $s1 has name $source1;
+  vocabulary (term: $t2, termSource: $s2); $s2 has name $source2;
+  $source1 < $source2;
+  termReconciliation (decision: $r1, term: $t1); fit (reconciliation: $r1, degree: $f1); $f1 has name $fit1;
+  termReconciliation (decision: $r2, term: $t2); fit (reconciliation: $r2, degree: $f2); $f2 has name $fit2;
+  {
+    termReconciliation (decision: $r1, concept: $c1); termReconciliation (decision: $r2, concept: $c2);
+    not { $c1 is $c2; };
+  } or {
+    termReconciliation (decision: $r1, concept: $cc); termReconciliation (decision: $r2, concept: $cc);
+    $fit1 != $fit2;
+  } or {
+    $fit1 == "different"; $fit2 == "different";
+  };
+select $term, $source1, $fit1, $source2, $fit2;
+distinct;

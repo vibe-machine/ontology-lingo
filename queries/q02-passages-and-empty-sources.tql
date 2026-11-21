@@ -1,0 +1,10 @@
+# 2. Which passages of a source does any claim rest on, and which sources yielded nothing?
+# A source read with no passage in the answer (an empty $passage) yielded nothing.
+match
+  readingSubject (pass: $r, sourceRead: $s); $s has name $source;
+  try {
+    placement (passage: $p, passageSource: $s); $p has locator $passage;
+    support (supportedClaim: $c, evidence: $p);
+  };
+select $source, $passage;
+distinct;

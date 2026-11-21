@@ -16,6 +16,7 @@ const curated = new Map(Object.entries({
   "Reading": "One pass over a source by one reader, under one version of the reading instructions.",
   "SourceTerm": "A word as one source uses it.",
   "SourceClaim": "One thing a source says about its terms, written in our words.",
+  "readingPurpose": "The subject a reading was done for: the brief it serves.",
   "ClaimCheck": "A second reader's verdict on a claim.",
   "ModelingBrief": "The statement of intent for one subject.",
   "BriefRevision": "The brief as it stood at one moment: the statements in force.",

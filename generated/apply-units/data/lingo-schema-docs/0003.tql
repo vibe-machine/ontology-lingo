@@ -1,5 +1,5 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v1.0.0.package-manifest.json
+# manifest: manifests/lingo-v1.0.1.package-manifest.json
 
 put $generated_role_1 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#aboutness:claim",
@@ -12,6 +12,23 @@ put $generated_role_1 isa SchemaResource,
 match
   $schema_module isa SchemaModule, has moduleKey "lingo";
   $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#aboutness:claim";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
+
+put $generated_role_4 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#authorship:reading",
+  has iri "https://github.com/vibe-machine/ontology-lingo#authorship:reading",
+  has typeLabel "authorship:reading",
+  has kind "role",
+  has roleName "reading",
+  has prefLabel "reading",
+  has definition "Role 'reading' in relation 'authorship'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#authorship:reading";
   not {
     (resource: $schema_resource, module: $schema_module) isa inModule;
   };
@@ -393,6 +410,40 @@ insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
 put $generated_role_27 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#hasGoal:directedThing",
+  has iri "https://github.com/vibe-machine/ontology-lingo#hasGoal:directedThing",
+  has typeLabel "hasGoal:directedThing",
+  has kind "role",
+  has roleName "directedThing",
+  has prefLabel "directedThing",
+  has definition "Role 'directedThing' in relation 'hasGoal'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#hasGoal:directedThing";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
+
+put $generated_role_28 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#hasGoal:goal",
+  has iri "https://github.com/vibe-machine/ontology-lingo#hasGoal:goal",
+  has typeLabel "hasGoal:goal",
+  has kind "role",
+  has roleName "goal",
+  has prefLabel "goal",
+  has definition "Role 'goal' in relation 'hasGoal'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#hasGoal:goal";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
+
+put $generated_role_29 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#hasParticipant:participant",
   has iri "https://github.com/vibe-machine/ontology-lingo#hasParticipant:participant",
   has typeLabel "hasParticipant:participant",
@@ -409,7 +460,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_28 isa SchemaResource,
+put $generated_role_30 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#hasParticipant:participationContext",
   has iri "https://github.com/vibe-machine/ontology-lingo#hasParticipant:participationContext",
   has typeLabel "hasParticipant:participationContext",
@@ -426,7 +477,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_29 isa SchemaResource,
+put $generated_role_31 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#inclusion:element",
   has iri "https://github.com/vibe-machine/ontology-lingo#inclusion:element",
   has typeLabel "inclusion:element",
@@ -443,7 +494,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_30 isa SchemaResource,
+put $generated_role_32 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#inclusion:revision",
   has iri "https://github.com/vibe-machine/ontology-lingo#inclusion:revision",
   has typeLabel "inclusion:revision",
@@ -460,7 +511,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_31 isa SchemaResource,
+put $generated_role_33 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isAbout:content",
   has iri "https://github.com/vibe-machine/ontology-lingo#isAbout:content",
   has typeLabel "isAbout:content",
@@ -477,7 +528,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_32 isa SchemaResource,
+put $generated_role_34 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isAbout:subjectMatter",
   has iri "https://github.com/vibe-machine/ontology-lingo#isAbout:subjectMatter",
   has typeLabel "isAbout:subjectMatter",
@@ -494,7 +545,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_33 isa SchemaResource,
+put $generated_role_35 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isBasedOn:basis",
   has iri "https://github.com/vibe-machine/ontology-lingo#isBasedOn:basis",
   has typeLabel "isBasedOn:basis",
@@ -511,7 +562,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_34 isa SchemaResource,
+put $generated_role_36 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isBasedOn:derivedThing",
   has iri "https://github.com/vibe-machine/ontology-lingo#isBasedOn:derivedThing",
   has typeLabel "isBasedOn:derivedThing",
@@ -528,7 +579,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_35 isa SchemaResource,
+put $generated_role_37 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isCategorizedBy:categorizedThing",
   has iri "https://github.com/vibe-machine/ontology-lingo#isCategorizedBy:categorizedThing",
   has typeLabel "isCategorizedBy:categorizedThing",
@@ -545,7 +596,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_36 isa SchemaResource,
+put $generated_role_38 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isCategorizedBy:category",
   has iri "https://github.com/vibe-machine/ontology-lingo#isCategorizedBy:category",
   has typeLabel "isCategorizedBy:category",
@@ -562,7 +613,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_37 isa SchemaResource,
+put $generated_role_39 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isExpressedIn:expressedThing",
   has iri "https://github.com/vibe-machine/ontology-lingo#isExpressedIn:expressedThing",
   has typeLabel "isExpressedIn:expressedThing",
@@ -579,7 +630,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_38 isa SchemaResource,
+put $generated_role_40 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isExpressedIn:language",
   has iri "https://github.com/vibe-machine/ontology-lingo#isExpressedIn:language",
   has typeLabel "isExpressedIn:language",
@@ -596,7 +647,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_39 isa SchemaResource,
+put $generated_role_41 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isMemberOf:collection",
   has iri "https://github.com/vibe-machine/ontology-lingo#isMemberOf:collection",
   has typeLabel "isMemberOf:collection",
@@ -613,7 +664,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_40 isa SchemaResource,
+put $generated_role_42 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isMemberOf:member",
   has iri "https://github.com/vibe-machine/ontology-lingo#isMemberOf:member",
   has typeLabel "isMemberOf:member",
@@ -630,7 +681,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_41 isa SchemaResource,
+put $generated_role_43 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isPartOf:part",
   has iri "https://github.com/vibe-machine/ontology-lingo#isPartOf:part",
   has typeLabel "isPartOf:part",
@@ -647,7 +698,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_42 isa SchemaResource,
+put $generated_role_44 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isPartOf:whole",
   has iri "https://github.com/vibe-machine/ontology-lingo#isPartOf:whole",
   has typeLabel "isPartOf:whole",
@@ -664,7 +715,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_43 isa SchemaResource,
+put $generated_role_45 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isProducedBy:producer",
   has iri "https://github.com/vibe-machine/ontology-lingo#isProducedBy:producer",
   has typeLabel "isProducedBy:producer",
@@ -681,7 +732,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_44 isa SchemaResource,
+put $generated_role_46 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#isProducedBy:product",
   has iri "https://github.com/vibe-machine/ontology-lingo#isProducedBy:product",
   has typeLabel "isProducedBy:product",
@@ -698,7 +749,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_45 isa SchemaResource,
+put $generated_role_47 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#listClassification:classifiedList",
   has iri "https://github.com/vibe-machine/ontology-lingo#listClassification:classifiedList",
   has typeLabel "listClassification:classifiedList",
@@ -715,7 +766,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_46 isa SchemaResource,
+put $generated_role_48 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#listClassification:listKind",
   has iri "https://github.com/vibe-machine/ontology-lingo#listClassification:listKind",
   has typeLabel "listClassification:listKind",
@@ -732,7 +783,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_47 isa SchemaResource,
+put $generated_role_49 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#locationClassification:classifiedLocation",
   has iri "https://github.com/vibe-machine/ontology-lingo#locationClassification:classifiedLocation",
   has typeLabel "locationClassification:classifiedLocation",
@@ -749,7 +800,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_48 isa SchemaResource,
+put $generated_role_50 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#locationClassification:locationKind",
   has iri "https://github.com/vibe-machine/ontology-lingo#locationClassification:locationKind",
   has typeLabel "locationClassification:locationKind",
@@ -766,7 +817,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_49 isa SchemaResource,
+put $generated_role_51 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#origin:originClaim",
   has iri "https://github.com/vibe-machine/ontology-lingo#origin:originClaim",
   has typeLabel "origin:originClaim",
@@ -783,7 +834,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_50 isa SchemaResource,
+put $generated_role_52 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#origin:originKind",
   has iri "https://github.com/vibe-machine/ontology-lingo#origin:originKind",
   has typeLabel "origin:originKind",
@@ -794,57 +845,6 @@ put $generated_role_50 isa SchemaResource,
 match
   $schema_module isa SchemaModule, has moduleKey "lingo";
   $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#origin:originKind";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_51 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#placement:passage",
-  has iri "https://github.com/vibe-machine/ontology-lingo#placement:passage",
-  has typeLabel "placement:passage",
-  has kind "role",
-  has roleName "passage",
-  has prefLabel "passage",
-  has definition "Role 'passage' in relation 'placement'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#placement:passage";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_52 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#placement:passageSource",
-  has iri "https://github.com/vibe-machine/ontology-lingo#placement:passageSource",
-  has typeLabel "placement:passageSource",
-  has kind "role",
-  has roleName "passageSource",
-  has prefLabel "passageSource",
-  has definition "Role 'passageSource' in relation 'placement'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#placement:passageSource";
-  not {
-    (resource: $schema_resource, module: $schema_module) isa inModule;
-  };
-insert
-  (resource: $schema_resource, module: $schema_module) isa inModule;
-
-put $generated_role_53 isa SchemaResource,
-  has docKey "https://github.com/vibe-machine/ontology-lingo#processRecord:record",
-  has iri "https://github.com/vibe-machine/ontology-lingo#processRecord:record",
-  has typeLabel "processRecord:record",
-  has kind "role",
-  has roleName "record",
-  has prefLabel "record",
-  has definition "Role 'record' in relation 'processRecord'.";
-match
-  $schema_module isa SchemaModule, has moduleKey "lingo";
-  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#processRecord:record";
   not {
     (resource: $schema_resource, module: $schema_module) isa inModule;
   };

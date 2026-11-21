@@ -1,9 +1,61 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v1.0.0.package-manifest.json
+# manifest: manifests/lingo-v1.0.1.package-manifest.json
+
+put $generated_role_1 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#aboutness:claim",
+  has iri "https://github.com/vibe-machine/ontology-lingo#aboutness:claim",
+  has typeLabel "aboutness:claim",
+  has kind "role",
+  has roleName "claim",
+  has prefLabel "claim",
+  has definition "Role 'claim' in relation 'aboutness'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#aboutness:claim";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
+
+match
+  $schema_resource isa SchemaResource, has typeLabel "verbPhrase";
+  not {
+    $schema_resource has valueTypeName "string";
+  };
+insert
+  $schema_resource has valueTypeName "string";
 
 match
   $struct_left isa SchemaResource, has typeLabel "aboutness";
   $struct_right isa SchemaResource, has typeLabel "isAbout";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "aboutness:claim";
+  $struct_right isa SchemaResource, has typeLabel "isAbout:content";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "aboutness:term";
+  $struct_right isa SchemaResource, has typeLabel "isAbout:subjectMatter";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "AssistantModel";
+  $struct_right isa SchemaResource, has typeLabel "System";
   not {
     (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
@@ -400,51 +452,6 @@ insert
 match
   $struct_left isa SchemaResource, has typeLabel "force";
   $struct_right isa SchemaResource, has typeLabel "isCategorizedBy";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "force:rule";
-  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:categorizedThing";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "force:strength";
-  $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:category";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "grounding";
-  $struct_right isa SchemaResource, has typeLabel "isBasedOn";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "grounding:element";
-  $struct_right isa SchemaResource, has typeLabel "isBasedOn:derivedThing";
-  not {
-    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-  };
-insert
-  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "grounding:groundingClaim";
-  $struct_right isa SchemaResource, has typeLabel "isBasedOn:basis";
   not {
     (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };

@@ -1,0 +1,5 @@
+# 12. Which terms were named by the reader because the source relied on them without naming them?
+match
+  $t isa SourceTerm, has name $term, has termIsReaders true;
+  vocabulary (term: $t, termSource: $s); $s has name $source;
+select $source, $term;
