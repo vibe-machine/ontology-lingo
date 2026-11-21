@@ -1,8 +1,8 @@
 {
   "package": "lingo",
-  "version": "1.0.1",
-  "ranAt": "2026-11-21T00:45:55Z",
-  "questionsDigest": "95ae4a34dd6ad32c819616006a0673d033c956e521daa36107ac0a067041d80e",
+  "version": "1.0.2",
+  "ranAt": "2026-11-21T00:49:15Z",
+  "questionsDigest": "746acdccf19056039ffd788b85b232da4ebf3765637744b62b67716c3b4712fa",
   "results": [
     {
       "id": "q01",
@@ -37,7 +37,7 @@
     {
       "id": "q07",
       "number": 7,
-      "rows": 1
+      "rows": 2
     },
     {
       "id": "q08",

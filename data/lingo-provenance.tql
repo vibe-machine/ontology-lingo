@@ -1,7 +1,7 @@
 # Provenance bootstrap
 # upstream-repo: https://github.com/vibe-machine/ontology-lingo
-# upstream-tag: v1.0.1
-# upstream-commit: 3deed03ba8fa6579e9ac9c5358ce483ea7472739
+# upstream-tag: v1.0.2
+# upstream-commit: 7ede7e8a96365c05c501d65120a5bef952ccb990
 # source-artifacts:
 # - package.json
 # - schema/lingo.tql
@@ -18,7 +18,7 @@
 # - generated/apply-units/data/lingo-schema-docs/0009.tql
 # - generated/apply-units/data/lingo-schema-docs/0010.tql
 # - generated/apply-units/data/lingo-schema-docs/0011.tql
-# manifest: manifests/lingo-v1.0.1.package-manifest.json
+# manifest: manifests/lingo-v1.0.2.package-manifest.json
 # generator: hand-authored-package-bootstrap/0.1.0
 
 
@@ -27,19 +27,19 @@ put $module isa OntologyModule,
   has moduleRepoUrl "https://github.com/vibe-machine/ontology-lingo";
 
 put $version isa OntologyModuleVersion,
-  has moduleVersionKey "https://github.com/vibe-machine/ontology-lingo@1.0.1",
-  has moduleVersion "1.0.1",
-  has upstreamCommit "3deed03ba8fa6579e9ac9c5358ce483ea7472739",
-  has manifestPath "manifests/lingo-v1.0.1.package-manifest.json",
+  has moduleVersionKey "https://github.com/vibe-machine/ontology-lingo@1.0.2",
+  has moduleVersion "1.0.2",
+  has upstreamCommit "7ede7e8a96365c05c501d65120a5bef952ccb990",
+  has manifestPath "manifests/lingo-v1.0.2.package-manifest.json",
   has generatorName "hand-authored-package-bootstrap",
   has generatorVersion "0.1.0",
-  has generatedAt "2026-11-21T00:42:03Z";
+  has generatedAt "2026-11-21T00:49:09Z";
 
 put (version: $version, module: $module) isa ontologyModuleVersionOf;
 
 put $s1 isa SourceArtifactRecord,
   has sourcePath "package.json",
-  has sourceSha256 "bd666bb485014b7c98334700843fdd37574daa212bfc26d68420d2abd0057b9e";
+  has sourceSha256 "99a484a3d344c4856876d68a3a559ad45ada630137fea57cfcb126d6ac596c86";
 put (version: $version, sourceArtifact: $s1) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s2 isa SourceArtifactRecord,
@@ -59,81 +59,81 @@ put (version: $version, sourceArtifact: $s4) isa ontologyModuleVersionBasedOnSou
 
 put $s5 isa SourceArtifactRecord,
   has sourcePath "generated/apply-units/data/lingo-schema-docs/0001.tql",
-  has sourceSha256 "257064ea7ea66ba5e63785a30cb348fedde38742a3ec0ea9efd1b831f873ea62";
+  has sourceSha256 "dcbb429ccef9dc691018609adbe9bd68b94a90962589a418a697fca640d3f831";
 put (version: $version, sourceArtifact: $s5) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s6 isa SourceArtifactRecord,
   has sourcePath "generated/apply-units/data/lingo-schema-docs/0002.tql",
-  has sourceSha256 "19ef805fe2b9bcf44e4181b8943eba559bdcb3ebb3131f5555a9d03fcc0b331b";
+  has sourceSha256 "d307e434cad1724bb000c68beddf7703868accbc432471862e41fce1879671a1";
 put (version: $version, sourceArtifact: $s6) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s7 isa SourceArtifactRecord,
   has sourcePath "generated/apply-units/data/lingo-schema-docs/0003.tql",
-  has sourceSha256 "a6246760ff433d11d42626afee632e13c3f7f4dd47be561e047a0a86b4e065ae";
+  has sourceSha256 "a17b0cdf91d8db6a357e8121d6fac8e0b272ed0a832fa1d6572af1d7da248d03";
 put (version: $version, sourceArtifact: $s7) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s8 isa SourceArtifactRecord,
   has sourcePath "generated/apply-units/data/lingo-schema-docs/0004.tql",
-  has sourceSha256 "3f1d1ca9606a330552703a852221d1114d6ace5043837960d3f1da9472681c33";
+  has sourceSha256 "0ab3dcf8644e27a9575b2454695c4c41567064064f63e7229ee463d6d2947611";
 put (version: $version, sourceArtifact: $s8) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s9 isa SourceArtifactRecord,
   has sourcePath "generated/apply-units/data/lingo-schema-docs/0005.tql",
-  has sourceSha256 "4a07671f43913be0df95055ee33e050e2d8ba24b3dfcc18c0a5605df63025178";
+  has sourceSha256 "68028ab4deae805be54cb928e37bba3d0f7d32a91a1ff1a2f19bf891a415637a";
 put (version: $version, sourceArtifact: $s9) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s10 isa SourceArtifactRecord,
   has sourcePath "generated/apply-units/data/lingo-schema-docs/0006.tql",
-  has sourceSha256 "c20a0213bae25b032b83874aa3396684908ca86b51a4a8301831591b5e7b7b9a";
+  has sourceSha256 "7eb88f9715399d84cfc9878a7f411f4e68a0ee21fa0f817875719e88cbb1c080";
 put (version: $version, sourceArtifact: $s10) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s11 isa SourceArtifactRecord,
   has sourcePath "generated/apply-units/data/lingo-schema-docs/0007.tql",
-  has sourceSha256 "48d02817a871c6a0b7b6f02e74f4791fdc8c515d0401a221c066e669bce1d61c";
+  has sourceSha256 "64396250ded88fce16541a9819c32b3ea9afab736c85373709d207792e94b595";
 put (version: $version, sourceArtifact: $s11) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s12 isa SourceArtifactRecord,
   has sourcePath "generated/apply-units/data/lingo-schema-docs/0008.tql",
-  has sourceSha256 "3dc6e88d37654a1464a3027ec026fdedb42f1d59ab6bcd210b02cb1cb2a696f7";
+  has sourceSha256 "b8b25f853fc3fbf222449377ae49cdf9255a3e3628dec6631004f1ea091ac399";
 put (version: $version, sourceArtifact: $s12) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s13 isa SourceArtifactRecord,
   has sourcePath "generated/apply-units/data/lingo-schema-docs/0009.tql",
-  has sourceSha256 "7780280968fe8c2c7ad69237018b14f4e32bb1be06c4e17a95669c42b3a000d3";
+  has sourceSha256 "ba2a4cca68f291cc7e2fd0d85318ee49216961d847075a601d8a6619bd95a503";
 put (version: $version, sourceArtifact: $s13) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s14 isa SourceArtifactRecord,
   has sourcePath "generated/apply-units/data/lingo-schema-docs/0010.tql",
-  has sourceSha256 "02cf239398c3051bd635abe4211ba9f9b8cfaa16d7005933b5204c1dc7ccedec";
+  has sourceSha256 "6352da45133ba36c88aafee1714ad4ce2ea769289a480af8680bd557c9655ebb";
 put (version: $version, sourceArtifact: $s14) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $s15 isa SourceArtifactRecord,
   has sourcePath "generated/apply-units/data/lingo-schema-docs/0011.tql",
-  has sourceSha256 "0f5f89d96d2cc6b2f4304fa5684c0dcfec83d74f14b4489d20f6eaec4915813b";
+  has sourceSha256 "e3f7fc4d3b98eff90ed84350e43d7fd2a5a4c2b57200c3011e43bfab8915c720";
 put (version: $version, sourceArtifact: $s15) isa ontologyModuleVersionBasedOnSourceArtifact;
 
 put $g1 isa GeneratedArtifactRecord,
   has artifactPath "schema/self-describing-schema.tql",
   has artifactKind "meta-schema",
-  has artifactSha256 "207023400aa094ba572775e5015d88b3fc04b2a5b5f1a4f2568f31b5313f9940";
+  has artifactSha256 "29ba619c90eb6b86bf6580950ab30da99661e534de6a65a5736ec0ded0ded071";
 put (generatedArtifact: $g1, version: $version) isa generatedArtifactForOntologyModuleVersion;
 
 put $g2 isa GeneratedArtifactRecord,
   has artifactPath "schema/package-provenance.tql",
   has artifactKind "provenance-schema",
-  has artifactSha256 "e41fe686b9047f5aa8db35f1b4ef4d1891efac9d6568d4e72c4737151061f7a4";
+  has artifactSha256 "847c09558d574ef096b98e4a5789699f8ac43257e07a3ab4b3e3f452fd29f7f4";
 put (generatedArtifact: $g2, version: $version) isa generatedArtifactForOntologyModuleVersion;
 
 put $g3 isa GeneratedArtifactRecord,
   has artifactPath "schema/administrative-operations.tql",
   has artifactKind "administrative-schema",
-  has artifactSha256 "89dcd537dde3f486f613b662ab5a5fadaabc5781ac0cd88553fab612100fd82c";
+  has artifactSha256 "c7efa76730b69d2927829170e97c4a57db2bf993346ada47bff3336bafafd34e";
 put (generatedArtifact: $g3, version: $version) isa generatedArtifactForOntologyModuleVersion;
 
 put $g4 isa GeneratedArtifactRecord,
   has artifactPath "data/lingo-schema-docs.tql",
   has artifactKind "documentation",
-  has artifactSha256 "ccae04111e9d1797606f40d8aedc9afe50c2575a48765a1d33c38bfd0b5b8efa";
+  has artifactSha256 "ef517a6c0c6189f0d083169b80ca61ffb8b24295d4bc78d7b38bc2be17ef9c3a";
 put (generatedArtifact: $g4, version: $version) isa generatedArtifactForOntologyModuleVersion;
 
 put $g5 isa GeneratedArtifactRecord,

@@ -1,7 +1,7 @@
 {
   "name": "lingo",
   "displayName": "Lingo Studio Knowledge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The record of how a model is made: what was read, what each source says in its own terms, what we intend to model, and the decisions that join them.",
   "author": "vibe-machine",
   "license": "MIT",
@@ -59,7 +59,7 @@
     "release:check": "../ontology-tooling/bin/ont release --repo . --validate-only"
   },
   "manifests": [
-    "manifests/lingo-v1.0.1.package-manifest.json"
+    "manifests/lingo-v1.0.2.package-manifest.json"
   ],
   "assembly": {
     "loadOrder": [
@@ -89,22 +89,11 @@
       "data/lingo-schema-docs.tql",
       "data/lingo-provenance.tql",
       "manifests/package-manifest.schema.json",
-      "manifests/lingo-v1.0.1.package-manifest.json",
-      "generated/apply-units/data/lingo-schema-docs/0001.tql",
-      "generated/apply-units/data/lingo-schema-docs/0002.tql",
-      "generated/apply-units/data/lingo-schema-docs/0003.tql",
-      "generated/apply-units/data/lingo-schema-docs/0004.tql",
-      "generated/apply-units/data/lingo-schema-docs/0005.tql",
-      "generated/apply-units/data/lingo-schema-docs/0006.tql",
-      "generated/apply-units/data/lingo-schema-docs/0007.tql",
-      "generated/apply-units/data/lingo-schema-docs/0008.tql",
-      "generated/apply-units/data/lingo-schema-docs/0009.tql",
-      "generated/apply-units/data/lingo-schema-docs/0010.tql",
-      "generated/apply-units/data/lingo-schema-docs/0011.tql"
+      "manifests/lingo-v1.0.2.package-manifest.json"
     ]
   },
   "provenance": {
-    "manifest": "manifests/lingo-v1.0.1.package-manifest.json",
+    "manifest": "manifests/lingo-v1.0.2.package-manifest.json",
     "status": "bootstrap"
   },
   "legacyDocumentation": {
