@@ -1,6 +1,6 @@
 # Competency questions: Lingo Studio Knowledge
 
-<!-- Generated from competency/questions.json by `ont check-questions --write-doc`. Do not edit by hand. -->
+<!-- Generated from competency/questions.json by `ont check-questions --write-generated`. Do not edit by hand. -->
 
 ## What was read
 

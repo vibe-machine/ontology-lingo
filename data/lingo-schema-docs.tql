@@ -1,12 +1,14 @@
 # Provenance bootstrap
 # upstream-repo: https://github.com/vibe-machine/ontology-lingo
 # upstream-tag: v1.0.2
-# upstream-commit: 7ede7e8a96365c05c501d65120a5bef952ccb990
+# upstream-commit: 574bd842876d7383866d327939cc60850c85c2c2
 # source-artifacts:
 # - package.json
+# - schema/stored-queries.tql
 # - schema/lingo.tql
 # - data/lingo-categories.tql
 # - data/lingo-formats.tql
+# - data/lingo-questions.tql
 # - generated/apply-units/data/lingo-schema-docs/0001.tql
 # - generated/apply-units/data/lingo-schema-docs/0002.tql
 # - generated/apply-units/data/lingo-schema-docs/0003.tql
@@ -2133,6 +2135,40 @@ insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
 put $generated_role_75 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#storedAnswer:query",
+  has iri "https://github.com/vibe-machine/ontology-lingo#storedAnswer:query",
+  has typeLabel "storedAnswer:query",
+  has kind "role",
+  has roleName "query",
+  has prefLabel "query",
+  has definition "Role 'query' in relation 'storedAnswer'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#storedAnswer:query";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
+
+put $generated_role_76 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#storedAnswer:question",
+  has iri "https://github.com/vibe-machine/ontology-lingo#storedAnswer:question",
+  has typeLabel "storedAnswer:question",
+  has kind "role",
+  has roleName "question",
+  has prefLabel "question",
+  has definition "Role 'question' in relation 'storedAnswer'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#storedAnswer:question";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
+
+put $generated_role_77 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#support:evidence",
   has iri "https://github.com/vibe-machine/ontology-lingo#support:evidence",
   has typeLabel "support:evidence",
@@ -2149,7 +2185,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_76 isa SchemaResource,
+put $generated_role_78 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#support:supportedClaim",
   has iri "https://github.com/vibe-machine/ontology-lingo#support:supportedClaim",
   has typeLabel "support:supportedClaim",
@@ -2166,7 +2202,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_77 isa SchemaResource,
+put $generated_role_79 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#vocabulary:term",
   has iri "https://github.com/vibe-machine/ontology-lingo#vocabulary:term",
   has typeLabel "vocabulary:term",
@@ -2183,7 +2219,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_78 isa SchemaResource,
+put $generated_role_80 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#vocabulary:termSource",
   has iri "https://github.com/vibe-machine/ontology-lingo#vocabulary:termSource",
   has typeLabel "vocabulary:termSource",
@@ -2200,7 +2236,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_79 isa SchemaResource,
+put $generated_role_81 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#whereabouts:locatedSource",
   has iri "https://github.com/vibe-machine/ontology-lingo#whereabouts:locatedSource",
   has typeLabel "whereabouts:locatedSource",
@@ -2217,7 +2253,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_80 isa SchemaResource,
+put $generated_role_82 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#whereabouts:location",
   has iri "https://github.com/vibe-machine/ontology-lingo#whereabouts:location",
   has typeLabel "whereabouts:location",
@@ -2385,6 +2421,78 @@ match
   };
 insert
   $schema_resource has valueTypeName "boolean";
+
+match
+  $schema_resource isa SchemaResource, has typeLabel "storedPackage";
+  not {
+    $schema_resource has valueTypeName "string";
+  };
+insert
+  $schema_resource has valueTypeName "string";
+
+match
+  $schema_resource isa SchemaResource, has typeLabel "storedQueryExplanation";
+  not {
+    $schema_resource has valueTypeName "string";
+  };
+insert
+  $schema_resource has valueTypeName "string";
+
+match
+  $schema_resource isa SchemaResource, has typeLabel "storedQueryName";
+  not {
+    $schema_resource has valueTypeName "string";
+  };
+insert
+  $schema_resource has valueTypeName "string";
+
+match
+  $schema_resource isa SchemaResource, has typeLabel "storedQueryText";
+  not {
+    $schema_resource has valueTypeName "string";
+  };
+insert
+  $schema_resource has valueTypeName "string";
+
+match
+  $schema_resource isa SchemaResource, has typeLabel "storedQueryTitle";
+  not {
+    $schema_resource has valueTypeName "string";
+  };
+insert
+  $schema_resource has valueTypeName "string";
+
+match
+  $schema_resource isa SchemaResource, has typeLabel "storedQuestionId";
+  not {
+    $schema_resource has valueTypeName "string";
+  };
+insert
+  $schema_resource has valueTypeName "string";
+
+match
+  $schema_resource isa SchemaResource, has typeLabel "storedQuestionOrder";
+  not {
+    $schema_resource has valueTypeName "integer";
+  };
+insert
+  $schema_resource has valueTypeName "integer";
+
+match
+  $schema_resource isa SchemaResource, has typeLabel "storedQuestionText";
+  not {
+    $schema_resource has valueTypeName "string";
+  };
+insert
+  $schema_resource has valueTypeName "string";
+
+match
+  $schema_resource isa SchemaResource, has typeLabel "storedVersion";
+  not {
+    $schema_resource has valueTypeName "string";
+  };
+insert
+  $schema_resource has valueTypeName "string";
 
 match
   $schema_resource isa SchemaResource, has typeLabel "termId";
@@ -3869,6 +3977,105 @@ insert
   (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
 
 match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuery";
+  $struct_right isa SchemaResource, has typeLabel "storedPackage";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuery";
+  $struct_right isa SchemaResource, has typeLabel "storedQueryExplanation";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuery";
+  $struct_right isa SchemaResource, has typeLabel "storedQueryName";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuery";
+  $struct_right isa SchemaResource, has typeLabel "storedQueryText";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuery";
+  $struct_right isa SchemaResource, has typeLabel "storedQueryTitle";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuery";
+  $struct_right isa SchemaResource, has typeLabel "storedVersion";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuestion";
+  $struct_right isa SchemaResource, has typeLabel "storedPackage";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuestion";
+  $struct_right isa SchemaResource, has typeLabel "storedQuestionId";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuestion";
+  $struct_right isa SchemaResource, has typeLabel "storedQuestionOrder";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuestion";
+  $struct_right isa SchemaResource, has typeLabel "storedQuestionText";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuestion";
+  $struct_right isa SchemaResource, has typeLabel "storedVersion";
+  not {
+    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+  };
+insert
+  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
+
+match
   $struct_left isa SchemaResource, has typeLabel "AssistantModel";
   $struct_right isa SchemaResource, has typeLabel "decisionMaking:decider";
   not {
@@ -4465,6 +4672,24 @@ insert
 match
   $struct_left isa SchemaResource, has typeLabel "SourceTerm";
   $struct_right isa SchemaResource, has typeLabel "vocabulary:term";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuery";
+  $struct_right isa SchemaResource, has typeLabel "storedAnswer:query";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuestion";
+  $struct_right isa SchemaResource, has typeLabel "storedAnswer:question";
   not {
     (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
   };
@@ -5149,6 +5374,24 @@ insert
 match
   $struct_left isa SchemaResource, has typeLabel "standing";
   $struct_right isa SchemaResource, has typeLabel "standing:subject";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "storedAnswer";
+  $struct_right isa SchemaResource, has typeLabel "storedAnswer:query";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "storedAnswer";
+  $struct_right isa SchemaResource, has typeLabel "storedAnswer:question";
   not {
     (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };

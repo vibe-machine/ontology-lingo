@@ -1,9 +1,108 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v1.0.1.package-manifest.json
+# manifest: manifests/lingo-v1.0.2.package-manifest.json
 
 match
   $struct_left isa SchemaResource, has typeLabel "aboutness";
   $struct_right isa SchemaResource, has typeLabel "isAbout";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "readingPurpose:purposeBrief";
+  $struct_right isa SchemaResource, has typeLabel "hasGoal:goal";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "readingPurpose:purposefulReading";
+  $struct_right isa SchemaResource, has typeLabel "hasGoal:directedThing";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "readingSubject";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "readingSubject:pass";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:derivedThing";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "readingSubject:sourceRead";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:basis";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "Reconciliation";
+  $struct_right isa SchemaResource, has typeLabel "Determination";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "replacement";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "replacement:newer";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:derivedThing";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "replacement:older";
+  $struct_right isa SchemaResource, has typeLabel "isBasedOn:basis";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "revisionHistory";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf";
+  not {
+    (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+  };
+insert
+  (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "revisionHistory:brief";
+  $struct_right isa SchemaResource, has typeLabel "isPartOf:whole";
   not {
     (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
   };
@@ -346,105 +445,6 @@ insert
 match
   $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
   $struct_right isa SchemaResource, has typeLabel "contentHash";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
-  $struct_right isa SchemaResource, has typeLabel "name";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
-  $struct_right isa SchemaResource, has typeLabel "publishedYear";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "EvidenceSource";
-  $struct_right isa SchemaResource, has typeLabel "sourceId";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "frameEnd";
-  $struct_right isa SchemaResource, has typeLabel "name";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "LifeHistory";
-  $struct_right isa SchemaResource, has typeLabel "statesAreOrdered";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "LinkClaim";
-  $struct_right isa SchemaResource, has typeLabel "verbPhrase";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "LocationKind";
-  $struct_right isa SchemaResource, has typeLabel "name";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "ModelingBrief";
-  $struct_right isa SchemaResource, has typeLabel "briefId";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "ModelingBrief";
-  $struct_right isa SchemaResource, has typeLabel "name";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Passage";
-  $struct_right isa SchemaResource, has typeLabel "locator";
-  not {
-    (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-  };
-insert
-  (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "Passage";
-  $struct_right isa SchemaResource, has typeLabel "passageId";
   not {
     (ownerResource: $struct_left, attributeResource: $struct_right) isa schemaOwns;
   };

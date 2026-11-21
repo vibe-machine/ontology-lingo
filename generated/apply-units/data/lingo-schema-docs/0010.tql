@@ -1,5 +1,5 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v1.0.1.package-manifest.json
+# manifest: manifests/lingo-v1.0.2.package-manifest.json
 
 match
   $struct_left isa SchemaResource, has typeLabel "aboutness";
@@ -9,6 +9,222 @@ match
   };
 insert
   (subtypeResource: $struct_left, supertypeResource: $struct_right) isa schemaSubTypeOf;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "division:dividedTerm";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "division:memberTerm";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "duty:actor";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "duty:target";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "step:state";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "termReconciliation:term";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "SourceTerm";
+  $struct_right isa SchemaResource, has typeLabel "vocabulary:term";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuery";
+  $struct_right isa SchemaResource, has typeLabel "storedAnswer:query";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "StoredQuestion";
+  $struct_right isa SchemaResource, has typeLabel "storedAnswer:question";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "TermDefinition";
+  $struct_right isa SchemaResource, has typeLabel "conceptClassification:classifiedDefinition";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "TermDefinition";
+  $struct_right isa SchemaResource, has typeLabel "emphasis:weighedDefinition";
+  not {
+    (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+  };
+insert
+  (playerResource: $struct_left, roleResource: $struct_right) isa schemaPlays;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "aboutness";
+  $struct_right isa SchemaResource, has typeLabel "aboutness:claim";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "aboutness";
+  $struct_right isa SchemaResource, has typeLabel "aboutness:term";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "authorship";
+  $struct_right isa SchemaResource, has typeLabel "authorship:authoredClaim";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "authorship";
+  $struct_right isa SchemaResource, has typeLabel "authorship:reading";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "checkOutcome";
+  $struct_right isa SchemaResource, has typeLabel "checkOutcome:judgedCheck";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "checkOutcome";
+  $struct_right isa SchemaResource, has typeLabel "checkOutcome:verdict";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "checkSubject";
+  $struct_right isa SchemaResource, has typeLabel "checkSubject:check";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "checkSubject";
+  $struct_right isa SchemaResource, has typeLabel "checkSubject:checkedClaim";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "conceptClassification";
+  $struct_right isa SchemaResource, has typeLabel "conceptClassification:classifiedDefinition";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "conceptClassification";
+  $struct_right isa SchemaResource, has typeLabel "conceptClassification:conceptKind";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "copyRead";
+  $struct_right isa SchemaResource, has typeLabel "copyRead:copy";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "copyRead";
+  $struct_right isa SchemaResource, has typeLabel "copyRead:readingOfCopy";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+
+match
+  $struct_left isa SchemaResource, has typeLabel "decisionMaking";
+  $struct_right isa SchemaResource, has typeLabel "decisionMaking:decider";
+  not {
+    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
+  };
+insert
+  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
 
 match
   $struct_left isa SchemaResource, has typeLabel "decisionMaking";
@@ -229,222 +445,6 @@ insert
 match
   $struct_left isa SchemaResource, has typeLabel "isCategorizedBy";
   $struct_right isa SchemaResource, has typeLabel "isCategorizedBy:category";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "isExpressedIn";
-  $struct_right isa SchemaResource, has typeLabel "isExpressedIn:expressedThing";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "isExpressedIn";
-  $struct_right isa SchemaResource, has typeLabel "isExpressedIn:language";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "isMemberOf";
-  $struct_right isa SchemaResource, has typeLabel "isMemberOf:collection";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "isMemberOf";
-  $struct_right isa SchemaResource, has typeLabel "isMemberOf:member";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "isPartOf";
-  $struct_right isa SchemaResource, has typeLabel "isPartOf:part";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "isPartOf";
-  $struct_right isa SchemaResource, has typeLabel "isPartOf:whole";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "isProducedBy";
-  $struct_right isa SchemaResource, has typeLabel "isProducedBy:producer";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "isProducedBy";
-  $struct_right isa SchemaResource, has typeLabel "isProducedBy:product";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "listClassification";
-  $struct_right isa SchemaResource, has typeLabel "listClassification:classifiedList";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "listClassification";
-  $struct_right isa SchemaResource, has typeLabel "listClassification:listKind";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "locationClassification";
-  $struct_right isa SchemaResource, has typeLabel "locationClassification:classifiedLocation";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "locationClassification";
-  $struct_right isa SchemaResource, has typeLabel "locationClassification:locationKind";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "origin";
-  $struct_right isa SchemaResource, has typeLabel "origin:originClaim";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "origin";
-  $struct_right isa SchemaResource, has typeLabel "origin:originKind";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "placement";
-  $struct_right isa SchemaResource, has typeLabel "placement:passage";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "placement";
-  $struct_right isa SchemaResource, has typeLabel "placement:passageSource";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "processRecord";
-  $struct_right isa SchemaResource, has typeLabel "processRecord:record";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "processRecord";
-  $struct_right isa SchemaResource, has typeLabel "processRecord:recordedReading";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "questionReference";
-  $struct_right isa SchemaResource, has typeLabel "questionReference:question";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "questionReference";
-  $struct_right isa SchemaResource, has typeLabel "questionReference:referencedElement";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "readership";
-  $struct_right isa SchemaResource, has typeLabel "readership:reader";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "readership";
-  $struct_right isa SchemaResource, has typeLabel "readership:reading";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "readingPurpose";
-  $struct_right isa SchemaResource, has typeLabel "readingPurpose:purposeBrief";
-  not {
-    (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-  };
-insert
-  (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
-
-match
-  $struct_left isa SchemaResource, has typeLabel "readingPurpose";
-  $struct_right isa SchemaResource, has typeLabel "readingPurpose:purposefulReading";
   not {
     (relationResource: $struct_left, roleResource: $struct_right) isa schemaRelates;
   };

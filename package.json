@@ -21,6 +21,10 @@
       "file": "schema/administrative-operations.tql"
     },
     {
+      "name": "stored-queries",
+      "file": "schema/stored-queries.tql"
+    },
+    {
       "name": "lingo",
       "file": "schema/lingo.tql"
     }
@@ -28,6 +32,7 @@
   "data": [
     "data/lingo-categories.tql",
     "data/lingo-formats.tql",
+    "data/lingo-questions.tql",
     "generated/apply-units/data/lingo-schema-docs/0001.tql",
     "generated/apply-units/data/lingo-schema-docs/0002.tql",
     "generated/apply-units/data/lingo-schema-docs/0003.tql",
@@ -66,9 +71,11 @@
       "schema/self-describing-schema.tql",
       "schema/package-provenance.tql",
       "schema/administrative-operations.tql",
+      "schema/stored-queries.tql",
       "schema/lingo.tql",
       "data/lingo-categories.tql",
       "data/lingo-formats.tql",
+      "data/lingo-questions.tql",
       "generated/apply-units/data/lingo-schema-docs/0001.tql",
       "generated/apply-units/data/lingo-schema-docs/0002.tql",
       "generated/apply-units/data/lingo-schema-docs/0003.tql",

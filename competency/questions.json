@@ -10,189 +10,243 @@
       "number": 1,
       "group": "What was read",
       "text": "Which sources have been read for a subject, by whom, when, and under which version of the reading brief?",
-      "query": "queries/q01-readings-for-a-subject.tql"
+      "title": "Readings for a subject",
+      "query": "queries/q01-readings-for-a-subject.tql",
+      "explanation": "Finds the readings done for one subject's brief (here the product operating model) and shows the source read, who read it, when, and which version of the reading brief they followed."
     },
     {
       "id": "q02",
       "number": 2,
       "group": "What was read",
       "text": "Which passages of a source does any claim rest on, and which sources yielded nothing?",
-      "query": "queries/q02-passages-and-empty-sources.tql"
+      "title": "Passages that claims rest on",
+      "query": "queries/q02-passages-and-empty-sources.tql",
+      "explanation": "Lists every source that was read with the passages its claims point to. A source with an empty passage column had no claim resting on it, so it yielded nothing."
     },
     {
       "id": "q03",
       "number": 3,
       "group": "What was read",
       "text": "Which claims has a second reader checked, and what did each check find?",
-      "query": "queries/q03-checked-claims.tql"
+      "title": "Checked claims and what each check found",
+      "query": "queries/q03-checked-claims.tql",
+      "explanation": "Finds every check a second reader made of a claim and shows the claim, who checked it, the verdict and any note they left."
     },
     {
       "id": "q04",
       "number": 4,
       "group": "What each source says",
       "text": "What does one source say about one term: every claim that is about it?",
-      "query": "queries/q04-claims-about-a-term.tql"
+      "title": "What one source says about one term",
+      "query": "queries/q04-claims-about-a-term.tql",
+      "explanation": "Takes one source (Transformed) and one of its terms (outcome) and lists every claim about that term, with the kind of claim it is."
     },
     {
       "id": "q05",
       "number": 5,
       "group": "What each source says",
       "text": "Which claims did the source state outright, and which did the reader infer?",
-      "query": "queries/q05-stated-or-inferred.tql"
+      "title": "Stated or inferred claims",
+      "query": "queries/q05-stated-or-inferred.tql",
+      "explanation": "Lists claims marked as stated outright by the source or as implied, meaning the reader inferred them, with the source each came from."
     },
     {
       "id": "q06",
       "number": 6,
       "group": "What each source says",
       "text": "Which claims came from a story the source tells and not from a statement it makes?",
-      "query": "queries/q06-claims-from-stories.tql"
+      "title": "Claims taken from stories",
+      "query": "queries/q06-claims-from-stories.tql",
+      "explanation": "Lists the claims whose origin is a story the source tells rather than a statement it makes, with the source each came from."
     },
     {
       "id": "q07",
       "number": 7,
       "group": "What each source says",
       "text": "Which distinctions does a source draw between two terms, and what separates them?",
-      "query": "queries/q07-distinctions.tql"
+      "title": "Distinctions a source draws",
+      "query": "queries/q07-distinctions.tql",
+      "explanation": "Lists each distinction a source draws, with the terms it is about and the text that says what separates them."
     },
     {
       "id": "q08",
       "number": 8,
       "group": "What each source says",
       "text": "Into what kinds, parts, options or stages does a source divide a term, and does it call the list complete?",
-      "query": "queries/q08-divisions.tql"
+      "title": "How a source divides a term",
+      "query": "queries/q08-divisions.tql",
+      "explanation": "Lists each list a source gives of a term's kinds, parts, options or stages, with its members and whether the source says the list is complete."
     },
     {
       "id": "q09",
       "number": 9,
       "group": "What each source says",
       "text": "Which states does a source say a thing passes through, and are they ordered?",
-      "query": "queries/q09-life-histories.tql"
+      "title": "States a thing passes through",
+      "query": "queries/q09-life-histories.tql",
+      "explanation": "Lists the states a source says a thing goes through, in their position when the source gives an order, and whether the source says they are ordered."
     },
     {
       "id": "q10",
       "number": 10,
       "group": "What each source says",
       "text": "Who does a source say does, decides or approves what?",
-      "query": "queries/q10-duties.tql"
+      "title": "Who does, decides or approves what",
+      "query": "queries/q10-duties.tql",
+      "explanation": "Lists the duties a source describes: who has them, whether they do, decide or approve, and what they act on when the source says."
     },
     {
       "id": "q11",
       "number": 11,
       "group": "What each source says",
       "text": "Which rules does a source place on a term, how strong is each, and what number does it give?",
-      "query": "queries/q11-rules.tql"
+      "title": "Rules a source places on a term",
+      "query": "queries/q11-rules.tql",
+      "explanation": "Lists the rules a source gives about a term, how strong each one is, and any number and unit it states."
     },
     {
       "id": "q12",
       "number": 12,
       "group": "What each source says",
       "text": "Which terms were named by the reader because the source relied on them without naming them?",
-      "query": "queries/q12-reader-named-terms.tql"
+      "title": "Terms the reader had to name",
+      "query": "queries/q12-reader-named-terms.tql",
+      "explanation": "Lists the terms marked as named by the reader because the source relied on an idea without giving it a name."
     },
     {
       "id": "q13",
       "number": 13,
       "group": "Across sources",
       "text": "Which terms do two sources use with different meanings?",
-      "query": "queries/q13-terms-with-different-meanings.tql"
+      "title": "Same word, different meanings",
+      "query": "queries/q13-terms-with-different-meanings.tql",
+      "explanation": "Pairs terms with the same name in two sources and keeps the pairs where the sources mean different things: they were matched to different concepts, matched to one concept with a different closeness, or both marked different."
     },
     {
       "id": "q14",
       "number": 14,
       "group": "Across sources",
       "text": "Which source terms have not been reconciled with our concepts yet?",
-      "query": "queries/q14-unreconciled-terms.tql"
+      "title": "Terms not yet reconciled",
+      "query": "queries/q14-unreconciled-terms.tql",
+      "explanation": "Lists the source terms that no decision has yet matched to one of our concepts, with the source each came from."
     },
     {
       "id": "q15",
       "number": 15,
       "group": "Across sources",
       "text": "Which source terms have we decided are one of our concepts, how close is the fit, who decided, and why?",
-      "query": "queries/q15-reconciled-terms.tql"
+      "title": "Terms decided to be our concepts",
+      "query": "queries/q15-reconciled-terms.tql",
+      "explanation": "Lists each decision that a source term is one of our concepts, with how close the match is, who decided and the reason they gave."
     },
     {
       "id": "q16",
       "number": 16,
       "group": "Across sources",
       "text": "How many new terms did the latest source add that no earlier source had?",
-      "query": "queries/q16-new-terms-in-latest-source.tql"
+      "title": "New terms in the latest source",
+      "query": "queries/q16-new-terms-in-latest-source.tql",
+      "explanation": "Takes the most recent reading and counts the terms of its source that no source read earlier already had."
     },
     {
       "id": "q17",
       "number": 17,
       "group": "What we intend to model",
       "text": "What is in force in the brief for a subject: its purpose, scope, concepts, relations, constraints and questions?",
-      "query": "queries/q17-brief-in-force.tql"
+      "title": "What the brief says now",
+      "query": "queries/q17-brief-in-force.tql",
+      "explanation": "Finds the current revision of the brief and lists every statement in it with its kind: purpose, scope, concept, relation, constraint or question."
     },
     {
       "id": "q18",
       "number": 18,
       "group": "What we intend to model",
       "text": "What changed between two revisions of the brief, and which statement replaced which?",
-      "query": "queries/q18-revision-changes.tql"
+      "title": "Changes between two revisions",
+      "query": "queries/q18-revision-changes.tql",
+      "explanation": "Compares the first and second revisions of the brief, lists the statements added and removed, and shows which older statement a new one replaced."
     },
     {
       "id": "q19",
       "number": 19,
       "group": "What we intend to model",
       "text": "Which statements did the owner assert, which did the assistant suggest, and which are assumed?",
-      "query": "queries/q19-asserted-suggested-assumed.tql"
+      "title": "Asserted, suggested or assumed",
+      "query": "queries/q19-asserted-suggested-assumed.tql",
+      "explanation": "Lists the statements in the current brief with their standing: asserted by the owner, suggested by the assistant, or assumed."
     },
     {
       "id": "q20",
       "number": 20,
       "group": "What we intend to model",
       "text": "Which concepts in the brief rest on no claim from any source?",
-      "query": "queries/q20-concepts-without-claims.tql"
+      "title": "Concepts with no source behind them",
+      "query": "queries/q20-concepts-without-claims.tql",
+      "explanation": "Lists the concepts in the current brief that no claim from any source supports."
     },
     {
       "id": "q21",
       "number": 21,
       "group": "What we intend to model",
       "text": "Which concepts rest on a single source?",
-      "query": "queries/q21-concepts-on-one-source.tql"
+      "title": "Concepts resting on one source",
+      "query": "queries/q21-concepts-on-one-source.tql",
+      "explanation": "Counts, for each concept in the current brief, how many different sources support it through its claims and passages, and keeps those with exactly one."
     },
     {
       "id": "q22",
       "number": 22,
       "group": "What we intend to model",
       "text": "Which concepts in the brief does no competency question refer to?",
-      "query": "queries/q22-concepts-no-question.tql"
+      "title": "Concepts no question uses",
+      "query": "queries/q22-concepts-no-question.tql",
+      "explanation": "Lists the concepts in the brief that no competency question refers to."
     },
     {
       "id": "q23",
       "number": 23,
       "group": "What we intend to model",
       "text": "Which competency questions refer to nothing in the brief?",
-      "query": "queries/q23-questions-referring-to-nothing.tql"
+      "title": "Questions that refer to nothing",
+      "query": "queries/q23-questions-referring-to-nothing.tql",
+      "explanation": "Lists the competency questions in the current brief that refer to nothing else in that revision of the brief."
     },
     {
       "id": "q24",
       "number": 24,
       "group": "The process",
       "text": "In which working session was a reading done, and where is its transcript kept?",
-      "query": "queries/q24-session-of-a-reading.tql"
+      "title": "Session and transcript of a reading",
+      "query": "queries/q24-session-of-a-reading.tql",
+      "explanation": "Shows, for each reading, the working session it was done in and where that session's transcript is kept."
     },
     {
       "id": "q25",
       "number": 25,
       "group": "The process",
       "text": "Which statements in the brief rest only on what the owner said in a session, and on no published source?",
-      "query": "queries/q25-owner-only-statements.tql"
+      "title": "Statements resting only on the owner's word",
+      "query": "queries/q25-owner-only-statements.tql",
+      "explanation": "Lists statements in the current brief whose support comes only from what the owner said in a working session and from no published source."
     },
     {
       "id": "q26",
       "number": 26,
       "group": "Format and location",
       "text": "In what file format is each source, and where is each copy of it kept?",
-      "query": "queries/q26-format-and-location.tql"
+      "title": "Format and copies of each source",
+      "query": "queries/q26-format-and-location.tql",
+      "explanation": "Lists each source with its file format, when it is known, and every place a copy of it is kept, with the kind of place."
     },
     {
       "id": "q27",
       "number": 27,
       "group": "Format and location",
       "text": "From which copy was a reading made, so that its line or page numbers can be found again?",
-      "query": "queries/q27-copy-read.tql"
+      "title": "The copy a reading used",
+      "query": "queries/q27-copy-read.tql",
+      "explanation": "Shows, for each reading, which copy of the source it was made from, so line or page numbers can be found again."
     }
   ]
 }

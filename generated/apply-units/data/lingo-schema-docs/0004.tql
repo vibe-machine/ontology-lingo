@@ -1,5 +1,5 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v1.0.1.package-manifest.json
+# manifest: manifests/lingo-v1.0.2.package-manifest.json
 
 put $generated_role_1 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#aboutness:claim",
@@ -393,6 +393,40 @@ insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
 put $generated_role_75 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#storedAnswer:query",
+  has iri "https://github.com/vibe-machine/ontology-lingo#storedAnswer:query",
+  has typeLabel "storedAnswer:query",
+  has kind "role",
+  has roleName "query",
+  has prefLabel "query",
+  has definition "Role 'query' in relation 'storedAnswer'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#storedAnswer:query";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
+
+put $generated_role_76 isa SchemaResource,
+  has docKey "https://github.com/vibe-machine/ontology-lingo#storedAnswer:question",
+  has iri "https://github.com/vibe-machine/ontology-lingo#storedAnswer:question",
+  has typeLabel "storedAnswer:question",
+  has kind "role",
+  has roleName "question",
+  has prefLabel "question",
+  has definition "Role 'question' in relation 'storedAnswer'.";
+match
+  $schema_module isa SchemaModule, has moduleKey "lingo";
+  $schema_resource isa SchemaResource, has docKey "https://github.com/vibe-machine/ontology-lingo#storedAnswer:question";
+  not {
+    (resource: $schema_resource, module: $schema_module) isa inModule;
+  };
+insert
+  (resource: $schema_resource, module: $schema_module) isa inModule;
+
+put $generated_role_77 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#support:evidence",
   has iri "https://github.com/vibe-machine/ontology-lingo#support:evidence",
   has typeLabel "support:evidence",
@@ -409,7 +443,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_76 isa SchemaResource,
+put $generated_role_78 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#support:supportedClaim",
   has iri "https://github.com/vibe-machine/ontology-lingo#support:supportedClaim",
   has typeLabel "support:supportedClaim",
@@ -426,7 +460,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_77 isa SchemaResource,
+put $generated_role_79 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#vocabulary:term",
   has iri "https://github.com/vibe-machine/ontology-lingo#vocabulary:term",
   has typeLabel "vocabulary:term",
@@ -443,7 +477,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_78 isa SchemaResource,
+put $generated_role_80 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#vocabulary:termSource",
   has iri "https://github.com/vibe-machine/ontology-lingo#vocabulary:termSource",
   has typeLabel "vocabulary:termSource",
@@ -460,7 +494,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_79 isa SchemaResource,
+put $generated_role_81 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#whereabouts:locatedSource",
   has iri "https://github.com/vibe-machine/ontology-lingo#whereabouts:locatedSource",
   has typeLabel "whereabouts:locatedSource",
@@ -477,7 +511,7 @@ match
 insert
   (resource: $schema_resource, module: $schema_module) isa inModule;
 
-put $generated_role_80 isa SchemaResource,
+put $generated_role_82 isa SchemaResource,
   has docKey "https://github.com/vibe-machine/ontology-lingo#whereabouts:location",
   has iri "https://github.com/vibe-machine/ontology-lingo#whereabouts:location",
   has typeLabel "whereabouts:location",
@@ -640,22 +674,6 @@ insert
 
 match
   $schema_resource isa SchemaResource, has typeLabel "statesAreOrdered";
-  not {
-    $schema_resource has valueTypeName "boolean";
-  };
-insert
-  $schema_resource has valueTypeName "boolean";
-
-match
-  $schema_resource isa SchemaResource, has typeLabel "termId";
-  not {
-    $schema_resource has valueTypeName "string";
-  };
-insert
-  $schema_resource has valueTypeName "string";
-
-match
-  $schema_resource isa SchemaResource, has typeLabel "termIsReaders";
   not {
     $schema_resource has valueTypeName "boolean";
   };

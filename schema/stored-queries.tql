@@ -1,0 +1,28 @@
+define
+  attribute storedPackage, value string;
+  attribute storedVersion, value string;
+  attribute storedQuestionId, value string;
+  attribute storedQuestionText, value string;
+  attribute storedQuestionOrder, value integer;
+  attribute storedQueryName, value string;
+  attribute storedQueryTitle, value string;
+  attribute storedQueryText, value string;
+  attribute storedQueryExplanation, value string;
+  entity StoredQuestion,
+    owns storedQuestionId @key,
+    owns storedQuestionText,
+    owns storedPackage,
+    owns storedVersion,
+    owns storedQuestionOrder @card(0..1),
+    plays storedAnswer:question;
+  entity StoredQuery,
+    owns storedQueryName @key,
+    owns storedQueryTitle,
+    owns storedQueryText,
+    owns storedPackage,
+    owns storedVersion,
+    owns storedQueryExplanation @card(0..1),
+    plays storedAnswer:query;
+  relation storedAnswer,
+    relates question,
+    relates query;
