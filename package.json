@@ -304,5 +304,9 @@
         ]
       }
     ]
-  }
+  },
+  "sampleData": [
+    "sandbox/sample-data/0001.tql",
+    "sandbox/sample-data/0002.tql"
+  ]
 }

@@ -1,9 +1,5 @@
 {
   "formatVersion": 1,
-  "fixtures": [
-    "fixtures/transformed-sample.tql",
-    "fixtures/competency-sample.tql"
-  ],
   "questions": [
     {
       "id": "q01",

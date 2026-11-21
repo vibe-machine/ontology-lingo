@@ -8,7 +8,7 @@ This repository is the TypeDB package for the Lingo ontology: the record of how 
 
 ## Rules
 
-- Start a change from `competency/questions.json`: add or change the question (with its `title` and `explanation`), then the schema, then the one query in `queries/` that answers it against the fixtures in `fixtures/`. A question the model cannot answer changes the model, never the question.
+- Start a change from `competency/questions.json`: add or change the question (with its `title` and `explanation`), then the schema, then the one query in `queries/` that answers it against the sample data in `sandbox/sample-data.tql`. A question the model cannot answer changes the model, never the question.
 - Build every type on a gist type, and a relation on a gist relation where one fits. Roles that specialise a gist relation's roles need names no other relation in that family uses.
 - Fixed lists are category types with seed values in `data/lingo-categories.tql`, never `@values` strings.
 - Never store a source's words. A passage holds a locator; a claim holds our wording.
@@ -25,7 +25,7 @@ This repository is the TypeDB package for the Lingo ontology: the record of how 
 - `data/lingo-categories.tql`, `data/lingo-formats.tql`
 - `competency/questions.json`
 - `queries/*.tql`
-- `fixtures/*.tql` (sample data for the questions; never installed)
+- `sandbox/sample-data.tql` (sample data for the questions, loaded by the app and by `ont check-questions`; never installed). `sandbox/sample-data/NNNN.tql` is generated from it.
 - `tools/generate_lingo_schema_docs.mjs` (every new type needs its description here)
 - `README.md`
 

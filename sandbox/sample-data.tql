@@ -1,4 +1,88 @@
-# More sample for the competency questions, loaded after transformed-sample.tql.
+# Sample data for the competency questions: the records the app loads into this package's sample
+# database (sample-lingo) and that `ont check-questions` runs every question against.
+# Queries are separated by lines reading `end;`; `ont prepare-package` (and `ont release`) write each
+# one to sandbox/sample-data/NNNN.tql and list them in package.json `sampleData`. Edit this file only.
+
+# Part 1: one book, one working session, a brief of two concepts.
+# It is not package data and is never installed. The meanings are in our own words.
+match
+  $book isa SourceKind, has name "book";
+  $stated isa EpistemicState, has name "stated";
+  $asserted isa EpistemicState, has name "asserted";
+  $measure isa ConceptKind, has name "measure";
+  $thing isa ConceptKind, has name "thing";
+  $central isa Weight, has name "central";
+  $kinds isa ListKind, has name "kinds";
+  $same isa TermFit, has name "same";
+  $epub isa MediaType, has name "EPUB";
+  $web isa LocationKind, has name "web address"; $file isa LocationKind, has name "local file";
+  $sessionKind isa SourceKind, has name "session";
+insert
+  $opus isa AssistantModel, has name "claude-opus";
+  $src isa EvidenceSource, has sourceId "cagan-transformed-2024", has name "Transformed", has authorName "Marty Cagan", has publishedYear 2024;
+  sourceClassification (classifiedSource: $src, sourceKind: $book);
+  sourceFormat (formattedSource: $src, format: $epub);
+  $l1 isa SourceLocation, has containedText "books/transformed.epub"; whereabouts (locatedSource: $src, location: $l1); locationClassification (classifiedLocation: $l1, locationKind: $file);
+  $l2 isa SourceLocation, has containedText "corpus/text/transformed.txt"; whereabouts (locatedSource: $src, location: $l2); locationClassification (classifiedLocation: $l2, locationKind: $file);
+  $p1 isa Passage, has passageId "ct-1312", has locator "line 1312: Principle: Outcomes over Output";
+  $p2 isa Passage, has passageId "ct-889", has locator "line 889: Product Managers, Product Designers, and Engineers";
+  placement (passage: $p1, passageSource: $src);
+  placement (passage: $p2, passageSource: $src);
+  $read isa Reading, has readingId "ct-read-1", has atDateTime 2026-11-20T16:00:00, has formatVersion "0.1";
+  readingSubject (pass: $read, sourceRead: $src);
+  readership (reading: $read, reader: $opus);
+  copyRead (readingOfCopy: $read, copy: $l2);
+  $sess isa SessionRecord, has sourceId "session-2026-11-20", has name "Working session, 20 November 2026";
+  $l3 isa SourceLocation, has containedText "transcripts/75b134bd.jsonl"; whereabouts (locatedSource: $sess, location: $l3); locationClassification (classifiedLocation: $l3, locationKind: $file);
+  sourceClassification (classifiedSource: $sess, sourceKind: $sessionKind);
+  processRecord (record: $sess, recordedReading: $read);
+  $sp isa Passage, has passageId "sess-1", has locator "the owner's message on who the customer is";
+  placement (passage: $sp, passageSource: $sess);
+  $said isa Principle, has claimId "sess-c1", has containedText "The reader of this model is an executive with a head of product and a head of engineering reporting to them.";
+  support (supportedClaim: $said, evidence: $sp); authorship (authoredClaim: $said, reading: $read);
+  standing (subject: $said, state: $asserted);
+  $outcome isa SourceTerm, has termId "ct:outcome", has name "outcome";
+  $output isa SourceTerm, has termId "ct:output", has name "output";
+  $risk isa SourceTerm, has termId "ct:product-risk", has name "product risk";
+  $value isa SourceTerm, has termId "ct:value-risk", has name "value risk";
+  $viab isa SourceTerm, has termId "ct:viability-risk", has name "viability risk";
+  $usab isa SourceTerm, has termId "ct:usability-risk", has name "usability risk";
+  $feas isa SourceTerm, has termId "ct:feasibility-risk", has name "feasibility risk";
+  vocabulary (term: $outcome, termSource: $src); vocabulary (term: $output, termSource: $src);
+  vocabulary (term: $risk, termSource: $src); vocabulary (term: $value, termSource: $src);
+  vocabulary (term: $viab, termSource: $src); vocabulary (term: $usab, termSource: $src);
+  vocabulary (term: $feas, termSource: $src);
+  $def isa TermDefinition, has claimId "ct-c1", has containedText "A business result a team is held to, as opposed to a list of things to deliver.";
+  support (supportedClaim: $def, evidence: $p1); authorship (authoredClaim: $def, reading: $read);
+  standing (subject: $def, state: $stated); aboutness (claim: $def, term: $outcome);
+  conceptClassification (classifiedDefinition: $def, conceptKind: $measure); emphasis (weighedDefinition: $def, weight: $central);
+  $dis isa Distinction, has claimId "ct-c2", has containedText "Shipping features is output; only solved problems that produce business results count.";
+  support (supportedClaim: $dis, evidence: $p1); authorship (authoredClaim: $dis, reading: $read);
+  standing (subject: $dis, state: $stated); aboutness (claim: $dis, term: $outcome); aboutness (claim: $dis, term: $output);
+  $enum isa Enumeration, has claimId "ct-c3", has containedText "Product risk divides into four kinds.", has listIsComplete true;
+  support (supportedClaim: $enum, evidence: $p2); authorship (authoredClaim: $enum, reading: $read);
+  standing (subject: $enum, state: $stated); listClassification (classifiedList: $enum, listKind: $kinds);
+  division (list: $enum, dividedTerm: $risk, memberTerm: $value, memberTerm: $viab, memberTerm: $usab, memberTerm: $feas);
+  $brief isa ModelingBrief, has briefId "pom", has name "Product operating model";
+  $rev isa BriefRevision, has briefRevisionId "pom-r1", has sequence 1, has atDateTime 2026-11-20T17:00:00;
+  revisionHistory (revision: $rev, brief: $brief);
+  $c1 isa BriefConcept, has briefElementId "pom-outcome", has name "Outcome", has containedText "A measured result a team answers for.";
+  $c2 isa BriefConcept, has briefElementId "pom-risk", has name "Product risk", has containedText "A way an idea can fail, assessed before it is built.";
+  inclusion (element: $c1, revision: $rev); inclusion (element: $c2, revision: $rev);
+  standing (subject: $c1, state: $asserted); standing (subject: $c2, state: $asserted);
+  grounding (element: $c1, groundingClaim: $def); grounding (element: $c1, groundingClaim: $dis);
+  $q isa BriefQuestion, has briefElementId "pom-q317", has containedText "Which results is each team responsible for, as opposed to a list of things to deliver?";
+  inclusion (element: $q, revision: $rev); standing (subject: $q, state: $asserted);
+  questionReference (question: $q, referencedElement: $c1);
+  $pur isa BriefPurpose, has briefElementId "pom-purpose", has containedText "Answer an executive's questions about how the product company is run.";
+  inclusion (element: $pur, revision: $rev); standing (subject: $pur, state: $asserted);
+  grounding (element: $pur, groundingClaim: $said);
+  $rec isa Reconciliation, has reconciliationId "rec-1", has atDateTime 2026-11-20T17:05:00, has description "The author's outcome is our Outcome.";
+  termReconciliation (decision: $rec, term: $outcome, concept: $c1); fit (reconciliation: $rec, degree: $same);
+  decisionMaking (decision: $rec, decider: $opus);
+end;
+
+# Part 2, loaded after part 1.
 # It adds a second source that uses one word differently, a source that yielded nothing,
 # one claim of each remaining kind, two checks, and a second revision of the brief.
 # It is not package data and is never installed. All wording is our own, invented for the sample.
@@ -162,3 +246,4 @@ insert
   inclusion (element: $scope, revision: $rev2); inclusion (element: $assume, revision: $rev2);
   inclusion (element: $constraint, revision: $rev2); inclusion (element: $c3, revision: $rev2);
   inclusion (element: $frame, revision: $rev2); inclusion (element: $q2, revision: $rev2);
+end;

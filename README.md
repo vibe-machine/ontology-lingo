@@ -50,10 +50,13 @@ Before a release, also run the candidate through the app's install:
 - `schema/lingo.tql`: the hand-written schema.
 - `data/lingo-categories.tql`, `data/lingo-formats.tql`: the fixed lists and the file formats.
 - `docs/competency-questions.md`: the questions, generated for reading.
-- `competency/questions.json`: every question with its query and the fixtures it is answered against.
+- `competency/questions.json`: every question with its query.
 - `queries/`: one query per question.
-- `fixtures/transformed-sample.tql`, `fixtures/competency-sample.tql`: a small sample on which every
-  query returns rows. Never installed.
+- `sandbox/sample-data.tql`: a small sample on which every query returns rows, two queries
+  separated by `end;`. `ont prepare-package` and `ont release` write them to
+  `sandbox/sample-data/0001.tql` and `0002.tql`, listed in `package.json` `sampleData`: the app
+  loads them into the package's sample database (`sample-lingo`) to run the questions, and
+  `ont check-questions` runs the questions on them. Never installed.
 - `data/lingo-schema-docs.tql`, `data/lingo-provenance.tql`, `manifests/`, the other files in
   `schema/`: generated.
 

@@ -1,4 +1,10 @@
-# A small sample for the package's own checks: one book, one working session, a brief of two concepts.
+# Generated from sandbox/sample-data.tql by `ont prepare-package`; edit the source, not this file.
+# Sample data for the competency questions: the records the app loads into this package's sample
+# database (sample-lingo) and that `ont check-questions` runs every question against.
+# Queries are separated by lines reading `end;`; `ont prepare-package` (and `ont release`) write each
+# one to sandbox/sample-data/NNNN.tql and list them in package.json `sampleData`. Edit this file only.
+
+# Part 1: one book, one working session, a brief of two concepts.
 # It is not package data and is never installed. The meanings are in our own words.
 match
   $book isa SourceKind, has name "book";
