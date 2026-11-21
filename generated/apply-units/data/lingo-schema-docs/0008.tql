@@ -1,5 +1,5 @@
 # Generated executable apply unit from data/lingo-schema-docs.tql
-# manifest: manifests/lingo-v1.1.0.package-manifest.json
+# manifest: manifests/lingo-v1.1.1.package-manifest.json
 
 match
   $struct_left isa SchemaResource, has typeLabel "aboutness";
